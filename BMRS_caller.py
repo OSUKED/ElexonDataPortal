@@ -156,7 +156,7 @@ class Caller(object):
 
         return df
     
-    def date_range_to_df(self, *args, **kwargs):
+    def SP_date_range_to_df(self, *args, **kwargs):
         ## Collecting start and end date from keywords
         local_kws = locals()['kwargs']
         start_date, end_date = get_start_end_date(local_kws)
@@ -197,18 +197,17 @@ class Caller(object):
         comb_df = comb_df.reset_index(drop=True)
         return comb_df
 
-    def non_SP_call(self, *args, **kwargs):
+    def non_SP_date_range_to_df(self, num_missing_dt=-1, *args, **kwargs):
         local_kws = locals()['kwargs']
         start_date, end_date = get_start_end_date(local_kws)
         df_dt_rng = create_df_dt_rng(start_date, end_date)
 
-        ##  *!*!*  From here-on up to the missing dates section it should be possible to iteratively add missing dates *!*!*
         kwargs.update(start_date = format_date(start_date))
         kwargs.update(end_date = format_date(end_date))
 
         df = self.call_2_df(self, *args, **kwargs)
         
-        ## Add in 'if date_col, SP_col present'
+        ## Adding local_datetime col
         if 'datetime_cols' in self.stream_url_dict[self.stream].keys():
             date_col = self.stream_url_dict[self.stream]['datetime_cols']['date_col']
             SP_col = self.stream_url_dict[self.stream]['datetime_cols']['SP_col']
@@ -216,15 +215,34 @@ class Caller(object):
         else:
             df = add_local_datetime(df_dt_rng, df)
 
+        ## Checking missing dates
         missing_dates = get_missing_dates(df['local_datetime'], df_dt_rng)
-        num_missing_dt = len(missing_dates)
+        new_num_missing_dt = len(missing_dates)
 
-        if num_missing_dt > 0:
+        ## Handle missing dates
+        if new_num_missing_dt == 0:
+            df = df.reset_index(drop=True)
+            return df
+
+        elif (new_num_missing_dt > 0) and (new_num_missing_dt == num_missing_dt):
             warnings.warn(f'Returned {df_dt_rng.shape[0] - num_missing_dt} datetimes\nMissing: {missing_dates}')
+            
+            df = df.reset_index(drop=True)
+            return df
 
-        ## Setting and returning the combined dataframe       
-        df = df.reset_index(drop=True)
-        return df
+        else:
+            s_bool_missing_match = df_dt_rng.index.isin(pd.to_datetime(missing_dates))
+            df_dt_rng_new = df_dt_rng[s_bool_missing_match]
+
+            kwargs.update(start_date = format_date(df_dt_rng_new.index.min()))
+            kwargs.update(end_date = format_date(df_dt_rng_new.index.max()))
+            kwargs.update(num_missing_dt = num_missing_dt)
+
+            missing_df = self.non_SP_call(self, *args, **kwargs)
+            df = df.append(missing_df)
+
+            df = df.reset_index(drop=True)
+            return df
           
         
     ## ~~~~~~~~~~~~ Initializer & Helper Functions ~~~~~~~~~~~~
@@ -263,8 +281,8 @@ class Caller(object):
         self.stream = stream
 
         self.caller_dict = {
-            'date_range_to_df' : self.date_range_to_df,
-            'non_SP_call' : self.non_SP_call,
+            'date_range_to_df' : self.SP_date_range_to_df,
+            'non_SP_call' : self.non_SP_date_range_to_df,
         }
     
         
