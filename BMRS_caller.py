@@ -238,7 +238,7 @@ class Caller(object):
             kwargs.update(end_date = format_date(df_dt_rng_new.index.max()))
             kwargs.update(num_missing_dt = num_missing_dt)
 
-            missing_df = self.non_SP_call(self, *args, **kwargs)
+            missing_df = self.non_SP_date_range_to_df(self, *args, **kwargs)
             df = df.append(missing_df)
 
             df = df.reset_index(drop=True)
