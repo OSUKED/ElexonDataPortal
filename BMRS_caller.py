@@ -162,7 +162,6 @@ class Caller(object):
         start_date, end_date = get_start_end_date(local_kws)
         
         ## Creating datetime range with dates and SPs
-        start_date, end_date = format_date(start_date), format_date(end_date)
         df_dt_rng = create_df_dt_rng(start_date, end_date)
         comb_df = pd.DataFrame()
 
@@ -176,7 +175,8 @@ class Caller(object):
             SP = SPs[i]
             date = dates[i]
             local_datetime = local_datetimes[i]
-                
+
+            ## Must be a neater way to try twice than this    
             try:
                 df_gen_SP = self.call_2_df(SP=SP, query_date=date, **kwargs) # Temp dataframe is made from json at url
                 
@@ -185,22 +185,36 @@ class Caller(object):
                     comb_df = comb_df.append(df_gen_SP) # Temp dataframe is appended to the main dataframe
                 
             except:
-                warnings.warn(f'API Call failed at SP: {SP}, Date: {date}')
+                try:
+                    df_gen_SP = self.call_2_df(SP=SP, query_date=date, **kwargs) # Temp dataframe is made from json at url
+                    
+                    if df_gen_SP is not None:
+                        df_gen_SP['local_datetime'] = local_datetime
+                        comb_df = comb_df.append(df_gen_SP) # Temp dataframe is appended to the main dataframe
+                
+                except:
+                    warnings.warn(f'API Call failed at SP: {SP}, Date: {date}, for the stream: {self.stream}')
 
         ## Checking if any dates are missing
         missing_dates = get_missing_dates(comb_df['local_datetime'], df_dt_rng)
 
         if len(missing_dates) > 0:
-            warnings.warn(f'Missing dates: {missing_dates}')
+            #warnings.warn(f'Missing dates: {missing_dates}')
+            warnings.warn('There are missing dates')
 
         ## Setting and returning the combined dataframe       
         comb_df = comb_df.reset_index(drop=True)
         return comb_df
 
-    def non_SP_date_range_to_df(self, num_missing_dt=-1, *args, **kwargs):
+    def non_SP_date_range_to_df(self, *args, **kwargs):
         local_kws = locals()['kwargs']
         start_date, end_date = get_start_end_date(local_kws)
         df_dt_rng = create_df_dt_rng(start_date, end_date)
+
+        if 'num_missing_dt' not in locals()['kwargs'].keys():
+            num_missing_dt = -1
+        else:
+            num_missing_dt = locals()['kwargs']['num_missing_dt']
 
         kwargs.update(start_date = format_date(start_date))
         kwargs.update(end_date = format_date(end_date))
@@ -236,7 +250,7 @@ class Caller(object):
 
             kwargs.update(start_date = format_date(df_dt_rng_new.index.min()))
             kwargs.update(end_date = format_date(df_dt_rng_new.index.max()))
-            kwargs.update(num_missing_dt = num_missing_dt)
+            kwargs.update(num_missing_dt = new_num_missing_dt)
 
             missing_df = self.non_SP_date_range_to_df(self, *args, **kwargs)
             df = df.append(missing_df)
