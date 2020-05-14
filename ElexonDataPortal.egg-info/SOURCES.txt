@@ -1,0 +1,11 @@
+setup.py
+ElexonDataPortal/API.py
+ElexonDataPortal/__init__.py
+ElexonDataPortal/cleaner.py
+ElexonDataPortal/plotter.py
+ElexonDataPortal/stream_info.py
+ElexonDataPortal.egg-info/PKG-INFO
+ElexonDataPortal.egg-info/SOURCES.txt
+ElexonDataPortal.egg-info/dependency_links.txt
+ElexonDataPortal.egg-info/requires.txt
+ElexonDataPortal.egg-info/top_level.txt
