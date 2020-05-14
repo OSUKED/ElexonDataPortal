@@ -67,7 +67,7 @@ Currently a number of commonly used streams are included as part of the module. 
 
 Information for each stream is laid out in the format below. The request type refers to whether the existing Elexon API queries data on a settlement period by settlement period basis or by accepting a date range. The required params is a dictionary which maps this modules harmonised names (e.g. query_date and SP) to the Elexon data stream param names (e.g. SettlementDate, SettlementPeriod) which vary from stream to stream. 
 
-```json
+```python
 'DETSYSPRICES' : {
     'name' : 'Detailed System Prices',
     'request_type' : 'SP_by_SP',
