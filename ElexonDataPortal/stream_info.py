@@ -27,12 +27,11 @@ streams = {
         'data_parse_type' : 'dataframe',
         'request_type' : 'SP_by_SP',
         'API_version' : '2',
-        'optional_params' : {
-            'BMU_id' : 'NGCBMUnitID'
-        },
+        'optional_params' : None,
         'required_params' : {
             'query_date' : 'SettlementDate',
             'SP' : 'Period',
+            'BMU_id' : 'NGCBMUnitID'
         },
     },
     'B1630' : {
