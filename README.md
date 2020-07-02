@@ -8,6 +8,8 @@ The ElexonDataPortal python wrapper is a project being developed within the UCL 
 
 The ElexonDataPortal provides the ability to download data directly from the Elexon API and have it parsed into a user-friendly Pandas dataframe. All queries require both a stream name and query arguments, all query argument information can be found <a href="https://www.elexon.co.uk/wp-content/uploads/2018/09/BMRS-API-Data-Push-User-Guide.pdf">here</a>. Previous users of Elexon data will have had to switch between many different naming conventions for query arguments, the ElexonDataPortal harmonises these so that instead of using one of say <i>FromDate</i>, <i>EventStart</i> or <i>SettlementDate</i> we would use <i>start_date</i> for all of them.
 
+You will also have to have an Elexon API key which you will receive after registering <a href="https://www.elexonportal.co.uk/registration/newuser?cachebust=e2242lmr6w">here</a>. 
+
 The module can be installed with
 
 ```bash
