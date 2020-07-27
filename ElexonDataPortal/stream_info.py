@@ -9,6 +9,19 @@ streams = {
             'year' : 'Year',
         },
     },
+    'B1430 : {
+        'name' : 'Day-Ahead Aggregated Generation',
+        'request_type' : 'SP_by_SP',
+        'date_col' : 'settlementDate',
+        'SP_col' : 'settelmentPeriod',
+        'data_parse_type' : 'series',
+        'API_version' : '1',
+        'optional_params' : None,
+        'required_params' : {
+            'query_date' : 'SettlementDate',
+            'SP' : 'Period',
+        },
+    },
     'B1440' : {
         'name' : 'Day-Ahead Generation forecasts for Wind and Solar',
         'request_type' : 'SP_by_SP',
