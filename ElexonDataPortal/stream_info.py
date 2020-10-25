@@ -201,5 +201,16 @@ streams = {
             'start_date' : 'FromDate',
             'end_date' : 'ToDate'
         },
+    },
+    'BOD' : {
+        'name' : 'Bid Offer Level Data',
+        'request_type' : 'SP_by_SP',
+        'data_parse_type' : 'dataframe',
+        'API_version' : '1',
+        'optional_params' : None,
+        'required_params' : {
+            'query_date' : 'SettlementDate',
+            'SP' : 'SettlementPeriod',
+        },
     }, 
 }
