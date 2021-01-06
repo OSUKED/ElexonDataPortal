@@ -1,5 +1,8 @@
 # ElexonDataPortal
 
+[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391)
+
+
 <br>
 
 ## About the ElexonDataPortal Python API Wrapper
