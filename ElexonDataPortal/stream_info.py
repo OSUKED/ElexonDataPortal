@@ -212,5 +212,18 @@ streams = {
             'query_date' : 'SettlementDate',
             'SP' : 'SettlementPeriod',
         },
+    },
+    'MKTDEPTHDATA' : {
+        'name' : 'Market Depth Data',
+        'request_type' : 'SP_by_SP',
+        'date_col' : 'settlementDate',
+        'SP_col' : 'settlementPeriod',
+        'data_parse_type' : 'dataframe',
+        'API_version' : '1',
+        'optional_params' : None,
+        'required_params' : {
+            'query_date' : 'SettlementDate',
+            'SP' : 'SettlementPeriod',
+        },
     }, 
 }
