@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setuptools.setup(
     name="ElexonDataPortal", 
-    version="1.0.0",
+    version="1.0.1",
     author="Ayrton Bourn",
     author_email="AyrtonBourn@Outlook.com",
     description="Package for accessing the Elexon data portal API",
@@ -20,7 +20,7 @@ setuptools.setup(
         'matplotlib',
         'requests',
         'xmltodict',
-        'ipypb',
+        'tqdm',
     ],
     package_data={'ElexonDataPortal':['*']},
     classifiers=[
