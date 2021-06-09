@@ -4,4 +4,4 @@ seaborn
 matplotlib
 requests
 xmltodict
-ipypb
+tqdm

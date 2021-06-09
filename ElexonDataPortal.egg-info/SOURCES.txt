@@ -1,3 +1,4 @@
+README.md
 setup.py
 ElexonDataPortal/API.py
 ElexonDataPortal/__init__.py

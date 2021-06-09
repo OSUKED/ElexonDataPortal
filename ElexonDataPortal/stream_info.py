@@ -9,7 +9,7 @@ streams = {
             'year' : 'Year',
         },
     },
-    'B1430 : {
+    'B1430' : {
         'name' : 'Day-Ahead Aggregated Generation',
         'request_type' : 'SP_by_SP',
         'date_col' : 'settlementDate',

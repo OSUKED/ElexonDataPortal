@@ -9,6 +9,19 @@ streams = {
             'year' : 'Year',
         },
     },
+    'B1430' : {
+        'name' : 'Day-Ahead Aggregated Generation',
+        'request_type' : 'SP_by_SP',
+        'date_col' : 'settlementDate',
+        'SP_col' : 'settelmentPeriod',
+        'data_parse_type' : 'series',
+        'API_version' : '1',
+        'optional_params' : None,
+        'required_params' : {
+            'query_date' : 'SettlementDate',
+            'SP' : 'Period',
+        },
+    },
     'B1440' : {
         'name' : 'Day-Ahead Generation forecasts for Wind and Solar',
         'request_type' : 'SP_by_SP',
@@ -27,12 +40,11 @@ streams = {
         'data_parse_type' : 'dataframe',
         'request_type' : 'SP_by_SP',
         'API_version' : '2',
-        'optional_params' : {
-            'BMU_id' : 'NGCBMUnitID'
-        },
+        'optional_params' : None,
         'required_params' : {
             'query_date' : 'SettlementDate',
             'SP' : 'Period',
+            'BMU_id' : 'NGCBMUnitID'
         },
     },
     'B1630' : {
@@ -188,6 +200,17 @@ streams = {
             'zone' : 'ZoneIdentifier',
             'start_date' : 'FromDate',
             'end_date' : 'ToDate'
+        },
+    },
+    'BOD' : {
+        'name' : 'Bid Offer Level Data',
+        'request_type' : 'SP_by_SP',
+        'data_parse_type' : 'dataframe',
+        'API_version' : '1',
+        'optional_params' : None,
+        'required_params' : {
+            'query_date' : 'SettlementDate',
+            'SP' : 'SettlementPeriod',
         },
     }, 
 }
