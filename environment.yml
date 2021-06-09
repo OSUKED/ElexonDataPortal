@@ -1,0 +1,16 @@
+name: BMRS
+
+channels:
+  - conda-forge
+  - fastai
+  
+dependencies:
+  - python>=3.7
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - seaborn
+  - pip
+  
+  - pip:
+      - -e .
