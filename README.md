@@ -1,6 +1,6 @@
 # ElexonDataPortal
 
-[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391)
+[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/OSUKED/ElexonDataPortal/master?urlpath=lab%2Ftree%2Fnbs%2FExample%20Usage.ipynb)
 
 
 <br>
