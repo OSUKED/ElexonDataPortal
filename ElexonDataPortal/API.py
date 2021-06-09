@@ -25,7 +25,7 @@ import time
 import time
 import warnings
 import collections
-from ipypb import track
+from tqdm import tqdm
 
 ## Stream Data
 from ElexonDataPortal import stream_info
@@ -245,7 +245,7 @@ class Wrapper:
             df_dates_SPs = self.dt_rng_2_SPs(start_date, end_date)
             date_SP_tuples = list(df_dates_SPs.reset_index().itertuples(index=False, name=None))
             
-            for datetime, query_date, SP in track(date_SP_tuples, label=track_label, total=len(date_SP_tuples)):
+            for datetime, query_date, SP in tqdm(date_SP_tuples, desc=track_label, total=len(date_SP_tuples)):
                 query_args['query_date'] = query_date
                 query_args['SP'] = SP
                 
