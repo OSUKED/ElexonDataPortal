@@ -1,7 +1,0 @@
-pandas
-numpy
-seaborn
-matplotlib
-requests
-xmltodict
-tqdm
