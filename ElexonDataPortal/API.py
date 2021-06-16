@@ -1,288 +1,1528 @@
-## ~~~~~ Imports ~~~~~
-
-## Data Manipulation
-import pandas as pd
-import numpy as np
-
-## Plotting
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-## Scraping
-import requests
-import xmltodict
-
-## OS Related
 import os
-from os import listdir
-from os.path import isfile, join
+from ElexonDataPortal.dev import orchestrator
 
-## Datetime Handling
-from datetime import timedelta, datetime, date
-import time
-
-## Miscellaneous
-import time
-import warnings
-import collections
-from tqdm import tqdm
-
-## Stream Data
-from ElexonDataPortal import stream_info
-
-
-## ~~~~~ Helper Functions/Classes ~~~~~
-
-class RequestError(Exception):
-    def __init__(self, http_code, error_type, description):
-        self.message = f'{http_code} - {error_type}\n{description}'
+class Client:
+    def __init__(self, api_key: str=None):
+        if api_key is None:
+            assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
+            api_key = os.environ['BMRS_API_KEY']
+            
+        self.api_key = api_key
+        self.set_method_descs()
         
-    def __str__(self):
-        return self.message
+        
+    def set_method_descs(self):
+        get_methods_names = [attr for attr in dir(self) if attr[:4]=='get_']
+        get_method_descs = [getattr(self, get_methods_name).__doc__.split('\n')[1].strip() for get_methods_name in get_methods_names]
+
+        self.methods = dict(zip(get_methods_names, get_method_descs))
+        
     
-
-## ~~~~~ Core Wrapper Class ~~~~~
-
-class Wrapper:
-    def dt_rng_2_SPs(self, start_date:datetime, end_date:datetime, freq='30T', tz='Europe/London'):
-        dt_rng = pd.date_range(start_date, end_date, freq=freq, tz=tz)
-        dt_strs = dt_rng.strftime('%Y-%m-%d')
-
-        dt_SP_counts = pd.Series(dt_strs).groupby(dt_strs).count()
-        SPs = []
-
-        for num_SPs in dt_SP_counts.values:
-            SPs += [SP+1 for SP in list(range(num_SPs))]
-
-        df_dates_SPs = pd.DataFrame({'date':dt_strs, 'SP':SPs}, index=dt_rng)
-
-        return df_dates_SPs
-    
-    def add_local_datetime(self, df:pd.DataFrame, start_date:str, end_date:str, stream:str):
+    def get_B0610(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
         """
-        Accepts a dataframe, start and end date, and date and SP columns in the dataframe
-        creates a mapping from date and SP columns to the local datetime, 
-        then maps the data and adds the new column to the dataframe.
+        Actual Total Load per Bidding Zone
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
         """
         
-        stream_metadata = stream_info.streams[stream]
-        
-        assert all(col in stream_metadata.keys() for col in ['date_col', 'SP_col']), f'{stream}\'s metadata does not contain the required date_col and SP_col parameters'
-
-        ## Adding End-Date Margin
-        end_date = (pd.to_datetime(end_date) + pd.Timedelta(days=1)).strftime('%Y-%m-%d')
-
-        ## Creating Date & SP to Timestamp Map
-        ts_2_dt_SPs = self.dt_rng_2_SPs(start_date, end_date)
-
-        date_SP_tuples = list(zip(ts_2_dt_SPs['date'], ts_2_dt_SPs['SP']))
-        dt_SP_2_ts = dict(zip(date_SP_tuples, ts_2_dt_SPs.index))
-
-        ## Mapping & Setting Datetimes
-        s_dt_SPs = pd.Series(zip(df[stream_info.streams[stream]['date_col']], df[stream_info.streams[stream]['SP_col']].astype(int)), index=df.index)
-
-        df['local_datetime'] = s_dt_SPs.map(dt_SP_2_ts)
-
-        return df
-    
-    def expand_cols(self, df, cols_2_expand=[]):
-        for col in cols_2_expand:
-            new_df_cols = df[col].apply(pd.Series)
-
-            df[new_df_cols.columns] = new_df_cols
-            df = df.drop(columns=col)
-
-        s_cols_2_expand = df.iloc[0].apply(type).isin([collections.OrderedDict, dict, list, tuple])
-
-        if s_cols_2_expand.sum() > 0:
-            cols_2_expand = s_cols_2_expand[s_cols_2_expand].index
-            df = self.expand_cols(df, cols_2_expand)
-
-        return df
-    
-    
-    def check_response(self, r_metadata):
-        if r_metadata['httpCode'] != '200':
-            raise RequestError(r_metadata['httpCode'], r_metadata['errorType'], r_metadata['description'])
-            
-        if 'cappingApplied' in r_metadata.keys():
-            if r_metadata['cappingApplied'] == 'Yes':
-                self.capping_applied = True
-            else:
-                self.capping_applied = False
-        else:
-            self.capping_applied = 'Could not be determined'
-    
-    
-    def check_and_parse_query_args(self, query_args, stream):
-        ## ~~~~~ Parsing args ~~~~~ 
-        ## Creating new params dictionary
-        stream_params = dict()
-        stream_params.update({'APIKey':'APIKey', 'ServiceType':'ServiceType'})
-
-        ## If dictionary of query parameter mappings exist then add it to the stream_params
-        for param_type in ['required_params', 'optional_params']:
-            if stream_info.streams[stream][param_type]:
-                stream_params.update(stream_info.streams[stream][param_type])
-
-        ## ~~~~~ Checking args ~~~~~
-        extra_args = list(set(query_args.keys()) - set(stream_params.keys()))
-        missing_args = list(set(stream_params.keys()) - set(query_args.keys()) - set(['APIKey', 'ServiceType']))
-        
-        assert(len(missing_args)) == 0, f'The following arguments were needed but not provided: {", ".join(missing_args)}'
-        if len(extra_args) != 0:
-            warnings.warn(f'The following arguments were provided but not needed: {", ".join(extra_args)}')
-            for key in extra_args:
-                query_args.pop(key, None)
-        
-        ## ~~~~ Mapping args ~~~~~
-        ## Mapping the generalised wrapper parameters to the parameter names expected by the API        
-        parsed_query_args = dict((stream_params[key], val) for key, val in query_args.items())
-        
-        return parsed_query_args
-    
-    
-    def parse_response(self, response, stream):
-        r_dict = xmltodict.parse(response.text)
-        
-        r_metadata = r_dict['response']['responseMetadata']
-        self.last_request_metadata = r_metadata
-        
-        if r_metadata['httpCode'] == '204':
-            warnings.warn(f'Data request was succesful but no content was returned')
-            return pd.DataFrame()
-        
-        self.check_response(r_metadata)
-        
-        content_dict = r_dict['response']['responseBody']['responseList']['item']
-        
-        data_parse_type = stream_info.streams[stream]['data_parse_type']
-        data = self.data_parse_types[data_parse_type](content_dict)
-        
-        if data_parse_type == 'dataframe':
-            df = self.expand_cols(data)
-        
-        if data_parse_type == 'series':
-            df = pd.DataFrame(data).T
-        
-        return df
-        
-    
-    def make_request(self, stream, query_args, service_type='xml'):
-        ## Checking inputs
-        assert stream in stream_info.streams.keys(), f'Data stream should be one of: {", ".join(stream_info.streams.keys())}'
-        query_args = self.check_and_parse_query_args(query_args, stream)
-        
-        ## Forming url and request parameters
-        url_endpoint = f'https://api.bmreports.com/BMRS/{stream}/v{stream_info.streams[stream]["API_version"]}'
-
-        query_args.update({
-            'APIKey' : self.API_key,
-            'ServiceType' : self.service_type,
-        })
-        
-        ## Making request
-        response = requests.get(url_endpoint, params=query_args)
-        return response
-    
-    
-    def query(self, stream, query_args, service_type='xml'):
-        response = self.make_request(stream, query_args, service_type)
-        df = self.parse_response(response, stream)
+        df = orchestrator.query_orchestrator(
+            method='get_B0610',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
         
         return df
     
     
-    def query_orchestrator(self, stream, query_args, service_type='xml', track_label=None, wait_time=0):
-        check_date_rng_args = lambda query_args: all(x in query_args.keys() for x in ['start_date', 'end_date'])
+    def get_B0620(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Day-Ahead Total Load Forecast per Bidding Zone
         
-        df = pd.DataFrame()
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
         
-        if stream_info.streams[stream]['request_type'] == 'date_range':
-            ## Dealing with date range requests - main concern is whether capping has been applied
-            assert check_date_rng_args(query_args), 'All date range queries should be provided with a "start_date" and "end_date".'
-            
-            self.capping_applied = True
-            date_col = stream_info.streams[stream]['date_col']
-            start_date, end_date = query_args['start_date'], query_args['end_date']
-            
-            absolute_start_date = start_date
-                    
-            while self.capping_applied == True:
-                response = self.make_request(stream, query_args, service_type)
-                df_new = self.parse_response(response, stream)
-
-                df = df.append(df_new)
-                
-                assert self.capping_applied != None, 'Whether or not capping limits had been breached could not be found in the response metadata'
-                if self.capping_applied == True:
-                    start_date = pd.to_datetime(df[date_col]).max().tz_localize(None)
-                    warnings.warn(f'Response was capped, request is rerunning for missing data from {start_date}')
-                    
-                    if pd.to_datetime(start_date) >= pd.to_datetime(end_date):
-                        warnings.warn(f'End data ({end_date}) was earlier than start date ({start_date})\nThe start date will be set one day earlier.')
-                        start_date = (pd.to_datetime(end_date) - pd.Timedelta(days=1)).strftime('%Y-%m-%d')
-                        
-                    query_args['start_date'] = start_date
-    
-            response = self.make_request(stream, query_args, service_type)
-            df_new = self.parse_response(response, stream)
-            
-            df = df.append(df_new)
-            
-            
-        elif stream_info.streams[stream]['request_type'] == 'SP_by_SP':
-            ## Dealing with SP by SP requests - main concern is handling daylight savings
-            assert check_date_rng_args(query_args), 'All date range queries should be provided with a "start_date" and "end_date".'
-            
-            start_date, end_date = query_args['start_date'], query_args['end_date']
-            
-            absolute_start_date = start_date
-            
-            for key in ['start_date', 'end_date']:
-                query_args.pop(key, None)
-            
-            df_dates_SPs = self.dt_rng_2_SPs(start_date, end_date)
-            date_SP_tuples = list(df_dates_SPs.reset_index().itertuples(index=False, name=None))
-            
-            for datetime, query_date, SP in tqdm(date_SP_tuples, desc=track_label, total=len(date_SP_tuples)):
-                query_args['query_date'] = query_date
-                query_args['SP'] = SP
-                
-                # request and parse
-                response = self.make_request(stream, query_args, service_type)
-                df_SP = self.parse_response(response, stream)
-
-                if df_SP.shape[0] != 0:
-
-                    # processing
-                    df_SP = self.expand_cols(df_SP)
-                    df_SP['datetime'] = datetime
-
-                    # saving
-                    df = df.append(df_SP, sort=False)
-
-                time.sleep(wait_time)
-            
-        df = df.reset_index(drop=True)
-        
-        df = df[~df.duplicated()]
-        
-        ## Assigning local_datetime for relevant dt_rng streams
-        if all(col in stream_info.streams[stream].keys() for col in ['date_col', 'SP_col']):
-            df = self.add_local_datetime(df, absolute_start_date, end_date, stream)
+        df = orchestrator.query_orchestrator(
+            method='get_B0620',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
         
         return df
     
     
-    def __init__(self, API_key, service_type='xml'):
-        self.API_key = API_key
-        self.service_type = service_type
+    def get_B0630(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-06-01',
+    ):
+        """
+        Week-Ahead Total Load Forecast per Bidding Zone
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0630',
+            api_key=self.api_key,
+            request_type='year_and_week',
+            kwargs_map={'year': 'Year', 'week': 'Week'},
+            func_params=['APIKey', 'year', 'week', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
     
-    data_parse_types = {
-        'dataframe' : pd.DataFrame,
-        'series' : pd.Series,
-    }
     
-    last_request_metadata = None
-    capping_applied = 'Could not be determined'
+    def get_B0640(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-06-01',
+    ):
+        """
+        Month-Ahead Total Load Forecast Per Bidding Zone
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0640',
+            api_key=self.api_key,
+            request_type='year_and_month',
+            kwargs_map={'year': 'Year', 'month': 'Month'},
+            func_params=['APIKey', 'year', 'month', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B0650(
+        self,
+        start_date: str='2019-01-01', 
+        end_date: str='2021-01-01',
+    ):
+        """
+        Year Ahead Total Load Forecast per Bidding Zone
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0650',
+            api_key=self.api_key,
+            request_type='year',
+            kwargs_map={'year': 'Year'},
+            func_params=['APIKey', 'year', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B0710(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Planned Unavailability of Consumption Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0710',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'end_time': 'EndTime', 'start_time': 'StartTime', 'start_date': 'StartDate', 'end_date': 'EndDate'},
+            func_params=['APIKey', 'end_time', 'start_time', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B0720(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Changes In Actual Availability Of Consumption Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0720',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'start_time': 'StartTime', 'end_date': 'EndDate', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'start_time', 'end_date', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B0810(
+        self,
+        start_date: str='2019-01-01', 
+        end_date: str='2021-01-01',
+    ):
+        """
+        Year Ahead Forecast Margin
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0810',
+            api_key=self.api_key,
+            request_type='year',
+            kwargs_map={'year': 'Year'},
+            func_params=['APIKey', 'year', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B0910(
+        self,
+        start_date: str='2019-01-01', 
+        end_date: str='2021-01-01',
+    ):
+        """
+        Expansion and Dismantling Projects
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B0910',
+            api_key=self.api_key,
+            request_type='year',
+            kwargs_map={'year': 'Year'},
+            func_params=['APIKey', 'year', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1010(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Planned Unavailability In The Transmission Grid
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1010',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1020(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Changes In Actual Availability In The Transmission Grid
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1020',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1030(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Changes In Actual Availability of Offshore Grid Infrastructure
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1030',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1320(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Congestion Management Measures Countertrading
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1320',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1330(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-06-01',
+    ):
+        """
+        Congestion Management Measures Costs of Congestion Management
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1330',
+            api_key=self.api_key,
+            request_type='year_and_month',
+            kwargs_map={'year': 'Year', 'month': 'Month'},
+            func_params=['APIKey', 'year', 'month', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1410(
+        self,
+        start_date: str='2019-01-01', 
+        end_date: str='2021-01-01',
+    ):
+        """
+        Installed Generation Capacity Aggregated
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1410',
+            api_key=self.api_key,
+            request_type='year',
+            kwargs_map={'year': 'Year'},
+            func_params=['APIKey', 'year', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1420(
+        self,
+        start_date: str='2019-01-01', 
+        end_date: str='2021-01-01',
+    ):
+        """
+        Installed Generation Capacity per Unit
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1420',
+            api_key=self.api_key,
+            request_type='year',
+            kwargs_map={'year': 'Year'},
+            func_params=['APIKey', 'year', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1430(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Day-Ahead Aggregated Generation
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1430',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1440(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+        ProcessType: str='Day Ahead',
+    ):
+        """
+        Generation forecasts for Wind and Solar
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            ProcessType (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1440',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ProcessType', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            ProcessType=ProcessType,
+        )
+        
+        return df
+    
+    
+    def get_B1510(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Planned Unavailability of Generation Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1510',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1520(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Changes In Actual Availability of Generation Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1520',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1530(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Planned Unavailability of Production Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1530',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1540(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Changes In Actual Availability of Production Units
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1540',
+            api_key=self.api_key,
+            request_type='date_time_range',
+            kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
+            func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1610(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+        NGCBMUnitID: str='*',
+    ):
+        """
+        Actual Generation Output per Generation Unit
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            NGCBMUnitID (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1610',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'NGCBMUnitID', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            NGCBMUnitID=NGCBMUnitID,
+        )
+        
+        return df
+    
+    
+    def get_B1620(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Actual Aggregated Generation per Type
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1620',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1630(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Actual Or Estimated Wind and Solar Power Generation
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1630',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1720(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Amount Of Balancing Reserves Under Contract Service
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1720',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1730(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Prices Of Procured Balancing Reserves Service
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1730',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1740(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Accepted Aggregated Offers
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1740',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1750(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Activated Balancing Energy
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1750',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1760(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Prices Of Activated Balancing Energy
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1760',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1770(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Imbalance Prices
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1770',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1780(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Aggregated Imbalance Volumes
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1780',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1790(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-06-01',
+    ):
+        """
+        Financial Expenses and Income For Balancing
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1790',
+            api_key=self.api_key,
+            request_type='year_and_month',
+            kwargs_map={'year': 'Year', 'month': 'Month'},
+            func_params=['APIKey', 'year', 'month', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1810(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Cross-Border Balancing Volumes of Exchanged Bids and Offers
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1810',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1820(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Cross-Border Balancing Prices
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1820',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_B1830(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Cross-border Balancing Energy Activated
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_B1830',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_BOD(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+        BMUnitId: str='2__AEENG000, G, E.ON Energy, Solutions Limited, EAS-EST01',
+        BMUnitType: str='G, S, E, I, T, etc',
+        LeadPartyName: str='AES New Energy Limited',
+        NGCBMUnit: str='EAS-ASP01, AES New Energy Limited, G, 2__AAEPD000',
+        Name: str='2__AAEPD000',
+    ):
+        """
+        Bid Offer Level Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            BMUnitId (str)
+            BMUnitType (str)
+            LeadPartyName (str)
+            NGCBMUnit (str)
+            Name (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_BOD',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
+            func_params=['APIKey', 'date', 'SP', 'BMUnitId', 'BMUnitType', 'LeadPartyName', 'NGCBMUnit', 'Name', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            BMUnitId=BMUnitId,
+            BMUnitType=BMUnitType,
+            LeadPartyName=LeadPartyName,
+            NGCBMUnit=NGCBMUnit,
+            Name=Name,
+        )
+        
+        return df
+    
+    
+    def get_CDN(
+        self,
+        FromClearedDate: str='2021-01-01',
+        ToClearedDate: str='2021-01-02',
+    ):
+        """
+        Credit Default Notice Data
+        
+        Parameters:
+            FromClearedDate (str)
+            ToClearedDate (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_CDN',
+            api_key=self.api_key,
+            request_type='non_temporal',
+            kwargs_map={},
+            func_params=['APIKey', 'FromClearedDate', 'ToClearedDate', 'ServiceType'],
+            FromClearedDate=FromClearedDate,
+            ToClearedDate=ToClearedDate,
+        )
+        
+        return df
+    
+    
+    def get_DETSYSPRICES(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Detailed System Prices
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_DETSYSPRICES',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_DEVINDOD(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Daily Energy Volume Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_DEVINDOD',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_DISBSAD(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+    ):
+        """
+        Balancing Services Adjustment Action Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_DISBSAD',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
+            func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_FORDAYDEM(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+        ZoneIdentifier: str='N',
+    ):
+        """
+        Forecast Day and Day Ahead Demand Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            ZoneIdentifier (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_FORDAYDEM',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'ZoneIdentifier', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            ZoneIdentifier=ZoneIdentifier,
+        )
+        
+        return df
+    
+    
+    def get_FREQ(
+        self,
+        FromDateTime: str='2021-01-01 00:01:00',
+        ToDateTime: str='2021-02-01 23:59:00',
+    ):
+        """
+        Rolling System Frequency
+        
+        Parameters:
+            FromDateTime (str)
+            ToDateTime (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_FREQ',
+            api_key=self.api_key,
+            request_type='non_temporal',
+            kwargs_map={},
+            func_params=['APIKey', 'FromDateTime', 'ToDateTime', 'ServiceType'],
+            FromDateTime=FromDateTime,
+            ToDateTime=ToDateTime,
+        )
+        
+        return df
+    
+    
+    def get_FUELHH(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Half Hourly Outturn Generation by Fuel Type
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_FUELHH',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_MELIMBALNGC(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+        ZoneIdentifier: str='N',
+    ):
+        """
+        Forecast Day and Day Ahead Margin and Imbalance Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            ZoneIdentifier (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_MELIMBALNGC',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'ZoneIdentifier', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            ZoneIdentifier=ZoneIdentifier,
+        )
+        
+        return df
+    
+    
+    def get_MID(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Market Index Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_MID',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromSettlementDate', 'end_date': 'ToSettlementDate', 'SP': 'Period'},
+            func_params=['APIKey', 'start_date', 'end_date', 'SP', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_MessageDetailRetrieval(
+        self,
+        MessageId: str='',
+        ParticipantId: str='',
+        SequenceId: str='',
+        ActiveFlag: str='N',
+    ):
+        """
+        REMIT Flow - Message List Retrieval
+        
+        Parameters:
+            MessageId (str)
+            ParticipantId (str)
+            SequenceId (str)
+            ActiveFlag (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_MessageDetailRetrieval',
+            api_key=self.api_key,
+            request_type='non_temporal',
+            kwargs_map={},
+            func_params=['APIKey', 'MessageId', 'ParticipantId', 'SequenceId', 'ActiveFlag', 'ServiceType'],
+            MessageId=MessageId,
+            ParticipantId=ParticipantId,
+            SequenceId=SequenceId,
+            ActiveFlag=ActiveFlag,
+        )
+        
+        return df
+    
+    
+    def get_MessageListRetrieval(
+        self,
+        EventStart: str='2021-01-01',
+        EventEnd: str='2021-01-02',
+        PublicationFrom: str='2021-01-01',
+        PublicationTo: str='2021-01-02',
+        ParticipantId: str='',
+        MessageID: str='',
+        AssetID: str='',
+        EventType: str='',
+        FuelType: str='',
+        MessageType: str='',
+        UnavailabilityType: str='',
+    ):
+        """
+        REMIT Flow - Message List Retrieval
+        
+        Parameters:
+            EventStart (str)
+            EventEnd (str)
+            PublicationFrom (str)
+            PublicationTo (str)
+            ParticipantId (str)
+            MessageID (str)
+            AssetID (str)
+            EventType (str)
+            FuelType (str)
+            MessageType (str)
+            UnavailabilityType (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_MessageListRetrieval',
+            api_key=self.api_key,
+            request_type='non_temporal',
+            kwargs_map={},
+            func_params=['APIKey', 'EventStart', 'EventEnd', 'PublicationFrom', 'PublicationTo', 'ParticipantId', 'MessageID', 'AssetID', 'EventType', 'FuelType', 'MessageType', 'UnavailabilityType', 'ServiceType'],
+            EventStart=EventStart,
+            EventEnd=EventEnd,
+            PublicationFrom=PublicationFrom,
+            PublicationTo=PublicationTo,
+            ParticipantId=ParticipantId,
+            MessageID=MessageID,
+            AssetID=AssetID,
+            EventType=EventType,
+            FuelType=FuelType,
+            MessageType=MessageType,
+            UnavailabilityType=UnavailabilityType,
+        )
+        
+        return df
+    
+    
+    def get_NETBSAD(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+        isTwoDayWindow: str='FALSE',
+    ):
+        """
+        Balancing Service Adjustment Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            isTwoDayWindow (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_NETBSAD',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
+            func_params=['APIKey', 'date', 'SP', 'isTwoDayWindow', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            isTwoDayWindow=isTwoDayWindow,
+        )
+        
+        return df
+    
+    
+    def get_NONBM(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Non BM STOR Instructed Volume Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_NONBM',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['start_date', 'end_date', 'APIKey', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_PHYBMDATA(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-01 1:30',
+        BMUnitId: str='',
+        BMUnitType: str='',
+        LeadPartyName: str='',
+        NGCBMUnit: str='',
+        Name: str='',
+    ):
+        """
+        Physical Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+            BMUnitId (str)
+            BMUnitType (str)
+            LeadPartyName (str)
+            NGCBMUnit (str)
+            Name (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_PHYBMDATA',
+            api_key=self.api_key,
+            request_type='SP_and_date',
+            kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
+            func_params=['APIKey', 'date', 'SP', 'BMUnitId', 'BMUnitType', 'LeadPartyName', 'NGCBMUnit', 'Name', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+            BMUnitId=BMUnitId,
+            BMUnitType=BMUnitType,
+            LeadPartyName=LeadPartyName,
+            NGCBMUnit=NGCBMUnit,
+            Name=Name,
+        )
+        
+        return df
+    
+    
+    def get_SYSDEM(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        System Demand
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_SYSDEM',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_SYSWARN(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        System Warnings
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_SYSWARN',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_TEMP(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Temperature Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_TEMP',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_WINDFORFUELHH(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Wind Generation Forecast and Out-turn Data
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_WINDFORFUELHH',
+            api_key=self.api_key,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    

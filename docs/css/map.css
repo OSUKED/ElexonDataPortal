@@ -1,0 +1,13 @@
+#dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+    
+#map {
+    width: 600px;
+    height: 500px;
+    margin: 0;
+}

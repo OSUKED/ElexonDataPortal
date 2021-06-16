@@ -1,0 +1,2105 @@
+openapi: 3.0.1
+info:
+  title: "BMRS API"
+  description: "API for the Elexon Balancing Mechanism Reporting Service"
+  version: "0.1"
+servers:
+  - url: "https://api.bmreports.com"
+paths:
+  /BMRS/B0610/v1:
+    get:
+      description: "Actual Total Load per Bidding Zone"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Actual Total Load per Bidding Zone"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0620/v1:
+    get:
+      description: "Day-Ahead Total Load Forecast per Bidding Zone"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Day-Ahead Total Load Forecast per Bidding Zone"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0630/v1:
+    get:
+      description: "Week-Ahead Total Load Forecast per Bidding Zone"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "Week"
+          in: "query"
+          schema:
+            type: "string"
+          example: "22"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Week-Ahead Total Load Forecast per Bidding Zone"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0640/v1:
+    get:
+      description: "Month-Ahead Total Load Forecast Per Bidding Zone"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "Month"
+          in: "query"
+          schema:
+            type: "string"
+          example: "MAR"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Month-Ahead Total Load Forecast Per Bidding Zone"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0650/v1:
+    get:
+      description: "Year Ahead Total Load Forecast per Bidding Zone"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Year Ahead Total Load Forecast per Bidding Zone"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0710/v1:
+    get:
+      description: "Planned Unavailability of Consumption Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Planned Unavailability of Consumption Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0720/v1:
+    get:
+      description: "Changes In Actual Availability Of Consumption Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Changes In Actual Availability Of Consumption Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0810/v1:
+    get:
+      description: "Year Ahead Forecast Margin"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Year Ahead Forecast Margin"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B0910/v1:
+    get:
+      description: "Expansion and Dismantling Projects"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "integer"
+          example: "2021"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Expansion and Dismantling Projects"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1010/v1:
+    get:
+      description: "Planned Unavailability In The Transmission Grid"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Planned Unavailability In The Transmission Grid"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1020/v1:
+    get:
+      description: "Changes In Actual Availability In The Transmission Grid"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Changes In Actual Availability In The Transmission Grid"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1030/v1:
+    get:
+      description: "Changes In Actual Availability of Offshore Grid Infrastructure"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Changes In Actual Availability of Offshore Grid Infrastructure"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1320/v1:
+    get:
+      description: "Congestion Management Measures Countertrading"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Congestion Management Measures Countertrading"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1330/v1:
+    get:
+      description: "Congestion Management Measures Costs of Congestion Management"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "Month"
+          in: "query"
+          schema:
+            type: "string"
+          example: "Mar"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Congestion Management Measures Costs of Congestion Management"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1410/v1:
+    get:
+      description: "Installed Generation Capacity Aggregated"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Installed Generation Capacity Aggregated"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1420/v1:
+    get:
+      description: "Installed Generation Capacity per Unit"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Installed Generation Capacity per Unit"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1430/v1:
+    get:
+      description: "Day-Ahead Aggregated Generation"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Day-Ahead Aggregated Generation"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1440/v1:
+    get:
+      description: "Generation forecasts for Wind and Solar"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ProcessType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "Day Ahead"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Generation forecasts for Wind and Solar"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1510/v1:
+    get:
+      description: "Planned Unavailability of Generation Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Planned Unavailability of Generation Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1520/v1:
+    get:
+      description: "Changes In Actual Availability of Generation Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Changes In Actual Availability of Generation Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1530/v1:
+    get:
+      description: "Planned Unavailability of Production Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Planned Unavailability of Production Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1540/v1:
+    get:
+      description: "Changes In Actual Availability of Production Units"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "StartDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EndDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "StartTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "00:00:00"
+        - name: "EndTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "23:59:59"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Changes In Actual Availability of Production Units"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1610/v2:
+    get:
+      description: "Actual Generation Output per Generation Unit"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "NGCBMUnitID"
+          in: "query"
+          schema:
+            type: "string"
+          example: "*"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Actual Generation Output per Generation Unit"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1620/v1:
+    get:
+      description: "Actual Aggregated Generation per Type"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Actual Aggregated Generation per Type"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1630/v1:
+    get:
+      description: "Actual Or Estimated Wind and Solar Power Generation"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Actual Or Estimated Wind and Solar Power Generation"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1720/v1:
+    get:
+      description: "Amount Of Balancing Reserves Under Contract Service"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Amount Of Balancing Reserves Under Contract Service"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1730/v1:
+    get:
+      description: "Prices Of Procured Balancing Reserves Service"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Prices Of Procured Balancing Reserves Service"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1740/v1:
+    get:
+      description: "Accepted Aggregated Offers"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Accepted Aggregated Offers"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1750/v1:
+    get:
+      description: "Activated Balancing Energy"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Activated Balancing Energy"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1760/v1:
+    get:
+      description: "Prices Of Activated Balancing Energy"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Prices Of Activated Balancing Energy"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1770/v1:
+    get:
+      description: "Imbalance Prices"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Imbalance Prices"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1780/v1:
+    get:
+      description: "Aggregated Imbalance Volumes"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Aggregated Imbalance Volumes"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1790/v1:
+    get:
+      description: "Financial Expenses and Income For Balancing"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "Year"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021"
+        - name: "Month"
+          in: "query"
+          schema:
+            type: "string"
+          example: "MAR"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Financial Expenses and Income For Balancing"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1810/v1:
+    get:
+      description: "Cross-Border Balancing Volumes of Exchanged Bids and Offers"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Cross-Border Balancing Volumes of Exchanged Bids and Offers"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1820/v1:
+    get:
+      description: "Cross-Border Balancing Prices"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Cross-Border Balancing Prices"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/B1830/v1:
+    get:
+      description: "Cross-border Balancing Energy Activated"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Cross-border Balancing Energy Activated"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/BOD/v1:
+    get:
+      description: "Bid Offer Level Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "SettlementPeriod"
+          in: "query"
+          schema:
+            type: "string"
+          example: "12"
+        - name: "BMUnitId"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2__AEENG000, G, E.ON Energy, Solutions Limited, EAS-EST01"
+        - name: "BMUnitType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "G, S, E, I, T, etc"
+        - name: "LeadPartyName"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AES New Energy Limited"
+        - name: "NGCBMUnit"
+          in: "query"
+          schema:
+            type: "string"
+          example: "EAS-ASP01, AES New Energy
+Limited, G, 2__AAEPD000"
+        - name: "Name"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2__AAEPD000"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Bid Offer Level Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/CDN/v1:
+    get:
+      description: "Credit Default Notice Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromClearedDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToClearedDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Credit Default Notice Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/DETSYSPRICES/v1:
+    get:
+      description: "Detailed System Prices"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2014-01-02"
+        - name: "SettlementPeriod"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Detailed System Prices"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/DEVINDOD/v1:
+    get:
+      description: "Daily Energy Volume Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Daily Energy Volume Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/DISBSAD/v1:
+    get:
+      description: "Balancing Services Adjustment Action Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "SettlementPeriod"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Balancing Services Adjustment Action Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/FORDAYDEM/v1:
+    get:
+      description: "Forecast Day and Day Ahead Demand Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "ZoneIdentifier"
+          in: "query"
+          schema:
+            type: "string"
+          example: "N"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Forecast Day and Day Ahead Demand Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/FREQ/v1:
+    get:
+      description: "Rolling System Frequency"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDateTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01 00:01:00"
+        - name: "ToDateTime"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-02-01 23:59:00"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Rolling System Frequency"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/FUELHH/v1:
+    get:
+      description: "Half Hourly Outturn Generation by Fuel Type"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "44197"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "44228"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Half Hourly Outturn Generation by Fuel Type"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/MELIMBALNGC/v1:
+    get:
+      description: "Forecast Day and Day Ahead Margin and Imbalance Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "ZoneIdentifier"
+          in: "query"
+          schema:
+            type: "string"
+          example: "N"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Forecast Day and Day Ahead Margin and Imbalance Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/MID/v1:
+    get:
+      description: "Market Index Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromSettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToSettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "Period"
+          in: "query"
+          schema:
+            type: "string"
+          example: "*"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/CSV/XML/xml"
+      responses:
+        '200':
+          description: "Market Index Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/MessageDetailRetrieval/v1:
+    get:
+      description: "REMIT Flow - Message List Retrieval"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "MessageId"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "ParticipantId"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "SequenceId"
+          in: "query"
+          schema:
+            type: "integer"
+          example: ""
+        - name: "ActiveFlag"
+          in: "query"
+          schema:
+            type: "string"
+          example: "N"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV."
+      responses:
+        '200':
+          description: "REMIT Flow - Message List Retrieval"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/MessageListRetrieval/v1:
+    get:
+      description: "REMIT Flow - Message List Retrieval"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "EventStart"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "EventEnd"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "PublicationFrom"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "PublicationTo"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ParticipantId"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "MessageID"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "AssetID"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "EventType"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "FuelType"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "MessageType"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "UnavailabilityType"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "REMIT Flow - Message List Retrieval"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/NETBSAD/v1:
+    get:
+      description: "Balancing Service Adjustment Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "SettlementPeriod"
+          in: "query"
+          schema:
+            type: "string"
+          example: "1"
+        - name: "isTwoDayWindow"
+          in: "query"
+          schema:
+            type: "string"
+          example: "FALSE"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "xml/XML/csv/CSV"
+      responses:
+        '200':
+          description: "Balancing Service Adjustment Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/NONBM/v1:
+    get:
+      description: "Non BM STOR Instructed Volume Data"
+      parameters:
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/CSV/XML/xml"
+      responses:
+        '200':
+          description: "Non BM STOR Instructed Volume Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/PHYBMDATA/v1:
+    get:
+      description: "Physical Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "SettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "SettlementPeriod"
+          in: "query"
+          schema:
+            type: "string"
+          example: "12"
+        - name: "BMUnitId"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "BMUnitType"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "LeadPartyName"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "NGCBMUnit"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "Name"
+          in: "query"
+          schema:
+            type: "string"
+          example: ""
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Physical Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/SYSDEM/v1:
+    get:
+      description: "System Demand"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "System Demand"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/SYSWARN/v1:
+    get:
+      description: "System Warnings"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/CSV/xml/XML"
+      responses:
+        '200':
+          description: "System Warnings"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/TEMP/v1:
+    get:
+      description: "Temperature Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/CSV/xml/XML"
+      responses:
+        '200':
+          description: "Temperature Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
+  /BMRS/WINDFORFUELHH/v1:
+    get:
+      description: "Wind Generation Forecast and Out-turn Data"
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          example: "csv/xml/CSV/XML"
+      responses:
+        '200':
+          description: "Wind Generation Forecast and Out-turn Data"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    

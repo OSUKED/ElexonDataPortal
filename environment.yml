@@ -1,15 +1,26 @@
-name: BMRS
+name: BMRS2
 
 channels:
   - conda-forge
+  - fastai
   
 dependencies:
   - python>=3.7
-  - pandas
   - matplotlib
   - jupyterlab
-  - seaborn
+  - twine
+  - mkdocs
+  - mkdocs-material
+  - geopandas
+  - lxml
+  - html5lib
   - pip
   
   - pip:
-      - -e .
+      - -e .[dev]
+      - sphinx
+      - mkdocs-material-extensions
+      - mkdocstrings
+      - configparser
+      - junix
+      - python-dotenv

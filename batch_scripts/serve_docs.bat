@@ -1,4 +1,4 @@
 call cd ..
 call conda activate BMRS2
-call jupyter lab
+call mkdocs serve
 pause
