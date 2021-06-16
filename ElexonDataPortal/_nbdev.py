@@ -152,7 +152,8 @@ modules = ["api.py",
            "dev/rawgen.py",
            "dev/specgen.py",
            "dev/utils.py",
-           "rebuild.py"]
+           "rebuild.py",
+           "dev/orchestrator.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"
 

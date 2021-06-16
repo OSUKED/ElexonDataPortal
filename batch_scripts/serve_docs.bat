@@ -1,4 +1,4 @@
 call cd ..
-call conda activate BMRS2
+call conda activate BMRS
 call mkdocs serve
 pause

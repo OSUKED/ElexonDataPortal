@@ -1,4 +1,4 @@
-name: BMRS2
+name: BMRS
 
 channels:
   - conda-forge
