@@ -42,8 +42,8 @@ def construct_PN_pivot_df(df_PN):
     return df_PN_pivot
 
 def get_latest_PN_df(api_key):
-    start_date = pd.Timestamp.now().round('30min') - pd.Timedelta(minutes=30)
-    end_date = pd.Timestamp.now().round('30min') + pd.Timedelta(minutes=90)
+    start_date = pd.Timestamp.now().round('30min') - pd.Timedelta(hours=1)
+    end_date = pd.Timestamp.now().round('30min') + pd.Timedelta(hours=1)
 
     df = pd.DataFrame()
 
@@ -177,7 +177,7 @@ def generate_map(
 
     df_PN = get_latest_PN_df(api_key)
 
-    nearest_half_hour = (pd.Timestamp.now().tz_localize('Europe/London')+pd.Timedelta(minutes=45)).round('30min')
+    nearest_half_hour = (pd.Timestamp.now().tz_localize('Europe/London')+pd.Timedelta(minutes=30)).round('30min')
     most_recent_available_dt = max(df_PN.index[pd.to_datetime(df_PN.index).tz_localize('Europe/London')<=nearest_half_hour])
     s_PN = df_PN.loc[most_recent_available_dt]
 

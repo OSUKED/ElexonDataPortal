@@ -11,9 +11,9 @@ dependencies:
   - twine
   - mkdocs
   - mkdocs-material
-  - geopandas
   - lxml
   - html5lib
+  - geopandas
   - pip
   
   - pip:

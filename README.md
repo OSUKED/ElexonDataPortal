@@ -87,7 +87,7 @@ The key feature changes are:
 
 ### Programmatic Library Generation
 
-One of the core features within the `ElexonDataPortal` library is that it is *self-generating*, by which we mean it can rebuild itself (including any new API request methods) from scratch using only the `endpoints.csv` spreadsheet. As well as generating the Python Client library a `BMRS_API.yaml` file is created, this provides an OpenAPI specification representation of the Elexon/BMRS API. In turn allows us to automatically generate documentation, as well as run tests on the API itself to ensure that everything is working as expected - during this process we identified and corrected several small errors in the API documentation provided by Elexon. 
+One of the core features within the `ElexonDataPortal` library is that it is *self-generating*, by which we mean it can rebuild itself (including any new API request methods) from scratch using only the `endpoints.csv` spreadsheet. As well as generating the Python Client library a `BMRS_API.yaml` file is created, this provides an OpenAPI specification representation of the Elexon/BMRS API. In turn this allows us to automatically generate documentation, as well as run tests on the API itself to ensure that everything is working as expected - during this process we identified and corrected several small errors in the API documentation provided by Elexon. 
 
 To rebuild the library simply run the following in the root directory: 
 
