@@ -1,6 +1,6 @@
 # Elexon Data Portal
 
-[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/OSUKED/ElexonDataPortal/main?urlpath=lab%2Ftree%2Fnbs%2F08-quick-start.ipynb)
+[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/OSUKED/ElexonDataPortal/master?urlpath=lab%2Ftree%2Fnbs%2F08-quick-start.ipynb)
 
 The `ElexonDataPortal` library is a Python Client for retrieving data from the Elexon/BMRS API. The library significantly reduces the complexity of interfacing with the Elexon/BMRS API through the standardisation of parameter names and orchestration of multiple queries when making requests over a date range. To use the `ElexonDataPortal` you will have to register for an Elexon API key which can be done [here](https://www.elexonportal.co.uk/registration/newuser). 
 
