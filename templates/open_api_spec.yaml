@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: "{{ API_spec['title'] }}"
+  description: "{{ API_spec['description'] }}"
+  version: "0.1"
+servers:
+  - url: "{{ API_spec['root_url'] }}"
+paths:{% for stream in API_spec['streams'] %}
+  {{ stream['endpoint'] }}:
+    get:
+      description: "{{ stream['description'] }}"
+      parameters:{% for parameter in stream['parameters'] %}
+        - name: "{{ parameter['name'] }}"
+          in: "query"
+          schema:
+            type: "{{ parameter['type'] }}"{% if 'example' in parameter %}
+          example: "{{ parameter['example'] }}"{% elif 'examples' in parameter %}
+          examples:{% for example in parameter['examples'] %}
+            {{ example }}:
+              value: "{{ example }}"{% endfor %}{% endif %}{% endfor %}
+      responses:
+        '200':
+          description: "{{ stream['description'] }}"
+      servers:
+        - url: "{{ API_spec['root_url'] }}"
+    servers:
+      - url: "{{ API_spec['root_url'] }}"
+    {% endfor %}

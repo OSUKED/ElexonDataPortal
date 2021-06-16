@@ -1,0 +1,50 @@
+site_name: Elexon Data Portal
+repo_url: https://github.com/OSUKED/ElexonDataPortal
+edit_uri: edit/main/docs/
+repo_name: ElexonDataPortal
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/git-alt
+  features:
+    - header.autohide
+    - navigation.tabs
+    - navigation.instant
+    - search.suggest
+  palette:
+    primary: black
+
+extra:
+  generator: false
+  
+plugins:
+  - search
+  
+markdown_extensions:
+  - attr_list
+
+extra_css:
+  - https://unpkg.com/leaflet@1.3.1/dist/leaflet.css
+  - css/map.css
+      
+extra_javascript:
+  - https://unpkg.com/leaflet@1.3.1/dist/leaflet.js
+  - https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js
+  - js/map.js
+  
+nav:
+  - Home: 
+    - Welcome: index.md
+    - Quick-Start: 08-quick-start.md
+    - Map: map.md
+  - Development:
+    - Utilities: 01-utils.md
+    - OpenAPI Spec: 02-spec-gen.md
+    - Raw Methods: 03-raw-methods.md
+    - Endpoint Types: 04-client-prep.md
+    - Orchestrator: 05-orchestrator.md
+    - Client Generation: 06-client-gen.md
+    - Rebuilding: 07-cli-rebuild.md
+    - Map Generation: 09-map-gen.md
+  - API: api.md

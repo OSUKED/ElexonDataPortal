@@ -1,7 +1,5 @@
 # Elexon Data Portal
 
-[![DOI](https://zenodo.org/badge/189842391.svg)](https://zenodo.org/badge/latestdoi/189842391) [![Binder](https://notebooks.gesis.org/binder/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/OSUKED/ElexonDataPortal/main?urlpath=lab%2Ftree%2Fnbs%2F08-quick-start.ipynb)
-
 The `ElexonDataPortal` library is a Python Client for retrieving data from the Elexon/BMRS API. The library significantly reduces the complexity of interfacing with the Elexon/BMRS API through the standardisation of parameter names and orchestration of multiple queries when making requests over a date range. To use the `ElexonDataPortal` you will have to register for an Elexon API key which can be done [here](https://www.elexonportal.co.uk/registration/newuser). 
 
 <br>
@@ -67,20 +65,6 @@ If you've previously written your own code for extracting data from the Elexon/B
 If you wish to make requests using the raw methods these are available through the `ElexonDataportal.dev.raw` module.
 
 Further information can be found in the [Quick Start notebook](https://github.com/OSUKED/BMRS-Wrapper-v2/blob/main/nbs/08-quick-start.ipynb).
-
-<br>
-<br>
-
-### What's Changed in v2.0.0
-
-The latest release of the library includes a full rewrite of the code-base. We have endeavoured to make the new API as intuitive as possible but that has required breaking changes from v1.0.0, if you wish to continue using the historic library use `pip install ElexonDataPortal==1.0.4`. N.b v1.0.0 will not be maintained going forward, you are advised to change over to v2.0.0+. 
-
-The key feature changes are:
-
-* Coverage of more BMRS streams 
-* Automated default values
-* Cleaner client API
-* A larger range of request types are compatible with the date range orchestrator
 
 <br>
 <br>

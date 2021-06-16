@@ -1,0 +1,38 @@
+name: "map-update"
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+
+jobs:
+  miniconda:
+    name: Miniconda ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: ["ubuntu-latest"]
+            
+    steps:
+      - name: Load in repo
+        uses: actions/checkout@v2
+    
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+        
+      - name: Update map
+        env: 
+          BMRS_API_KEY: ${{ secrets.BMRS_API_KEY }}
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[dev]
+          pip install mkdocs==1.1.2 mkdocs-material==7.1.1 mkdocs-material-extensions==1.0.1 mkdocstrings==0.15.0
+          python -m ElexonDataPortal.dev.mapgen
+          mkdocs gh-deploy --force
+      
+      - name: Saving changes to repo
+        uses: stefanzweifel/git-auto-commit-action@v4 
