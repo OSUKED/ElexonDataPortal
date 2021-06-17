@@ -64,14 +64,28 @@ If you've previously written your own code for extracting data from the Elexon/B
 
 If you wish to make requests using the raw methods these are available through the `ElexonDataportal.dev.raw` module.
 
-Further information can be found in the [Quick Start notebook](https://github.com/OSUKED/BMRS-Wrapper-v2/blob/main/nbs/08-quick-start.ipynb).
+Further information can be found in the [Quick Start quide](https://osuked.github.io/ElexonDataPortal/08-quick-start/).
+
+<br>
+<br>
+
+### What's Changed in v2.0.0
+
+The latest release of the library includes a full rewrite of the code-base. We have endeavoured to make the new API as intuitive as possible but that has required breaking changes from v1.0.0, if you wish to continue using the historic library use `pip install ElexonDataPortal==1.0.4`. N.b v1.0.0 will not be maintained going forward, you are advised to change over to v2.0.0+. 
+
+The key feature changes are:
+
+* Coverage of more BMRS streams 
+* Automated default values
+* Cleaner client API
+* A larger range of request types are compatible with the date range orchestrator
 
 <br>
 <br>
 
 ### Programmatic Library Generation
 
-One of the core features within the `ElexonDataPortal` library is that it is *self-generating*, by which we mean it can rebuild itself (including any new API request methods) from scratch using only the `endpoints.csv` spreadsheet. As well as generating the Python Client library a `BMRS_API.yaml` file is created, this provides an OpenAPI specification representation of the Elexon/BMRS API. In turn allows us to automatically generate documentation, as well as run tests on the API itself to ensure that everything is working as expected - during this process we identified and corrected several small errors in the API documentation provided by Elexon. 
+One of the core features within the `ElexonDataPortal` library is that it is *self-generating*, by which we mean it can rebuild itself (including any new API request methods) from scratch using only the `endpoints.csv` spreadsheet. As well as generating the Python Client library a `BMRS_API.yaml` file is created, this provides an OpenAPI specification representation of the Elexon/BMRS API. In turn this allows us to automatically generate documentation, as well as run tests on the API itself to ensure that everything is working as expected - during this process we identified and corrected several small errors in the API documentation provided by Elexon. 
 
 To rebuild the library simply run the following in the root directory: 
 
