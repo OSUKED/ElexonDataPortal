@@ -105,7 +105,7 @@ def extract_PN_ts(df_PN, bmu_ids):
         return None
 
     s_PN = df_PN[matching_output_bmu_ids].sum(axis=1).resample('30T').mean()
-    s_PN.index = (s_PN.index - pd.to_datetime(0, unit='s')).total_seconds().astype(int) * 1000
+    s_PN.index = (s_PN.index.tz_localize('Europe/London').tz_convert('UTC') - pd.to_datetime(0, unit='s').tz_localize('UTC')).total_seconds().astype(int) * 1000
 
     s_PN = s_PN.fillna(0)
     s_PN[s_PN<0] = 0
@@ -160,7 +160,7 @@ def construct_map_geojson(
     gdf_map = df_to_gdf(df_map)
 
     geojson = json.loads(gdf_map.to_json())
-    geojson['timeseries'] = list((df_PN.resample('30T').mean().index - pd.to_datetime(0, unit='s')).total_seconds().astype(int)*1000)
+    geojson['timeseries'] = list((df_PN.resample('30T').mean().index.tz_localize('Europe/London').tz_convert('UTC') - pd.to_datetime(0, unit='s').tz_localize('UTC')).total_seconds().astype(int)*1000)
 
     return geojson
 
@@ -194,7 +194,7 @@ def generate_map_js(df_PN, df_powerdict, js_template_fp='templates/map.js', js_d
 
 # Cell
 def generate_map_md(md_template_fp='templates/map.md', md_docs_fp='docs/map.md'):
-    update_date = pd.Timestamp.now().round('5min').strftime('%Y-%m-%d %H:%M')
+    update_date = pd.Timestamp.now().round('5min').tz_localize('Europe/London').strftime('%Y-%m-%d %H:%M')
     rendered_map_md = Template(open(md_template_fp).read()).render({'update_date': update_date})
 
     with open(md_docs_fp, 'w', encoding='utf8') as fp:
