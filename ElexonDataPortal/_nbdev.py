@@ -144,7 +144,6 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
 
 modules = ["api.py",
            "dev/clientgen.py",
-           "dev/clientgen.py",
            "dev/clientprep.py",
            "dev/docs.py",
            "dev/mapgen.py",
