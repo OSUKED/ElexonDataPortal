@@ -65,7 +65,7 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "query_orchestrator": "05-orchestrator.ipynb",
          "generate_streams": "06-client-gen.ipynb",
          "save_api": "06-client-gen.ipynb",
-         "app": "07-cli-rebuild.ipynb",
+         "app": "09-map-gen.ipynb",
          "rebuild_library": "07-cli-rebuild.ipynb",
          "construct_df_PN_pivot_dt_rng": "09-map-gen.ipynb",
          "construct_PN_pivot_df": "09-map-gen.ipynb",
@@ -140,7 +140,10 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "get_SYSDEM": "03-raw-methods.ipynb",
          "get_SYSWARN": "03-raw-methods.ipynb",
          "get_TEMP": "03-raw-methods.ipynb",
-         "get_WINDFORFUELHH": "03-raw-methods.ipynb"}
+         "get_WINDFORFUELHH": "03-raw-methods.ipynb",
+         "extract_PN_ts": "09-map-gen.ipynb",
+         "get_nearest_dt_idx": "09-map-gen.ipynb",
+         "construct_map_geojson": "09-map-gen.ipynb"}
 
 modules = ["api.py",
            "dev/clientgen.py",
@@ -153,7 +156,10 @@ modules = ["api.py",
            "dev/rawgen.py",
            "dev/specgen.py",
            "dev/utils.py",
-           "rebuild.py"]
+           "rebuild.py",
+           "dev/mapgen.py",
+           "dev/mapgen.py",
+           "dev/mapgen.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"
 
