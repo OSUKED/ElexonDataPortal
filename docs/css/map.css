@@ -8,7 +8,7 @@
     
 #map {
     z-index: 1;
-    width: 800px;
+    width: device-width;
     height: 500px;
     margin: 0;
 }
