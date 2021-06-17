@@ -8,7 +8,7 @@ import shutil
 import pandas as pd
 from fastcore.foundation import Config
 
-from .dev import utils, specgen, rawgen, clientgen
+from .dev import nbdev, specgen, rawgen, clientgen
 
 # Cell
 app = typer.Typer()
@@ -21,8 +21,8 @@ def rebuild_library():
     endpoints_fp = f'{dir_root}/data/endpoints.csv'
 
     shutil.rmtree(lib_path)
-    utils.prepare_nbdev_module()
-    utils.notebook2script()
+    nbdev.prepare_nbdev_module()
+    nbdev.notebook2script()
 
     df_endpoints = specgen.load_endpoints_df(endpoints_fp)
     API_spec = specgen.construct_spec(df_endpoints)
@@ -45,7 +45,7 @@ def rebuild_library():
         out_fp=f'{dir_root}/ElexonDataPortal/api.py'
     )
 
-    utils.add_extra_code_desc_to_mod()
+    nbdev.add_extra_code_desc_to_mod()
 
     return
 

@@ -1407,8 +1407,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "EAS-ASP01, AES New Energy
-Limited, G, 2__AAEPD000"
+          example: "EAS-ASP01, AES New Energy Limited, G, 2__AAEPD000"
         - name: "Name"
           in: "query"
           schema:

@@ -790,8 +790,7 @@ BOD,Bid Offer Level Data,1,get,request,SettlementPeriod,String,,No,1 to 50 or *,
 BOD,Bid Offer Level Data,1,get,request,BMUnitId,String,,No,,"2__AEENG000, G, E.ON Energy, Solutions Limited, EAS-EST01"
 BOD,Bid Offer Level Data,1,get,request,BMUnitType,String,,No,,"G, S, E, I, T, etc"
 BOD,Bid Offer Level Data,1,get,request,LeadPartyName,String,,No,,AES New Energy Limited
-BOD,Bid Offer Level Data,1,get,request,NGCBMUnit,String,,No,,"EAS-ASP01, AES New Energy
-Limited, G, 2__AAEPD000"
+BOD,Bid Offer Level Data,1,get,request,NGCBMUnit,String,,No,,"EAS-ASP01, AES New Energy Limited, G, 2__AAEPD000"
 BOD,Bid Offer Level Data,1,get,request,Name,String,,No,,2__AAEPD000
 BOD,Bid Offer Level Data,1,get,request,ServiceType,String,,No,,csv/xml/CSV/XML
 BOD,Bid Offer Level Data,1,get,response,RecordType,String,,No,,BOD

@@ -5,7 +5,6 @@ __all__ = ['RequestError', 'check_status', 'check_capping', 'expand_cols', 'pars
 
 # Cell
 import pandas as pd
-import yaml
 import xmltodict
 from collections import OrderedDict
 from warnings import warn
