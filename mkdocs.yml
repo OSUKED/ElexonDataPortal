@@ -1,6 +1,6 @@
 site_name: Elexon Data Portal
 repo_url: https://github.com/OSUKED/ElexonDataPortal
-edit_uri: edit/main/docs/
+edit_uri: ""
 repo_name: ElexonDataPortal
 
 theme:
@@ -27,17 +27,23 @@ markdown_extensions:
 extra_css:
   - https://unpkg.com/leaflet@1.3.1/dist/leaflet.css
   - css/map.css
+  - http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css
       
 extra_javascript:
   - https://unpkg.com/leaflet@1.3.1/dist/leaflet.js
   - https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js
   - js/map.js
+  - JS/SliderControl.js
+  - http://code.jquery.com/jquery-1.9.1.min.js
+  - http://code.jquery.com/ui/1.9.2/jquery-ui.js
+  - http://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js
   
 nav:
   - Home: 
     - Welcome: index.md
     - Quick-Start: 08-quick-start.md
     - Map: map.md
+  - API: api.md
   - Development:
     - Utilities: 01-utils.md
     - OpenAPI Spec: 02-spec-gen.md
@@ -47,4 +53,3 @@ nav:
     - Client Generation: 06-client-gen.md
     - Rebuilding: 07-cli-rebuild.md
     - Map Generation: 09-map-gen.md
-  - API: api.md

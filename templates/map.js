@@ -29,23 +29,50 @@ document.addEventListener("DOMContentLoaded", function() {
       accessToken: 'pk.eyJ1IjoiZW5lcmd5dmlzIiwiYSI6ImNrbjR2aWo4azBsaHEycHM5dHByZzFnZW8ifQ.MyLCIQqHnNHQFWJQqs-j4w'
     }).addTo(mymap);
 
-    var geojsonFeature = {{ geojson_features }}
+    var sliderControl = null;
+    var geojsonFeatures = {{ geojson_features }}
+    
+    function setNegativeToZero(value) {
+        if (value<0) return 0
+        else return value
+    }
+    
+    function createVariables(geojsonFeatures){
+        var dateLayers = [];
 
-    var geoJson = new L.geoJSON(geojsonFeature, {
-        pointToLayer: (feature, latlng) => {
-            return new L.Circle(
-                [feature.properties.latitude, feature.properties.longitude], 
-                Math.sqrt(feature.properties.output)*1000, {
-                    fillOpacity: .75,
-                    weight: 2,
-                    color: getColor(feature.properties.fuel_type)
+        for (let i in geojsonFeatures.timeseries) {
+            const epochTime = geojsonFeatures.timeseries[i];
+            dateLayer = new L.geoJSON(geojsonFeatures, {
+                pointToLayer: (feature, latlng) => {
+                    var output = feature.properties.output[epochTime];
+                    var radius = null;
+                    
+                    if(output) radius = Math.sqrt(setNegativeToZero(output))*1000;
+                    else radius = 0;
+                    
+                    return new L.Circle(
+                        [feature.properties.latitude, feature.properties.longitude], 
+                        radius, {
+                            fillOpacity: .75,
+                            weight: 2,
+                            color: getColor(feature.properties.fuel_type)
+                        }
+                    );
+                },
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup('<p>Name: '+feature.properties.name);
                 }
-            );
-        },
-        onEachFeature: function (feature, layer) {
-            layer.bindPopup('<p>Name: '+feature.properties.name);
+            });
+            dateLayer.options.epoch = epochTime
+            dateLayers[i] = dateLayer
         }
-    }).addTo(mymap);
+
+        return dateLayers;
+    }
+
+    var dateLayers = createVariables(geojsonFeatures);
+    var dateLayersGroup = L.layerGroup(dateLayers);
+    dateLayersGroup.addTo(mymap);
 
     var legend = L.control({position: 'bottomleft'});
         legend.onAdd = function (mymap) {
@@ -65,4 +92,19 @@ document.addEventListener("DOMContentLoaded", function() {
         return div;
         };
     legend.addTo(mymap);
+
+    sliderControl = L.control.sliderControl({
+        position: "topright",
+        layer: dateLayersGroup,
+        sameDate: true,
+        timeAttribute: "epoch",
+        showPopups: false,
+        showAllOnStart: true,
+        startTimeIdx: 3,
+        isEpoch: true,
+        range: false,
+        follow: 1
+    });
+    mymap.addControl(sliderControl);
+    sliderControl.startSlider({{ start_idx }});
 });
