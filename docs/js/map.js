@@ -106,5 +106,5 @@ document.addEventListener("DOMContentLoaded", function() {
         follow: 1
     });
     mymap.addControl(sliderControl);
-    sliderControl.startSlider(26);
+    sliderControl.startSlider(27);
 });
