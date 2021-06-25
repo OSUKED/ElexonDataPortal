@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }).addTo(mymap);
 
     var sliderControl = null;
-    var geojsonFeatures = {{ geojson_features }}
+//     var geojsonFeatures = {{ geojson_features }}
+    var geojsonFeatures = new L.GeoJSON.AJAX("StratfordBoundary.geojson");
     
     function setNegativeToZero(value) {
         if (value<0) return 0
