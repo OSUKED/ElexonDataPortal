@@ -1,4 +1,4 @@
-function getColor(d) {
+function getPlantColor(d) {
     return d === 'wind' ? "#14A7E5" :
            d === 'solar' ? "#F8C52A" :
            d === 'gas' ? "#C23596" :
@@ -13,6 +13,13 @@ function getColor(d) {
                         "#1C0B2A";
 }
 
+function getrouteColor(d) {
+    return d === '400' ? "#216BE6" :
+           d === '275' ? "#FC0C15" :
+           d === '<=132' ? "#101010" :
+                        "#101010";
+}
+
 function capitalise(word) {
   return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
@@ -22,7 +29,7 @@ function setNegativeToZero(value) {
     else return value
 }
 
-function createVariables(geojsonFeatures){
+function createDateLayers(geojsonFeatures){
     var dateLayers = [];
 
     for (let i in geojsonFeatures.timeseries) {
@@ -40,7 +47,7 @@ function createVariables(geojsonFeatures){
                     radius, {
                         fillOpacity: .75,
                         weight: 2,
-                        color: getColor(feature.properties.fuel_type)
+                        color: getPlantColor(feature.properties.fuel_type)
                     }
                 );
             },
@@ -55,6 +62,23 @@ function createVariables(geojsonFeatures){
     return dateLayers;
 }
 
+function createRouteLayer(geojsonFeatures){
+    routeLayer = new L.geoJSON(geojsonFeatures, {
+        style: function(feature) {
+            return {
+                stroke: true,
+                color: getrouteColor(feature.properties.kV),
+                weight: 2
+            };
+        },
+        onEachFeature: function(feature, layer) {
+            layer.bindPopup("Capacity: " + feature.properties.kV + " (kV)");
+        }
+    });
+    
+    return routeLayer;
+}
+
 function createLegend(){
     var legend = L.control({position: 'bottomleft'});
         legend.onAdd = function (mymap) {
@@ -66,7 +90,7 @@ function createLegend(){
 
                     div.innerHTML += 
                     labels.push(
-                        '<span id="dot" style="background-color:' + getColor(categories[i]) + '"></span> ' +
+                        '<span id="dot" style="background-color:' + getPlantColor(categories[i]) + '"></span> ' +
                     (categories[i] ? capitalise(categories[i]) : '+'));
             }
             labels.push('</p>')
@@ -78,41 +102,47 @@ function createLegend(){
 }
 
 document.addEventListener("DOMContentLoaded", function() {    
+    $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json", function(plant_data) {
+        $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json", function(route_data) {
+            var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery Â© <a href="https://www.mapbox.com/">Mapbox</a>',
+              maxZoom: 18,
+              id: 'mapbox/streets-v11',
+              tileSize: 512,
+              zoomOffset: -1,
+              accessToken: 'pk.eyJ1IjoiZW5lcmd5dmlzIiwiYSI6ImNrbjR2aWo4azBsaHEycHM5dHByZzFnZW8ifQ.MyLCIQqHnNHQFWJQqs-j4w'
+            });
 
-    $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/map.json", function(data) {
-        var mymap = L.map('map').setView([53.96, -3.22], 5);
+            var routeLayer = createRouteLayer(route_data);
+            var dateLayers = createDateLayers(plant_data);
+            var dateLayersGroup = L.layerGroup(dateLayers);
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: 'mapbox/streets-v11',
-          tileSize: 512,
-          zoomOffset: -1,
-          accessToken: 'pk.eyJ1IjoiZW5lcmd5dmlzIiwiYSI6ImNrbjR2aWo4azBsaHEycHM5dHByZzFnZW8ifQ.MyLCIQqHnNHQFWJQqs-j4w'
-        }).addTo(mymap);
-    
-        var dateLayers = createVariables(data);
-        var dateLayersGroup = L.layerGroup(dateLayers);
-        dateLayersGroup.addTo(mymap);
+            var mymap = L.map('map', {layers: [basemap, dateLayersGroup]}).setView([54.8, -4.61], 5);
 
-        var legend = createLegend();
-        legend.addTo(mymap);
+            var overlayLayers = {
+                "Plants": dateLayersGroup,
+                "Network": routeLayer
+            };
+            L.control.layers(null, overlayLayers, {position: 'bottomright'}).addTo(mymap);
 
-        var sliderControl = null;
+            var legend = createLegend();
+            legend.addTo(mymap);
 
-        sliderControl = L.control.sliderControl({
-            position: "topright",
-            layer: dateLayersGroup,
-            sameDate: true,
-            timeAttribute: "epoch",
-            showPopups: false,
-            showAllOnStart: true,
-            startTimeIdx: 3,
-            isEpoch: true,
-            range: false,
-            follow: 1
+            var sliderControl = null;
+            sliderControl = L.control.sliderControl({
+                position: "topright",
+                layer: dateLayersGroup,
+                sameDate: true,
+                timeAttribute: "epoch",
+                showPopups: false,
+                showAllOnStart: true,
+                startTimeIdx: 3,
+                isEpoch: true,
+                range: false,
+                follow: 1
+            });
+            mymap.addControl(sliderControl);
+            sliderControl.startSlider(335);
         });
-        mymap.addControl(sliderControl);
-        sliderControl.startSlider(333);
     });
 });

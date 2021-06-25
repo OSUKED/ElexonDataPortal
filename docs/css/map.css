@@ -5,10 +5,19 @@
   border-radius: 50%;
   display: inline-block;
 }
-    
+   
 #map {
     z-index: 1;
-    width: device-width;
+    width: 500px;
     height: 500px;
     margin: 0;
+}
+   
+@media (max-width: 500px){
+    #map {
+        z-index: 1;
+        width: device-width;
+        height: 500px;
+        margin: 0;
+    }
 }
