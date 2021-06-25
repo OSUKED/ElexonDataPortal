@@ -65,11 +65,11 @@ gdf_route.head(3)
 
 
 
-|   Unnamed: 0 |   kV | geometry                                          |
-|-------------:|-----:|:--------------------------------------------------|
-|            0 |  400 | LINESTRING Z (-2.02839 51.85078 0.00000, -2.02... |
-|            1 |  400 | LINESTRING Z (-2.02754 51.84931 0.00000, -2.02... |
-|            2 |  400 | LINESTRING Z (-3.12672 51.20292 0.00000, -3.12... |</div>
+|   kV | geometry                                          |
+|-----:|:--------------------------------------------------|
+|  400 | LINESTRING Z (-2.02839 51.85078 0.00000, -2.02... |
+|  400 | LINESTRING Z (-2.02754 51.84931 0.00000, -2.02... |
+|  400 | LINESTRING Z (-3.12672 51.20292 0.00000, -3.12... |</div>
 
 
 
@@ -167,17 +167,17 @@ df_PN = get_PHYBM_df(api_key)
 df_PN.index.min(), df_PN.index.max()
 ```
 
-     44%â–Ž                                              | 4/9 [00:18<00:23,  4.66s/it]c:\users\ayrto\desktop\phd\data\bmrs\elexon-bmrs-api-wrapper\ElexonDataPortal\dev\utils.py:29: UserWarning: Data request was succesful but no content was returned
+     44%â–Ž                                              | 4/9 [00:13<00:15,  3.13s/it]c:\users\ayrto\desktop\phd\data\bmrs\elexon-bmrs-api-wrapper\ElexonDataPortal\dev\utils.py:29: UserWarning: Data request was succesful but no content was returned
       warn(f'Data request was succesful but no content was returned')
-    100% 9/9 [00:19<00:00,  2.15s/it]
-    100% 1370/1370 [00:10<00:00, 128.94it/s]
+    100% 9/9 [00:14<00:00,  1.58s/it]
+    100% 1370/1370 [00:10<00:00, 133.33it/s]
     
 
 
 
 
-    (Timestamp('2021-06-25 08:30:00+0100', tz='Europe/London', freq='30T'),
-     Timestamp('2021-06-25 10:30:00+0100', tz='Europe/London', freq='30T'))
+    (Timestamp('2021-06-25 15:00:00+0100', tz='Europe/London', freq='30T'),
+     Timestamp('2021-06-25 17:00:00+0100', tz='Europe/London', freq='30T'))
 
 
 
@@ -197,12 +197,12 @@ s_PN.replace(0, np.nan).dropna().head()
 
 
 
-    2__ABGAS000   -252.0
-    2__AEELC000   -151.0
-    2__AEMEB000   -171.0
-    2__AENRD000   -201.0
-    2__AEOND000   -137.0
-    Name: 2021-06-25 10:30:00+01:00, dtype: float64
+    2__ABGAS000   -378.0
+    2__AEELC000   -174.0
+    2__AEMEB000   -200.0
+    2__AENRD000   -145.0
+    2__AEOND000   -177.0
+    Name: 2021-06-25 17:00:00+01:00, dtype: float64
 
 
 
@@ -256,6 +256,10 @@ def download_latest_PHYBM_data(api_key=None, data_dir='data/PN', record_type='PN
 download_latest_PHYBM_data(api_key, data_dir='../data/PN')
 ```
 
+    100% 5/5 [00:18<00:00,  3.78s/it]
+    100% 1370/1370 [00:11<00:00, 118.20it/s]
+    
+
 <br>
 
 We'll also create a helper function for loading in the latest data, when there is less than a week's worth of data in the latest month we'll append the dataframe to last months data as well.
@@ -297,11 +301,11 @@ df_PN.tail()
 
 | local_datetime            |   2__AANGE001 |   2__AANGE002 |   2__ABGAS000 |   2__ACNDL001 |   2__AEDFE000 |   2__AEDIR000 |   2__AEELC000 |   2__AEENG000 |   2__AEMEB000 |   2__AENRD000 | ...   |   V__KGAZP002 |   V__LCEND001 |   V__LFLEX001 |   V__MADEL001 |   V__MGBLO001 |   V__NFLEX001 |   V__PFLEX001 |   I_I2D-MQBN1 |   I_I2G-MQBN1 |   I_IFG-MQBN1 |
 |:--------------------------|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|:------|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|--------------:|
-| 2021-06-25 08:00:00+01:00 |             0 |             0 |      -265.617 |             0 |             0 |             0 |      -152     |             0 |      -165.483 |      -188.933 | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
-| 2021-06-25 08:30:00+01:00 |             0 |             0 |      -262     |             0 |             0 |             0 |      -152     |             0 |      -167.45  |      -192.933 | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
-| 2021-06-25 09:00:00+01:00 |             0 |             0 |      -258.617 |             0 |             0 |             0 |      -151.033 |             0 |      -169.967 |      -196.45  | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
-| 2021-06-25 09:30:00+01:00 |             0 |             0 |      -255     |             0 |             0 |             0 |      -150     |             0 |      -171     |      -198     | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
-| 2021-06-25 10:00:00+01:00 |             0 |             0 |      -255     |             0 |             0 |             0 |      -150     |             0 |      -171     |      -198     | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |</div>
+| 2021-06-25 15:00:00+01:00 |             0 |             0 |      -299.917 |             0 |             0 |             0 |      -154.833 |             0 |      -177.8   |      -171.617 | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
+| 2021-06-25 15:30:00+01:00 |             0 |             0 |      -335.4   |             0 |             0 |             0 |      -161.933 |             0 |      -188.35  |      -162.2   | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
+| 2021-06-25 16:00:00+01:00 |             0 |             0 |      -365.6   |             0 |             0 |             0 |      -168.833 |             0 |      -196.383 |      -150.683 | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
+| 2021-06-25 16:30:00+01:00 |             0 |             0 |      -378     |             0 |             0 |             0 |      -174     |             0 |      -200     |      -145     | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |
+| 2021-06-25 17:00:00+01:00 |             0 |             0 |      -378     |             0 |             0 |             0 |      -174     |             0 |      -200     |      -145     | ...   |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |             0 |</div>
 
 
 
@@ -320,11 +324,11 @@ df_powerdict.head(3)
 
 
 
-|   Unnamed: 0 |   osuked_id | esail_id   | gppd_idnr   | name                 | sett_bmu_id                        |   longitude |   latitude | fuel_type   |   capacity_mw |
-|-------------:|------------:|:-----------|:------------|:---------------------|:-----------------------------------|------------:|-----------:|:------------|--------------:|
-|            0 |       10000 | MARK       | nan         | Rothes Bio-Plant CHP | E_MARK-1, E_MARK-2                 |    -3.60352 |    57.4804 | biomass     |           nan |
-|            1 |       10001 | DIDC       | nan         | Didcot A (G)         | T_DIDC1, T_DIDC2, T_DIDC4, T_DIDC3 |    -1.26757 |    51.6236 | coal        |           nan |
-|            2 |       10002 | ABTH       | GBR1000374  | Aberthaw B           | T_ABTH7, T_ABTH8, T_ABTH9          |    -3.40487 |    51.3873 | coal        |          1586 |</div>
+|   osuked_id | esail_id   | gppd_idnr   | name                 | sett_bmu_id                        |   longitude |   latitude | fuel_type   |   capacity_mw |
+|------------:|:-----------|:------------|:---------------------|:-----------------------------------|------------:|-----------:|:------------|--------------:|
+|       10000 | MARK       | nan         | Rothes Bio-Plant CHP | E_MARK-1, E_MARK-2                 |    -3.60352 |    57.4804 | biomass     |           nan |
+|       10001 | DIDC       | nan         | Didcot A (G)         | T_DIDC1, T_DIDC2, T_DIDC4, T_DIDC3 |    -1.26757 |    51.6236 | coal        |           nan |
+|       10002 | ABTH       | GBR1000374  | Aberthaw B           | T_ABTH7, T_ABTH8, T_ABTH9          |    -3.40487 |    51.3873 | coal        |          1586 |</div>
 
 
 
@@ -344,6 +348,14 @@ def construct_osuked_id_mappings(df_powerdict):
                                      .dropna()
                                      .to_dict()
                                     )
+
+    osuked_id_mappings['capacity_mw'] = (df_powerdict
+                                         .set_index('osuked_id')
+                                         ['capacity_mw']
+                                         .astype(str)
+                                         .str.replace('.0', '', regex=False)
+                                         .to_dict()
+                                        )
 
     osuked_id_mappings['fuel_type'] = (df_powerdict
                                        .set_index('osuked_id')
@@ -372,7 +384,7 @@ def construct_osuked_id_mappings(df_powerdict):
 
 ```python
 osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
-osuked_id_to_bmu_ids, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
+osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
 
 pd.Series(osuked_id_to_bmu_ids).head().to_dict()
 ```
@@ -435,6 +447,7 @@ def extract_PN_ts(df_PN, bmu_ids, n_SPs=48*7):
 def construct_map_df(
     df_PN, 
     osuked_id_to_bmu_ids, 
+    osuked_id_to_capacity_mw,
     osuked_id_to_lat_lon, 
     osuked_id_to_fuel_type, 
     osuked_id_to_name,
@@ -452,6 +465,7 @@ def construct_map_df(
                 site_data = osuked_id_to_lat_lon[osuked_id]
                 site_data.update({'id': osuked_id})
                 site_data.update({'name': osuked_id_to_name[osuked_id]})
+                site_data.update({'capacity': osuked_id_to_capacity_mw[osuked_id]})
                 site_data.update({'fuel_type': osuked_id_to_fuel_type[osuked_id]})
                 site_data.update({'output': PN_ts})
 
@@ -463,7 +477,7 @@ def construct_map_df(
 ```
 
 ```python
-df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name)
+df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name)
 
 df_map.head(3)
 ```
@@ -471,11 +485,11 @@ df_map.head(3)
 
 
 
-|    id |   latitude |   longitude | name                 | fuel_type     | output                                            |
-|------:|-----------:|------------:|:---------------------|:--------------|:--------------------------------------------------|
-| 10000 |    57.4804 |   -3.60352  | Rothes Bio-Plant CHP | biomass       | {1624008600000: 55.0, 1624010400000: 55.0, 162... |
-| 10004 |    53.7487 |   -0.626221 | Drax                 | coal, biomass | {1624008600000: 1950.0, 1624010400000: 1950.0,... |
-| 10010 |    55.2042 |   -1.52083  | Lynemouth Generator  | coal          | {1624008600000: 405.0, 1624010400000: 405.0, 1... |</div>
+|    id |   latitude |   longitude | name                 |   capacity | fuel_type     | output                                            |
+|------:|-----------:|------------:|:---------------------|-----------:|:--------------|:--------------------------------------------------|
+| 10000 |    57.4804 |   -3.60352  | Rothes Bio-Plant CHP |        nan | biomass       | {1624033800000: 55.0, 1624035600000: 55.0, 162... |
+| 10004 |    53.7487 |   -0.626221 | Drax                 |       1980 | coal, biomass | {1624033800000: 1950.0, 1624035600000: 1950.0,... |
+| 10010 |    55.2042 |   -1.52083  | Lynemouth Generator  |        nan | coal          | {1624033800000: 405.0, 1624035600000: 405.0, 1... |</div>
 
 
 
@@ -518,12 +532,12 @@ def construct_map_geojson(
     n_SPs=48*7
 ):
     osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
-    osuked_id_to_bmu_ids, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
+    osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
 
-    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
+    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
     gdf_map = df_to_gdf(df_map)
 
-    geojson = json.loads(gdf_map.to_json())
+    geojson = json.loads(gdf_map.to_json().replace('"nan"', 'null'))
     geojson['timeseries'] = [int(unix_datetime) for unix_datetime in list(geojson['features'][0]['properties']['output'].keys())]
 
     return geojson
@@ -638,7 +652,10 @@ def generate_map(
     js_docs_fp: str='docs/js/map.js', 
     md_template_fp: str='templates/map.md', 
     md_docs_fp: str='docs/map.md',
-    data_dir: str='data/PN'
+    data_dir: str='data/PN',
+    plants_geojson_fp: str='data/power_plants.json',
+    plants_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json',
+    routes_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json'
 ):
     if api_key is None:
         assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
@@ -649,7 +666,7 @@ def generate_map(
     
     df_powerdict = pd.read_csv(powerdict_url)
     
-    generate_map_js(df_PN, df_powerdict, js_template_fp=js_template_fp, js_docs_fp=js_docs_fp)
+    generate_map_js(df_PN, df_powerdict, js_template_fp=js_template_fp, js_docs_fp=js_docs_fp, plants_geojson_fp=plants_geojson_fp, plants_geojson_url=plants_geojson_url, routes_geojson_url=routes_geojson_url)
     generate_map_md(md_template_fp=md_template_fp, md_docs_fp=md_docs_fp)
     
     return 
@@ -662,13 +679,10 @@ generate_map(
     js_docs_fp='../docs/js/map.js', 
     md_template_fp='../templates/map.md', 
     md_docs_fp='../docs/map.md',
-    data_dir='../data/PN'
+    data_dir='../data/PN',
+    plants_geojson_fp='../data/power_plants.json'
 )
 ```
-
-    100% 6/6 [03:21<00:00, 33.55s/it]
-    100% 1367/1367 [00:15<00:00, 85.53it/s]
-    
 
 ```python
 #exports

@@ -192,10 +192,10 @@ pd.read_csv(io.StringIO(r.text), skiprows=1).head(3)
 
 
 
-|   Unnamed: 0 | Time Series ID        | Registered Resource EIC Code   | BM Unit ID   | NGC BM Unit ID   | PSR Type   | Market Generation Unit EIC Code   | Market Generation BMU ID   | Market Generation NGC BM Unit ID   | Settlement Date   |   SP |   Quantity (MW) |
-|-------------:|:----------------------|:-------------------------------|:-------------|:-----------------|:-----------|:----------------------------------|:---------------------------|:-----------------------------------|:------------------|-----:|----------------:|
-|            0 | ELX-EMFIP-AGOG-TS-319 | 48W00000LNCSO-1R               | T_LNCSW-1    | LNCSO-1          | Generation | 48W00000LNCSO-1R                  | T_LNCSW-1                  | LNCSO-1                            | 2020-01-01        |    1 |          56.076 |
-|            1 | ELX-EMFIP-AGOG-TS-320 | 48W00000LNCSO-2P               | T_LNCSW-2    | LNCSO-2          | Generation | 48W00000LNCSO-2P                  | T_LNCSW-2                  | LNCSO-2                            | 2020-01-01        |    1 |          47.456 |
-|            2 | ELX-EMFIP-AGOG-TS-175 | 48W00000CLDRW-16               | E_CLDRW-1    | CLDRW-1          | Generation | 48W00000CLDRW-16                  | E_CLDRW-1                  | CLDRW-1                            | 2020-01-01        |    1 |           3.096 |</div>
+| Time Series ID        | Registered Resource EIC Code   | BM Unit ID   | NGC BM Unit ID   | PSR Type   | Market Generation Unit EIC Code   | Market Generation BMU ID   | Market Generation NGC BM Unit ID   | Settlement Date   |   SP |   Quantity (MW) |
+|:----------------------|:-------------------------------|:-------------|:-----------------|:-----------|:----------------------------------|:---------------------------|:-----------------------------------|:------------------|-----:|----------------:|
+| ELX-EMFIP-AGOG-TS-319 | 48W00000LNCSO-1R               | T_LNCSW-1    | LNCSO-1          | Generation | 48W00000LNCSO-1R                  | T_LNCSW-1                  | LNCSO-1                            | 2020-01-01        |    1 |          56.076 |
+| ELX-EMFIP-AGOG-TS-320 | 48W00000LNCSO-2P               | T_LNCSW-2    | LNCSO-2          | Generation | 48W00000LNCSO-2P                  | T_LNCSW-2                  | LNCSO-2                            | 2020-01-01        |    1 |          47.456 |
+| ELX-EMFIP-AGOG-TS-175 | 48W00000CLDRW-16               | E_CLDRW-1    | CLDRW-1          | Generation | 48W00000CLDRW-16                  | E_CLDRW-1                  | CLDRW-1                            | 2020-01-01        |    1 |           3.096 |</div>
 
 

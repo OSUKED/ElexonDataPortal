@@ -79,11 +79,11 @@ df_endpoints.head(3)
 
 
 
-|   Unnamed: 0 | id    | name                                              |   version | method   | direction   | Field Name     | Field Type   |   Remarks | Mandatory   | Format     | Sample Data   |
-|-------------:|:------|:--------------------------------------------------|----------:|:---------|:------------|:---------------|:-------------|----------:|:------------|:-----------|:--------------|
-|            0 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | APIKey         | String       |       nan | Yes         | nan        | AP8DA23       |
-|            1 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | SettlementDate | String       |       nan | Yes         | YYYY-MM-DD | 2021-01-01    |
-|            2 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | Period         | String       |       nan | Yes         | */1-50     | 1             |</div>
+| id    | name                                              |   version | method   | direction   | Field Name     | Field Type   |   Remarks | Mandatory   | Format     | Sample Data   |
+|:------|:--------------------------------------------------|----------:|:---------|:------------|:---------------|:-------------|----------:|:------------|:-----------|:--------------|
+| B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | APIKey         | String       |       nan | Yes         | nan        | AP8DA23       |
+| B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | SettlementDate | String       |       nan | Yes         | YYYY-MM-DD | 2021-01-01    |
+| B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | Period         | String       |       nan | Yes         | */1-50     | 1             |</div>
 
 
 
