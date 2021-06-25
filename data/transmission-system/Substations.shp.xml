@@ -1,0 +1,370 @@
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gml1="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <gmd:fileIdentifier>
+    <gco:CharacterString>8cf22a7a-3ca9-4ca0-b761-6b86c15dba82</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gmd:LanguageCode codeListValue="eng" codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" />
+  </gmd:language>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeListValue="series" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" />
+  </gmd:hierarchyLevel>
+  <gmd:hierarchyLevelName>
+    <gco:CharacterString>series</gco:CharacterString>
+  </gmd:hierarchyLevelName>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:individualName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+					<gco:CharacterString>GIS Officer</gco:CharacterString>
+				</gmd:individualName>
+      <gmd:organisationName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+					<gco:CharacterString>National Grid</gco:CharacterString>
+				</gmd:organisationName>
+      <gmd:positionName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+					<gco:CharacterString>GIS Officer</gco:CharacterString>
+				</gmd:positionName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone gco:nilReason="missing" />
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>Warwick Technology Park</gco:CharacterString>
+								</gmd:deliveryPoint>
+              <gmd:city xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>Warwick</gco:CharacterString>
+								</gmd:city>
+              <gmd:administrativeArea xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>Warwickshire</gco:CharacterString>
+								</gmd:administrativeArea>
+              <gmd:postalCode xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>CV34 6DA</gco:CharacterString>
+								</gmd:postalCode>
+              <gmd:country>
+                <gmd:Country codeListValue="GBR" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#Country" />
+              </gmd:country>
+              <gmd:electronicMailAddress xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>box.GIS@nationalgrid.com</gco:CharacterString>
+								</gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeListValue="pointOfContact" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_RoleCode" />
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+			<gco:Date>2021-02-10</gco:Date>
+		</gmd:dateStamp>
+  <gmd:referenceSystemInfo>
+    <gmd:MD_ReferenceSystem>
+      <gmd:referenceSystemIdentifier>
+        <gmd:RS_Identifier>
+          <gmd:authority gco:nilReason="missing" />
+          <gmd:code>
+            <gco:CharacterString>urn:ogc:def:crs:EPSG:27700</gco:CharacterString>
+          </gmd:code>
+          <gmd:codeSpace gco:nilReason="missing" />
+        </gmd:RS_Identifier>
+      </gmd:referenceSystemIdentifier>
+    </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:identificationInfo>
+    <gmd:MD_DataIdentification>
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>Electricity Transmission Substations</gco:CharacterString>
+						</gmd:title>
+          <gmd:alternateTitle gco:nilReason="missing" />
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Date>2009-04-17</gco:Date>
+								</gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeListValue="creation" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" />
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Date>2019-09-13</gco:Date>
+								</gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeListValue="revision" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" />
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+          <gmd:identifier>
+            <gmd:RS_Identifier>
+              <gmd:authority gco:nilReason="missing" />
+              <gmd:code>
+                <gco:CharacterString>10.11.65.110\Fileshare\SystemMaintenance\NGWebSite_Extract\Substations.shp</gco:CharacterString>
+              </gmd:code>
+              <gmd:codeSpace xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>10.11.65.110\Fileshare\SystemMaintenance\NGWebSite_Extract\Substations.shp</gco:CharacterString>
+								</gmd:codeSpace>
+            </gmd:RS_Identifier>
+          </gmd:identifier>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+					<gco:CharacterString>Substations represent the outline of a building or buildings which contains a set of equipment reducing the high voltage of electrical power transmission to that suitable for supply to consumers.</gco:CharacterString>
+				</gmd:abstract>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:individualName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>GIS Officer</gco:CharacterString>
+						</gmd:individualName>
+          <gmd:organisationName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>National Grid</gco:CharacterString>
+						</gmd:organisationName>
+          <gmd:positionName xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>GIS Officer</gco:CharacterString>
+						</gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone gco:nilReason="missing" />
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>Warwick Technology Park</gco:CharacterString>
+										</gmd:deliveryPoint>
+                  <gmd:city xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>Warwick</gco:CharacterString>
+										</gmd:city>
+                  <gmd:administrativeArea xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>Warwickshire</gco:CharacterString>
+										</gmd:administrativeArea>
+                  <gmd:postalCode xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>CV34 6DA</gco:CharacterString>
+										</gmd:postalCode>
+                  <gmd:country>
+                    <gmd:Country codeListValue="GBR" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/ML_gmxCodelists.xml#Country" />
+                  </gmd:country>
+                  <gmd:electronicMailAddress xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>box.GIS@nationalgrid.com</gco:CharacterString>
+										</gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeListValue="pointOfContact" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_RoleCode" />
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:resourceMaintenance>
+        <gmd:MD_MaintenanceInformation>
+          <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeListValue="annually" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode">annually</gmd:MD_MaintenanceFrequencyCode>
+          </gmd:maintenanceAndUpdateFrequency>
+        </gmd:MD_MaintenanceInformation>
+      </gmd:resourceMaintenance>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>National Grid, Transmission, Electricity, Substations</gco:CharacterString>
+						</gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeListValue="theme" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" />
+          </gmd:type>
+          <gmd:thesaurusName>
+            <gmd:CI_Citation>
+              <gmd:title xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:CharacterString>General Multilingual Environmental Thesaurus</gco:CharacterString>
+								</gmd:title>
+              <gmd:alternateTitle gco:nilReason="missing" />
+              <gmd:date gco:nilReason="missing" />
+              <gmd:identifier gco:nilReason="missing" />
+            </gmd:CI_Citation>
+          </gmd:thesaurusName>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_Constraints>
+          <gmd:useLimitation xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>This dataset is for indicative purposes only. It can only be used for Emergency and Land Use planning and cannot be used for commercial purposes. This dataset is owned by National Grid and acknowledgement of this is required in your product or application using © National Grid UK.</gco:CharacterString>
+						</gmd:useLimitation>
+          <gmd:useLimitation xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>This data is supplied on a best effort basis only, utilising available information as documented at the time by the transmission network operators. While every effort is made to ensure the information is accurate and up-to-date, National Grid does not accept any liability for any direct, indirect or consequential loss or damage of any nature, however caused, which may be sustained as a result of reliance upon such information</gco:CharacterString>
+						</gmd:useLimitation>
+        </gmd:MD_Constraints>
+      </gmd:resourceConstraints>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeListValue="otherRestrictions" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" />
+          </gmd:accessConstraints>
+          <gmd:otherConstraints xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+							<gco:CharacterString>Restricted</gco:CharacterString>
+						</gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <gmd:spatialResolution>
+        <gmd:MD_Resolution>
+          <gmd:distance>
+            <gco:Distance uom="urn:ogc:def:uom:EPSG::9001">0.25</gco:Distance>
+          </gmd:distance>
+        </gmd:MD_Resolution>
+      </gmd:spatialResolution>
+      <gmd:language>
+        <gmd:LanguageCode codeListValue="eng" codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" />
+      </gmd:language>
+      <gmd:topicCategory>
+        <gmd:MD_TopicCategoryCode>structure</gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:topicCategory>
+        <gmd:MD_TopicCategoryCode>utilitiesCommunication</gmd:MD_TopicCategoryCode>
+      </gmd:topicCategory>
+      <gmd:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicDescription>
+              <gmd:geographicIdentifier>
+                <gmd:RS_Identifier>
+                  <gmd:authority>
+                    <gmd:CI_Citation>
+                      <gmd:title xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+													<gco:CharacterString>National Grid - United Kingdom</gco:CharacterString>
+												</gmd:title>
+                      <gmd:alternateTitle gco:nilReason="missing" />
+                      <gmd:date>
+                        <gmd:CI_Date>
+                          <gmd:date xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+															<gco:Date>2016-03-29</gco:Date>
+														</gmd:date>
+                          <gmd:dateType>
+                            <gmd:CI_DateTypeCode codeListValue="revision" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" />
+                          </gmd:dateType>
+                        </gmd:CI_Date>
+                      </gmd:date>
+                      <gmd:identifier gco:nilReason="missing" />
+                    </gmd:CI_Citation>
+                  </gmd:authority>
+                  <gmd:code>
+                    <gco:CharacterString>GB</gco:CharacterString>
+                  </gmd:code>
+                  <gmd:codeSpace gco:nilReason="missing" />
+                </gmd:RS_Identifier>
+              </gmd:geographicIdentifier>
+            </gmd:EX_GeographicDescription>
+          </gmd:geographicElement>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Decimal>-8.655</gco:Decimal>
+								</gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Decimal>1.79</gco:Decimal>
+								</gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Decimal>49.9</gco:Decimal>
+								</gmd:southBoundLatitude>
+              <gmd:northBoundLatitude xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+									<gco:Decimal>60.85</gco:Decimal>
+								</gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+          <gmd:temporalElement>
+            <gmd:EX_TemporalExtent>
+              <gmd:extent>
+                <gml:TimePeriod gml:id="ID0ELAAC">
+                  <gml:beginPosition>2009-04-17</gml:beginPosition>
+                  <gml:endPosition>2010-02-10</gml:endPosition>
+                </gml:TimePeriod>
+              </gmd:extent>
+            </gmd:EX_TemporalExtent>
+          </gmd:temporalElement>
+          <gmd:verticalElement gco:nilReason="missing" />
+        </gmd:EX_Extent>
+      </gmd:extent>
+      <gmd:supplementalInformation gco:nilReason="missing" />
+    </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name>
+            <gco:CharacterString>ESRI ArcGIS</gco:CharacterString>
+          </gmd:name>
+          <gmd:version>
+            <gco:CharacterString>10.3</gco:CharacterString>
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine gco:nilReason="missing" />
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+    <gmd:DQ_DataQuality>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeListValue="series" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" />
+          </gmd:level>
+          <gmd:levelDescription gco:nilReason="missing" />
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <gmd:report>
+        <gmd:DQ_DomainConsistency>
+          <gmd:result>
+            <gmd:DQ_ConformanceResult>
+              <gmd:specification>
+                <gmd:CI_Citation>
+                  <gmd:title xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+											<gco:CharacterString>Conformance Results</gco:CharacterString>
+										</gmd:title>
+                  <gmd:alternateTitle gco:nilReason="missing" />
+                  <gmd:date>
+                    <gmd:CI_Date>
+                      <gmd:date xmlns:ns0="http://www.isotc211.org/2005/gmd" xmlns:ns1="http://www.isotc211.org/2005/gco" xmlns:ns2="http://www.opengis.net/gml" xmlns:gml="http://www.opengis.net/gml" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+													<gco:Date>2016-03-29</gco:Date>
+												</gmd:date>
+                      <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeListValue="revision" codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" />
+                      </gmd:dateType>
+                    </gmd:CI_Date>
+                  </gmd:date>
+                  <gmd:identifier gco:nilReason="missing" />
+                </gmd:CI_Citation>
+              </gmd:specification>
+              <gmd:explanation>
+                <gco:CharacterString>No data conformity checks have been carried out</gco:CharacterString>
+              </gmd:explanation>
+              <gmd:pass>
+                <gco:Boolean>false</gco:Boolean>
+              </gmd:pass>
+            </gmd:DQ_ConformanceResult>
+          </gmd:result>
+        </gmd:DQ_DomainConsistency>
+      </gmd:report>
+      <gmd:lineage>
+        <gmd:LI_Lineage>
+          <gmd:statement>
+            <gco:CharacterString>This dataset is for indicative purposes only. It can only be used for Emergency and Land Use planning and cannot be used for commercial purposes. It is owned by National Grid and acknowledgement of this is required in your product or application using © National Grid UK. 
+
+The data is supplied on a best effort basis only, utilising available information as documented at the time by the transmission network operators. While every effort is made to ensure the information is accurate and up-to-date, National Grid does not accept any liability for any direct, indirect or consequential loss or damage of any nature, however caused, which may be sustained as a result of reliance upon such information.
+
+The dataset contains Gas and Electricity Transmission data only. For Gas or Electricity distribution data, please contact the retaining distribution company for your area and see the following websites for more information and contact details:
+
+Electricity Distribution: http://www2.nationalgrid.com/UK/Our-company/electricity/Distribution-Network-Operator-Companies/
+Gas Distribution: http://www2.nationalgrid.com/UK/Our-company/Gas/Gas-Distribution-Network/
+
+If you are planning to undertake any ground works please see the following website (http://cadentgas.com/Digging-safely) or contact the Plant Protection team at least 14 days in advance on 0800 688 588 or plantprotection@cadentgas.com.  
+
+For any National Grid Transmission GIS related enquiries, please email box.GIS@nationalgrid.com.</gco:CharacterString>
+          </gmd:statement>
+        </gmd:LI_Lineage>
+      </gmd:lineage>
+    </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>
