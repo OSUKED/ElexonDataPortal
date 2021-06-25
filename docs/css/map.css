@@ -8,15 +8,15 @@
    
 #map {
     z-index: 1;
-    width: 500px;
-    height: 500px;
+    width: device-width;
+    height: 550px;
     margin: 0;
 }
    
-@media (max-width: 500px){
+@media (min-width: 550px){
     #map {
         z-index: 1;
-        width: device-width;
+        width: 550px;
         height: 500px;
         margin: 0;
     }
