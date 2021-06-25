@@ -29,7 +29,7 @@ def construct_df_PN_pivot_dt_rng(df_PN):
 
     return dt_rng
 
-def construct_PN_pivot_df(df_PN):
+def construct_PN_pivot_df(df_PN, resample=None):
     bmu_ids = sorted(list(df_PN['bmUnitID'].unique()))
     df_PN_pivot = pd.DataFrame(index=construct_df_PN_pivot_dt_rng(df_PN), columns=bmu_ids, dtype=float)
 
@@ -39,6 +39,9 @@ def construct_PN_pivot_df(df_PN):
             df_PN_pivot.loc[pd.to_datetime(row['timeTo']).tz_localize('Europe/London'), bmu_id] = float(row['pnLevelTo'])
 
         df_PN_pivot[bmu_id] = df_PN_pivot[bmu_id].interpolate()
+
+    if resample is not None:
+        df_PN_pivot = df_PN_pivot.resample(resample).mean()
 
     return df_PN_pivot
 
@@ -61,7 +64,7 @@ def get_PN_df(api_key, start_date=None, end_date=None):
     df = (df
           .query('recordType=="PN"')
           .dropna(how='all', axis=1)
-          .pipe(construct_PN_pivot_df)
+          .pipe(construct_PN_pivot_df, resample='30T')
          )
 
     df.index.name = 'local_datetime'
@@ -78,8 +81,9 @@ def load_most_recent_PN_data(data_dir='data/PN', latest_year_month_file=None, df
 
     df_PN = pd.read_csv(latest_fp)
 
-    df_PN['local_datetime'] = pd.to_datetime(df_PN['local_datetime'], utc=True)#.tz_convert('Europe/London')
+    df_PN['local_datetime'] = pd.to_datetime(df_PN['local_datetime'], utc=True)
     df_PN = df_PN.set_index('local_datetime')
+    df_PN.index = df_PN.index.tz_convert('Europe/London')
 
     if df_PN_old is not None:
         assert latest_year_month_file is not None, 'Should not be appending to the main dataframe if `latest_year_month_file` was not specified'
@@ -135,7 +139,7 @@ def extract_PN_ts(df_PN, bmu_ids, n_SPs=48*7):
     if output_match == False:
         return None
 
-    s_PN = df_PN[matching_output_bmu_ids].sum(axis=1).resample('30T').mean()
+    s_PN = df_PN[matching_output_bmu_ids].sum(axis=1)
     s_PN.index = (s_PN.index.tz_convert('UTC') - pd.to_datetime(0, unit='s').tz_localize('UTC')).total_seconds().astype(int) * 1000
 
     s_PN = s_PN.fillna(0)
@@ -149,14 +153,15 @@ def construct_map_df(
     osuked_id_to_bmu_ids,
     osuked_id_to_lat_lon,
     osuked_id_to_fuel_type,
-    osuked_id_to_name
+    osuked_id_to_name,
+    n_SPs=48*7
 ):
     sites_data = list()
 
     for osuked_id, bmu_ids in osuked_id_to_bmu_ids.items():
         lat_lon_match = osuked_id in osuked_id_to_lat_lon.keys()
 
-        PN_ts = extract_PN_ts(df_PN, bmu_ids)
+        PN_ts = extract_PN_ts(df_PN, bmu_ids, n_SPs=n_SPs)
 
         if lat_lon_match and PN_ts is not None:
             if sum(PN_ts.values()) > 0:
@@ -182,16 +187,17 @@ def df_to_gdf(df, lat_col='latitude', lon_col='longitude'):
 # Cell
 def construct_map_geojson(
     df_PN,
-    df_powerdict
+    df_powerdict,
+    n_SPs=48*7
 ):
     osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
     osuked_id_to_bmu_ids, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
 
-    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name)
+    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
     gdf_map = df_to_gdf(df_map)
 
     geojson = json.loads(gdf_map.to_json())
-    geojson['timeseries'] = list((df_PN.resample('30T').mean().index.tz_convert('UTC') - pd.to_datetime(0, unit='s').tz_localize('UTC')).total_seconds().astype(int)*1000)
+    geojson['timeseries'] = [int(unix_datetime) for unix_datetime in list(geojson['features'][0]['properties']['output'].keys())]
 
     return geojson
 
