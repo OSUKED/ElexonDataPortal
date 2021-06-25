@@ -52,7 +52,7 @@ function createDateLayers(geojsonFeatures){
                 );
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup('<p>Name: ' + feature.properties.name + '\nOutput (MW): ' + feature.properties.output + '\nCapacity (MW): ' + feature.properties.capacity + '</p>');
+                layer.bindPopup('<p style="font-size: 0.5em">Name: ' + feature.properties.name + '<br>Latest Output (MW): ' + feature.properties.output[geojsonFeatures.timeseries[geojsonFeatures.timeseries.length-1]] + '<br>Capacity (MW): ' + feature.properties.capacity + '</p>');
             }
         });
         dateLayer.options.epoch = epochTime
