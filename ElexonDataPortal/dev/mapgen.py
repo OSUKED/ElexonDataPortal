@@ -173,7 +173,6 @@ def construct_osuked_id_mappings(df_powerdict):
     osuked_id_mappings['capacity_mw'] = (df_powerdict
                                          .set_index('osuked_id')
                                          ['capacity_mw']
-                                         .fillna('Unknown')
                                          .astype(str)
                                          .str.replace('.0', '', regex=False)
                                          .to_dict()
@@ -270,7 +269,7 @@ def construct_map_geojson(
     df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
     gdf_map = df_to_gdf(df_map)
 
-    geojson = json.loads(gdf_map.to_json())
+    geojson = json.loads(gdf_map.to_json().replace('"nan"', 'null'))
     geojson['timeseries'] = [int(unix_datetime) for unix_datetime in list(geojson['features'][0]['properties']['output'].keys())]
 
     return geojson
