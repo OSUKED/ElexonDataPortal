@@ -101,11 +101,13 @@ def dt_rng_to_SPs(
     df_dates_SPs = pd.DataFrame({'date':dt_strs, 'SP':SPs}, index=dt_rng).astype(str)
 
     # Accounting for clock changes
-    clock_change_dts_to_SP_count = {k: v for k, v in pd.Series(dt_rng.date).value_counts().to_dict().items() if v>48}
+    clock_change_dt_idxs_dir = pd.Series(dt_rng).apply(lambda dt: dt.utcoffset().total_seconds()).diff().replace(0, np.nan).dropna()
 
-    for dt, SP_count in clock_change_dts_to_SP_count.items():
-        if SP_count != 48:
-            df_dates_SPs.loc[df_dates_SPs.index.date==dt, 'SP'] = list(range(1, SP_count+1))
+    for dt_idx, dir_ in clock_change_dt_idxs_dir.items():
+        dt = dt_rng[dt_idx].date()
+        SPs = (1 + 2*(dt_rng[dt_rng.date==dt] - pd.to_datetime(dt).tz_localize('Europe/London')).total_seconds()/(60*60)).astype(int)
+
+        df_dates_SPs.loc[df_dates_SPs.index.date==dt, 'SP'] = SPs
 
     return df_dates_SPs
 

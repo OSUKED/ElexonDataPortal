@@ -191,7 +191,14 @@ modules = ["api.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
-           "dev/mapgen.py"]
+           "dev/mapgen.py",
+           "dev/orchestrator.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/orchestrator.py",
+           "dev/orchestrator.py",
+           "dev/orchestrator.py",
+           "dev/utils.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"
 

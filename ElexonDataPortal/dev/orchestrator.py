@@ -396,4 +396,6 @@ def query_orchestrator(
         **kwargs
     )
 
+    df = df.reset_index(drop=True)
+
     return df
