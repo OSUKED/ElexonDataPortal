@@ -170,6 +170,15 @@ def construct_osuked_id_mappings(df_powerdict):
                                      .to_dict()
                                     )
 
+    osuked_id_mappings['capacity_mw'] = (df_powerdict
+                                         .set_index('osuked_id')
+                                         ['capacity_mw']
+                                         .fillna('Unknown')
+                                         .astype(str)
+                                         .str.replace('.0', '', regex=False)
+                                         .to_dict()
+                                        )
+
     osuked_id_mappings['fuel_type'] = (df_powerdict
                                        .set_index('osuked_id')
                                        ['fuel_type']
@@ -214,6 +223,7 @@ def extract_PN_ts(df_PN, bmu_ids, n_SPs=48*7):
 def construct_map_df(
     df_PN,
     osuked_id_to_bmu_ids,
+    osuked_id_to_capacity_mw,
     osuked_id_to_lat_lon,
     osuked_id_to_fuel_type,
     osuked_id_to_name,
@@ -231,6 +241,7 @@ def construct_map_df(
                 site_data = osuked_id_to_lat_lon[osuked_id]
                 site_data.update({'id': osuked_id})
                 site_data.update({'name': osuked_id_to_name[osuked_id]})
+                site_data.update({'capacity': osuked_id_to_capacity_mw[osuked_id]})
                 site_data.update({'fuel_type': osuked_id_to_fuel_type[osuked_id]})
                 site_data.update({'output': PN_ts})
 
@@ -254,9 +265,9 @@ def construct_map_geojson(
     n_SPs=48*7
 ):
     osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
-    osuked_id_to_bmu_ids, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
+    osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
 
-    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
+    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
     gdf_map = df_to_gdf(df_map)
 
     geojson = json.loads(gdf_map.to_json())
@@ -331,7 +342,10 @@ def generate_map(
     js_docs_fp: str='docs/js/map.js',
     md_template_fp: str='templates/map.md',
     md_docs_fp: str='docs/map.md',
-    data_dir: str='data/PN'
+    data_dir: str='data/PN',
+    plants_geojson_fp: str='data/power_plants.json',
+    plants_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json',
+    routes_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json'
 ):
     if api_key is None:
         assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
@@ -342,7 +356,7 @@ def generate_map(
 
     df_powerdict = pd.read_csv(powerdict_url)
 
-    generate_map_js(df_PN, df_powerdict, js_template_fp=js_template_fp, js_docs_fp=js_docs_fp)
+    generate_map_js(df_PN, df_powerdict, js_template_fp=js_template_fp, js_docs_fp=js_docs_fp, plants_geojson_fp=plants_geojson_fp, plants_geojson_url=plants_geojson_url, routes_geojson_url=routes_geojson_url)
     generate_map_md(md_template_fp=md_template_fp, md_docs_fp=md_docs_fp)
 
     return
