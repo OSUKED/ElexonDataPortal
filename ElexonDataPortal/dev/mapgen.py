@@ -2,7 +2,8 @@
 
 __all__ = ['construct_df_PN_pivot_dt_rng', 'construct_PN_pivot_df', 'get_PN_df', 'download_latest_PN_data', 'get_files',
            'load_most_recent_PN_data', 'construct_osuked_id_mappings', 'extract_PN_ts', 'construct_map_df', 'df_to_gdf',
-           'construct_map_geojson', 'get_nearest_dt_idx', 'generate_map_js', 'generate_map_md', 'app', 'generate_map']
+           'construct_map_geojson', 'save_map_geojson', 'get_nearest_dt_idx', 'generate_map_js', 'generate_map_md',
+           'app', 'generate_map']
 
 # Cell
 import json
@@ -240,6 +241,11 @@ def construct_map_geojson(
     geojson['timeseries'] = [int(unix_datetime) for unix_datetime in list(geojson['features'][0]['properties']['output'].keys())]
 
     return geojson
+
+# Cell
+def save_map_geojson(geojson, fp='data/map.json'):
+    with open(fp, 'w') as f:
+        json.dump(geojson, f)
 
 # Cell
 def get_nearest_dt_idx(geojson, nearest_half_hour):

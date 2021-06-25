@@ -147,7 +147,8 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "get_PN_df": "09-map-gen.ipynb",
          "load_most_recent_PN_data": "09-map-gen.ipynb",
          "download_latest_PN_data": "09-map-gen.ipynb",
-         "get_files": "09-map-gen.ipynb"}
+         "get_files": "09-map-gen.ipynb",
+         "save_map_geojson": "09-map-gen.ipynb"}
 
 modules = ["api.py",
            "dev/clientgen.py",
@@ -186,6 +187,7 @@ modules = ["api.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
            "dev/utils.py",
+           "dev/mapgen.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
            "dev/mapgen.py"]

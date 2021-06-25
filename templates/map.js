@@ -17,64 +17,45 @@ function capitalise(word) {
   return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var mymap = L.map('map').setView({{ center }}, {{ zoom }});
+function setNegativeToZero(value) {
+    if (value<0) return 0
+    else return value
+}
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox/streets-v11',
-      tileSize: 512,
-      zoomOffset: -1,
-      accessToken: 'pk.eyJ1IjoiZW5lcmd5dmlzIiwiYSI6ImNrbjR2aWo4azBsaHEycHM5dHByZzFnZW8ifQ.MyLCIQqHnNHQFWJQqs-j4w'
-    }).addTo(mymap);
+function createVariables(geojsonFeatures){
+    var dateLayers = [];
 
-    var sliderControl = null;
-//     var geojsonFeatures = {{ geojson_features }}
-    var geojsonFeatures = new L.GeoJSON.AJAX("StratfordBoundary.geojson");
-    
-    function setNegativeToZero(value) {
-        if (value<0) return 0
-        else return value
-    }
-    
-    function createVariables(geojsonFeatures){
-        var dateLayers = [];
+    for (let i in geojsonFeatures.timeseries) {
+        const epochTime = geojsonFeatures.timeseries[i];
+        dateLayer = new L.geoJSON(geojsonFeatures, {
+            pointToLayer: (feature, latlng) => {
+                var output = feature.properties.output[epochTime];
+                var radius = null;
 
-        for (let i in geojsonFeatures.timeseries) {
-            const epochTime = geojsonFeatures.timeseries[i];
-            dateLayer = new L.geoJSON(geojsonFeatures, {
-                pointToLayer: (feature, latlng) => {
-                    var output = feature.properties.output[epochTime];
-                    var radius = null;
-                    
-                    if(output) radius = Math.sqrt(setNegativeToZero(output))*1000;
-                    else radius = 0;
-                    
-                    return new L.Circle(
-                        [feature.properties.latitude, feature.properties.longitude], 
-                        radius, {
-                            fillOpacity: .75,
-                            weight: 2,
-                            color: getColor(feature.properties.fuel_type)
-                        }
-                    );
-                },
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup('<p>Name: '+feature.properties.name);
-                }
-            });
-            dateLayer.options.epoch = epochTime
-            dateLayers[i] = dateLayer
-        }
+                if(output) radius = Math.sqrt(setNegativeToZero(output))*1000;
+                else radius = 0;
 
-        return dateLayers;
+                return new L.Circle(
+                    [feature.properties.latitude, feature.properties.longitude], 
+                    radius, {
+                        fillOpacity: .75,
+                        weight: 2,
+                        color: getColor(feature.properties.fuel_type)
+                    }
+                );
+            },
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup('<p>Name: '+feature.properties.name);
+            }
+        });
+        dateLayer.options.epoch = epochTime
+        dateLayers[i] = dateLayer
     }
 
-    var dateLayers = createVariables(geojsonFeatures);
-    var dateLayersGroup = L.layerGroup(dateLayers);
-    dateLayersGroup.addTo(mymap);
+    return dateLayers;
+}
 
+function createLegend(){
     var legend = L.control({position: 'bottomleft'});
         legend.onAdd = function (mymap) {
             var div = L.DomUtil.create('div', 'info legend');
@@ -91,21 +72,47 @@ document.addEventListener("DOMContentLoaded", function() {
             labels.push('</p>')
             div.innerHTML = labels.join('<br>');
         return div;
-        };
-    legend.addTo(mymap);
+    };
+    
+    return legend
+}
 
-    sliderControl = L.control.sliderControl({
-        position: "topright",
-        layer: dateLayersGroup,
-        sameDate: true,
-        timeAttribute: "epoch",
-        showPopups: false,
-        showAllOnStart: true,
-        startTimeIdx: 3,
-        isEpoch: true,
-        range: false,
-        follow: 1
+document.addEventListener("DOMContentLoaded", function() {    
+
+    $.getJSON("{{ plants_geojson_url }}", function(data) {
+        var mymap = L.map('map').setView({{ center }}, {{ zoom }});
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: 'mapbox/streets-v11',
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: 'pk.eyJ1IjoiZW5lcmd5dmlzIiwiYSI6ImNrbjR2aWo4azBsaHEycHM5dHByZzFnZW8ifQ.MyLCIQqHnNHQFWJQqs-j4w'
+        }).addTo(mymap);
+    
+        var dateLayers = createVariables(data);
+        var dateLayersGroup = L.layerGroup(dateLayers);
+        dateLayersGroup.addTo(mymap);
+
+        var legend = createLegend();
+        legend.addTo(mymap);
+
+        var sliderControl = null;
+
+        sliderControl = L.control.sliderControl({
+            position: "topright",
+            layer: dateLayersGroup,
+            sameDate: true,
+            timeAttribute: "epoch",
+            showPopups: false,
+            showAllOnStart: true,
+            startTimeIdx: 3,
+            isEpoch: true,
+            range: false,
+            follow: 1
+        });
+        mymap.addControl(sliderControl);
+        sliderControl.startSlider({{ start_idx }});
     });
-    mymap.addControl(sliderControl);
-    sliderControl.startSlider({{ start_idx }});
 });
