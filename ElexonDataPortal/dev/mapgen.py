@@ -257,17 +257,27 @@ def get_nearest_dt_idx(geojson, nearest_half_hour):
     else:
         return len(ts)-1
 
-def generate_map_js(df_PN, df_powerdict, js_template_fp='templates/map.js', js_docs_fp='docs/js/map.js'):
+def generate_map_js(
+    df_PN: pd.DataFrame,
+    df_powerdict: pd.DataFrame,
+    zoom: int=5,
+    center: list=[53.96, -3.22],
+    js_template_fp: str='templates/map.js',
+    js_docs_fp: str='docs/js/map.js',
+    plants_geojson_fp: str='data/map.json',
+    plants_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/map.json'
+):
     geojson = construct_map_geojson(df_PN, df_powerdict)
+    save_map_geojson(geojson, fp=plants_geojson_fp)
 
     nearest_half_hour = (pd.Timestamp.now().tz_localize('Europe/London')+pd.Timedelta(minutes=15)).round('30min')
     nearest_dt_idx = get_nearest_dt_idx(geojson, nearest_half_hour)
 
     rendered_map_js = Template(open(js_template_fp).read()).render(
-        zoom=5,
+        zoom=zoom,
         start_idx=nearest_dt_idx,
-        center=[53.96, -3.22],
-        geojson_features=str(geojson).replace('None', 'null')
+        center=center,
+        plants_geojson_url=plants_geojson_url
     )
 
     with open(js_docs_fp, 'w', encoding='utf8') as fp:
