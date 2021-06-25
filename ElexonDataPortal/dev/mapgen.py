@@ -184,7 +184,7 @@ def extract_PN_ts(df_PN, bmu_ids, n_SPs=48*7):
 
     s_PN = s_PN.fillna(0)
     s_PN[s_PN<0] = 0
-    PN_ts = s_PN.head(n_SPs).to_dict()
+    PN_ts = s_PN.tail(n_SPs).to_dict()
 
     return PN_ts
 
