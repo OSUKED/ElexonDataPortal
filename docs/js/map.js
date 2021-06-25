@@ -52,7 +52,7 @@ function createDateLayers(geojsonFeatures){
                 );
             },
             onEachFeature: function (feature, layer) {
-                layer.bindPopup('<p>Name: '+feature.properties.name);
+                layer.bindPopup('<p>Name: ' + feature.properties.name + '\nOutput (MW): ' + feature.properties.output + '\nCapacity (MW): ' + feature.properties.capacity + '</p>');
             }
         });
         dateLayer.options.epoch = epochTime
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json", function(plant_data) {
         $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json", function(route_data) {
             var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery Â© <a href="https://www.mapbox.com/">Mapbox</a>',
               maxZoom: 18,
               id: 'mapbox/streets-v11',
               tileSize: 512,
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 follow: 1
             });
             mymap.addControl(sliderControl);
-            sliderControl.startSlider(333);
+            sliderControl.startSlider(335);
         });
     });
 });
