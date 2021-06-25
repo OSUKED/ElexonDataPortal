@@ -39,7 +39,7 @@ def rebuild_library():
         out_fp=f'{dir_root}/ElexonDataPortal/dev/raw.py'
     )
 
-    clientgen.save_api(
+    clientgen.save_api_client(
         API_yaml_fp=f'{dir_root}/data/BMRS_API.yaml',
         in_fp=f'{dir_root}/templates/api.py',
         out_fp=f'{dir_root}/ElexonDataPortal/api.py'

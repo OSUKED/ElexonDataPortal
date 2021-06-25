@@ -4,12 +4,14 @@ __all__ = ['RequestError', 'check_status', 'check_capping', 'expand_cols', 'pars
            'parse_local_datetime']
 
 # Cell
+import numpy as np
 import pandas as pd
+
+import re
+import os
 import xmltodict
 from collections import OrderedDict
 from warnings import warn
-import re
-import os
 
 # Cell
 class RequestError(Exception):
@@ -93,10 +95,17 @@ def dt_rng_to_SPs(
 ):
     dt_rng = pd.date_range(start_date, end_date, freq=freq, tz=tz)
 
-    SPs = (2*(dt_rng.hour + dt_rng.minute/60) + 1).astype(int)
-    dt_strs = dt_rng.strftime('%Y-%m-%d')
+    SPs = list((2*(dt_rng.hour + dt_rng.minute/60) + 1).astype(int))
+    dt_strs = list(dt_rng.strftime('%Y-%m-%d'))
 
-    df_dates_SPs = pd.DataFrame({'date':dt_strs, 'SP':SPs}, index=dt_rng)
+    df_dates_SPs = pd.DataFrame({'date':dt_strs, 'SP':SPs}, index=dt_rng).astype(str)
+
+    # Accounting for clock changes
+    clock_change_dts_to_SP_count = {k: v for k, v in pd.Series(dt_rng.date).value_counts().to_dict().items() if v>48}
+
+    for dt, SP_count in clock_change_dts_to_SP_count.items():
+        if SP_count != 48:
+            df_dates_SPs.loc[df_dates_SPs.index.date==dt, 'SP'] = list(range(1, SP_count+1))
 
     return df_dates_SPs
 
@@ -107,12 +116,19 @@ def parse_local_datetime(
     freq: str='30T',
     tz: str='Europe/London'
 ) -> pd.DataFrame:
+    # preparing start/end dates
     start_date = pd.to_datetime(df[dt_col].min()) - pd.Timedelta(days=2)
     end_date = pd.to_datetime(df[dt_col].max()) + pd.Timedelta(days=2)
 
+    # mapping from date and SP to local datetime
     df_dates_SPs = dt_rng_to_SPs(start_date, end_date, freq=freq, tz=tz)
-    date_SP_to_ts = {v: k for k, v in df_dates_SPs.apply(tuple, axis=1).to_dict().items()}
+    date_SP_to_ts = {(v[0], str(v[1])): k for k, v in df_dates_SPs.apply(tuple, axis=1).to_dict().items()}
 
     df['local_datetime'] = df[[dt_col, SP_col]].apply(tuple, axis=1).map(date_SP_to_ts)
+
+    # reordering the `local_datetime` column to be first
+    cols = list(df.columns)
+    cols.remove('local_datetime')
+    df = df[['local_datetime'] + cols]
 
     return df

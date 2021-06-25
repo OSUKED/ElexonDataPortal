@@ -15,12 +15,6 @@ The library can be easily installed from PyPi, this can be done using:
 pip install ElexonDataPortal
 ```
 
-If you wish to develop the library further or use any of the programmatic library generation functionality then please use:
-
-```bash
-pip install ElexonDataPortal[dev]
-```
-
 <br>
 <br>
 
@@ -38,7 +32,7 @@ client = api.Client('your_api_key_here')
 
 Now that the client has been initialised we can make a request! 
 
-Each response will be automatically cleaned and parsed, then concatenated into a single Pandas DataFrame. This abstraction around date range requests is a key feature within the `ElexonDataPortal` library
+One of the key abstractions within the `ElexonDataPortal` library is the handling of multiple requests over a date range specified through the `start_date` and `end_date` parameters. Each response will be automatically cleaned and parsed, then concatenated into a single Pandas DataFrame. If a settlement period and date column can be identified in the returned data then a new column will be added with the local datetime for each data-point. N.b. that if passed as a string the start and end datetimes will be assumed to be in the local timezone for the UK
 
 ```python
 start_date = '2020-01-01'
@@ -64,16 +58,16 @@ If you've previously written your own code for extracting data from the Elexon/B
 * Automatic passing of `APIKey` after client initialisation
 * Shipped with sensible defaults for all remaining parameters
 
-If you wish to make requests using the raw methods these are available through the `ElexonDataportal.dev.raw` module.
+The full list of data streams that are able to be requested can be found [here](#data-stream-descriptions). If you wish to make requests using the raw methods these are available through the `ElexonDataportal.dev.raw` module.
 
-Further information can be found in the [Quick Start notebook](https://github.com/OSUKED/BMRS-Wrapper-v2/blob/main/nbs/08-quick-start.ipynb).
+Further information can be found in the [Quick Start guide](https://osuked.github.io/ElexonDataPortal/08-quick-start/).
 
 <br>
 <br>
 
-### What's Changed in v2.0.0
+### What's Changed in v2
 
-The latest release of the library includes a full rewrite of the code-base. We have endeavoured to make the new API as intuitive as possible but that has required breaking changes from v1.0.0, if you wish to continue using the historic library use `pip install ElexonDataPortal==1.0.4`. N.b v1.0.0 will not be maintained going forward, you are advised to change over to v2.0.0+. 
+The latest release of the library includes a full rewrite of the code-base. We have endeavoured to make the new API as intuitive as possible but that has required breaking changes from v1, if you wish to continue using the historic library use `pip install ElexonDataPortal==1.0.4`. N.b v1 will not be maintained going forward, you are advised to change over to v2.0.0+. 
 
 The key feature changes are:
 
@@ -94,3 +88,76 @@ To rebuild the library simply run the following in the root directory:
 ```bash
 python -m ElexonDataPortal.rebuild
 ```
+
+N.b. If you wish to develop the library further or use any of the programmatic library generation functionality then please install the development version of the library using:
+
+```bash
+pip install ElexonDataPortal[dev]
+```
+
+If you are not installing into a fresh environment it is recommended you install `pyyaml` and `geopandas` using conda to avoid any dependency conflicts. In future we are looking to release `ElexonDataPortal` as a conda package to avoid these issues.
+
+<br>
+<br>
+
+### Data Stream Descriptions
+
+The following table describes the data streams that are currently retreivable through the API. The client method to retrieve data from a given stream follows the naming convention `get_{stream-name}`.
+
+| Stream                 | Description                                                    |
+|:-----------------------|:---------------------------------------------------------------|
+| B0610                  | Actual Total Load per Bidding Zone                             |
+| B0620                  | Day-Ahead Total Load Forecast per Bidding Zone                 |
+| B0630                  | Week-Ahead Total Load Forecast per Bidding Zone                |
+| B0640                  | Month-Ahead Total Load Forecast Per Bidding Zone               |
+| B0650                  | Year Ahead Total Load Forecast per Bidding Zone                |
+| B0710                  | Planned Unavailability of Consumption Units                    |
+| B0720                  | Changes In Actual Availability Of Consumption Units            |
+| B0810                  | Year Ahead Forecast Margin                                     |
+| B0910                  | Expansion and Dismantling Projects                             |
+| B1010                  | Planned Unavailability In The Transmission Grid                |
+| B1020                  | Changes In Actual Availability In The Transmission Grid        |
+| B1030                  | Changes In Actual Availability of Offshore Grid Infrastructure |
+| B1320                  | Congestion Management Measures Countertrading                  |
+| B1330                  | Congestion Management Measures Costs of Congestion Management  |
+| B1410                  | Installed Generation Capacity Aggregated                       |
+| B1420                  | Installed Generation Capacity per Unit                         |
+| B1430                  | Day-Ahead Aggregated Generation                                |
+| B1440                  | Generation forecasts for Wind and Solar                        |
+| B1510                  | Planned Unavailability of Generation Units                     |
+| B1520                  | Changes In Actual Availability of Generation Units             |
+| B1530                  | Planned Unavailability of Production Units                     |
+| B1540                  | Changes In Actual Availability of Production Units             |
+| B1610                  | Actual Generation Output per Generation Unit                   |
+| B1620                  | Actual Aggregated Generation per Type                          |
+| B1630                  | Actual Or Estimated Wind and Solar Power Generation            |
+| B1720                  | Amount Of Balancing Reserves Under Contract Service            |
+| B1730                  | Prices Of Procured Balancing Reserves Service                  |
+| B1740                  | Accepted Aggregated Offers                                     |
+| B1750                  | Activated Balancing Energy                                     |
+| B1760                  | Prices Of Activated Balancing Energy                           |
+| B1770                  | Imbalance Prices                                               |
+| B1780                  | Aggregated Imbalance Volumes                                   |
+| B1790                  | Financial Expenses and Income For Balancing                    |
+| B1810                  | Cross-Border Balancing Volumes of Exchanged Bids and Offers    |
+| B1820                  | Cross-Border Balancing Prices                                  |
+| B1830                  | Cross-border Balancing Energy Activated                        |
+| BOD                    | Bid Offer Level Data                                           |
+| CDN                    | Credit Default Notice Data                                     |
+| DETSYSPRICES           | Detailed System Prices                                         |
+| DEVINDOD               | Daily Energy Volume Data                                       |
+| DISBSAD                | Balancing Services Adjustment Action Data                      |
+| FORDAYDEM              | Forecast Day and Day Ahead Demand Data                         |
+| FREQ                   | Rolling System Frequency                                       |
+| FUELHH                 | Half Hourly Outturn Generation by Fuel Type                    |
+| MELIMBALNGC            | Forecast Day and Day Ahead Margin and Imbalance Data           |
+| MID                    | Market Index Data                                              |
+| MessageDetailRetrieval | REMIT Flow - Message List Retrieval                            |
+| MessageListRetrieval   | REMIT Flow - Message List Retrieval                            |
+| NETBSAD                | Balancing Service Adjustment Data                              |
+| NONBM                  | Non BM STOR Instructed Volume Data                             |
+| PHYBMDATA              | Physical Data                                                  |
+| SYSDEM                 | System Demand                                                  |
+| SYSWARN                | System Warnings                                                |
+| TEMP                   | Temperature Data                                               |
+| WINDFORFUELHH          | Wind Generation Forecast and Out-turn Data                     |

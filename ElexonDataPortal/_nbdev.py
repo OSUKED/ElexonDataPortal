@@ -143,7 +143,9 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "get_WINDFORFUELHH": "03-raw-methods.ipynb",
          "extract_PN_ts": "09-map-gen.ipynb",
          "get_nearest_dt_idx": "09-map-gen.ipynb",
-         "construct_map_geojson": "09-map-gen.ipynb"}
+         "construct_map_geojson": "09-map-gen.ipynb",
+         "get_PN_df": "09-map-gen.ipynb",
+         "load_most_recent_PN_data": "09-map-gen.ipynb"}
 
 modules = ["api.py",
            "dev/clientgen.py",
@@ -163,7 +165,25 @@ modules = ["api.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
            "dev/mapgen.py",
-           "dev/mapgen.py"]
+           "dev/mapgen.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/orchestrator.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/utils.py",
+           "dev/mapgen.py",
+           "dev/mapgen.py",
+           "dev/utils.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"
 
