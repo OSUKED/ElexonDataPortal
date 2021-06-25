@@ -11,8 +11,9 @@
 import typer
 import shutil
 import pandas as pd
+from fastcore.foundation import Config
 
-from ElexonDataPortal.dev import utils, specgen, rawgen, clientgen
+from ElexonDataPortal.dev import nbdev, specgen, rawgen, clientgen
 ```
 
 ```python
@@ -24,14 +25,15 @@ app = typer.Typer()
 #exports
 @app.command()
 def rebuild_library():
-    lib_path = str(utils.Config().path('lib_path'))
+    lib_path = str(Config().path('lib_path'))
     dir_root = f'{lib_path}/..'
+    endpoints_fp = f'{dir_root}/data/endpoints.csv'
     
     shutil.rmtree(lib_path)
-    utils.prepare_nbdev_module()
-    utils.notebook2script()
+    nbdev.prepare_nbdev_module()
+    nbdev.notebook2script()
     
-    df_endpoints = pd.read_csv(f'{dir_root}/data/endpoints.csv')
+    df_endpoints = specgen.load_endpoints_df(endpoints_fp)
     API_spec = specgen.construct_spec(df_endpoints)
     
     specgen.save_spec(
@@ -46,13 +48,13 @@ def rebuild_library():
         out_fp=f'{dir_root}/ElexonDataPortal/dev/raw.py'
     )
     
-    clientgen.save_api(
+    clientgen.save_api_client(
         API_yaml_fp=f'{dir_root}/data/BMRS_API.yaml',
         in_fp=f'{dir_root}/templates/api.py',
         out_fp=f'{dir_root}/ElexonDataPortal/api.py'
     )
     
-    utils.add_extra_code_desc_to_mod()
+    nbdev.add_extra_code_desc_to_mod()
     
     return
 ```
@@ -61,6 +63,7 @@ def rebuild_library():
 rebuild_library()
 ```
 
+    Converted 00-documentation.ipynb.
     Converted 01-utils.ipynb.
     Converted 02-spec-gen.ipynb.
     Converted 03-raw-methods.ipynb.
@@ -69,6 +72,9 @@ rebuild_library()
     Converted 06-client-gen.ipynb.
     Converted 07-cli-rebuild.ipynb.
     Converted 08-quick-start.ipynb.
+    Converted 09-map-gen.ipynb.
+    Converted 10-nbdev.ipynb.
+    Converted Example Usage.ipynb.
     
 
 ```python

@@ -149,7 +149,7 @@ functions[0]
      'endpoint': 'https://api.bmreports.com/BMRS/B0610/v1',
      'description': 'Actual Total Load per Bidding Zone',
      'parameters': [{'name': 'APIKey', 'type': 'string', 'example': 'AP8DA23'},
-      {'name': 'SettlementDate', 'type': 'string', 'example': '2020-01-01'},
+      {'name': 'SettlementDate', 'type': 'string', 'example': '2021-01-01'},
       {'name': 'Period', 'type': 'string', 'example': '1'},
       {'name': 'ServiceType', 'type': 'string', 'example': 'csv'}]}
 
@@ -181,6 +181,7 @@ from ElexonDataPortal.dev import raw
 r = raw.get_B1610(
     APIKey=api_key, 
     SettlementDate='2020-01-01', 
+    Period=1,
     NGCBMUnitID='*', 
     ServiceType='csv'
 )

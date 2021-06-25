@@ -8,6 +8,7 @@
 
 ```python
 #exports
+import numpy as np
 import pandas as pd
 
 import os
@@ -52,10 +53,25 @@ API_spec
 
 
 ```python
-df_endpoints = pd.read_csv('../data/endpoints.csv')
+#exports
+def load_endpoints_df(endpoints_fp: str='data/endpoints.csv'):
+    df_endpoints = pd.read_csv(endpoints_fp)
 
-df_endpoints['Sample Data'] = df_endpoints['Sample Data'].str.replace('01/01/2020', '2020-01-01').str.replace('02/01/2020', '2020-01-02')
-df_endpoints['Field Name'] = df_endpoints['Field Name'].str.replace(' ', '')
+    date_idxs = (df_endpoints['Sample Data'].str.count('/')==2).replace(np.nan, False)
+    time_idxs = df_endpoints['Sample Data'].str.contains(':').replace(np.nan, False)
+
+    df_endpoints.loc[date_idxs & ~time_idxs, 'Sample Data'] = pd.to_datetime(df_endpoints.loc[date_idxs & ~time_idxs, 'Sample Data']).dt.strftime('%Y-%m-%d')
+    df_endpoints.loc[date_idxs & time_idxs, 'Sample Data'] = pd.to_datetime(df_endpoints.loc[date_idxs & time_idxs, 'Sample Data']).dt.strftime('%Y-%m-%d %H:%M:%S')
+
+    df_endpoints['Sample Data'] = df_endpoints['Sample Data'].fillna('')
+    df_endpoints['Field Name'] = df_endpoints['Field Name'].str.replace(' ', '')
+    
+    return df_endpoints
+```
+
+```python
+df_endpoints = load_endpoints_df('../data/endpoints.csv')
+df_endpoints.to_csv('../data/endpoints.csv', index=False)
 
 df_endpoints.head(3)
 ```
@@ -66,7 +82,7 @@ df_endpoints.head(3)
 |   Unnamed: 0 | id    | name                                              |   version | method   | direction   | Field Name     | Field Type   |   Remarks | Mandatory   | Format     | Sample Data   |
 |-------------:|:------|:--------------------------------------------------|----------:|:---------|:------------|:---------------|:-------------|----------:|:------------|:-----------|:--------------|
 |            0 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | APIKey         | String       |       nan | Yes         | nan        | AP8DA23       |
-|            1 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | SettlementDate | String       |       nan | Yes         | YYYY-MM-DD | 2020-01-01    |
+|            1 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | SettlementDate | String       |       nan | Yes         | YYYY-MM-DD | 2021-01-01    |
 |            2 | B1720 | Amount Of Balancing Reserves Under Contract Se... |         1 | get      | request     | Period         | String       |       nan | Yes         | */1-50     | 1             |</div>
 
 
@@ -134,6 +150,7 @@ def add_params_to_stream_dict(
         'String': 'string',
         'Int': 'integer',
         'int': 'integer',
+        'Integer': 'integer',
         'Date': 'string'
     }
 ):
@@ -174,7 +191,7 @@ stream
        'type': 'string',
        'format': 'password',
        'example': 'AP8DA23'},
-      {'name': 'SettlementDate', 'type': 'string', 'example': '2020-01-01'},
+      {'name': 'SettlementDate', 'type': 'string', 'example': '2021-01-01'},
       {'name': 'Period', 'type': 'string', 'example': '1'},
       {'name': 'ServiceType',
        'type': 'string',
@@ -232,7 +249,7 @@ def construct_spec(
 API_spec = construct_spec(df_endpoints)
 ```
 
-    Wall time: 244 ms
+    Wall time: 480 ms
     
 
 ```python

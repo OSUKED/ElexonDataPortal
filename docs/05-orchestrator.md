@@ -52,8 +52,10 @@ JSON([method_info])
 ```python
 #exports
 def if_possible_parse_local_datetime(df):
-    dt_cols = [col for col in df.columns if 'date' in col.lower()]
-    sp_cols = [col for col in df.columns if 'period' in col.lower()]
+    dt_cols_with_period_in_name = ['startTimeOfHalfHrPeriod', 'initialForecastPublishingPeriodCommencingTime', 'latestForecastPublishingPeriodCommencingTime', 'outTurnPublishingPeriodCommencingTime']
+    
+    dt_cols = [col for col in df.columns if 'date' in col.lower() or col in dt_cols_with_period_in_name]
+    sp_cols = [col for col in df.columns if 'period' in col.lower() and col not in dt_cols_with_period_in_name]
 
     if len(dt_cols)==1 and len(sp_cols)==1:
         df = utils.parse_local_datetime(df, dt_col=dt_cols[0], SP_col=sp_cols[0])
@@ -88,7 +90,7 @@ def SP_and_date_request(
             kwargs_map['date']: datetime.strftime('%Y-%m-%d'),
             kwargs_map['SP']: SP,
         })
-
+        
         missing_kwargs = list(set(func_params) - set(['SP', 'date'] + list(kwargs.keys())))
         assert len(missing_kwargs) == 0, f"The following kwargs are missing: {', '.join(missing_kwargs)}"
 
@@ -138,7 +140,7 @@ df = SP_and_date_request(
 df.head(3)
 ```
 
-    B1610: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 4/4 [00:02<00:00,  1.45it/s]
+    B1610: 100% 4/4 [00:02<00:00,  1.45it/s]
     
 
 
@@ -169,7 +171,8 @@ def handle_capping(
     assert capping_applied != None, 'No information on whether or not capping limits had been breached could be found in the response metadata'
     
     if capping_applied == True: # only subset of date range returned
-        dt_cols = [col for col in df.columns if ('date' in col.lower()) and ('end' not in col.lower())]
+        dt_cols_with_period_in_name = ['startTimeOfHalfHrPeriod']
+        dt_cols = [col for col in df.columns if ('date' in col.lower() or col in dt_cols_with_period_in_name) and ('end' not in col.lower())]
         
         if len(dt_cols) == 1:
             start_date = pd.to_datetime(df[dt_cols[0]]).max().strftime('%Y-%m-%d')
@@ -196,7 +199,7 @@ def handle_capping(
             df = df.drop_duplicates()
             
         else:
-            warn(f'Response was capped: a new `start_date` to continue requesting could not be determined automatically, please handle manually')
+            warn(f'Response was capped: a new `start_date` to continue requesting could not be determined automatically, please handle manually for `{method}`')
             
     return df
     
@@ -218,22 +221,24 @@ def date_range_request(
         'ServiceType': 'xml'
     })
 
-    start_date, start_time = pd.to_datetime(start_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
-    end_date, end_time = pd.to_datetime(end_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
+    for kwarg in ['start_time', 'end_time']:
+        if kwarg not in kwargs_map.keys():
+            kwargs_map[kwarg] = kwarg
+        
+    kwargs[kwargs_map['start_date']], kwargs[kwargs_map['start_time']] = pd.to_datetime(start_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
+    kwargs[kwargs_map['end_date']], kwargs[kwargs_map['end_time']] = pd.to_datetime(end_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
     
-    kwargs.update({
-        kwargs_map['start_date']: start_date,
-        kwargs_map['end_date']: end_date,
-        kwargs_map['start_time']: start_time,
-        kwargs_map['end_time']: end_time
-    })
+    if 'SP' in kwargs_map.keys():
+        kwargs[kwargs_map['SP']] = '*'
+        func_params.remove('SP')
+        func_params += [kwargs_map['SP']]
 
     missing_kwargs = list(set(func_params) - set(['start_date', 'end_date', 'start_time', 'end_time'] + list(kwargs.keys())))
     assert len(missing_kwargs) == 0, f"The following kwargs are missing: {', '.join(missing_kwargs)}"
     
     if request_type == 'date_range':
-        kwargs.pop('start_time')
-        kwargs.pop('end_time')
+        kwargs.pop(kwargs_map['start_time'])
+        kwargs.pop(kwargs_map['end_time'])
 
     r = getattr(raw, method)(**kwargs)
     utils.check_status(r)
@@ -360,7 +365,7 @@ df = year_request(
 df.head(3)
 ```
 
-    B0650: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 2/2 [00:01<00:00,  1.06it/s]
+    B0650: 100% 2/2 [00:01<00:00,  1.06it/s]
     
 
 
@@ -450,7 +455,7 @@ df = year_and_month_request(
 df.head(3)
 ```
 
-    B0640: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 3/3 [00:00<00:00,  5.57it/s]
+    B0640: 100% 3/3 [00:00<00:00,  5.57it/s]
     
 
 
@@ -553,7 +558,7 @@ df = year_and_week_request(
 df.head(3)
 ```
 
-    B0630: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 4/4 [00:00<00:00,  6.22it/s]
+    B0630: 100% 4/4 [00:00<00:00,  6.22it/s]
     
 
 
@@ -582,7 +587,7 @@ def non_temporal_request(
     r = getattr(raw, method)(**kwargs)
     utils.check_status(r)
     
-    df = parse_xml_response(r)
+    df = utils.parse_xml_response(r)
     df = if_possible_parse_local_datetime(df)
         
     return df
@@ -635,6 +640,8 @@ def query_orchestrator(
         api_key=api_key,
         **kwargs
     )
+    
+    df = df.reset_index(drop=True)
 
     return df
 ```
@@ -661,7 +668,7 @@ df = query_orchestrator(
 df.head(3)
 ```
 
-    B0630: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 4/4 [00:00<00:00,  6.54it/s]
+    B0630: 100% 4/4 [00:00<00:00,  6.54it/s]
     
 
 
@@ -672,24 +679,5 @@ df.head(3)
 |            0 | NGET-EMFIP-WATL-TS-00005681 | Minimum possible  | 2019-12-29       |      22753 |     52 | System total load | Week ahead    | Area                | Sequential fixed size block | P1D          | Mega watt       |   2019 | Y            | NGET-EMFIP-WATL-00005681 |                1 |
 |            1 | NGET-EMFIP-WATL-TS-00005682 | Maximum available | 2019-12-29       |      40156 |     52 | System total load | Week ahead    | Area                | Sequential fixed size block | P1D          | Mega watt       |   2019 | Y            | NGET-EMFIP-WATL-00005681 |                1 |
 |            2 | NGET-EMFIP-WATL-TS-00005681 | Minimum possible  | 2019-12-28       |      23644 |     52 | System total load | Week ahead    | Area                | Sequential fixed size block | P1D          | Mega watt       |   2019 | Y            | NGET-EMFIP-WATL-00005681 |                1 |</div>
-
-
-
-```python
-method = 'get_B1630'
-start_date = '2020-01-01'
-end_date = '2020-01-31'
-
-request_type = method_info[method]['request_type']
-kwargs_map = method_info[method]['kwargs_map']
-func_params = list(method_info[method]['func_kwargs'].keys())
-
-func_params
-```
-
-
-
-
-    ['APIKey', 'date', 'SP', 'ServiceType']
 
 

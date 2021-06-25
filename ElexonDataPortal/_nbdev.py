@@ -150,7 +150,9 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "get_files": "09-map-gen.ipynb",
          "save_map_geojson": "09-map-gen.ipynb",
          "clean_route_gdf": "09-map-gen.ipynb",
-         "load_route_gdf": "09-map-gen.ipynb"}
+         "load_route_gdf": "09-map-gen.ipynb",
+         "get_PHYBM_df": "09-map-gen.ipynb",
+         "download_latest_PHYBM_data": "09-map-gen.ipynb"}
 
 modules = ["api.py",
            "dev/clientgen.py",
@@ -201,6 +203,8 @@ modules = ["api.py",
            "dev/orchestrator.py",
            "dev/orchestrator.py",
            "dev/utils.py",
+           "dev/mapgen.py",
+           "dev/mapgen.py",
            "dev/mapgen.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"

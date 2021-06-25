@@ -86,9 +86,7 @@ default_kwargs = {
 stream_to_df = test_endpoints(default_kwargs)
 ```
 
-     14%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–Œ                                                                       | 5/36 [00:01<00:08,  3.55it/s]c:\users\ayrto\desktop\phd\data\bmrs\bmrs-wrapper-v2\ElexonDataPortal\dev\utils.py:30: UserWarning: Data request was succesful but no content was returned
-      warn(f'Data request was succesful but no content was returned')
-    100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 36/36 [00:20<00:00,  1.75it/s]
+    100% 49/49 [00:35<00:00,  1.39it/s]
     
 
 ```python
@@ -122,15 +120,15 @@ pd.Series(method_to_params).head(3).to_dict()
 
 
     {'get_B0610': {'APIKey': 'AP8DA23',
-      'SettlementDate': '2020-01-01',
+      'SettlementDate': '2021-01-01',
       'Period': '1',
       'ServiceType': 'csv'},
      'get_B0620': {'APIKey': 'AP8DA23',
-      'SettlementDate': '2020-01-01',
+      'SettlementDate': '2021-01-01',
       'Period': '1',
       'ServiceType': 'csv'},
      'get_B0630': {'APIKey': 'AP8DA23',
-      'Year': '2020',
+      'Year': '2021',
       'Week': '22',
       'ServiceType': 'csv'}}
 
@@ -148,18 +146,47 @@ field_names
 
 
     ['APIKey',
+     'ActiveFlag',
+     'AssetID',
+     'BMUnitId',
+     'BMUnitType',
      'EndDate',
      'EndTime',
+     'EventEnd',
+     'EventStart',
+     'EventType',
+     'FromClearedDate',
+     'FromDate',
+     'FromDateTime',
+     'FromSettlementDate',
+     'FuelType',
+     'LeadPartyName',
+     'MessageID',
+     'MessageId',
+     'MessageType',
      'Month',
+     'NGCBMUnit',
      'NGCBMUnitID',
+     'Name',
+     'ParticipantId',
      'Period',
      'ProcessType',
+     'PublicationFrom',
+     'PublicationTo',
+     'SequenceId',
      'ServiceType',
      'SettlementDate',
+     'SettlementPeriod',
      'StartDate',
      'StartTime',
+     'ToClearedDate',
+     'ToDate',
+     'ToDateTime',
+     'ToSettlementDate',
+     'UnavailabilityType',
      'Week',
-     'Year']
+     'Year',
+     'isTwoDayWindow']
 
 
 
@@ -183,7 +210,7 @@ def construct_request_type_filter(
         'year_and_month': has_year + has_month == 2,
         'year_and_week': has_year + has_week == 2,
         'SP_and_date': has_SP + has_date == 2,
-        'date_range': has_start_date + has_end_date + has_start_date + has_end_date == 2,
+        'date_range': has_start_time + has_end_time + has_start_date + has_end_date == 2,
         'date_time_range': has_start_time + has_end_time + has_start_date + has_end_date == 4,
         'non_temporal': has_start_time + has_end_time + has_start_date + has_end_date + has_SP + has_date + has_year + has_month == 0,
     }
@@ -191,6 +218,7 @@ def construct_request_type_filter(
     return request_type_filter
 
 def check_request_type_filter(
+    field_names: list,
     request_type_filter: dict,
     has_start_time: bool,
     has_end_time: bool,
@@ -213,13 +241,13 @@ def check_request_type_filter(
     * filter does not contain only one request type
     """
     
-    filter_str = f'\n\nFilter:\n{request_type_filter}'
+    filter_str = f'\n\nFilter:\n{request_type_filter}\n\nField Names:\n{", ".join(field_names)}'
 
     assert {(False, True): True, (False, False): False, (True, True): False, (True, False): False}[(has_year, has_month)] == False, 'Cannot provide a month without a year' + filter_str
     assert {(False, True): True, (False, False): False, (True, True): False, (True, False): False}[(has_year, has_week)] == False, 'Cannot provide a week without a year' + filter_str
     assert has_start_time + has_end_time != 1, 'Only one of start/end time was provided' + filter_str
     assert has_start_date + has_end_date != 1, 'Only one of start/end date was provided' + filter_str
-    assert has_SP + has_date != 1, 'Only one of date/SP was provided' + filter_str
+    assert (has_SP + has_date != 1) or (has_start_date + has_end_date == 2), 'Only one of date/SP was provided' + filter_str
     assert sum(request_type_filter.values()) == 1, 'Request type could not be determined\n\nFilter' + filter_str
     
     return 
@@ -228,9 +256,9 @@ def determine_request_type_from_fields(
     field_names: list,
     start_time_cols: list=['StartTime'],
     end_time_cols: list=['EndTime'],
-    start_date_cols: list=['StartDate'],
-    end_date_cols: list=['EndDate'],
-    date_cols: list=['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date'],
+    start_date_cols: list=['StartDate', 'FromSettlementDate', 'FromDate'],
+    end_date_cols: list=['EndDate', 'ToSettlementDate', 'ToDate'],
+    date_cols: list=['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date', 'startTimeOfHalfHrPeriod'],
     SP_cols: list=['SettlementPeriod', 'Period'],
     year_cols: list=['Year'],
     month_cols: list=['Month', 'MonthName'],
@@ -252,7 +280,7 @@ def determine_request_type_from_fields(
     )
     
     check_request_type_filter(
-        request_type_filter, has_start_time, has_end_time, has_start_date, 
+        field_names, request_type_filter, has_start_time, has_end_time, has_start_date, 
         has_end_date, has_date, has_SP, has_year, has_month, has_week
     )
 
@@ -298,11 +326,13 @@ pd.Series(method_to_request_type).value_counts()
 
 
 
-    SP_and_date        18
+    SP_and_date        22
     date_time_range     9
+    non_temporal        8
     year                5
     year_and_month      3
     year_and_week       1
+    date_range          1
     dtype: int64
 
 
@@ -313,9 +343,9 @@ def construct_method_to_params_map(method_to_params):
     standardised_params_map = {
         'start_time': ['StartTime'],
         'end_time': ['EndTime'],
-        'start_date': ['StartDate'],
-        'end_date': ['EndDate'],
-        'date': ['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date'],
+        'start_date': ['StartDate', 'FromSettlementDate', 'FromDate'],
+        'end_date': ['EndDate', 'ToSettlementDate', 'ToDate'],
+        'date': ['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date', 'startTimeOfHalfHrPeriod'],
         'SP': ['SettlementPeriod', 'Period'],
         'year': ['Year'],
         'month': ['Month', 'MonthName'],
