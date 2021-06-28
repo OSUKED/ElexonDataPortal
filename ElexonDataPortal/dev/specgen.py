@@ -53,12 +53,17 @@ def get_endpoint_single_attr(df_endpoint, attribute='version'):
 def init_stream_dict(df_endpoint, endpoint_id):
     version = get_endpoint_single_attr(df_endpoint, 'version')
     name = get_endpoint_single_attr(df_endpoint, 'name')
+    tags = get_endpoint_single_attr(df_endpoint, 'tags')
 
     stream = dict()
 
     stream['endpoint'] = f'/BMRS/{endpoint_id}/v{version}'
+    stream['x-title'] = endpoint_id
     stream['description'] = name
     stream['parameters'] = list()
+
+    if isinstance(tags, str):
+        stream['tags'] = tags.split(', ')
 
     return stream
 

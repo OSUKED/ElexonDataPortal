@@ -1,17 +1,25 @@
 openapi: 3.0.1
-# tags:
-#   - name: pets
-#     description: Everything about your Pets
-#     externalDocs:
-#       url: http://docs.my-api.com/pet-operations.htm
-#   - name: store
-#     description: Access to Petstore orders
-#     externalDocs:
-#       url: http://docs.my-api.com/store-orders.htm
+tags:
+  - name: transmission
+    description: Data relating to the infrastructure and management of the transmission network
+    externalDocs:
+      url: https://www.bmreports.com/bmrs/?q=transmission/
+  - name: demand
+    description: Data relating to forecasts, out-turn, and reductions in demand
+    externalDocs:
+      url: https://www.bmreports.com/bmrs/?q=demand/
+  - name: generation
+    description: Data relating to forecasts, out-turn, and reductions in generation 
+    externalDocs:
+      url: https://www.bmreports.com/bmrs/?q=generation/
+  - name: balancing
+    description: Data relating to the prices, volumes, and units operating in short-term power markets
+    externalDocs:
+      url: hhttps://www.bmreports.com/bmrs/?q=balancing/
 info:
   title: "BMRS API"
   description: "API for the Elexon Balancing Mechanism Reporting Service"
-  version: "0.1"
+  version: "2.0"
 servers:
   - url: "https://api.bmreports.com"
 paths:
@@ -19,6 +27,8 @@ paths:
     get:
       x-title: "B0610"
       description: "Actual Total Load per Bidding Zone"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -56,6 +66,8 @@ paths:
     get:
       x-title: "B0620"
       description: "Day-Ahead Total Load Forecast per Bidding Zone"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -93,6 +105,8 @@ paths:
     get:
       x-title: "B0630"
       description: "Week-Ahead Total Load Forecast per Bidding Zone"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -130,6 +144,8 @@ paths:
     get:
       x-title: "B0640"
       description: "Month-Ahead Total Load Forecast Per Bidding Zone"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -163,6 +179,8 @@ paths:
     get:
       x-title: "B0650"
       description: "Year Ahead Total Load Forecast per Bidding Zone"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -195,6 +213,8 @@ paths:
     get:
       x-title: "B0710"
       description: "Planned Unavailability of Consumption Units"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -242,6 +262,8 @@ paths:
     get:
       x-title: "B0720"
       description: "Changes In Actual Availability Of Consumption Units"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -289,6 +311,8 @@ paths:
     get:
       x-title: "B0810"
       description: "Year Ahead Forecast Margin"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -321,6 +345,8 @@ paths:
     get:
       x-title: "B0910"
       description: "Expansion and Dismantling Projects"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -353,6 +379,8 @@ paths:
     get:
       x-title: "B1010"
       description: "Planned Unavailability In The Transmission Grid"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -400,6 +428,8 @@ paths:
     get:
       x-title: "B1020"
       description: "Changes In Actual Availability In The Transmission Grid"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -447,6 +477,8 @@ paths:
     get:
       x-title: "B1030"
       description: "Changes In Actual Availability of Offshore Grid Infrastructure"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -494,6 +526,8 @@ paths:
     get:
       x-title: "B1320"
       description: "Congestion Management Measures Countertrading"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -531,6 +565,8 @@ paths:
     get:
       x-title: "B1330"
       description: "Congestion Management Measures Costs of Congestion Management"
+      tags:
+        - transparency
       parameters:
         - name: "APIKey"
           in: "query"
@@ -568,6 +604,8 @@ paths:
     get:
       x-title: "B1410"
       description: "Installed Generation Capacity Aggregated"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -600,6 +638,8 @@ paths:
     get:
       x-title: "B1420"
       description: "Installed Generation Capacity per Unit"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -632,6 +672,8 @@ paths:
     get:
       x-title: "B1430"
       description: "Day-Ahead Aggregated Generation"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -669,6 +711,8 @@ paths:
     get:
       x-title: "B1440"
       description: "Generation forecasts for Wind and Solar"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -711,6 +755,8 @@ paths:
     get:
       x-title: "B1510"
       description: "Planned Unavailability of Generation Units"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -758,6 +804,8 @@ paths:
     get:
       x-title: "B1520"
       description: "Changes In Actual Availability of Generation Units"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -805,6 +853,8 @@ paths:
     get:
       x-title: "B1530"
       description: "Planned Unavailability of Production Units"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -852,6 +902,8 @@ paths:
     get:
       x-title: "B1540"
       description: "Changes In Actual Availability of Production Units"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -899,6 +951,8 @@ paths:
     get:
       x-title: "B1610"
       description: "Actual Generation Output per Generation Unit"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -941,6 +995,8 @@ paths:
     get:
       x-title: "B1620"
       description: "Actual Aggregated Generation per Type"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -978,6 +1034,8 @@ paths:
     get:
       x-title: "B1630"
       description: "Actual Or Estimated Wind and Solar Power Generation"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1015,6 +1073,8 @@ paths:
     get:
       x-title: "B1720"
       description: "Amount Of Balancing Reserves Under Contract Service"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1052,6 +1112,8 @@ paths:
     get:
       x-title: "B1730"
       description: "Prices Of Procured Balancing Reserves Service"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1089,6 +1151,8 @@ paths:
     get:
       x-title: "B1740"
       description: "Accepted Aggregated Offers"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1126,6 +1190,8 @@ paths:
     get:
       x-title: "B1750"
       description: "Activated Balancing Energy"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1163,6 +1229,8 @@ paths:
     get:
       x-title: "B1760"
       description: "Prices Of Activated Balancing Energy"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1200,6 +1268,8 @@ paths:
     get:
       x-title: "B1770"
       description: "Imbalance Prices"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1237,6 +1307,8 @@ paths:
     get:
       x-title: "B1780"
       description: "Aggregated Imbalance Volumes"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1274,6 +1346,8 @@ paths:
     get:
       x-title: "B1790"
       description: "Financial Expenses and Income For Balancing"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1307,6 +1381,8 @@ paths:
     get:
       x-title: "B1810"
       description: "Cross-Border Balancing Volumes of Exchanged Bids and Offers"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1344,6 +1420,8 @@ paths:
     get:
       x-title: "B1820"
       description: "Cross-Border Balancing Prices"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1381,6 +1459,8 @@ paths:
     get:
       x-title: "B1830"
       description: "Cross-border Balancing Energy Activated"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1418,6 +1498,8 @@ paths:
     get:
       x-title: "BOD"
       description: "Bid Offer Level Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1476,6 +1558,8 @@ paths:
     get:
       x-title: "CDN"
       description: "Credit Default Notice Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1509,6 +1593,8 @@ paths:
     get:
       x-title: "DETSYSPRICES"
       description: "Detailed System Prices"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1575,6 +1661,8 @@ paths:
     get:
       x-title: "DISBSAD"
       description: "Balancing Services Adjustment Action Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1608,6 +1696,8 @@ paths:
     get:
       x-title: "FORDAYDEM"
       description: "Forecast Day and Day Ahead Demand Data"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1646,6 +1736,8 @@ paths:
     get:
       x-title: "FREQ"
       description: "Rolling System Frequency"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1679,6 +1771,8 @@ paths:
     get:
       x-title: "FUELHH"
       description: "Half Hourly Outturn Generation by Fuel Type"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1712,6 +1806,8 @@ paths:
     get:
       x-title: "MELIMBALNGC"
       description: "Forecast Day and Day Ahead Margin and Imbalance Data"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1750,6 +1846,8 @@ paths:
     get:
       x-title: "MID"
       description: "Market Index Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1788,6 +1886,8 @@ paths:
     get:
       x-title: "MessageDetailRetrieval"
       description: "REMIT Flow - Message List Retrieval"
+      tags:
+        - REMIT
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1831,6 +1931,8 @@ paths:
     get:
       x-title: "MessageListRetrieval"
       description: "REMIT Flow - Message List Retrieval"
+      tags:
+        - REMIT
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1909,6 +2011,8 @@ paths:
     get:
       x-title: "NETBSAD"
       description: "Balancing Service Adjustment Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1947,6 +2051,8 @@ paths:
     get:
       x-title: "NONBM"
       description: "Non BM STOR Instructed Volume Data"
+      tags:
+        - balancing
       parameters:
         - name: "FromDate"
           in: "query"
@@ -1980,6 +2086,8 @@ paths:
     get:
       x-title: "PHYBMDATA"
       description: "Physical Data"
+      tags:
+        - balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2038,6 +2146,8 @@ paths:
     get:
       x-title: "SYSDEM"
       description: "System Demand"
+      tags:
+        - demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2071,6 +2181,8 @@ paths:
     get:
       x-title: "SYSWARN"
       description: "System Warnings"
+      tags:
+        - transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2104,6 +2216,8 @@ paths:
     get:
       x-title: "TEMP"
       description: "Temperature Data"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2137,6 +2251,8 @@ paths:
     get:
       x-title: "WINDFORFUELHH"
       description: "Wind Generation Forecast and Out-turn Data"
+      tags:
+        - generation
       parameters:
         - name: "APIKey"
           in: "query"
