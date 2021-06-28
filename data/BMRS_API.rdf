@@ -1,563 +1,563 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/catalogs/1> a dcat:Catalog ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#catalogs/1> a dcat:Catalog ;
     dct:title "An Elexon dataset catalog"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/029bfea946b2323ae1e4cc967be98d61e109af51>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/03fd3478b4c2b327a61413b74a5cf6215f55928d>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/04a0f49338ab3dac2d6097c2099f2c6164a1f91f>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/0e5fdfa2e8f29744c371ab45415e03fc5378047a>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/19570084f9314e92529f06455d5a1d6279e053ad>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/22d8103cab1a253bd194956e56c98b572cf432ad>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/285c2087e3043660424bbd9954c6b75861d0f7e0>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2927976a9dabdda503ef79d8834089377d02bd12>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2aa169ecc41fe6edc136832a50dfe37fd12c3d87>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2b2d9919a67eab31b5cbed1ac03f69069c769b76>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2b941e4ccf18973df2c4c42ca17c00b8f58b6276>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3519b2019120f09555a5e6b13de5e6ee405eb963>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/36a3f8399244a1747dabaa1a2176b493ebb2563f>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3baa62553fcde2f2b5d8a3d6815b652b76fd75fb>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/420fd6c140894bb09a4b8c9a75577418e987e2e0>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4233e658b698c9a548bdff75aafd946ad71bc5c3>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/450b3ddd9370305faf82672cf52bf041a6747208>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/45916b2d430a4d72cf0615fea65b2ce5b7e347b3>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4cf360d909fd4742cbfbe07254a61e3c80bf83a2>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/55f94777f599998f6e499987e8ed3f2feaaa5635>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/563e371acb209ac1e1267925cb7335ebbb514179>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5acdd9bc44380366778f8e644d0022bf063ee549>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/6046066360f60e0e2e30f96e7f30ee4227cfb274>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/64dc864aa965d1d41dc64181b157b8f78c587622>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/6e2ab93c6d820605e421e0bbd92ff4eec7d17c73>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/78a5b45da2586908f42f08c4ab1bc37043329b91>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80d1339182d022fa14d33eb589274e58f535985f>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80d708dd695e05dc35562a9f240081d3feb788c8>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/8c6ae9f8245f8fc4185d68800d61a9c75887213e>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99376e5225d215261a1042d5ad75035ea12035b8>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9aeecabb137e7e52a47d5117b7fa392690d7af20>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9e48ef6df2c415e78e2504f36a86054092434808>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a118b9aad6ff1360f18ff966f3a0757e43e8dc07>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a5b02a197d7479f86240129cd9a788417362b357>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a7ee2dca8c6f9ef23ad8987e5340cad5f215e376>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a9e3f68e8443fa8d8603bae37372c7478a995037>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/aa9236eb78d3ff98efdb819206cb3baa6114725d>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/aae9faa7237fec657d4ff820967e6b1686844c5f>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/acd8fee20a84ec60377438dd895fcd92661039b3>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ad79dc1712f342d3ca567da8d443f2d4567168ae>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b63ddc4ec45655718cb8e29e9f05c312c360a127>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bef81ac65e177aa6a7df1cddf2ac6c2a29678699>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/cca5717e98fb723ffd8841f9db4fe47800b658ea>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d6757798cec1df32aa0d5103fefc4e25787f2ae6>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d75f48ab7f6771c110fd377957bcf1fb7c6725d3>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/da0fd6ab7f0004887c10c4431db96899fcf48676>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ea9f6f971c57204f17275ba4fcb5fc0f2734ee49>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ef74cb0bf19ff8bd89bb68590ccafe480f267f72>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/fa6784084a633f3554f6b687d3c0d20028442846>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/fde4886646d8ce85d02478d3f1c99611a62a7e21> ;
-    dcat:service <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c002eba1b6e86da2257235ff784433e06fc49ddf> .
+    dcat:dataset <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#029bfea946b2323ae1e4cc967be98d61e109af51>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#03fd3478b4c2b327a61413b74a5cf6215f55928d>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#04a0f49338ab3dac2d6097c2099f2c6164a1f91f>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#0e5fdfa2e8f29744c371ab45415e03fc5378047a>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#19570084f9314e92529f06455d5a1d6279e053ad>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#22d8103cab1a253bd194956e56c98b572cf432ad>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#285c2087e3043660424bbd9954c6b75861d0f7e0>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2927976a9dabdda503ef79d8834089377d02bd12>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2aa169ecc41fe6edc136832a50dfe37fd12c3d87>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2b2d9919a67eab31b5cbed1ac03f69069c769b76>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2b941e4ccf18973df2c4c42ca17c00b8f58b6276>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3519b2019120f09555a5e6b13de5e6ee405eb963>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#36a3f8399244a1747dabaa1a2176b493ebb2563f>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3baa62553fcde2f2b5d8a3d6815b652b76fd75fb>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#420fd6c140894bb09a4b8c9a75577418e987e2e0>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4233e658b698c9a548bdff75aafd946ad71bc5c3>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#450b3ddd9370305faf82672cf52bf041a6747208>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#45916b2d430a4d72cf0615fea65b2ce5b7e347b3>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4cf360d909fd4742cbfbe07254a61e3c80bf83a2>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#55f94777f599998f6e499987e8ed3f2feaaa5635>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#563e371acb209ac1e1267925cb7335ebbb514179>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5acdd9bc44380366778f8e644d0022bf063ee549>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#6046066360f60e0e2e30f96e7f30ee4227cfb274>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#64dc864aa965d1d41dc64181b157b8f78c587622>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#6e2ab93c6d820605e421e0bbd92ff4eec7d17c73>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#78a5b45da2586908f42f08c4ab1bc37043329b91>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80d1339182d022fa14d33eb589274e58f535985f>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80d708dd695e05dc35562a9f240081d3feb788c8>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#8c6ae9f8245f8fc4185d68800d61a9c75887213e>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99376e5225d215261a1042d5ad75035ea12035b8>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9aeecabb137e7e52a47d5117b7fa392690d7af20>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9e48ef6df2c415e78e2504f36a86054092434808>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a118b9aad6ff1360f18ff966f3a0757e43e8dc07>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a5b02a197d7479f86240129cd9a788417362b357>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a7ee2dca8c6f9ef23ad8987e5340cad5f215e376>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a9e3f68e8443fa8d8603bae37372c7478a995037>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#aa9236eb78d3ff98efdb819206cb3baa6114725d>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#aae9faa7237fec657d4ff820967e6b1686844c5f>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#acd8fee20a84ec60377438dd895fcd92661039b3>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ad79dc1712f342d3ca567da8d443f2d4567168ae>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b63ddc4ec45655718cb8e29e9f05c312c360a127>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bef81ac65e177aa6a7df1cddf2ac6c2a29678699>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#cca5717e98fb723ffd8841f9db4fe47800b658ea>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d6757798cec1df32aa0d5103fefc4e25787f2ae6>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d75f48ab7f6771c110fd377957bcf1fb7c6725d3>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#da0fd6ab7f0004887c10c4431db96899fcf48676>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ea9f6f971c57204f17275ba4fcb5fc0f2734ee49>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ef74cb0bf19ff8bd89bb68590ccafe480f267f72>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#fa6784084a633f3554f6b687d3c0d20028442846>,
+        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#fde4886646d8ce85d02478d3f1c99611a62a7e21> ;
+    dcat:service <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c002eba1b6e86da2257235ff784433e06fc49ddf> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/029bfea946b2323ae1e4cc967be98d61e109af51> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#029bfea946b2323ae1e4cc967be98d61e109af51> a dcat:Dataset ;
     dct:description "Generation forecasts for Wind and Solar"@en ;
     dct:title "B1440"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/688cdf30918d449c2c91db2e7d2c750898e8b47e> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#688cdf30918d449c2c91db2e7d2c750898e8b47e> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/02bc37303e66975cb78655fa32c2197126beea1b> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#02bc37303e66975cb78655fa32c2197126beea1b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/SYSWARN/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/03fd3478b4c2b327a61413b74a5cf6215f55928d> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#03fd3478b4c2b327a61413b74a5cf6215f55928d> a dcat:Dataset ;
     dct:description "Congestion Management Measures Costs of Congestion Management"@en ;
     dct:title "B1330"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/db9130096a9e735b2168feab1d344a1c9eb8a425> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#db9130096a9e735b2168feab1d344a1c9eb8a425> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/04a0f49338ab3dac2d6097c2099f2c6164a1f91f> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#04a0f49338ab3dac2d6097c2099f2c6164a1f91f> a dcat:Dataset ;
     dct:description "Prices Of Procured Balancing Reserves Service"@en ;
     dct:title "B1730"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1730/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/0d20833739569e9c36b0b076c530dd86fac0fb8e> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#0d20833739569e9c36b0b076c530dd86fac0fb8e> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/DISBSAD/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/0e5fdfa2e8f29744c371ab45415e03fc5378047a> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#0e5fdfa2e8f29744c371ab45415e03fc5378047a> a dcat:Dataset ;
     dct:description "Year Ahead Forecast Margin"@en ;
     dct:title "B0810"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ca287fa13a6f42ef74e76190c3e264a63df36012> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ca287fa13a6f42ef74e76190c3e264a63df36012> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/14628c365c8fa2ee7c79a1955d60145c493e989f> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#14628c365c8fa2ee7c79a1955d60145c493e989f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/WINDFORFUELHH/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/19570084f9314e92529f06455d5a1d6279e053ad> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#19570084f9314e92529f06455d5a1d6279e053ad> a dcat:Dataset ;
     dct:description "Balancing Services Adjustment Action Data"@en ;
     dct:title "DISBSAD"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/0d20833739569e9c36b0b076c530dd86fac0fb8e> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#0d20833739569e9c36b0b076c530dd86fac0fb8e> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1c76f1a57ecab9e9229a21716ddb8a85836815b1> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1c76f1a57ecab9e9229a21716ddb8a85836815b1> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1830/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8> a dcat:Dataset ;
     dct:description "Day-Ahead Aggregated Generation"@en ;
     dct:title "B1430"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/7e70542f61904e40bb4255237763c584de088068> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#7e70542f61904e40bb4255237763c584de088068> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1facca45d0668978747075b38f0f6b29b649218d> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1facca45d0668978747075b38f0f6b29b649218d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0910/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/22d8103cab1a253bd194956e56c98b572cf432ad> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#22d8103cab1a253bd194956e56c98b572cf432ad> a dcat:Dataset ;
     dct:description "Changes In Actual Availability Of Consumption Units"@en ;
     dct:title "B0720"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4355a28d02064088859166e4ababc558fe4f67a0> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4355a28d02064088859166e4ababc558fe4f67a0> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/285c2087e3043660424bbd9954c6b75861d0f7e0> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#285c2087e3043660424bbd9954c6b75861d0f7e0> a dcat:Dataset ;
     dct:description "Market Index Data"@en ;
     dct:title "MID"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4ef85d49b8ffa7ea985eaa28a229b47226522cb4> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4ef85d49b8ffa7ea985eaa28a229b47226522cb4> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2927976a9dabdda503ef79d8834089377d02bd12> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2927976a9dabdda503ef79d8834089377d02bd12> a dcat:Dataset ;
     dct:description "Planned Unavailability of Consumption Units"@en ;
     dct:title "B0710"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/67de88d823abd62f0e5977168e591d2fcea3ba0a> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#67de88d823abd62f0e5977168e591d2fcea3ba0a> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2aa169ecc41fe6edc136832a50dfe37fd12c3d87> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2aa169ecc41fe6edc136832a50dfe37fd12c3d87> a dcat:Dataset ;
     dct:description "Accepted Aggregated Offers"@en ;
     dct:title "B1740"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e4b94ef0992ceb595e899cc719174c5bcf37365f> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e4b94ef0992ceb595e899cc719174c5bcf37365f> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2b2d9919a67eab31b5cbed1ac03f69069c769b76> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2b2d9919a67eab31b5cbed1ac03f69069c769b76> a dcat:Dataset ;
     dct:description "Amount Of Balancing Reserves Under Contract Service"@en ;
     dct:title "B1720"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/92bd84c011abffb2effd3e2800e81aff759565b1> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#92bd84c011abffb2effd3e2800e81aff759565b1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2b941e4ccf18973df2c4c42ca17c00b8f58b6276> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2b941e4ccf18973df2c4c42ca17c00b8f58b6276> a dcat:Dataset ;
     dct:description "Planned Unavailability of Generation Units"@en ;
     dct:title "B1510"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/64d97df80b1283d8c6ba32cc5fc6c7117d26642d> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#64d97df80b1283d8c6ba32cc5fc6c7117d26642d> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/MessageListRetrieval/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3519b2019120f09555a5e6b13de5e6ee405eb963> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3519b2019120f09555a5e6b13de5e6ee405eb963> a dcat:Dataset ;
     dct:description "Week-Ahead Total Load Forecast per Bidding Zone"@en ;
     dct:title "B0630"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3630303cc6abe3fedc3133ef7b7289d57cca32c3> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3630303cc6abe3fedc3133ef7b7289d57cca32c3> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/SYSDEM/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/36a3f8399244a1747dabaa1a2176b493ebb2563f> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#36a3f8399244a1747dabaa1a2176b493ebb2563f> a dcat:Dataset ;
     dct:description "Changes In Actual Availability of Offshore Grid Infrastructure"@en ;
     dct:title "B1030"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/86c864446dcf373216eb08603ce0b86252aa56c2> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#86c864446dcf373216eb08603ce0b86252aa56c2> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9> a dcat:Dataset ;
     dct:description "Detailed System Prices"@en ;
     dct:title "DETSYSPRICES"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a4a022d897869bb60fc7d98a112ff3e7d336b5d8> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a4a022d897869bb60fc7d98a112ff3e7d336b5d8> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3baa62553fcde2f2b5d8a3d6815b652b76fd75fb> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3baa62553fcde2f2b5d8a3d6815b652b76fd75fb> a dcat:Dataset ;
     dct:description "Year Ahead Total Load Forecast per Bidding Zone"@en ;
     dct:title "B0650"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a0997fd8eff5cd065c92ec1d1e16a496f5b57033> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a0997fd8eff5cd065c92ec1d1e16a496f5b57033> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3e92a5ae34c0314246a929255e0661882adcaf7d> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3e92a5ae34c0314246a929255e0661882adcaf7d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1750/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3f59258e10582ecc1ab971254a678f9ed9840bb6> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3f59258e10582ecc1ab971254a678f9ed9840bb6> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0640/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4107792ac75242bc833c888052ebef1f1e688ef7> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4107792ac75242bc833c888052ebef1f1e688ef7> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0610/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/420fd6c140894bb09a4b8c9a75577418e987e2e0> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#420fd6c140894bb09a4b8c9a75577418e987e2e0> a dcat:Dataset ;
     dct:description "Balancing Service Adjustment Data"@en ;
     dct:title "NETBSAD"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a65a1713c2285185f67a6c4bdc8934652a57d225> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a65a1713c2285185f67a6c4bdc8934652a57d225> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/422b7e8ac64dac685382ef4da56bc699563cc8f7> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#422b7e8ac64dac685382ef4da56bc699563cc8f7> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1420/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4233e658b698c9a548bdff75aafd946ad71bc5c3> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4233e658b698c9a548bdff75aafd946ad71bc5c3> a dcat:Dataset ;
     dct:description "Forecast Day and Day Ahead Margin and Imbalance Data"@en ;
     dct:title "MELIMBALNGC"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d877e11f49b45043b9c9486e77a90228646fa989> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d877e11f49b45043b9c9486e77a90228646fa989> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4355a28d02064088859166e4ababc558fe4f67a0> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4355a28d02064088859166e4ababc558fe4f67a0> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0720/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/450b3ddd9370305faf82672cf52bf041a6747208> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#450b3ddd9370305faf82672cf52bf041a6747208> a dcat:Dataset ;
     dct:description "Aggregated Imbalance Volumes"@en ;
     dct:title "B1780"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b1da5f02cd6eb9ba1893c5c897bba211b84ae675> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b1da5f02cd6eb9ba1893c5c897bba211b84ae675> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/45916b2d430a4d72cf0615fea65b2ce5b7e347b3> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#45916b2d430a4d72cf0615fea65b2ce5b7e347b3> a dcat:Dataset ;
     dct:description "Changes In Actual Availability of Generation Units"@en ;
     dct:title "B1520"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/efa789260e3dd8bcab47fd2728ce229030de8402> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#efa789260e3dd8bcab47fd2728ce229030de8402> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4cf360d909fd4742cbfbe07254a61e3c80bf83a2> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4cf360d909fd4742cbfbe07254a61e3c80bf83a2> a dcat:Dataset ;
     dct:description "Expansion and Dismantling Projects"@en ;
     dct:title "B0910"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1facca45d0668978747075b38f0f6b29b649218d> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1facca45d0668978747075b38f0f6b29b649218d> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4ef85d49b8ffa7ea985eaa28a229b47226522cb4> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4ef85d49b8ffa7ea985eaa28a229b47226522cb4> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/MID/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5068331497b2be79ecfc53aba934837a05860f8f> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5068331497b2be79ecfc53aba934837a05860f8f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1540/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/53539e5e45daf8989e3b08f0aec6431a50a34aa2> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#53539e5e45daf8989e3b08f0aec6431a50a34aa2> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0620/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/55f94777f599998f6e499987e8ed3f2feaaa5635> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#55f94777f599998f6e499987e8ed3f2feaaa5635> a dcat:Dataset ;
     dct:description "Cross-border Balancing Energy Activated"@en ;
     dct:title "B1830"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/1c76f1a57ecab9e9229a21716ddb8a85836815b1> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#1c76f1a57ecab9e9229a21716ddb8a85836815b1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/563e371acb209ac1e1267925cb7335ebbb514179> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#563e371acb209ac1e1267925cb7335ebbb514179> a dcat:Dataset ;
     dct:description "Forecast Day and Day Ahead Demand Data"@en ;
     dct:title "FORDAYDEM"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b3226ae1471fe7eca55971bbfa2f03e4e4503453> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b3226ae1471fe7eca55971bbfa2f03e4e4503453> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/572ddccba509ed2a1615d8a93bf7fc9b91a60c66> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#572ddccba509ed2a1615d8a93bf7fc9b91a60c66> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1320/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5acdd9bc44380366778f8e644d0022bf063ee549> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5acdd9bc44380366778f8e644d0022bf063ee549> a dcat:Dataset ;
     dct:description "Prices Of Activated Balancing Energy"@en ;
     dct:title "B1760"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/87445d4dbbf1f69ad557d046d25d6798340af2ab> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#87445d4dbbf1f69ad557d046d25d6798340af2ab> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5be0d2a008205f35e9f0b573ac69594188d86c6a> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5be0d2a008205f35e9f0b573ac69594188d86c6a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1610/v2> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/6046066360f60e0e2e30f96e7f30ee4227cfb274> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#6046066360f60e0e2e30f96e7f30ee4227cfb274> a dcat:Dataset ;
     dct:description "Imbalance Prices"@en ;
     dct:title "B1770"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/77e1fd21944deadf5dee467bc8739a3e9300709a> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#77e1fd21944deadf5dee467bc8739a3e9300709a> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/64d97df80b1283d8c6ba32cc5fc6c7117d26642d> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#64d97df80b1283d8c6ba32cc5fc6c7117d26642d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1510/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/64dc864aa965d1d41dc64181b157b8f78c587622> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#64dc864aa965d1d41dc64181b157b8f78c587622> a dcat:Dataset ;
     dct:description "Wind Generation Forecast and Out-turn Data"@en ;
     dct:title "WINDFORFUELHH"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/14628c365c8fa2ee7c79a1955d60145c493e989f> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#14628c365c8fa2ee7c79a1955d60145c493e989f> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/67de88d823abd62f0e5977168e591d2fcea3ba0a> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#67de88d823abd62f0e5977168e591d2fcea3ba0a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0710/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/688cdf30918d449c2c91db2e7d2c750898e8b47e> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#688cdf30918d449c2c91db2e7d2c750898e8b47e> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1440/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/6e2ab93c6d820605e421e0bbd92ff4eec7d17c73> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#6e2ab93c6d820605e421e0bbd92ff4eec7d17c73> a dcat:Dataset ;
     dct:description "Rolling System Frequency"@en ;
     dct:title "FREQ"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/77e1fd21944deadf5dee467bc8739a3e9300709a> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#77e1fd21944deadf5dee467bc8739a3e9300709a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1770/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/78a5b45da2586908f42f08c4ab1bc37043329b91> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#78a5b45da2586908f42f08c4ab1bc37043329b91> a dcat:Dataset ;
     dct:description "Changes In Actual Availability In The Transmission Grid"@en ;
     dct:title "B1020"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99a19b0b1d2e646865e98a32975b2982796d4704> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99a19b0b1d2e646865e98a32975b2982796d4704> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/7b145adc4900512ad9ebbff42d5a9ad99fffa190> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#7b145adc4900512ad9ebbff42d5a9ad99fffa190> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/TEMP/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/7e70542f61904e40bb4255237763c584de088068> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#7e70542f61904e40bb4255237763c584de088068> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1430/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d> a dcat:Dataset ;
     dct:description "Congestion Management Measures Countertrading"@en ;
     dct:title "B1320"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/572ddccba509ed2a1615d8a93bf7fc9b91a60c66> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#572ddccba509ed2a1615d8a93bf7fc9b91a60c66> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80d1339182d022fa14d33eb589274e58f535985f> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80d1339182d022fa14d33eb589274e58f535985f> a dcat:Dataset ;
     dct:description "Physical Data"@en ;
     dct:title "PHYBMDATA"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/f56df5c3da60683fac0bb1e0f8a546fe50c818b4> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#f56df5c3da60683fac0bb1e0f8a546fe50c818b4> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/80d708dd695e05dc35562a9f240081d3feb788c8> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#80d708dd695e05dc35562a9f240081d3feb788c8> a dcat:Dataset ;
     dct:description "Cross-Border Balancing Volumes of Exchanged Bids and Offers"@en ;
     dct:title "B1810"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9a095788e727c3c54a88aa0105e1c0b0da0b5c92> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9a095788e727c3c54a88aa0105e1c0b0da0b5c92> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/86c864446dcf373216eb08603ce0b86252aa56c2> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#86c864446dcf373216eb08603ce0b86252aa56c2> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1030/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/87445d4dbbf1f69ad557d046d25d6798340af2ab> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#87445d4dbbf1f69ad557d046d25d6798340af2ab> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1760/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/8c6ae9f8245f8fc4185d68800d61a9c75887213e> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#8c6ae9f8245f8fc4185d68800d61a9c75887213e> a dcat:Dataset ;
     dct:description "Changes In Actual Availability of Production Units"@en ;
     dct:title "B1540"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5068331497b2be79ecfc53aba934837a05860f8f> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5068331497b2be79ecfc53aba934837a05860f8f> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/92bd84c011abffb2effd3e2800e81aff759565b1> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#92bd84c011abffb2effd3e2800e81aff759565b1> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1720/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/97fc236a27d54b2f25f00ba5663672b777bf25fa> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#97fc236a27d54b2f25f00ba5663672b777bf25fa> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1010/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99376e5225d215261a1042d5ad75035ea12035b8> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99376e5225d215261a1042d5ad75035ea12035b8> a dcat:Dataset ;
     dct:description "Financial Expenses and Income For Balancing"@en ;
     dct:title "B1790"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c1e5d56d6234fc871c8c2654d67fb5c033643e8c> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c1e5d56d6234fc871c8c2654d67fb5c033643e8c> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/DEVINDOD/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99a19b0b1d2e646865e98a32975b2982796d4704> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99a19b0b1d2e646865e98a32975b2982796d4704> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1020/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9a095788e727c3c54a88aa0105e1c0b0da0b5c92> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9a095788e727c3c54a88aa0105e1c0b0da0b5c92> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1810/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/FREQ/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9aeecabb137e7e52a47d5117b7fa392690d7af20> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9aeecabb137e7e52a47d5117b7fa392690d7af20> a dcat:Dataset ;
     dct:description "Activated Balancing Energy"@en ;
     dct:title "B1750"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3e92a5ae34c0314246a929255e0661882adcaf7d> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3e92a5ae34c0314246a929255e0661882adcaf7d> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/9e48ef6df2c415e78e2504f36a86054092434808> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#9e48ef6df2c415e78e2504f36a86054092434808> a dcat:Dataset ;
     dct:description "Actual Total Load per Bidding Zone"@en ;
     dct:title "B0610"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/4107792ac75242bc833c888052ebef1f1e688ef7> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#4107792ac75242bc833c888052ebef1f1e688ef7> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a0997fd8eff5cd065c92ec1d1e16a496f5b57033> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a0997fd8eff5cd065c92ec1d1e16a496f5b57033> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0650/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a118b9aad6ff1360f18ff966f3a0757e43e8dc07> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a118b9aad6ff1360f18ff966f3a0757e43e8dc07> a dcat:Dataset ;
     dct:description "Actual Generation Output per Generation Unit"@en ;
     dct:title "B1610"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/5be0d2a008205f35e9f0b573ac69594188d86c6a> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#5be0d2a008205f35e9f0b573ac69594188d86c6a> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a4a022d897869bb60fc7d98a112ff3e7d336b5d8> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a4a022d897869bb60fc7d98a112ff3e7d336b5d8> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/DETSYSPRICES/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a5b02a197d7479f86240129cd9a788417362b357> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a5b02a197d7479f86240129cd9a788417362b357> a dcat:Dataset ;
     dct:description "Planned Unavailability In The Transmission Grid"@en ;
     dct:title "B1010"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/97fc236a27d54b2f25f00ba5663672b777bf25fa> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#97fc236a27d54b2f25f00ba5663672b777bf25fa> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a65a1713c2285185f67a6c4bdc8934652a57d225> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a65a1713c2285185f67a6c4bdc8934652a57d225> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/NETBSAD/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a7ee2dca8c6f9ef23ad8987e5340cad5f215e376> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a7ee2dca8c6f9ef23ad8987e5340cad5f215e376> a dcat:Dataset ;
     dct:description "Half Hourly Outturn Generation by Fuel Type"@en ;
     dct:title "FUELHH"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c69d8b34ae0e5c6086397cf51172fbb45cdba250> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c69d8b34ae0e5c6086397cf51172fbb45cdba250> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/a9e3f68e8443fa8d8603bae37372c7478a995037> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#a9e3f68e8443fa8d8603bae37372c7478a995037> a dcat:Dataset ;
     dct:description "Installed Generation Capacity per Unit"@en ;
     dct:title "B1420"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/422b7e8ac64dac685382ef4da56bc699563cc8f7> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#422b7e8ac64dac685382ef4da56bc699563cc8f7> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/aa9236eb78d3ff98efdb819206cb3baa6114725d> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#aa9236eb78d3ff98efdb819206cb3baa6114725d> a dcat:Dataset ;
     dct:description "Temperature Data"@en ;
     dct:title "TEMP"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/7b145adc4900512ad9ebbff42d5a9ad99fffa190> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#7b145adc4900512ad9ebbff42d5a9ad99fffa190> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/aae9faa7237fec657d4ff820967e6b1686844c5f> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#aae9faa7237fec657d4ff820967e6b1686844c5f> a dcat:Dataset ;
     dct:description "Month-Ahead Total Load Forecast Per Bidding Zone"@en ;
     dct:title "B0640"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3f59258e10582ecc1ab971254a678f9ed9840bb6> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3f59258e10582ecc1ab971254a678f9ed9840bb6> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/acd8fee20a84ec60377438dd895fcd92661039b3> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#acd8fee20a84ec60377438dd895fcd92661039b3> a dcat:Dataset ;
     dct:description "Non BM STOR Instructed Volume Data"@en ;
     dct:title "NONBM"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bfed4927c27f2436847234ce9f7f1c17761fd4e1> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bfed4927c27f2436847234ce9f7f1c17761fd4e1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ad4bea632e199c3ea677293af679d02db68a6267> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ad4bea632e199c3ea677293af679d02db68a6267> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/BOD/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ad79dc1712f342d3ca567da8d443f2d4567168ae> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ad79dc1712f342d3ca567da8d443f2d4567168ae> a dcat:Dataset ;
     dct:description "Installed Generation Capacity Aggregated"@en ;
     dct:title "B1410"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/f07190d62aebd092f9d3e23e04c3ff14cdd8a973> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#f07190d62aebd092f9d3e23e04c3ff14cdd8a973> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94> a dcat:Dataset ;
     dct:description "REMIT Flow - Message List Retrieval"@en ;
     dct:title "MessageDetailRetrieval"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d8823e7f8eac68e5f9278623d4865596ee1e31bf> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d8823e7f8eac68e5f9278623d4865596ee1e31bf> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b1da5f02cd6eb9ba1893c5c897bba211b84ae675> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b1da5f02cd6eb9ba1893c5c897bba211b84ae675> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1780/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b3226ae1471fe7eca55971bbfa2f03e4e4503453> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b3226ae1471fe7eca55971bbfa2f03e4e4503453> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/FORDAYDEM/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/b63ddc4ec45655718cb8e29e9f05c312c360a127> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#b63ddc4ec45655718cb8e29e9f05c312c360a127> a dcat:Dataset ;
     dct:description "Day-Ahead Total Load Forecast per Bidding Zone"@en ;
     dct:title "B0620"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/53539e5e45daf8989e3b08f0aec6431a50a34aa2> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#53539e5e45daf8989e3b08f0aec6431a50a34aa2> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bc64e64d7b803972b541d637b66487bd84f8d6de> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bc64e64d7b803972b541d637b66487bd84f8d6de> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1530/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bef81ac65e177aa6a7df1cddf2ac6c2a29678699> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bef81ac65e177aa6a7df1cddf2ac6c2a29678699> a dcat:Dataset ;
     dct:description "Cross-Border Balancing Prices"@en ;
     dct:title "B1820"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d1b53ffce90a8c69fd799610e285d7982b59984b> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d1b53ffce90a8c69fd799610e285d7982b59984b> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bfed4927c27f2436847234ce9f7f1c17761fd4e1> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bfed4927c27f2436847234ce9f7f1c17761fd4e1> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/NONBM/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c002eba1b6e86da2257235ff784433e06fc49ddf> a dcat:DataService ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c002eba1b6e86da2257235ff784433e06fc49ddf> a dcat:DataService ;
     dct:description "API for the Elexon Balancing Mechanism Reporting Service"@en ;
     dct:title "BMRS API"@en ;
     dcat:endpointDescription <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.yaml> ;
     dcat:endpointURL <https://api.bmreports.com> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c1e5d56d6234fc871c8c2654d67fb5c033643e8c> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c1e5d56d6234fc871c8c2654d67fb5c033643e8c> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1790/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/c69d8b34ae0e5c6086397cf51172fbb45cdba250> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#c69d8b34ae0e5c6086397cf51172fbb45cdba250> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/FUELHH/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ca287fa13a6f42ef74e76190c3e264a63df36012> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ca287fa13a6f42ef74e76190c3e264a63df36012> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0810/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/cca5717e98fb723ffd8841f9db4fe47800b658ea> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#cca5717e98fb723ffd8841f9db4fe47800b658ea> a dcat:Dataset ;
     dct:description "Actual Aggregated Generation per Type"@en ;
     dct:title "B1620"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e7db93c39e8b6c8d4940bec73a395bab5276ca31> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e7db93c39e8b6c8d4940bec73a395bab5276ca31> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ce39ade7a0a1e8e486d649447beba27a8d04db0a> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ce39ade7a0a1e8e486d649447beba27a8d04db0a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/CDN/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d1b53ffce90a8c69fd799610e285d7982b59984b> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d1b53ffce90a8c69fd799610e285d7982b59984b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1820/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d6757798cec1df32aa0d5103fefc4e25787f2ae6> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d6757798cec1df32aa0d5103fefc4e25787f2ae6> a dcat:Dataset ;
     dct:description "Bid Offer Level Data"@en ;
     dct:title "BOD"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ad4bea632e199c3ea677293af679d02db68a6267> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ad4bea632e199c3ea677293af679d02db68a6267> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d75f48ab7f6771c110fd377957bcf1fb7c6725d3> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d75f48ab7f6771c110fd377957bcf1fb7c6725d3> a dcat:Dataset ;
     dct:description "Actual Or Estimated Wind and Solar Power Generation"@en ;
     dct:title "B1630"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/dda984d42cf9238da162b1ed77339f27c947f22b> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#dda984d42cf9238da162b1ed77339f27c947f22b> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d877e11f49b45043b9c9486e77a90228646fa989> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d877e11f49b45043b9c9486e77a90228646fa989> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/MELIMBALNGC/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/d8823e7f8eac68e5f9278623d4865596ee1e31bf> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#d8823e7f8eac68e5f9278623d4865596ee1e31bf> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/MessageDetailRetrieval/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/da0fd6ab7f0004887c10c4431db96899fcf48676> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#da0fd6ab7f0004887c10c4431db96899fcf48676> a dcat:Dataset ;
     dct:description "Credit Default Notice Data"@en ;
     dct:title "CDN"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ce39ade7a0a1e8e486d649447beba27a8d04db0a> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ce39ade7a0a1e8e486d649447beba27a8d04db0a> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/db9130096a9e735b2168feab1d344a1c9eb8a425> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#db9130096a9e735b2168feab1d344a1c9eb8a425> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1330/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/dda984d42cf9238da162b1ed77339f27c947f22b> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#dda984d42cf9238da162b1ed77339f27c947f22b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1630/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e4b94ef0992ceb595e899cc719174c5bcf37365f> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e4b94ef0992ceb595e899cc719174c5bcf37365f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1740/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e7db93c39e8b6c8d4940bec73a395bab5276ca31> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e7db93c39e8b6c8d4940bec73a395bab5276ca31> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1620/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1> a dcat:Dataset ;
     dct:description "REMIT Flow - Message List Retrieval"@en ;
     dct:title "MessageListRetrieval"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ea9f6f971c57204f17275ba4fcb5fc0f2734ee49> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ea9f6f971c57204f17275ba4fcb5fc0f2734ee49> a dcat:Dataset ;
     dct:description "System Warnings"@en ;
     dct:title "SYSWARN"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/02bc37303e66975cb78655fa32c2197126beea1b> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#02bc37303e66975cb78655fa32c2197126beea1b> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0630/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/ef74cb0bf19ff8bd89bb68590ccafe480f267f72> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#ef74cb0bf19ff8bd89bb68590ccafe480f267f72> a dcat:Dataset ;
     dct:description "System Demand"@en ;
     dct:title "SYSDEM"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/3630303cc6abe3fedc3133ef7b7289d57cca32c3> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#3630303cc6abe3fedc3133ef7b7289d57cca32c3> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/efa789260e3dd8bcab47fd2728ce229030de8402> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#efa789260e3dd8bcab47fd2728ce229030de8402> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1520/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/f07190d62aebd092f9d3e23e04c3ff14cdd8a973> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#f07190d62aebd092f9d3e23e04c3ff14cdd8a973> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B1410/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/f56df5c3da60683fac0bb1e0f8a546fe50c818b4> a dcat:Distribution ;
-    dcat:accessService <http://example.com/.well-known/skolem/8eef5699-099d-4260-8b0b-718ca0fba62a> ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#f56df5c3da60683fac0bb1e0f8a546fe50c818b4> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/993556f9-aa08-4f9d-afa7-16c24abdc808> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/PHYBMDATA/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/fa6784084a633f3554f6b687d3c0d20028442846> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#fa6784084a633f3554f6b687d3c0d20028442846> a dcat:Dataset ;
     dct:description "Daily Energy Volume Data"@en ;
     dct:title "DEVINDOD"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/fde4886646d8ce85d02478d3f1c99611a62a7e21> a dcat:Dataset ;
+<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#fde4886646d8ce85d02478d3f1c99611a62a7e21> a dcat:Dataset ;
     dct:description "Planned Unavailability of Production Units"@en ;
     dct:title "B1530"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf/bc64e64d7b803972b541d637b66487bd84f8d6de> .
+    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.rdf#bc64e64d7b803972b541d637b66487bd84f8d6de> .
 
