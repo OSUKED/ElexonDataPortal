@@ -1,4 +1,13 @@
 openapi: 3.0.1
+# tags:
+#   - name: pets
+#     description: Everything about your Pets
+#     externalDocs:
+#       url: http://docs.my-api.com/pet-operations.htm
+#   - name: store
+#     description: Access to Petstore orders
+#     externalDocs:
+#       url: http://docs.my-api.com/store-orders.htm
 info:
   title: "BMRS API"
   description: "API for the Elexon Balancing Mechanism Reporting Service"
@@ -8,6 +17,7 @@ servers:
 paths:
   /BMRS/B0610/v1:
     get:
+      x-title: "B0610"
       description: "Actual Total Load per Bidding Zone"
       parameters:
         - name: "APIKey"
@@ -44,6 +54,7 @@ paths:
     
   /BMRS/B0620/v1:
     get:
+      x-title: "B0620"
       description: "Day-Ahead Total Load Forecast per Bidding Zone"
       parameters:
         - name: "APIKey"
@@ -80,6 +91,7 @@ paths:
     
   /BMRS/B0630/v1:
     get:
+      x-title: "B0630"
       description: "Week-Ahead Total Load Forecast per Bidding Zone"
       parameters:
         - name: "APIKey"
@@ -116,6 +128,7 @@ paths:
     
   /BMRS/B0640/v1:
     get:
+      x-title: "B0640"
       description: "Month-Ahead Total Load Forecast Per Bidding Zone"
       parameters:
         - name: "APIKey"
@@ -148,6 +161,7 @@ paths:
     
   /BMRS/B0650/v1:
     get:
+      x-title: "B0650"
       description: "Year Ahead Total Load Forecast per Bidding Zone"
       parameters:
         - name: "APIKey"
@@ -179,6 +193,7 @@ paths:
     
   /BMRS/B0710/v1:
     get:
+      x-title: "B0710"
       description: "Planned Unavailability of Consumption Units"
       parameters:
         - name: "APIKey"
@@ -225,6 +240,7 @@ paths:
     
   /BMRS/B0720/v1:
     get:
+      x-title: "B0720"
       description: "Changes In Actual Availability Of Consumption Units"
       parameters:
         - name: "APIKey"
@@ -271,6 +287,7 @@ paths:
     
   /BMRS/B0810/v1:
     get:
+      x-title: "B0810"
       description: "Year Ahead Forecast Margin"
       parameters:
         - name: "APIKey"
@@ -302,6 +319,7 @@ paths:
     
   /BMRS/B0910/v1:
     get:
+      x-title: "B0910"
       description: "Expansion and Dismantling Projects"
       parameters:
         - name: "APIKey"
@@ -333,6 +351,7 @@ paths:
     
   /BMRS/B1010/v1:
     get:
+      x-title: "B1010"
       description: "Planned Unavailability In The Transmission Grid"
       parameters:
         - name: "APIKey"
@@ -379,6 +398,7 @@ paths:
     
   /BMRS/B1020/v1:
     get:
+      x-title: "B1020"
       description: "Changes In Actual Availability In The Transmission Grid"
       parameters:
         - name: "APIKey"
@@ -425,6 +445,7 @@ paths:
     
   /BMRS/B1030/v1:
     get:
+      x-title: "B1030"
       description: "Changes In Actual Availability of Offshore Grid Infrastructure"
       parameters:
         - name: "APIKey"
@@ -471,6 +492,7 @@ paths:
     
   /BMRS/B1320/v1:
     get:
+      x-title: "B1320"
       description: "Congestion Management Measures Countertrading"
       parameters:
         - name: "APIKey"
@@ -507,6 +529,7 @@ paths:
     
   /BMRS/B1330/v1:
     get:
+      x-title: "B1330"
       description: "Congestion Management Measures Costs of Congestion Management"
       parameters:
         - name: "APIKey"
@@ -543,6 +566,7 @@ paths:
     
   /BMRS/B1410/v1:
     get:
+      x-title: "B1410"
       description: "Installed Generation Capacity Aggregated"
       parameters:
         - name: "APIKey"
@@ -574,6 +598,7 @@ paths:
     
   /BMRS/B1420/v1:
     get:
+      x-title: "B1420"
       description: "Installed Generation Capacity per Unit"
       parameters:
         - name: "APIKey"
@@ -605,6 +630,7 @@ paths:
     
   /BMRS/B1430/v1:
     get:
+      x-title: "B1430"
       description: "Day-Ahead Aggregated Generation"
       parameters:
         - name: "APIKey"
@@ -641,6 +667,7 @@ paths:
     
   /BMRS/B1440/v1:
     get:
+      x-title: "B1440"
       description: "Generation forecasts for Wind and Solar"
       parameters:
         - name: "APIKey"
@@ -682,6 +709,7 @@ paths:
     
   /BMRS/B1510/v1:
     get:
+      x-title: "B1510"
       description: "Planned Unavailability of Generation Units"
       parameters:
         - name: "APIKey"
@@ -728,6 +756,7 @@ paths:
     
   /BMRS/B1520/v1:
     get:
+      x-title: "B1520"
       description: "Changes In Actual Availability of Generation Units"
       parameters:
         - name: "APIKey"
@@ -774,6 +803,7 @@ paths:
     
   /BMRS/B1530/v1:
     get:
+      x-title: "B1530"
       description: "Planned Unavailability of Production Units"
       parameters:
         - name: "APIKey"
@@ -820,6 +850,7 @@ paths:
     
   /BMRS/B1540/v1:
     get:
+      x-title: "B1540"
       description: "Changes In Actual Availability of Production Units"
       parameters:
         - name: "APIKey"
@@ -866,6 +897,7 @@ paths:
     
   /BMRS/B1610/v2:
     get:
+      x-title: "B1610"
       description: "Actual Generation Output per Generation Unit"
       parameters:
         - name: "APIKey"
@@ -907,6 +939,7 @@ paths:
     
   /BMRS/B1620/v1:
     get:
+      x-title: "B1620"
       description: "Actual Aggregated Generation per Type"
       parameters:
         - name: "APIKey"
@@ -943,6 +976,7 @@ paths:
     
   /BMRS/B1630/v1:
     get:
+      x-title: "B1630"
       description: "Actual Or Estimated Wind and Solar Power Generation"
       parameters:
         - name: "APIKey"
@@ -979,6 +1013,7 @@ paths:
     
   /BMRS/B1720/v1:
     get:
+      x-title: "B1720"
       description: "Amount Of Balancing Reserves Under Contract Service"
       parameters:
         - name: "APIKey"
@@ -1015,6 +1050,7 @@ paths:
     
   /BMRS/B1730/v1:
     get:
+      x-title: "B1730"
       description: "Prices Of Procured Balancing Reserves Service"
       parameters:
         - name: "APIKey"
@@ -1051,6 +1087,7 @@ paths:
     
   /BMRS/B1740/v1:
     get:
+      x-title: "B1740"
       description: "Accepted Aggregated Offers"
       parameters:
         - name: "APIKey"
@@ -1087,6 +1124,7 @@ paths:
     
   /BMRS/B1750/v1:
     get:
+      x-title: "B1750"
       description: "Activated Balancing Energy"
       parameters:
         - name: "APIKey"
@@ -1123,6 +1161,7 @@ paths:
     
   /BMRS/B1760/v1:
     get:
+      x-title: "B1760"
       description: "Prices Of Activated Balancing Energy"
       parameters:
         - name: "APIKey"
@@ -1159,6 +1198,7 @@ paths:
     
   /BMRS/B1770/v1:
     get:
+      x-title: "B1770"
       description: "Imbalance Prices"
       parameters:
         - name: "APIKey"
@@ -1195,6 +1235,7 @@ paths:
     
   /BMRS/B1780/v1:
     get:
+      x-title: "B1780"
       description: "Aggregated Imbalance Volumes"
       parameters:
         - name: "APIKey"
@@ -1231,6 +1272,7 @@ paths:
     
   /BMRS/B1790/v1:
     get:
+      x-title: "B1790"
       description: "Financial Expenses and Income For Balancing"
       parameters:
         - name: "APIKey"
@@ -1263,6 +1305,7 @@ paths:
     
   /BMRS/B1810/v1:
     get:
+      x-title: "B1810"
       description: "Cross-Border Balancing Volumes of Exchanged Bids and Offers"
       parameters:
         - name: "APIKey"
@@ -1299,6 +1342,7 @@ paths:
     
   /BMRS/B1820/v1:
     get:
+      x-title: "B1820"
       description: "Cross-Border Balancing Prices"
       parameters:
         - name: "APIKey"
@@ -1335,6 +1379,7 @@ paths:
     
   /BMRS/B1830/v1:
     get:
+      x-title: "B1830"
       description: "Cross-border Balancing Energy Activated"
       parameters:
         - name: "APIKey"
@@ -1371,6 +1416,7 @@ paths:
     
   /BMRS/BOD/v1:
     get:
+      x-title: "BOD"
       description: "Bid Offer Level Data"
       parameters:
         - name: "APIKey"
@@ -1428,6 +1474,7 @@ paths:
     
   /BMRS/CDN/v1:
     get:
+      x-title: "CDN"
       description: "Credit Default Notice Data"
       parameters:
         - name: "APIKey"
@@ -1460,6 +1507,7 @@ paths:
     
   /BMRS/DETSYSPRICES/v1:
     get:
+      x-title: "DETSYSPRICES"
       description: "Detailed System Prices"
       parameters:
         - name: "APIKey"
@@ -1492,6 +1540,7 @@ paths:
     
   /BMRS/DEVINDOD/v1:
     get:
+      x-title: "DEVINDOD"
       description: "Daily Energy Volume Data"
       parameters:
         - name: "APIKey"
@@ -1524,6 +1573,7 @@ paths:
     
   /BMRS/DISBSAD/v1:
     get:
+      x-title: "DISBSAD"
       description: "Balancing Services Adjustment Action Data"
       parameters:
         - name: "APIKey"
@@ -1556,6 +1606,7 @@ paths:
     
   /BMRS/FORDAYDEM/v1:
     get:
+      x-title: "FORDAYDEM"
       description: "Forecast Day and Day Ahead Demand Data"
       parameters:
         - name: "APIKey"
@@ -1593,6 +1644,7 @@ paths:
     
   /BMRS/FREQ/v1:
     get:
+      x-title: "FREQ"
       description: "Rolling System Frequency"
       parameters:
         - name: "APIKey"
@@ -1625,6 +1677,7 @@ paths:
     
   /BMRS/FUELHH/v1:
     get:
+      x-title: "FUELHH"
       description: "Half Hourly Outturn Generation by Fuel Type"
       parameters:
         - name: "APIKey"
@@ -1657,6 +1710,7 @@ paths:
     
   /BMRS/MELIMBALNGC/v1:
     get:
+      x-title: "MELIMBALNGC"
       description: "Forecast Day and Day Ahead Margin and Imbalance Data"
       parameters:
         - name: "APIKey"
@@ -1694,6 +1748,7 @@ paths:
     
   /BMRS/MID/v1:
     get:
+      x-title: "MID"
       description: "Market Index Data"
       parameters:
         - name: "APIKey"
@@ -1731,6 +1786,7 @@ paths:
     
   /BMRS/MessageDetailRetrieval/v1:
     get:
+      x-title: "MessageDetailRetrieval"
       description: "REMIT Flow - Message List Retrieval"
       parameters:
         - name: "APIKey"
@@ -1773,6 +1829,7 @@ paths:
     
   /BMRS/MessageListRetrieval/v1:
     get:
+      x-title: "MessageListRetrieval"
       description: "REMIT Flow - Message List Retrieval"
       parameters:
         - name: "APIKey"
@@ -1850,6 +1907,7 @@ paths:
     
   /BMRS/NETBSAD/v1:
     get:
+      x-title: "NETBSAD"
       description: "Balancing Service Adjustment Data"
       parameters:
         - name: "APIKey"
@@ -1887,6 +1945,7 @@ paths:
     
   /BMRS/NONBM/v1:
     get:
+      x-title: "NONBM"
       description: "Non BM STOR Instructed Volume Data"
       parameters:
         - name: "FromDate"
@@ -1919,6 +1978,7 @@ paths:
     
   /BMRS/PHYBMDATA/v1:
     get:
+      x-title: "PHYBMDATA"
       description: "Physical Data"
       parameters:
         - name: "APIKey"
@@ -1976,6 +2036,7 @@ paths:
     
   /BMRS/SYSDEM/v1:
     get:
+      x-title: "SYSDEM"
       description: "System Demand"
       parameters:
         - name: "APIKey"
@@ -2008,6 +2069,7 @@ paths:
     
   /BMRS/SYSWARN/v1:
     get:
+      x-title: "SYSWARN"
       description: "System Warnings"
       parameters:
         - name: "APIKey"
@@ -2040,6 +2102,7 @@ paths:
     
   /BMRS/TEMP/v1:
     get:
+      x-title: "TEMP"
       description: "Temperature Data"
       parameters:
         - name: "APIKey"
@@ -2072,6 +2135,7 @@ paths:
     
   /BMRS/WINDFORFUELHH/v1:
     get:
+      x-title: "WINDFORFUELHH"
       description: "Wind Generation Forecast and Out-turn Data"
       parameters:
         - name: "APIKey"
