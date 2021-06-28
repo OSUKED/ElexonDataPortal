@@ -1,0 +1,562 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+<http://example.com/.well-known/skolem/4c67b553-e1eb-4857-95eb-7a99e91dc631> a dcat:Catalog ;
+    dcat:dataset <http://example.com/dataservices/00a4b4f3b9afc0af20035b32561020b711524643>,
+        <http://example.com/dataservices/04c44885e1d51848f8c0bca455a2318f296fd147>,
+        <http://example.com/dataservices/0a4cd7710379865c7baf34e51ee66b8f3ec37567>,
+        <http://example.com/dataservices/0eeab003a023ce1af0e9b5dcabd3ff3d08ee833b>,
+        <http://example.com/dataservices/104af523b1c263717ce54ce021d4d32687bf8a88>,
+        <http://example.com/dataservices/13ea986895d87bd21fe1f9bdc0b99d3c8d8f29f0>,
+        <http://example.com/dataservices/196859b518d0053791e81bec8fedfa044497d166>,
+        <http://example.com/dataservices/2c16f64c7af9a4201c7d9804c7e6d3d2b8893f4f>,
+        <http://example.com/dataservices/2d26f380caa52a7ce8c6674d82f340cf486393b8>,
+        <http://example.com/dataservices/38b255da041d299ac02151c0ad13148043dbab83>,
+        <http://example.com/dataservices/39874796266046fba229efacd3e39b4b27344aeb>,
+        <http://example.com/dataservices/3c934cb05654fa27d9353f3c31ce6d42a3a1580e>,
+        <http://example.com/dataservices/3ea4c0ff79d5c217b544691685d11219923820ca>,
+        <http://example.com/dataservices/4bf9193ebe55a19c82bb2959f27efda440b67c56>,
+        <http://example.com/dataservices/4c1e11218f32122bc6d1a17a21391bfd14c80911>,
+        <http://example.com/dataservices/4e4676009511573273e402d19c56a8e94be1daa8>,
+        <http://example.com/dataservices/52299bff6a568d7b28807f171c5394b4e3b1170c>,
+        <http://example.com/dataservices/570f6af2b54014e974b0270e1d3b756dcfbfc459>,
+        <http://example.com/dataservices/5eb44546f7f08fb58fec158d94c546406cab1553>,
+        <http://example.com/dataservices/63323972d469e0216e118819ef0cb2cf8a64f1eb>,
+        <http://example.com/dataservices/6aae5cd96db375f6b1e8e6e953caab12c18e0466>,
+        <http://example.com/dataservices/6caae5049cd6e24009e70c5bef7b797614fa1b81>,
+        <http://example.com/dataservices/72035b2e6a801ba308f904062da6ec2cd1dda5ab>,
+        <http://example.com/dataservices/752e6461dfe517eb3369b7eabf81fd8baf0b39fc>,
+        <http://example.com/dataservices/78b39c85cf9d6bbb26230ed0c8829f9c22c08a47>,
+        <http://example.com/dataservices/79814f2f885965e2a00b34b163d3547be514b952>,
+        <http://example.com/dataservices/8299a864ffdab889c4adf62904aed15b5332bb73>,
+        <http://example.com/dataservices/87f1f9e1b892a9c2b75d53cc9fe3a0be467a913a>,
+        <http://example.com/dataservices/8f84090271e52177553a93aa149523c53016505d>,
+        <http://example.com/dataservices/9457d0be0c62ee2ff76d1d2c446df98ee11116c6>,
+        <http://example.com/dataservices/9e12a9932e760fee6d8ed11cdadb5f78b5559d6e>,
+        <http://example.com/dataservices/9f05488a4c9c7b3c07fdef30a477e09b688bb14c>,
+        <http://example.com/dataservices/a1ad0caa1a54b45ee0f40ba243fe00390e44ae6c>,
+        <http://example.com/dataservices/a38a8956dfc4a66812ca51f4f0601bb04655c35c>,
+        <http://example.com/dataservices/a6bdbf4b66142b9bb709f2a8e4bbd7325c250b8c>,
+        <http://example.com/dataservices/a80f8f410abe3096513407e7572d7397a470560b>,
+        <http://example.com/dataservices/b740cd640200c60a122542aedcaef9bd8b8fceba>,
+        <http://example.com/dataservices/ba67031752593042072c4ccd1f9f2db23ea01f2e>,
+        <http://example.com/dataservices/bd25870f10e3c0dea640af04a3e54db2ad815243>,
+        <http://example.com/dataservices/bd3ce78871121a4ed7b78f2872d0f63feba27587>,
+        <http://example.com/dataservices/c34d9d421ccfbdd02e26cc08b0a10376cf61b1fd>,
+        <http://example.com/dataservices/c3d7eb825006df31748e1eb09e4ac09b471e8bbc>,
+        <http://example.com/dataservices/d104d26b295591bf1bc1a3090a2f02636f27d392>,
+        <http://example.com/dataservices/d20bd6d9dc79a3e1e4075af14773230e328f71dc>,
+        <http://example.com/dataservices/d80c1b814f57f420080d6d66831fc24731ee92e3>,
+        <http://example.com/dataservices/d877cc5bd272aea2e906ee8603f98179bd075edb>,
+        <http://example.com/dataservices/d8a2ae746a34eadf519ebe9358551227fe0d39a5>,
+        <http://example.com/dataservices/de67a77ce5c1293b7541a4625bda096402b3afed>,
+        <http://example.com/dataservices/e1fe863c46cc0743e23a40791cbdd886116a36cf>,
+        <http://example.com/dataservices/e57582b9a15bd5a47b6812e7f12201ec50e3bd39>,
+        <http://example.com/dataservices/eb8f7651dccbf8310023eabf1973adafd4ecc44e>,
+        <http://example.com/dataservices/f04dc57f17c070c611840b5bf62fdee9217a5e7a>,
+        <http://example.com/dataservices/fc3459e40e91f86e6c84d6873f15bac87cb19ed8>,
+        <http://example.com/dataservices/fe5bd1ea27c080067cfe9d77fada9ec128e75568>,
+        <http://example.com/dataservices/ffaacdd703e6d8b756ea2fd9e8851081d76e9d1a> ;
+    dcat:service <http://example.com/dataservices/c002eba1b6e86da2257235ff784433e06fc49ddf> .
+
+<http://example.com/.well-known/skolem/09336737-1873-4742-ad73-1251452c3f40> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MELIMBALNGC/v1> .
+
+<http://example.com/.well-known/skolem/0fb90c0f-ae78-4433-82cc-58e84f79754a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DEVINDOD/v1> .
+
+<http://example.com/.well-known/skolem/16747bc6-b863-4f7b-a07d-57f3a5b3fe08> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1010/v1> .
+
+<http://example.com/.well-known/skolem/1949569c-eb93-40f4-8a88-92b6f9da980d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1730/v1> .
+
+<http://example.com/.well-known/skolem/1b343ea3-1733-422d-9d70-fa8b5fd9eccb> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1030/v1> .
+
+<http://example.com/.well-known/skolem/1e097c54-9ccf-4197-86f2-6e81b14ae5f8> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1420/v1> .
+
+<http://example.com/.well-known/skolem/2a0f0ccf-cf07-46ca-b85a-830ebeb6b6c3> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1780/v1> .
+
+<http://example.com/.well-known/skolem/377caf7a-17d1-4e1d-9335-795f4d1f20c6> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1430/v1> .
+
+<http://example.com/.well-known/skolem/3a6ab5bc-74bf-4b15-b4f0-b3db274cef92> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0620/v1> .
+
+<http://example.com/.well-known/skolem/3b8e23ff-886b-4056-b352-06d170a394f0> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1540/v1> .
+
+<http://example.com/.well-known/skolem/3bcad8ca-1dd9-4e19-bdeb-cc3650132b4b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1770/v1> .
+
+<http://example.com/.well-known/skolem/3fc32df9-fd75-44f0-ace8-d98d1f705f9a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FREQ/v1> .
+
+<http://example.com/.well-known/skolem/41c4f3c4-dd80-4f40-ae45-c91998fd12ab> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1330/v1> .
+
+<http://example.com/.well-known/skolem/41de967c-58f8-4f76-a35e-eead3f7e6d67> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0650/v1> .
+
+<http://example.com/.well-known/skolem/4895776c-d318-4492-b307-b91c30249d2d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0640/v1> .
+
+<http://example.com/.well-known/skolem/494ccd5c-de59-4697-b667-ae2330b609d4> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1750/v1> .
+
+<http://example.com/.well-known/skolem/515a9d09-a584-4b7e-8f2f-af847c741c7c> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/PHYBMDATA/v1> .
+
+<http://example.com/.well-known/skolem/5579934c-ba68-41f3-bc9a-e3404fd68c24> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1820/v1> .
+
+<http://example.com/.well-known/skolem/5e0a8ae0-7e04-492c-a4af-2bf0b56a51e8> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/NONBM/v1> .
+
+<http://example.com/.well-known/skolem/60d90c56-05c1-4cd7-979f-c92adbfd6b5f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1620/v1> .
+
+<http://example.com/.well-known/skolem/63ae869b-51b8-417c-8623-13cbbffb56da> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0710/v1> .
+
+<http://example.com/.well-known/skolem/6cca4c11-cb80-4331-960a-957b15e20167> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/WINDFORFUELHH/v1> .
+
+<http://example.com/.well-known/skolem/6fde7e97-ed98-42a6-860a-1cfb0749680b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1830/v1> .
+
+<http://example.com/.well-known/skolem/71abfdd6-a5d9-4ee7-85b3-8544b6dde9eb> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0610/v1> .
+
+<http://example.com/.well-known/skolem/7d2f4778-c253-4fc2-9dcd-a1f96a1f6f54> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1610/v2> .
+
+<http://example.com/.well-known/skolem/80395a0e-5650-48ce-a8d4-e272ba117fbe> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/TEMP/v1> .
+
+<http://example.com/.well-known/skolem/85d7a815-956e-4f11-a468-feff3a91393b> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DETSYSPRICES/v1> .
+
+<http://example.com/.well-known/skolem/86fc019e-060f-4c8e-a713-e6fe4f1ca4bb> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MessageDetailRetrieval/v1> .
+
+<http://example.com/.well-known/skolem/88edd6ba-9f20-4a53-8735-7839285e0d47> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/BOD/v1> .
+
+<http://example.com/.well-known/skolem/9007be4e-2d17-4782-ad19-64372497214f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DISBSAD/v1> .
+
+<http://example.com/.well-known/skolem/93a19664-2f01-4365-8744-21ec2f9a8328> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0910/v1> .
+
+<http://example.com/.well-known/skolem/9d09b8a3-a11a-46a5-8d06-037d336ebe89> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0810/v1> .
+
+<http://example.com/.well-known/skolem/a1dd8c79-2924-434a-ab2f-1ff744d00f46> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1810/v1> .
+
+<http://example.com/.well-known/skolem/a4a15d9e-5d36-41bf-9c3c-8753f563f7af> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/NETBSAD/v1> .
+
+<http://example.com/.well-known/skolem/baa5182f-e195-4e7b-89c0-a572897e7d30> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1020/v1> .
+
+<http://example.com/.well-known/skolem/bccc1b4e-a2a7-429d-89d1-12ca31205571> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1740/v1> .
+
+<http://example.com/.well-known/skolem/becc0faa-a8d2-4a1a-9d84-5910a4435c7e> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/CDN/v1> .
+
+<http://example.com/.well-known/skolem/bfbda23c-46ff-4eab-a59e-d4705fa42fd6> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0630/v1> .
+
+<http://example.com/.well-known/skolem/c16cafa2-087a-4a83-9600-a4b52d4e70e6> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1320/v1> .
+
+<http://example.com/.well-known/skolem/c2a4fa0f-2379-4a25-99b4-475dadbd878a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FORDAYDEM/v1> .
+
+<http://example.com/.well-known/skolem/c93be8a1-4c44-47e8-98dd-b3f388950dd1> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1790/v1> .
+
+<http://example.com/.well-known/skolem/ce07d475-8f33-4702-8403-319ae8e8333a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/SYSWARN/v1> .
+
+<http://example.com/.well-known/skolem/d04a2f92-5f43-4a01-96bc-d8e937e7a67f> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1440/v1> .
+
+<http://example.com/.well-known/skolem/d3b21a6e-cf0b-41ab-bb5a-6cf7902b1dcb> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1530/v1> .
+
+<http://example.com/.well-known/skolem/d67d2531-1472-4632-8f8a-2803f4d96772> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1410/v1> .
+
+<http://example.com/.well-known/skolem/d92f55de-635d-43e8-86ec-bdabe87f86d9> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0720/v1> .
+
+<http://example.com/.well-known/skolem/d9327d5c-6478-42b9-b9f8-c7d68d878639> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1520/v1> .
+
+<http://example.com/.well-known/skolem/d993b521-9e89-4f0d-99d3-b9b001e95b4a> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1760/v1> .
+
+<http://example.com/.well-known/skolem/db47d9f4-f705-450a-8077-fd0b2550c313> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1630/v1> .
+
+<http://example.com/.well-known/skolem/e2622981-541f-4bf4-a4c2-3ae411f1ab5d> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1510/v1> .
+
+<http://example.com/.well-known/skolem/e902105f-b36c-4656-bf18-19dcb20d6d4c> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MessageListRetrieval/v1> .
+
+<http://example.com/.well-known/skolem/ecf2fa23-f116-4d7c-80a7-d1f501909707> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/SYSDEM/v1> .
+
+<http://example.com/.well-known/skolem/f73c446c-6950-4b7f-8c10-06022bc25515> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FUELHH/v1> .
+
+<http://example.com/.well-known/skolem/fa09ced2-3220-4c3f-b0f3-c876f4d45293> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MID/v1> .
+
+<http://example.com/.well-known/skolem/fcfcadcc-8f83-48eb-9d29-e71941d2b4e5> a dcat:Distribution ;
+    dcat:accessService <http://example.com/.well-known/skolem/37b1f462-1ca0-497e-90d3-2f9f4ef30102> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1720/v1> .
+
+<http://example.com/dataservices/00a4b4f3b9afc0af20035b32561020b711524643> a dcat:Dataset ;
+    dct:description "Forecast Day and Day Ahead Margin and Imbalance Data"@en ;
+    dct:title "MELIMBALNGC"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/09336737-1873-4742-ad73-1251452c3f40> .
+
+<http://example.com/dataservices/04c44885e1d51848f8c0bca455a2318f296fd147> a dcat:Dataset ;
+    dct:description "Year Ahead Total Load Forecast per Bidding Zone"@en ;
+    dct:title "B0650"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/41de967c-58f8-4f76-a35e-eead3f7e6d67> .
+
+<http://example.com/dataservices/0a4cd7710379865c7baf34e51ee66b8f3ec37567> a dcat:Dataset ;
+    dct:description "Daily Energy Volume Data"@en ;
+    dct:title "DEVINDOD"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/0fb90c0f-ae78-4433-82cc-58e84f79754a> .
+
+<http://example.com/dataservices/0eeab003a023ce1af0e9b5dcabd3ff3d08ee833b> a dcat:Dataset ;
+    dct:description "Cross-Border Balancing Prices"@en ;
+    dct:title "B1820"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/5579934c-ba68-41f3-bc9a-e3404fd68c24> .
+
+<http://example.com/dataservices/104af523b1c263717ce54ce021d4d32687bf8a88> a dcat:Dataset ;
+    dct:description "Detailed System Prices"@en ;
+    dct:title "DETSYSPRICES"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/85d7a815-956e-4f11-a468-feff3a91393b> .
+
+<http://example.com/dataservices/13ea986895d87bd21fe1f9bdc0b99d3c8d8f29f0> a dcat:Dataset ;
+    dct:description "System Warnings"@en ;
+    dct:title "SYSWARN"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/ce07d475-8f33-4702-8403-319ae8e8333a> .
+
+<http://example.com/dataservices/196859b518d0053791e81bec8fedfa044497d166> a dcat:Dataset ;
+    dct:description "Credit Default Notice Data"@en ;
+    dct:title "CDN"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/becc0faa-a8d2-4a1a-9d84-5910a4435c7e> .
+
+<http://example.com/dataservices/2c16f64c7af9a4201c7d9804c7e6d3d2b8893f4f> a dcat:Dataset ;
+    dct:description "Year Ahead Forecast Margin"@en ;
+    dct:title "B0810"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/9d09b8a3-a11a-46a5-8d06-037d336ebe89> .
+
+<http://example.com/dataservices/2d26f380caa52a7ce8c6674d82f340cf486393b8> a dcat:Dataset ;
+    dct:description "Month-Ahead Total Load Forecast Per Bidding Zone"@en ;
+    dct:title "B0640"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/4895776c-d318-4492-b307-b91c30249d2d> .
+
+<http://example.com/dataservices/38b255da041d299ac02151c0ad13148043dbab83> a dcat:Dataset ;
+    dct:description "Actual Total Load per Bidding Zone"@en ;
+    dct:title "B0610"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/71abfdd6-a5d9-4ee7-85b3-8544b6dde9eb> .
+
+<http://example.com/dataservices/39874796266046fba229efacd3e39b4b27344aeb> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Production Units"@en ;
+    dct:title "B1530"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d3b21a6e-cf0b-41ab-bb5a-6cf7902b1dcb> .
+
+<http://example.com/dataservices/3c934cb05654fa27d9353f3c31ce6d42a3a1580e> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Production Units"@en ;
+    dct:title "B1540"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/3b8e23ff-886b-4056-b352-06d170a394f0> .
+
+<http://example.com/dataservices/3ea4c0ff79d5c217b544691685d11219923820ca> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Generation Units"@en ;
+    dct:title "B1520"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d9327d5c-6478-42b9-b9f8-c7d68d878639> .
+
+<http://example.com/dataservices/4bf9193ebe55a19c82bb2959f27efda440b67c56> a dcat:Dataset ;
+    dct:description "Day-Ahead Total Load Forecast per Bidding Zone"@en ;
+    dct:title "B0620"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/3a6ab5bc-74bf-4b15-b4f0-b3db274cef92> .
+
+<http://example.com/dataservices/4c1e11218f32122bc6d1a17a21391bfd14c80911> a dcat:Dataset ;
+    dct:description "Day-Ahead Aggregated Generation"@en ;
+    dct:title "B1430"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/377caf7a-17d1-4e1d-9335-795f4d1f20c6> .
+
+<http://example.com/dataservices/4e4676009511573273e402d19c56a8e94be1daa8> a dcat:Dataset ;
+    dct:description "Balancing Services Adjustment Action Data"@en ;
+    dct:title "DISBSAD"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/9007be4e-2d17-4782-ad19-64372497214f> .
+
+<http://example.com/dataservices/52299bff6a568d7b28807f171c5394b4e3b1170c> a dcat:Dataset ;
+    dct:description "Installed Generation Capacity per Unit"@en ;
+    dct:title "B1420"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/1e097c54-9ccf-4197-86f2-6e81b14ae5f8> .
+
+<http://example.com/dataservices/570f6af2b54014e974b0270e1d3b756dcfbfc459> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Offshore Grid Infrastructure"@en ;
+    dct:title "B1030"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/1b343ea3-1733-422d-9d70-fa8b5fd9eccb> .
+
+<http://example.com/dataservices/5eb44546f7f08fb58fec158d94c546406cab1553> a dcat:Dataset ;
+    dct:description "Actual Generation Output per Generation Unit"@en ;
+    dct:title "B1610"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/7d2f4778-c253-4fc2-9dcd-a1f96a1f6f54> .
+
+<http://example.com/dataservices/63323972d469e0216e118819ef0cb2cf8a64f1eb> a dcat:Dataset ;
+    dct:description "Non BM STOR Instructed Volume Data"@en ;
+    dct:title "NONBM"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/5e0a8ae0-7e04-492c-a4af-2bf0b56a51e8> .
+
+<http://example.com/dataservices/6aae5cd96db375f6b1e8e6e953caab12c18e0466> a dcat:Dataset ;
+    dct:description "Cross-border Balancing Energy Activated"@en ;
+    dct:title "B1830"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/6fde7e97-ed98-42a6-860a-1cfb0749680b> .
+
+<http://example.com/dataservices/6caae5049cd6e24009e70c5bef7b797614fa1b81> a dcat:Dataset ;
+    dct:description "Cross-Border Balancing Volumes of Exchanged Bids and Offers"@en ;
+    dct:title "B1810"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/a1dd8c79-2924-434a-ab2f-1ff744d00f46> .
+
+<http://example.com/dataservices/72035b2e6a801ba308f904062da6ec2cd1dda5ab> a dcat:Dataset ;
+    dct:description "REMIT Flow - Message List Retrieval"@en ;
+    dct:title "MessageDetailRetrieval"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/86fc019e-060f-4c8e-a713-e6fe4f1ca4bb> .
+
+<http://example.com/dataservices/752e6461dfe517eb3369b7eabf81fd8baf0b39fc> a dcat:Dataset ;
+    dct:description "REMIT Flow - Message List Retrieval"@en ;
+    dct:title "MessageListRetrieval"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/e902105f-b36c-4656-bf18-19dcb20d6d4c> .
+
+<http://example.com/dataservices/78b39c85cf9d6bbb26230ed0c8829f9c22c08a47> a dcat:Dataset ;
+    dct:description "Market Index Data"@en ;
+    dct:title "MID"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/fa09ced2-3220-4c3f-b0f3-c876f4d45293> .
+
+<http://example.com/dataservices/79814f2f885965e2a00b34b163d3547be514b952> a dcat:Dataset ;
+    dct:description "Balancing Service Adjustment Data"@en ;
+    dct:title "NETBSAD"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/a4a15d9e-5d36-41bf-9c3c-8753f563f7af> .
+
+<http://example.com/dataservices/8299a864ffdab889c4adf62904aed15b5332bb73> a dcat:Dataset ;
+    dct:description "Imbalance Prices"@en ;
+    dct:title "B1770"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/3bcad8ca-1dd9-4e19-bdeb-cc3650132b4b> .
+
+<http://example.com/dataservices/87f1f9e1b892a9c2b75d53cc9fe3a0be467a913a> a dcat:Dataset ;
+    dct:description "Temperature Data"@en ;
+    dct:title "TEMP"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/80395a0e-5650-48ce-a8d4-e272ba117fbe> .
+
+<http://example.com/dataservices/8f84090271e52177553a93aa149523c53016505d> a dcat:Dataset ;
+    dct:description "Week-Ahead Total Load Forecast per Bidding Zone"@en ;
+    dct:title "B0630"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/bfbda23c-46ff-4eab-a59e-d4705fa42fd6> .
+
+<http://example.com/dataservices/9457d0be0c62ee2ff76d1d2c446df98ee11116c6> a dcat:Dataset ;
+    dct:description "Expansion and Dismantling Projects"@en ;
+    dct:title "B0910"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/93a19664-2f01-4365-8744-21ec2f9a8328> .
+
+<http://example.com/dataservices/9e12a9932e760fee6d8ed11cdadb5f78b5559d6e> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Consumption Units"@en ;
+    dct:title "B0710"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/63ae869b-51b8-417c-8623-13cbbffb56da> .
+
+<http://example.com/dataservices/9f05488a4c9c7b3c07fdef30a477e09b688bb14c> a dcat:Dataset ;
+    dct:description "Generation forecasts for Wind and Solar"@en ;
+    dct:title "B1440"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d04a2f92-5f43-4a01-96bc-d8e937e7a67f> .
+
+<http://example.com/dataservices/a1ad0caa1a54b45ee0f40ba243fe00390e44ae6c> a dcat:Dataset ;
+    dct:description "Amount Of Balancing Reserves Under Contract Service"@en ;
+    dct:title "B1720"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/fcfcadcc-8f83-48eb-9d29-e71941d2b4e5> .
+
+<http://example.com/dataservices/a38a8956dfc4a66812ca51f4f0601bb04655c35c> a dcat:Dataset ;
+    dct:description "Forecast Day and Day Ahead Demand Data"@en ;
+    dct:title "FORDAYDEM"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/c2a4fa0f-2379-4a25-99b4-475dadbd878a> .
+
+<http://example.com/dataservices/a6bdbf4b66142b9bb709f2a8e4bbd7325c250b8c> a dcat:Dataset ;
+    dct:description "Rolling System Frequency"@en ;
+    dct:title "FREQ"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/3fc32df9-fd75-44f0-ace8-d98d1f705f9a> .
+
+<http://example.com/dataservices/a80f8f410abe3096513407e7572d7397a470560b> a dcat:Dataset ;
+    dct:description "Physical Data"@en ;
+    dct:title "PHYBMDATA"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/515a9d09-a584-4b7e-8f2f-af847c741c7c> .
+
+<http://example.com/dataservices/b740cd640200c60a122542aedcaef9bd8b8fceba> a dcat:Dataset ;
+    dct:description "Actual Aggregated Generation per Type"@en ;
+    dct:title "B1620"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/60d90c56-05c1-4cd7-979f-c92adbfd6b5f> .
+
+<http://example.com/dataservices/ba67031752593042072c4ccd1f9f2db23ea01f2e> a dcat:Dataset ;
+    dct:description "Planned Unavailability In The Transmission Grid"@en ;
+    dct:title "B1010"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/16747bc6-b863-4f7b-a07d-57f3a5b3fe08> .
+
+<http://example.com/dataservices/bd25870f10e3c0dea640af04a3e54db2ad815243> a dcat:Dataset ;
+    dct:description "Financial Expenses and Income For Balancing"@en ;
+    dct:title "B1790"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/c93be8a1-4c44-47e8-98dd-b3f388950dd1> .
+
+<http://example.com/dataservices/bd3ce78871121a4ed7b78f2872d0f63feba27587> a dcat:Dataset ;
+    dct:description "Prices Of Procured Balancing Reserves Service"@en ;
+    dct:title "B1730"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/1949569c-eb93-40f4-8a88-92b6f9da980d> .
+
+<http://example.com/dataservices/c002eba1b6e86da2257235ff784433e06fc49ddf> a dcat:DataService ;
+    dct:description "API for the Elexon Balancing Mechanism Reporting Service"@en ;
+    dct:title "BMRS API"@en ;
+    dcat:endpointDescription <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.yaml> ;
+    dcat:endpointURL <https://api.bmreports.com> .
+
+<http://example.com/dataservices/c34d9d421ccfbdd02e26cc08b0a10376cf61b1fd> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability In The Transmission Grid"@en ;
+    dct:title "B1020"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/baa5182f-e195-4e7b-89c0-a572897e7d30> .
+
+<http://example.com/dataservices/c3d7eb825006df31748e1eb09e4ac09b471e8bbc> a dcat:Dataset ;
+    dct:description "System Demand"@en ;
+    dct:title "SYSDEM"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/ecf2fa23-f116-4d7c-80a7-d1f501909707> .
+
+<http://example.com/dataservices/d104d26b295591bf1bc1a3090a2f02636f27d392> a dcat:Dataset ;
+    dct:description "Wind Generation Forecast and Out-turn Data"@en ;
+    dct:title "WINDFORFUELHH"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/6cca4c11-cb80-4331-960a-957b15e20167> .
+
+<http://example.com/dataservices/d20bd6d9dc79a3e1e4075af14773230e328f71dc> a dcat:Dataset ;
+    dct:description "Prices Of Activated Balancing Energy"@en ;
+    dct:title "B1760"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d993b521-9e89-4f0d-99d3-b9b001e95b4a> .
+
+<http://example.com/dataservices/d80c1b814f57f420080d6d66831fc24731ee92e3> a dcat:Dataset ;
+    dct:description "Half Hourly Outturn Generation by Fuel Type"@en ;
+    dct:title "FUELHH"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/f73c446c-6950-4b7f-8c10-06022bc25515> .
+
+<http://example.com/dataservices/d877cc5bd272aea2e906ee8603f98179bd075edb> a dcat:Dataset ;
+    dct:description "Activated Balancing Energy"@en ;
+    dct:title "B1750"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/494ccd5c-de59-4697-b667-ae2330b609d4> .
+
+<http://example.com/dataservices/d8a2ae746a34eadf519ebe9358551227fe0d39a5> a dcat:Dataset ;
+    dct:description "Congestion Management Measures Costs of Congestion Management"@en ;
+    dct:title "B1330"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/41c4f3c4-dd80-4f40-ae45-c91998fd12ab> .
+
+<http://example.com/dataservices/de67a77ce5c1293b7541a4625bda096402b3afed> a dcat:Dataset ;
+    dct:description "Bid Offer Level Data"@en ;
+    dct:title "BOD"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/88edd6ba-9f20-4a53-8735-7839285e0d47> .
+
+<http://example.com/dataservices/e1fe863c46cc0743e23a40791cbdd886116a36cf> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Generation Units"@en ;
+    dct:title "B1510"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/e2622981-541f-4bf4-a4c2-3ae411f1ab5d> .
+
+<http://example.com/dataservices/e57582b9a15bd5a47b6812e7f12201ec50e3bd39> a dcat:Dataset ;
+    dct:description "Congestion Management Measures Countertrading"@en ;
+    dct:title "B1320"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/c16cafa2-087a-4a83-9600-a4b52d4e70e6> .
+
+<http://example.com/dataservices/eb8f7651dccbf8310023eabf1973adafd4ecc44e> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability Of Consumption Units"@en ;
+    dct:title "B0720"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d92f55de-635d-43e8-86ec-bdabe87f86d9> .
+
+<http://example.com/dataservices/f04dc57f17c070c611840b5bf62fdee9217a5e7a> a dcat:Dataset ;
+    dct:description "Accepted Aggregated Offers"@en ;
+    dct:title "B1740"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/bccc1b4e-a2a7-429d-89d1-12ca31205571> .
+
+<http://example.com/dataservices/fc3459e40e91f86e6c84d6873f15bac87cb19ed8> a dcat:Dataset ;
+    dct:description "Actual Or Estimated Wind and Solar Power Generation"@en ;
+    dct:title "B1630"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/db47d9f4-f705-450a-8077-fd0b2550c313> .
+
+<http://example.com/dataservices/fe5bd1ea27c080067cfe9d77fada9ec128e75568> a dcat:Dataset ;
+    dct:description "Installed Generation Capacity Aggregated"@en ;
+    dct:title "B1410"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/d67d2531-1472-4632-8f8a-2803f4d96772> .
+
+<http://example.com/dataservices/ffaacdd703e6d8b756ea2fd9e8851081d76e9d1a> a dcat:Dataset ;
+    dct:description "Aggregated Imbalance Volumes"@en ;
+    dct:title "B1780"@en ;
+    dcat:distribution <http://example.com/.well-known/skolem/2a0f0ccf-cf07-46ca-b85a-830ebeb6b6c3> .
+
