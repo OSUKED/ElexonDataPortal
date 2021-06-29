@@ -1,18 +1,18 @@
 openapi: 3.0.1
 tags:
-  - name: transmission
-    description: Data relating to the infrastructure and management of the transmission network
+  - name: Transmission
+    description: Data relating to the infrastructure on and management of the transmission network
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=transmission/
-  - name: demand
+  - name: Demand
     description: Data relating to forecasts, out-turn, and reductions in demand
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=demand/
-  - name: generation
+  - name: Generation
     description: Data relating to forecasts, out-turn, and reductions in generation 
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=generation/
-  - name: balancing
+  - name: Balancing
     description: Data relating to the prices, volumes, and units operating in short-term power markets
     externalDocs:
       url: hhttps://www.bmreports.com/bmrs/?q=balancing/
@@ -24,8 +24,8 @@ servers:
   - url: "{{ API_spec['root_url'] }}"
 paths:{% for stream in API_spec['streams'] %}
   {{ stream['endpoint'] }}:
-    get:
-      x-title: "{{ stream['x-title'] }}"
+    get:{% if 'x-title' in stream %}
+      x-title: "{{ stream['x-title'] }}"{% endif %}
       description: "{{ stream['description'] }}"{% if 'tags' in stream %}
       tags:{% for tag in stream['tags'] %}
         - {{ tag }}{% endfor %}{% endif %}
