@@ -1,43 +1,564 @@
+@prefix bmrs: <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/catalog-1> a dcat:Catalog ;
+<bmrs/catalog-1> a dcat:Catalog ;
     dct:title "An Elexon dataset catalog"@en ;
-    dcat:dataset <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/3519b2019120f09555a5e6b13de5e6ee405eb963>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/9e48ef6df2c415e78e2504f36a86054092434808>,
-        <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/b63ddc4ec45655718cb8e29e9f05c312c360a127> ;
-    dcat:service <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/c002eba1b6e86da2257235ff784433e06fc49ddf> .
+    dcat:dataset <bmrs:029bfea946b2323ae1e4cc967be98d61e109af51>,
+        <bmrs:03fd3478b4c2b327a61413b74a5cf6215f55928d>,
+        <bmrs:04a0f49338ab3dac2d6097c2099f2c6164a1f91f>,
+        <bmrs:0e5fdfa2e8f29744c371ab45415e03fc5378047a>,
+        <bmrs:19570084f9314e92529f06455d5a1d6279e053ad>,
+        <bmrs:1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8>,
+        <bmrs:22d8103cab1a253bd194956e56c98b572cf432ad>,
+        <bmrs:285c2087e3043660424bbd9954c6b75861d0f7e0>,
+        <bmrs:2927976a9dabdda503ef79d8834089377d02bd12>,
+        <bmrs:2aa169ecc41fe6edc136832a50dfe37fd12c3d87>,
+        <bmrs:2b2d9919a67eab31b5cbed1ac03f69069c769b76>,
+        <bmrs:2b941e4ccf18973df2c4c42ca17c00b8f58b6276>,
+        <bmrs:3519b2019120f09555a5e6b13de5e6ee405eb963>,
+        <bmrs:36a3f8399244a1747dabaa1a2176b493ebb2563f>,
+        <bmrs:3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9>,
+        <bmrs:3baa62553fcde2f2b5d8a3d6815b652b76fd75fb>,
+        <bmrs:420fd6c140894bb09a4b8c9a75577418e987e2e0>,
+        <bmrs:4233e658b698c9a548bdff75aafd946ad71bc5c3>,
+        <bmrs:450b3ddd9370305faf82672cf52bf041a6747208>,
+        <bmrs:45916b2d430a4d72cf0615fea65b2ce5b7e347b3>,
+        <bmrs:4cf360d909fd4742cbfbe07254a61e3c80bf83a2>,
+        <bmrs:55f94777f599998f6e499987e8ed3f2feaaa5635>,
+        <bmrs:563e371acb209ac1e1267925cb7335ebbb514179>,
+        <bmrs:5acdd9bc44380366778f8e644d0022bf063ee549>,
+        <bmrs:6046066360f60e0e2e30f96e7f30ee4227cfb274>,
+        <bmrs:64dc864aa965d1d41dc64181b157b8f78c587622>,
+        <bmrs:6e2ab93c6d820605e421e0bbd92ff4eec7d17c73>,
+        <bmrs:78a5b45da2586908f42f08c4ab1bc37043329b91>,
+        <bmrs:80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d>,
+        <bmrs:80d1339182d022fa14d33eb589274e58f535985f>,
+        <bmrs:80d708dd695e05dc35562a9f240081d3feb788c8>,
+        <bmrs:8c6ae9f8245f8fc4185d68800d61a9c75887213e>,
+        <bmrs:99376e5225d215261a1042d5ad75035ea12035b8>,
+        <bmrs:9aeecabb137e7e52a47d5117b7fa392690d7af20>,
+        <bmrs:9e48ef6df2c415e78e2504f36a86054092434808>,
+        <bmrs:a118b9aad6ff1360f18ff966f3a0757e43e8dc07>,
+        <bmrs:a5b02a197d7479f86240129cd9a788417362b357>,
+        <bmrs:a7ee2dca8c6f9ef23ad8987e5340cad5f215e376>,
+        <bmrs:a9e3f68e8443fa8d8603bae37372c7478a995037>,
+        <bmrs:aa9236eb78d3ff98efdb819206cb3baa6114725d>,
+        <bmrs:aae9faa7237fec657d4ff820967e6b1686844c5f>,
+        <bmrs:acd8fee20a84ec60377438dd895fcd92661039b3>,
+        <bmrs:ad79dc1712f342d3ca567da8d443f2d4567168ae>,
+        <bmrs:ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94>,
+        <bmrs:b63ddc4ec45655718cb8e29e9f05c312c360a127>,
+        <bmrs:bef81ac65e177aa6a7df1cddf2ac6c2a29678699>,
+        <bmrs:cca5717e98fb723ffd8841f9db4fe47800b658ea>,
+        <bmrs:d6757798cec1df32aa0d5103fefc4e25787f2ae6>,
+        <bmrs:d75f48ab7f6771c110fd377957bcf1fb7c6725d3>,
+        <bmrs:da0fd6ab7f0004887c10c4431db96899fcf48676>,
+        <bmrs:e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1>,
+        <bmrs:ea9f6f971c57204f17275ba4fcb5fc0f2734ee49>,
+        <bmrs:ef74cb0bf19ff8bd89bb68590ccafe480f267f72>,
+        <bmrs:fa6784084a633f3554f6b687d3c0d20028442846>,
+        <bmrs:fde4886646d8ce85d02478d3f1c99611a62a7e21> ;
+    dcat:service <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/3519b2019120f09555a5e6b13de5e6ee405eb963> a dcat:Dataset ;
+<bmrs:029bfea946b2323ae1e4cc967be98d61e109af51> a dcat:Dataset ;
+    dct:description "Generation forecasts for Wind and Solar"@en ;
+    dct:title "B1440"@en ;
+    dcat:distribution <bmrs:688cdf30918d449c2c91db2e7d2c750898e8b47e> .
+
+<bmrs:02bc37303e66975cb78655fa32c2197126beea1b> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/SYSWARN/v1> .
+
+<bmrs:03fd3478b4c2b327a61413b74a5cf6215f55928d> a dcat:Dataset ;
+    dct:description "Congestion Management Measures Costs of Congestion Management"@en ;
+    dct:title "B1330"@en ;
+    dcat:distribution <bmrs:db9130096a9e735b2168feab1d344a1c9eb8a425> .
+
+<bmrs:04a0f49338ab3dac2d6097c2099f2c6164a1f91f> a dcat:Dataset ;
+    dct:description "Prices Of Procured Balancing Reserves Service"@en ;
+    dct:title "B1730"@en ;
+    dcat:distribution <bmrs:08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> .
+
+<bmrs:08c81630ab9e1c0e27b5c7d9552ceb5b3597cc68> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1730/v1> .
+
+<bmrs:0d20833739569e9c36b0b076c530dd86fac0fb8e> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DISBSAD/v1> .
+
+<bmrs:0e5fdfa2e8f29744c371ab45415e03fc5378047a> a dcat:Dataset ;
+    dct:description "Year Ahead Forecast Margin"@en ;
+    dct:title "B0810"@en ;
+    dcat:distribution <bmrs:ca287fa13a6f42ef74e76190c3e264a63df36012> .
+
+<bmrs:14628c365c8fa2ee7c79a1955d60145c493e989f> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/WINDFORFUELHH/v1> .
+
+<bmrs:19570084f9314e92529f06455d5a1d6279e053ad> a dcat:Dataset ;
+    dct:description "Balancing Services Adjustment Action Data"@en ;
+    dct:title "DISBSAD"@en ;
+    dcat:distribution <bmrs:0d20833739569e9c36b0b076c530dd86fac0fb8e> .
+
+<bmrs:1c76f1a57ecab9e9229a21716ddb8a85836815b1> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1830/v1> .
+
+<bmrs:1e8d46cf275d8695ffc4eeec0a504cc1eb67f7a8> a dcat:Dataset ;
+    dct:description "Day-Ahead Aggregated Generation"@en ;
+    dct:title "B1430"@en ;
+    dcat:distribution <bmrs:7e70542f61904e40bb4255237763c584de088068> .
+
+<bmrs:1facca45d0668978747075b38f0f6b29b649218d> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0910/v1> .
+
+<bmrs:22d8103cab1a253bd194956e56c98b572cf432ad> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability Of Consumption Units"@en ;
+    dct:title "B0720"@en ;
+    dcat:distribution <bmrs:4355a28d02064088859166e4ababc558fe4f67a0> .
+
+<bmrs:285c2087e3043660424bbd9954c6b75861d0f7e0> a dcat:Dataset ;
+    dct:description "Market Index Data"@en ;
+    dct:title "MID"@en ;
+    dcat:distribution <bmrs:4ef85d49b8ffa7ea985eaa28a229b47226522cb4> .
+
+<bmrs:2927976a9dabdda503ef79d8834089377d02bd12> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Consumption Units"@en ;
+    dct:title "B0710"@en ;
+    dcat:distribution <bmrs:67de88d823abd62f0e5977168e591d2fcea3ba0a> .
+
+<bmrs:2aa169ecc41fe6edc136832a50dfe37fd12c3d87> a dcat:Dataset ;
+    dct:description "Accepted Aggregated Offers"@en ;
+    dct:title "B1740"@en ;
+    dcat:distribution <bmrs:e4b94ef0992ceb595e899cc719174c5bcf37365f> .
+
+<bmrs:2b2d9919a67eab31b5cbed1ac03f69069c769b76> a dcat:Dataset ;
+    dct:description "Amount Of Balancing Reserves Under Contract Service"@en ;
+    dct:title "B1720"@en ;
+    dcat:distribution <bmrs:92bd84c011abffb2effd3e2800e81aff759565b1> .
+
+<bmrs:2b941e4ccf18973df2c4c42ca17c00b8f58b6276> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Generation Units"@en ;
+    dct:title "B1510"@en ;
+    dcat:distribution <bmrs:64d97df80b1283d8c6ba32cc5fc6c7117d26642d> .
+
+<bmrs:2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MessageListRetrieval/v1> .
+
+<bmrs:3519b2019120f09555a5e6b13de5e6ee405eb963> a dcat:Dataset ;
     dct:description "Week-Ahead Total Load Forecast per Bidding Zone"@en ;
     dct:title "B0630"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> .
+    dcat:distribution <bmrs:ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/4107792ac75242bc833c888052ebef1f1e688ef7> a dcat:Distribution ;
-    dcat:accessService <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+<bmrs:3630303cc6abe3fedc3133ef7b7289d57cca32c3> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/SYSDEM/v1> .
+
+<bmrs:36a3f8399244a1747dabaa1a2176b493ebb2563f> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Offshore Grid Infrastructure"@en ;
+    dct:title "B1030"@en ;
+    dcat:distribution <bmrs:86c864446dcf373216eb08603ce0b86252aa56c2> .
+
+<bmrs:3a9b5f1853e9dc9751adf657790f3c5cbb1d1ec9> a dcat:Dataset ;
+    dct:description "Detailed System Prices"@en ;
+    dct:title "DETSYSPRICES"@en ;
+    dcat:distribution <bmrs:a4a022d897869bb60fc7d98a112ff3e7d336b5d8> .
+
+<bmrs:3baa62553fcde2f2b5d8a3d6815b652b76fd75fb> a dcat:Dataset ;
+    dct:description "Year Ahead Total Load Forecast per Bidding Zone"@en ;
+    dct:title "B0650"@en ;
+    dcat:distribution <bmrs:a0997fd8eff5cd065c92ec1d1e16a496f5b57033> .
+
+<bmrs:3e92a5ae34c0314246a929255e0661882adcaf7d> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1750/v1> .
+
+<bmrs:3f59258e10582ecc1ab971254a678f9ed9840bb6> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0640/v1> .
+
+<bmrs:4107792ac75242bc833c888052ebef1f1e688ef7> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0610/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/53539e5e45daf8989e3b08f0aec6431a50a34aa2> a dcat:Distribution ;
-    dcat:accessService <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+<bmrs:420fd6c140894bb09a4b8c9a75577418e987e2e0> a dcat:Dataset ;
+    dct:description "Balancing Service Adjustment Data"@en ;
+    dct:title "NETBSAD"@en ;
+    dcat:distribution <bmrs:a65a1713c2285185f67a6c4bdc8934652a57d225> .
+
+<bmrs:422b7e8ac64dac685382ef4da56bc699563cc8f7> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1420/v1> .
+
+<bmrs:4233e658b698c9a548bdff75aafd946ad71bc5c3> a dcat:Dataset ;
+    dct:description "Forecast Day and Day Ahead Margin and Imbalance Data"@en ;
+    dct:title "MELIMBALNGC"@en ;
+    dcat:distribution <bmrs:d877e11f49b45043b9c9486e77a90228646fa989> .
+
+<bmrs:4355a28d02064088859166e4ababc558fe4f67a0> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0720/v1> .
+
+<bmrs:450b3ddd9370305faf82672cf52bf041a6747208> a dcat:Dataset ;
+    dct:description "Aggregated Imbalance Volumes"@en ;
+    dct:title "B1780"@en ;
+    dcat:distribution <bmrs:b1da5f02cd6eb9ba1893c5c897bba211b84ae675> .
+
+<bmrs:45916b2d430a4d72cf0615fea65b2ce5b7e347b3> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Generation Units"@en ;
+    dct:title "B1520"@en ;
+    dcat:distribution <bmrs:efa789260e3dd8bcab47fd2728ce229030de8402> .
+
+<bmrs:4cf360d909fd4742cbfbe07254a61e3c80bf83a2> a dcat:Dataset ;
+    dct:description "Expansion and Dismantling Projects"@en ;
+    dct:title "B0910"@en ;
+    dcat:distribution <bmrs:1facca45d0668978747075b38f0f6b29b649218d> .
+
+<bmrs:4ef85d49b8ffa7ea985eaa28a229b47226522cb4> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MID/v1> .
+
+<bmrs:5068331497b2be79ecfc53aba934837a05860f8f> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1540/v1> .
+
+<bmrs:53539e5e45daf8989e3b08f0aec6431a50a34aa2> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0620/v1> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/9e48ef6df2c415e78e2504f36a86054092434808> a dcat:Dataset ;
+<bmrs:55f94777f599998f6e499987e8ed3f2feaaa5635> a dcat:Dataset ;
+    dct:description "Cross-border Balancing Energy Activated"@en ;
+    dct:title "B1830"@en ;
+    dcat:distribution <bmrs:1c76f1a57ecab9e9229a21716ddb8a85836815b1> .
+
+<bmrs:563e371acb209ac1e1267925cb7335ebbb514179> a dcat:Dataset ;
+    dct:description "Forecast Day and Day Ahead Demand Data"@en ;
+    dct:title "FORDAYDEM"@en ;
+    dcat:distribution <bmrs:b3226ae1471fe7eca55971bbfa2f03e4e4503453> .
+
+<bmrs:572ddccba509ed2a1615d8a93bf7fc9b91a60c66> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1320/v1> .
+
+<bmrs:5acdd9bc44380366778f8e644d0022bf063ee549> a dcat:Dataset ;
+    dct:description "Prices Of Activated Balancing Energy"@en ;
+    dct:title "B1760"@en ;
+    dcat:distribution <bmrs:87445d4dbbf1f69ad557d046d25d6798340af2ab> .
+
+<bmrs:5be0d2a008205f35e9f0b573ac69594188d86c6a> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1610/v2> .
+
+<bmrs:6046066360f60e0e2e30f96e7f30ee4227cfb274> a dcat:Dataset ;
+    dct:description "Imbalance Prices"@en ;
+    dct:title "B1770"@en ;
+    dcat:distribution <bmrs:77e1fd21944deadf5dee467bc8739a3e9300709a> .
+
+<bmrs:64d97df80b1283d8c6ba32cc5fc6c7117d26642d> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1510/v1> .
+
+<bmrs:64dc864aa965d1d41dc64181b157b8f78c587622> a dcat:Dataset ;
+    dct:description "Wind Generation Forecast and Out-turn Data"@en ;
+    dct:title "WINDFORFUELHH"@en ;
+    dcat:distribution <bmrs:14628c365c8fa2ee7c79a1955d60145c493e989f> .
+
+<bmrs:67de88d823abd62f0e5977168e591d2fcea3ba0a> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0710/v1> .
+
+<bmrs:688cdf30918d449c2c91db2e7d2c750898e8b47e> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1440/v1> .
+
+<bmrs:6e2ab93c6d820605e421e0bbd92ff4eec7d17c73> a dcat:Dataset ;
+    dct:description "Rolling System Frequency"@en ;
+    dct:title "FREQ"@en ;
+    dcat:distribution <bmrs:9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> .
+
+<bmrs:77e1fd21944deadf5dee467bc8739a3e9300709a> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1770/v1> .
+
+<bmrs:78a5b45da2586908f42f08c4ab1bc37043329b91> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability In The Transmission Grid"@en ;
+    dct:title "B1020"@en ;
+    dcat:distribution <bmrs:99a19b0b1d2e646865e98a32975b2982796d4704> .
+
+<bmrs:7b145adc4900512ad9ebbff42d5a9ad99fffa190> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/TEMP/v1> .
+
+<bmrs:7e70542f61904e40bb4255237763c584de088068> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1430/v1> .
+
+<bmrs:80b42cb5f5bc1ea2ff85f5a9adf63e2348adb18d> a dcat:Dataset ;
+    dct:description "Congestion Management Measures Countertrading"@en ;
+    dct:title "B1320"@en ;
+    dcat:distribution <bmrs:572ddccba509ed2a1615d8a93bf7fc9b91a60c66> .
+
+<bmrs:80d1339182d022fa14d33eb589274e58f535985f> a dcat:Dataset ;
+    dct:description "Physical Data"@en ;
+    dct:title "PHYBMDATA"@en ;
+    dcat:distribution <bmrs:f56df5c3da60683fac0bb1e0f8a546fe50c818b4> .
+
+<bmrs:80d708dd695e05dc35562a9f240081d3feb788c8> a dcat:Dataset ;
+    dct:description "Cross-Border Balancing Volumes of Exchanged Bids and Offers"@en ;
+    dct:title "B1810"@en ;
+    dcat:distribution <bmrs:9a095788e727c3c54a88aa0105e1c0b0da0b5c92> .
+
+<bmrs:86c864446dcf373216eb08603ce0b86252aa56c2> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1030/v1> .
+
+<bmrs:87445d4dbbf1f69ad557d046d25d6798340af2ab> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1760/v1> .
+
+<bmrs:8c6ae9f8245f8fc4185d68800d61a9c75887213e> a dcat:Dataset ;
+    dct:description "Changes In Actual Availability of Production Units"@en ;
+    dct:title "B1540"@en ;
+    dcat:distribution <bmrs:5068331497b2be79ecfc53aba934837a05860f8f> .
+
+<bmrs:92bd84c011abffb2effd3e2800e81aff759565b1> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1720/v1> .
+
+<bmrs:97fc236a27d54b2f25f00ba5663672b777bf25fa> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1010/v1> .
+
+<bmrs:99376e5225d215261a1042d5ad75035ea12035b8> a dcat:Dataset ;
+    dct:description "Financial Expenses and Income For Balancing"@en ;
+    dct:title "B1790"@en ;
+    dcat:distribution <bmrs:c1e5d56d6234fc871c8c2654d67fb5c033643e8c> .
+
+<bmrs:99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DEVINDOD/v1> .
+
+<bmrs:99a19b0b1d2e646865e98a32975b2982796d4704> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1020/v1> .
+
+<bmrs:9a095788e727c3c54a88aa0105e1c0b0da0b5c92> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1810/v1> .
+
+<bmrs:9a2eefd9cbb858ebd9e6231bb6d1c4d6b87d56c8> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FREQ/v1> .
+
+<bmrs:9aeecabb137e7e52a47d5117b7fa392690d7af20> a dcat:Dataset ;
+    dct:description "Activated Balancing Energy"@en ;
+    dct:title "B1750"@en ;
+    dcat:distribution <bmrs:3e92a5ae34c0314246a929255e0661882adcaf7d> .
+
+<bmrs:9e48ef6df2c415e78e2504f36a86054092434808> a dcat:Dataset ;
     dct:description "Actual Total Load per Bidding Zone"@en ;
     dct:title "B0610"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/4107792ac75242bc833c888052ebef1f1e688ef7> .
+    dcat:distribution <bmrs:4107792ac75242bc833c888052ebef1f1e688ef7> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/b63ddc4ec45655718cb8e29e9f05c312c360a127> a dcat:Dataset ;
+<bmrs:a0997fd8eff5cd065c92ec1d1e16a496f5b57033> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0650/v1> .
+
+<bmrs:a118b9aad6ff1360f18ff966f3a0757e43e8dc07> a dcat:Dataset ;
+    dct:description "Actual Generation Output per Generation Unit"@en ;
+    dct:title "B1610"@en ;
+    dcat:distribution <bmrs:5be0d2a008205f35e9f0b573ac69594188d86c6a> .
+
+<bmrs:a4a022d897869bb60fc7d98a112ff3e7d336b5d8> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/DETSYSPRICES/v1> .
+
+<bmrs:a5b02a197d7479f86240129cd9a788417362b357> a dcat:Dataset ;
+    dct:description "Planned Unavailability In The Transmission Grid"@en ;
+    dct:title "B1010"@en ;
+    dcat:distribution <bmrs:97fc236a27d54b2f25f00ba5663672b777bf25fa> .
+
+<bmrs:a65a1713c2285185f67a6c4bdc8934652a57d225> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/NETBSAD/v1> .
+
+<bmrs:a7ee2dca8c6f9ef23ad8987e5340cad5f215e376> a dcat:Dataset ;
+    dct:description "Half Hourly Outturn Generation by Fuel Type"@en ;
+    dct:title "FUELHH"@en ;
+    dcat:distribution <bmrs:c69d8b34ae0e5c6086397cf51172fbb45cdba250> .
+
+<bmrs:a9e3f68e8443fa8d8603bae37372c7478a995037> a dcat:Dataset ;
+    dct:description "Installed Generation Capacity per Unit"@en ;
+    dct:title "B1420"@en ;
+    dcat:distribution <bmrs:422b7e8ac64dac685382ef4da56bc699563cc8f7> .
+
+<bmrs:aa9236eb78d3ff98efdb819206cb3baa6114725d> a dcat:Dataset ;
+    dct:description "Temperature Data"@en ;
+    dct:title "TEMP"@en ;
+    dcat:distribution <bmrs:7b145adc4900512ad9ebbff42d5a9ad99fffa190> .
+
+<bmrs:aae9faa7237fec657d4ff820967e6b1686844c5f> a dcat:Dataset ;
+    dct:description "Month-Ahead Total Load Forecast Per Bidding Zone"@en ;
+    dct:title "B0640"@en ;
+    dcat:distribution <bmrs:3f59258e10582ecc1ab971254a678f9ed9840bb6> .
+
+<bmrs:acd8fee20a84ec60377438dd895fcd92661039b3> a dcat:Dataset ;
+    dct:description "Non BM STOR Instructed Volume Data"@en ;
+    dct:title "NONBM"@en ;
+    dcat:distribution <bmrs:bfed4927c27f2436847234ce9f7f1c17761fd4e1> .
+
+<bmrs:ad4bea632e199c3ea677293af679d02db68a6267> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/BOD/v1> .
+
+<bmrs:ad79dc1712f342d3ca567da8d443f2d4567168ae> a dcat:Dataset ;
+    dct:description "Installed Generation Capacity Aggregated"@en ;
+    dct:title "B1410"@en ;
+    dcat:distribution <bmrs:f07190d62aebd092f9d3e23e04c3ff14cdd8a973> .
+
+<bmrs:ae0e305c7c76ec6bbaa25e6f25b1444eaa772f94> a dcat:Dataset ;
+    dct:description "REMIT Flow - Message List Retrieval"@en ;
+    dct:title "MessageDetailRetrieval"@en ;
+    dcat:distribution <bmrs:d8823e7f8eac68e5f9278623d4865596ee1e31bf> .
+
+<bmrs:b1da5f02cd6eb9ba1893c5c897bba211b84ae675> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1780/v1> .
+
+<bmrs:b3226ae1471fe7eca55971bbfa2f03e4e4503453> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FORDAYDEM/v1> .
+
+<bmrs:b63ddc4ec45655718cb8e29e9f05c312c360a127> a dcat:Dataset ;
     dct:description "Day-Ahead Total Load Forecast per Bidding Zone"@en ;
     dct:title "B0620"@en ;
-    dcat:distribution <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/53539e5e45daf8989e3b08f0aec6431a50a34aa2> .
+    dcat:distribution <bmrs:53539e5e45daf8989e3b08f0aec6431a50a34aa2> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/c002eba1b6e86da2257235ff784433e06fc49ddf> a dcat:DataService ;
+<bmrs:bc64e64d7b803972b541d637b66487bd84f8d6de> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1530/v1> .
+
+<bmrs:bef81ac65e177aa6a7df1cddf2ac6c2a29678699> a dcat:Dataset ;
+    dct:description "Cross-Border Balancing Prices"@en ;
+    dct:title "B1820"@en ;
+    dcat:distribution <bmrs:d1b53ffce90a8c69fd799610e285d7982b59984b> .
+
+<bmrs:bfed4927c27f2436847234ce9f7f1c17761fd4e1> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/NONBM/v1> .
+
+<bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> a dcat:DataService ;
     dct:description "API for the Elexon Balancing Mechanism Reporting Service"@en ;
     dct:title "BMRS API"@en ;
     dcat:endpointDescription <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.yaml> ;
     dcat:endpointURL <https://api.bmreports.com> .
 
-<https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> a dcat:Distribution ;
-    dcat:accessService <https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/BMRS_API.ttl/c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+<bmrs:c1e5d56d6234fc871c8c2654d67fb5c033643e8c> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1790/v1> .
+
+<bmrs:c69d8b34ae0e5c6086397cf51172fbb45cdba250> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/FUELHH/v1> .
+
+<bmrs:ca287fa13a6f42ef74e76190c3e264a63df36012> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B0810/v1> .
+
+<bmrs:cca5717e98fb723ffd8841f9db4fe47800b658ea> a dcat:Dataset ;
+    dct:description "Actual Aggregated Generation per Type"@en ;
+    dct:title "B1620"@en ;
+    dcat:distribution <bmrs:e7db93c39e8b6c8d4940bec73a395bab5276ca31> .
+
+<bmrs:ce39ade7a0a1e8e486d649447beba27a8d04db0a> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/CDN/v1> .
+
+<bmrs:d1b53ffce90a8c69fd799610e285d7982b59984b> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1820/v1> .
+
+<bmrs:d6757798cec1df32aa0d5103fefc4e25787f2ae6> a dcat:Dataset ;
+    dct:description "Bid Offer Level Data"@en ;
+    dct:title "BOD"@en ;
+    dcat:distribution <bmrs:ad4bea632e199c3ea677293af679d02db68a6267> .
+
+<bmrs:d75f48ab7f6771c110fd377957bcf1fb7c6725d3> a dcat:Dataset ;
+    dct:description "Actual Or Estimated Wind and Solar Power Generation"@en ;
+    dct:title "B1630"@en ;
+    dcat:distribution <bmrs:dda984d42cf9238da162b1ed77339f27c947f22b> .
+
+<bmrs:d877e11f49b45043b9c9486e77a90228646fa989> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MELIMBALNGC/v1> .
+
+<bmrs:d8823e7f8eac68e5f9278623d4865596ee1e31bf> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/MessageDetailRetrieval/v1> .
+
+<bmrs:da0fd6ab7f0004887c10c4431db96899fcf48676> a dcat:Dataset ;
+    dct:description "Credit Default Notice Data"@en ;
+    dct:title "CDN"@en ;
+    dcat:distribution <bmrs:ce39ade7a0a1e8e486d649447beba27a8d04db0a> .
+
+<bmrs:db9130096a9e735b2168feab1d344a1c9eb8a425> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1330/v1> .
+
+<bmrs:dda984d42cf9238da162b1ed77339f27c947f22b> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1630/v1> .
+
+<bmrs:e4b94ef0992ceb595e899cc719174c5bcf37365f> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1740/v1> .
+
+<bmrs:e7db93c39e8b6c8d4940bec73a395bab5276ca31> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1620/v1> .
+
+<bmrs:e957bcdc88bf44b2ba223a60cedaf7b3eeb83dc1> a dcat:Dataset ;
+    dct:description "REMIT Flow - Message List Retrieval"@en ;
+    dct:title "MessageListRetrieval"@en ;
+    dcat:distribution <bmrs:2f89c3e984e1d64896c4570e4c1f33fa29e6a05c> .
+
+<bmrs:ea9f6f971c57204f17275ba4fcb5fc0f2734ee49> a dcat:Dataset ;
+    dct:description "System Warnings"@en ;
+    dct:title "SYSWARN"@en ;
+    dcat:distribution <bmrs:02bc37303e66975cb78655fa32c2197126beea1b> .
+
+<bmrs:ec0dcc1fe3d8ad6ba208b0a9a892a3f96dc6c12d> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
     dcat:downloadURL <https://api.bmreports.com/BMRS/B0630/v1> .
+
+<bmrs:ef74cb0bf19ff8bd89bb68590ccafe480f267f72> a dcat:Dataset ;
+    dct:description "System Demand"@en ;
+    dct:title "SYSDEM"@en ;
+    dcat:distribution <bmrs:3630303cc6abe3fedc3133ef7b7289d57cca32c3> .
+
+<bmrs:efa789260e3dd8bcab47fd2728ce229030de8402> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1520/v1> .
+
+<bmrs:f07190d62aebd092f9d3e23e04c3ff14cdd8a973> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/B1410/v1> .
+
+<bmrs:f56df5c3da60683fac0bb1e0f8a546fe50c818b4> a dcat:Distribution ;
+    dcat:accessService <bmrs:c002eba1b6e86da2257235ff784433e06fc49ddf> ;
+    dcat:downloadURL <https://api.bmreports.com/BMRS/PHYBMDATA/v1> .
+
+<bmrs:fa6784084a633f3554f6b687d3c0d20028442846> a dcat:Dataset ;
+    dct:description "Daily Energy Volume Data"@en ;
+    dct:title "DEVINDOD"@en ;
+    dcat:distribution <bmrs:99636f7d49ef0b64a0c9f330ec1e7b1e9f382758> .
+
+<bmrs:fde4886646d8ce85d02478d3f1c99611a62a7e21> a dcat:Dataset ;
+    dct:description "Planned Unavailability of Production Units"@en ;
+    dct:title "B1530"@en ;
+    dcat:distribution <bmrs:bc64e64d7b803972b541d637b66487bd84f8d6de> .
 

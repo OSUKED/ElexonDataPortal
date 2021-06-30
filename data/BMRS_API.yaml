@@ -1,18 +1,18 @@
 openapi: 3.0.1
 tags:
-  - name: transmission
-    description: Data relating to the infrastructure and management of the transmission network
+  - name: Transmission
+    description: Data relating to the infrastructure on and management of the transmission network
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=transmission/
-  - name: demand
+  - name: Demand
     description: Data relating to forecasts, out-turn, and reductions in demand
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=demand/
-  - name: generation
+  - name: Generation
     description: Data relating to forecasts, out-turn, and reductions in generation 
     externalDocs:
       url: https://www.bmreports.com/bmrs/?q=generation/
-  - name: balancing
+  - name: Balancing
     description: Data relating to the prices, volumes, and units operating in short-term power markets
     externalDocs:
       url: hhttps://www.bmreports.com/bmrs/?q=balancing/
@@ -28,7 +28,7 @@ paths:
       x-title: "B0610"
       description: "Actual Total Load per Bidding Zone"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -67,7 +67,7 @@ paths:
       x-title: "B0620"
       description: "Day-Ahead Total Load Forecast per Bidding Zone"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -106,7 +106,7 @@ paths:
       x-title: "B0630"
       description: "Week-Ahead Total Load Forecast per Bidding Zone"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -145,7 +145,7 @@ paths:
       x-title: "B0640"
       description: "Month-Ahead Total Load Forecast Per Bidding Zone"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -166,7 +166,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Month-Ahead Total Load Forecast Per Bidding Zone"
@@ -180,7 +184,7 @@ paths:
       x-title: "B0650"
       description: "Year Ahead Total Load Forecast per Bidding Zone"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -214,7 +218,7 @@ paths:
       x-title: "B0710"
       description: "Planned Unavailability of Consumption Units"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -240,7 +244,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -263,7 +267,7 @@ paths:
       x-title: "B0720"
       description: "Changes In Actual Availability Of Consumption Units"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -284,7 +288,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "EndTime"
           in: "query"
           schema:
@@ -312,7 +316,7 @@ paths:
       x-title: "B0810"
       description: "Year Ahead Forecast Margin"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -346,7 +350,7 @@ paths:
       x-title: "B0910"
       description: "Expansion and Dismantling Projects"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -380,7 +384,7 @@ paths:
       x-title: "B1010"
       description: "Planned Unavailability In The Transmission Grid"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -396,7 +400,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -429,7 +433,7 @@ paths:
       x-title: "B1020"
       description: "Changes In Actual Availability In The Transmission Grid"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -445,7 +449,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -478,7 +482,7 @@ paths:
       x-title: "B1030"
       description: "Changes In Actual Availability of Offshore Grid Infrastructure"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -494,7 +498,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -527,7 +531,7 @@ paths:
       x-title: "B1320"
       description: "Congestion Management Measures Countertrading"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -566,7 +570,7 @@ paths:
       x-title: "B1330"
       description: "Congestion Management Measures Costs of Congestion Management"
       tags:
-        - transparency
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -605,7 +609,7 @@ paths:
       x-title: "B1410"
       description: "Installed Generation Capacity Aggregated"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -639,7 +643,7 @@ paths:
       x-title: "B1420"
       description: "Installed Generation Capacity per Unit"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -673,7 +677,7 @@ paths:
       x-title: "B1430"
       description: "Day-Ahead Aggregated Generation"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -712,7 +716,7 @@ paths:
       x-title: "B1440"
       description: "Generation forecasts for Wind and Solar"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -756,7 +760,7 @@ paths:
       x-title: "B1510"
       description: "Planned Unavailability of Generation Units"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -772,7 +776,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -805,7 +809,7 @@ paths:
       x-title: "B1520"
       description: "Changes In Actual Availability of Generation Units"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -821,7 +825,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -854,7 +858,7 @@ paths:
       x-title: "B1530"
       description: "Planned Unavailability of Production Units"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -870,7 +874,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -903,7 +907,7 @@ paths:
       x-title: "B1540"
       description: "Changes In Actual Availability of Production Units"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -919,7 +923,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "StartTime"
           in: "query"
           schema:
@@ -952,7 +956,7 @@ paths:
       x-title: "B1610"
       description: "Actual Generation Output per Generation Unit"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -996,7 +1000,7 @@ paths:
       x-title: "B1620"
       description: "Actual Aggregated Generation per Type"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1035,7 +1039,7 @@ paths:
       x-title: "B1630"
       description: "Actual Or Estimated Wind and Solar Power Generation"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1074,7 +1078,7 @@ paths:
       x-title: "B1720"
       description: "Amount Of Balancing Reserves Under Contract Service"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1113,7 +1117,7 @@ paths:
       x-title: "B1730"
       description: "Prices Of Procured Balancing Reserves Service"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1152,7 +1156,7 @@ paths:
       x-title: "B1740"
       description: "Accepted Aggregated Offers"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1191,7 +1195,7 @@ paths:
       x-title: "B1750"
       description: "Activated Balancing Energy"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1230,7 +1234,7 @@ paths:
       x-title: "B1760"
       description: "Prices Of Activated Balancing Energy"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1269,7 +1273,7 @@ paths:
       x-title: "B1770"
       description: "Imbalance Prices"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1308,7 +1312,7 @@ paths:
       x-title: "B1780"
       description: "Aggregated Imbalance Volumes"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1347,7 +1351,7 @@ paths:
       x-title: "B1790"
       description: "Financial Expenses and Income For Balancing"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1368,7 +1372,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Financial Expenses and Income For Balancing"
@@ -1382,7 +1390,7 @@ paths:
       x-title: "B1810"
       description: "Cross-Border Balancing Volumes of Exchanged Bids and Offers"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1421,7 +1429,7 @@ paths:
       x-title: "B1820"
       description: "Cross-Border Balancing Prices"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1460,7 +1468,7 @@ paths:
       x-title: "B1830"
       description: "Cross-border Balancing Energy Activated"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1499,7 +1507,7 @@ paths:
       x-title: "BOD"
       description: "Bid Offer Level Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1545,7 +1553,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Bid Offer Level Data"
@@ -1559,7 +1571,7 @@ paths:
       x-title: "CDN"
       description: "Credit Default Notice Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1575,12 +1587,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Credit Default Notice Data"
@@ -1594,7 +1610,7 @@ paths:
       x-title: "DETSYSPRICES"
       description: "Detailed System Prices"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1605,7 +1621,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2014-01-02"
+          example: "2014-02-01"
         - name: "SettlementPeriod"
           in: "query"
           schema:
@@ -1615,7 +1631,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Detailed System Prices"
@@ -1628,6 +1648,8 @@ paths:
     get:
       x-title: "DEVINDOD"
       description: "Daily Energy Volume Data"
+      tags:
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1643,12 +1665,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Daily Energy Volume Data"
@@ -1662,7 +1688,7 @@ paths:
       x-title: "DISBSAD"
       description: "Balancing Services Adjustment Action Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1683,7 +1709,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Balancing Services Adjustment Action Data"
@@ -1697,7 +1727,7 @@ paths:
       x-title: "FORDAYDEM"
       description: "Forecast Day and Day Ahead Demand Data"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1718,12 +1748,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Forecast Day and Day Ahead Demand Data"
@@ -1737,7 +1771,7 @@ paths:
       x-title: "FREQ"
       description: "Rolling System Frequency"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1753,12 +1787,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01 23:59:00"
+          example: "2021-01-02 23:59:00"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Rolling System Frequency"
@@ -1772,7 +1810,7 @@ paths:
       x-title: "FUELHH"
       description: "Half Hourly Outturn Generation by Fuel Type"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1793,7 +1831,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Half Hourly Outturn Generation by Fuel Type"
@@ -1807,7 +1849,7 @@ paths:
       x-title: "MELIMBALNGC"
       description: "Forecast Day and Day Ahead Margin and Imbalance Data"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1828,12 +1870,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Forecast Day and Day Ahead Margin and Imbalance Data"
@@ -1847,7 +1893,7 @@ paths:
       x-title: "MID"
       description: "Market Index Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -1863,7 +1909,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "Period"
           in: "query"
           schema:
@@ -1873,7 +1919,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/CSV/XML/xml"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Market Index Data"
@@ -1918,7 +1968,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV."
+          example: "csv/xml."
       responses:
         '200':
           description: "REMIT Flow - Message List Retrieval"
@@ -1948,7 +1998,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "PublicationFrom"
           in: "query"
           schema:
@@ -1958,7 +2008,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ParticipantId"
           in: "query"
           schema:
@@ -1998,7 +2048,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "REMIT Flow - Message List Retrieval"
@@ -2012,7 +2066,7 @@ paths:
       x-title: "NETBSAD"
       description: "Balancing Service Adjustment Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2038,7 +2092,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "xml/XML/csv/CSV"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Balancing Service Adjustment Data"
@@ -2052,7 +2110,7 @@ paths:
       x-title: "NONBM"
       description: "Non BM STOR Instructed Volume Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "FromDate"
           in: "query"
@@ -2063,7 +2121,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "APIKey"
           in: "query"
           schema:
@@ -2073,7 +2131,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/CSV/XML/xml"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Non BM STOR Instructed Volume Data"
@@ -2087,7 +2149,7 @@ paths:
       x-title: "PHYBMDATA"
       description: "Physical Data"
       tags:
-        - balancing
+        - Balancing
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2133,7 +2195,11 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Physical Data"
@@ -2147,7 +2213,7 @@ paths:
       x-title: "SYSDEM"
       description: "System Demand"
       tags:
-        - demand
+        - Demand
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2163,12 +2229,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "System Demand"
@@ -2182,7 +2252,7 @@ paths:
       x-title: "SYSWARN"
       description: "System Warnings"
       tags:
-        - transmission
+        - Transmission
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2198,12 +2268,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/CSV/xml/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "System Warnings"
@@ -2217,7 +2291,7 @@ paths:
       x-title: "TEMP"
       description: "Temperature Data"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2233,12 +2307,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/CSV/xml/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Temperature Data"
@@ -2252,7 +2330,7 @@ paths:
       x-title: "WINDFORFUELHH"
       description: "Wind Generation Forecast and Out-turn Data"
       tags:
-        - generation
+        - Generation
       parameters:
         - name: "APIKey"
           in: "query"
@@ -2268,12 +2346,16 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02"
+          example: "2021-02-01"
         - name: "ServiceType"
           in: "query"
           schema:
             type: "string"
-          example: "csv/xml/CSV/XML"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
       responses:
         '200':
           description: "Wind Generation Forecast and Out-turn Data"
