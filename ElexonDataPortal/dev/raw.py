@@ -71,7 +71,7 @@ def get_B0640(
     APIKey='AP8DA23',
     Year='2021',
     Month='MAR',
-    ServiceType='csv/xml/CSV/XML',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B0640/v1'
 ):
     """Month-Ahead Total Load Forecast Per Bidding Zone
@@ -114,7 +114,7 @@ def get_B0710(
     EndTime='23:59:59',
     StartTime='00:00:00',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B0710/v1'
 ):
@@ -139,7 +139,7 @@ def get_B0720(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
     StartTime='00:00:00',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     EndTime='23:59:59',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B0720/v1'
@@ -204,7 +204,7 @@ def get_B0910(
 def get_B1010(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -230,7 +230,7 @@ def get_B1010(
 def get_B1020(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -256,7 +256,7 @@ def get_B1020(
 def get_B1030(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -412,7 +412,7 @@ def get_B1440(
 def get_B1510(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -438,7 +438,7 @@ def get_B1510(
 def get_B1520(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -464,7 +464,7 @@ def get_B1520(
 def get_B1530(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -490,7 +490,7 @@ def get_B1530(
 def get_B1540(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-01-02',
+    EndDate='2021-02-01',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -739,7 +739,7 @@ def get_B1790(
     APIKey='AP8DA23',
     Year='2021',
     Month='MAR',
-    ServiceType='csv/xml/CSV/XML',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B1790/v1'
 ):
     """Financial Expenses and Income For Balancing
@@ -832,7 +832,7 @@ def get_BOD(
     LeadPartyName='AES New Energy Limited',
     NGCBMUnit='EAS-ASP01, AES New Energy Limited, G, 2__AAEPD000',
     Name='2__AAEPD000',
-    ServiceType='csv/xml/CSV/XML',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/BOD/v1'
 ):
     """Bid Offer Level Data
@@ -858,8 +858,8 @@ def get_BOD(
 def get_CDN(
     APIKey='AP8DA23',
     FromClearedDate='2021-01-01',
-    ToClearedDate='2021-01-02',
-    ServiceType='xml/XML/csv/CSV',
+    ToClearedDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/CDN/v1'
 ):
     """Credit Default Notice Data
@@ -879,9 +879,9 @@ def get_CDN(
 
 def get_DETSYSPRICES(
     APIKey='AP8DA23',
-    SettlementDate='2014-01-02',
+    SettlementDate='2014-02-01',
     SettlementPeriod='2',
-    ServiceType='xml/XML/csv/CSV',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/DETSYSPRICES/v1'
 ):
     """Detailed System Prices
@@ -902,8 +902,8 @@ def get_DETSYSPRICES(
 def get_DEVINDOD(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='xml/XML/csv/CSV',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/DEVINDOD/v1'
 ):
     """Daily Energy Volume Data
@@ -925,7 +925,7 @@ def get_DISBSAD(
     APIKey='AP8DA23',
     SettlementDate='2021-01-01',
     SettlementPeriod='1',
-    ServiceType='xml/XML/csv/CSV',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/DISBSAD/v1'
 ):
     """Balancing Services Adjustment Action Data
@@ -947,8 +947,8 @@ def get_FORDAYDEM(
     APIKey='AP8DA23',
     ZoneIdentifier='N',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/xml/CSV/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/FORDAYDEM/v1'
 ):
     """Forecast Day and Day Ahead Demand Data
@@ -970,8 +970,8 @@ def get_FORDAYDEM(
 def get_FREQ(
     APIKey='AP8DA23',
     FromDateTime='2021-01-01 00:01:00',
-    ToDateTime='2021-02-01 23:59:00',
-    ServiceType='xml/XML/csv/CSV',
+    ToDateTime='2021-01-02 23:59:00',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/FREQ/v1'
 ):
     """Rolling System Frequency
@@ -993,7 +993,7 @@ def get_FUELHH(
     APIKey='AP8DA23',
     FromDate='44197',
     ToDate='44228',
-    ServiceType='csv/xml/CSV/XML',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/FUELHH/v1'
 ):
     """Half Hourly Outturn Generation by Fuel Type
@@ -1015,8 +1015,8 @@ def get_MELIMBALNGC(
     APIKey='AP8DA23',
     ZoneIdentifier='N',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/xml/CSV/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/MELIMBALNGC/v1'
 ):
     """Forecast Day and Day Ahead Margin and Imbalance Data
@@ -1038,9 +1038,9 @@ def get_MELIMBALNGC(
 def get_MID(
     APIKey='AP8DA23',
     FromSettlementDate='2021-01-01',
-    ToSettlementDate='2021-01-02',
+    ToSettlementDate='2021-02-01',
     Period='*',
-    ServiceType='csv/CSV/XML/xml',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/MID/v1'
 ):
     """Market Index Data
@@ -1065,7 +1065,7 @@ def get_MessageDetailRetrieval(
     ParticipantId='',
     SequenceId='',
     ActiveFlag='N',
-    ServiceType='xml/XML/csv/CSV.',
+    ServiceType='csv/xml.',
     endpoint='https://api.bmreports.com/BMRS/MessageDetailRetrieval/v1'
 ):
     """REMIT Flow - Message List Retrieval
@@ -1088,9 +1088,9 @@ def get_MessageDetailRetrieval(
 def get_MessageListRetrieval(
     APIKey='AP8DA23',
     EventStart='2021-01-01',
-    EventEnd='2021-01-02',
+    EventEnd='2021-02-01',
     PublicationFrom='2021-01-01',
-    PublicationTo='2021-01-02',
+    PublicationTo='2021-02-01',
     ParticipantId='',
     MessageID='',
     AssetID='',
@@ -1098,7 +1098,7 @@ def get_MessageListRetrieval(
     FuelType='',
     MessageType='',
     UnavailabilityType='',
-    ServiceType='xml/XML/csv/CSV',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/MessageListRetrieval/v1'
 ):
     """REMIT Flow - Message List Retrieval
@@ -1130,7 +1130,7 @@ def get_NETBSAD(
     SettlementDate='2021-01-01',
     SettlementPeriod='1',
     isTwoDayWindow='FALSE',
-    ServiceType='xml/XML/csv/CSV',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/NETBSAD/v1'
 ):
     """Balancing Service Adjustment Data
@@ -1151,9 +1151,9 @@ def get_NETBSAD(
 
 def get_NONBM(
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
+    ToDate='2021-02-01',
     APIKey='AP8DA23',
-    ServiceType='csv/CSV/XML/xml',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/NONBM/v1'
 ):
     """Non BM STOR Instructed Volume Data
@@ -1180,7 +1180,7 @@ def get_PHYBMDATA(
     LeadPartyName='',
     NGCBMUnit='',
     Name='',
-    ServiceType='csv/xml/CSV/XML',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/PHYBMDATA/v1'
 ):
     """Physical Data
@@ -1206,8 +1206,8 @@ def get_PHYBMDATA(
 def get_SYSDEM(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/xml/CSV/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/SYSDEM/v1'
 ):
     """System Demand
@@ -1228,8 +1228,8 @@ def get_SYSDEM(
 def get_SYSWARN(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/CSV/xml/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/SYSWARN/v1'
 ):
     """System Warnings
@@ -1250,8 +1250,8 @@ def get_SYSWARN(
 def get_TEMP(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/CSV/xml/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/TEMP/v1'
 ):
     """Temperature Data
@@ -1272,8 +1272,8 @@ def get_TEMP(
 def get_WINDFORFUELHH(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-01-02',
-    ServiceType='csv/xml/CSV/XML',
+    ToDate='2021-02-01',
+    ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/WINDFORFUELHH/v1'
 ):
     """Wind Generation Forecast and Out-turn Data

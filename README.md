@@ -89,6 +89,8 @@ To rebuild the library simply run the following in the root directory:
 python -m ElexonDataPortal.rebuild
 ```
 
+<br>
+
 N.b. If you wish to develop the library further or use any of the programmatic library generation functionality then please install the development version of the library using:
 
 ```bash

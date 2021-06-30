@@ -1004,7 +1004,7 @@ class Client:
     def get_CDN(
         self,
         FromClearedDate: str='2021-01-01',
-        ToClearedDate: str='2021-01-02',
+        ToClearedDate: str='2021-02-01',
     ):
         """
         Credit Default Notice Data
@@ -1137,7 +1137,7 @@ class Client:
     def get_FREQ(
         self,
         FromDateTime: str='2021-01-01 00:01:00',
-        ToDateTime: str='2021-02-01 23:59:00',
+        ToDateTime: str='2021-01-02 23:59:00',
     ):
         """
         Rolling System Frequency
@@ -1276,9 +1276,9 @@ class Client:
     def get_MessageListRetrieval(
         self,
         EventStart: str='2021-01-01',
-        EventEnd: str='2021-01-02',
+        EventEnd: str='2021-02-01',
         PublicationFrom: str='2021-01-01',
-        PublicationTo: str='2021-01-02',
+        PublicationTo: str='2021-02-01',
         ParticipantId: str='',
         MessageID: str='',
         AssetID: str='',
