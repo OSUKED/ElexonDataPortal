@@ -2,14 +2,17 @@ import os
 from ElexonDataPortal.dev import orchestrator
 
 class Client:
-    def __init__(self, api_key: str=None):
+    def __init__(self, api_key: str=None, n_retry_attempts: int=3):
         if api_key is None:
             assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
             api_key = os.environ['BMRS_API_KEY']
             
         self.api_key = api_key
+        self.n_retry_attempts = n_retry_attempts
+        
         self.set_method_descs()
         
+        return
         
     def set_method_descs(self):
         get_methods_names = [attr for attr in dir(self) if attr[:4]=='get_']
@@ -36,6 +39,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='{{ stream['name'] }}',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='{{ stream['request_type'] }}',
             kwargs_map={{ stream['kwargs_map'] }},
             func_params={{ stream['func_params'] }},{% if stream['request_type'] not in ['non_temporal'] %}

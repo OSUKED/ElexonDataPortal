@@ -2,14 +2,17 @@ import os
 from ElexonDataPortal.dev import orchestrator
 
 class Client:
-    def __init__(self, api_key: str=None):
+    def __init__(self, api_key: str=None, n_retry_attempts: int=3):
         if api_key is None:
             assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
             api_key = os.environ['BMRS_API_KEY']
             
         self.api_key = api_key
+        self.n_retry_attempts = n_retry_attempts
+        
         self.set_method_descs()
         
+        return
         
     def set_method_descs(self):
         get_methods_names = [attr for attr in dir(self) if attr[:4]=='get_']
@@ -34,6 +37,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0610',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -60,6 +64,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0620',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -86,6 +91,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0630',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year_and_week',
             kwargs_map={'year': 'Year', 'week': 'Week'},
             func_params=['APIKey', 'year', 'week', 'ServiceType'],
@@ -112,6 +118,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0640',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year_and_month',
             kwargs_map={'year': 'Year', 'month': 'Month'},
             func_params=['APIKey', 'year', 'month', 'ServiceType'],
@@ -138,6 +145,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0650',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year',
             kwargs_map={'year': 'Year'},
             func_params=['APIKey', 'year', 'ServiceType'],
@@ -164,6 +172,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0710',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'end_time': 'EndTime', 'start_time': 'StartTime', 'start_date': 'StartDate', 'end_date': 'EndDate'},
             func_params=['APIKey', 'end_time', 'start_time', 'start_date', 'end_date', 'ServiceType'],
@@ -190,6 +199,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0720',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'start_time': 'StartTime', 'end_date': 'EndDate', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'start_time', 'end_date', 'end_time', 'ServiceType'],
@@ -216,6 +226,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0810',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year',
             kwargs_map={'year': 'Year'},
             func_params=['APIKey', 'year', 'ServiceType'],
@@ -242,6 +253,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B0910',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year',
             kwargs_map={'year': 'Year'},
             func_params=['APIKey', 'year', 'ServiceType'],
@@ -268,6 +280,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1010',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -294,6 +307,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1020',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -320,6 +334,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1030',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -346,6 +361,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1320',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -372,6 +388,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1330',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year_and_month',
             kwargs_map={'year': 'Year', 'month': 'Month'},
             func_params=['APIKey', 'year', 'month', 'ServiceType'],
@@ -398,6 +415,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1410',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year',
             kwargs_map={'year': 'Year'},
             func_params=['APIKey', 'year', 'ServiceType'],
@@ -424,6 +442,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1420',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year',
             kwargs_map={'year': 'Year'},
             func_params=['APIKey', 'year', 'ServiceType'],
@@ -450,6 +469,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1430',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -478,6 +498,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1440',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ProcessType', 'ServiceType'],
@@ -505,6 +526,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1510',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -531,6 +553,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1520',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -557,6 +580,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1530',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -583,6 +607,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1540',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_time_range',
             kwargs_map={'start_date': 'StartDate', 'end_date': 'EndDate', 'start_time': 'StartTime', 'end_time': 'EndTime'},
             func_params=['APIKey', 'start_date', 'end_date', 'start_time', 'end_time', 'ServiceType'],
@@ -611,6 +636,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1610',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'NGCBMUnitID', 'ServiceType'],
@@ -638,6 +664,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1620',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -664,6 +691,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1630',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -690,6 +718,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1720',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -716,6 +745,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1730',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -742,6 +772,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1740',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -768,6 +799,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1750',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -794,6 +826,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1760',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -820,6 +853,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1770',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -846,6 +880,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1780',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -872,6 +907,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1790',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='year_and_month',
             kwargs_map={'year': 'Year', 'month': 'Month'},
             func_params=['APIKey', 'year', 'month', 'ServiceType'],
@@ -898,6 +934,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1810',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -924,6 +961,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1820',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -950,6 +988,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_B1830',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -986,6 +1025,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_BOD',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
             func_params=['APIKey', 'date', 'SP', 'BMUnitId', 'BMUnitType', 'LeadPartyName', 'NGCBMUnit', 'Name', 'ServiceType'],
@@ -1017,6 +1057,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_CDN',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='non_temporal',
             kwargs_map={},
             func_params=['APIKey', 'FromClearedDate', 'ToClearedDate', 'ServiceType'],
@@ -1043,6 +1084,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_DETSYSPRICES',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -1069,6 +1111,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_DEVINDOD',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
@@ -1095,6 +1138,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_DISBSAD',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
             func_params=['APIKey', 'date', 'SP', 'ServiceType'],
@@ -1123,6 +1167,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_FORDAYDEM',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'ZoneIdentifier', 'start_date', 'end_date', 'ServiceType'],
@@ -1150,6 +1195,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_FREQ',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='non_temporal',
             kwargs_map={},
             func_params=['APIKey', 'FromDateTime', 'ToDateTime', 'ServiceType'],
@@ -1176,6 +1222,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_FUELHH',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
@@ -1204,6 +1251,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_MELIMBALNGC',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'ZoneIdentifier', 'start_date', 'end_date', 'ServiceType'],
@@ -1231,6 +1279,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_MID',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromSettlementDate', 'end_date': 'ToSettlementDate', 'SP': 'Period'},
             func_params=['APIKey', 'start_date', 'end_date', 'SP', 'ServiceType'],
@@ -1261,6 +1310,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_MessageDetailRetrieval',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='non_temporal',
             kwargs_map={},
             func_params=['APIKey', 'MessageId', 'ParticipantId', 'SequenceId', 'ActiveFlag', 'ServiceType'],
@@ -1307,6 +1357,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_MessageListRetrieval',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='non_temporal',
             kwargs_map={},
             func_params=['APIKey', 'EventStart', 'EventEnd', 'PublicationFrom', 'PublicationTo', 'ParticipantId', 'MessageID', 'AssetID', 'EventType', 'FuelType', 'MessageType', 'UnavailabilityType', 'ServiceType'],
@@ -1344,6 +1395,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_NETBSAD',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
             func_params=['APIKey', 'date', 'SP', 'isTwoDayWindow', 'ServiceType'],
@@ -1371,6 +1423,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_NONBM',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['start_date', 'end_date', 'APIKey', 'ServiceType'],
@@ -1407,6 +1460,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_PHYBMDATA',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='SP_and_date',
             kwargs_map={'date': 'SettlementDate', 'SP': 'SettlementPeriod'},
             func_params=['APIKey', 'date', 'SP', 'BMUnitId', 'BMUnitType', 'LeadPartyName', 'NGCBMUnit', 'Name', 'ServiceType'],
@@ -1438,6 +1492,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_SYSDEM',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
@@ -1464,6 +1519,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_SYSWARN',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
@@ -1490,6 +1546,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_TEMP',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
@@ -1516,6 +1573,7 @@ class Client:
         df = orchestrator.query_orchestrator(
             method='get_WINDFORFUELHH',
             api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
