@@ -131,7 +131,7 @@ def determine_request_type_from_fields(
     start_date_cols: list=['StartDate', 'FromSettlementDate', 'FromDate'],
     end_date_cols: list=['EndDate', 'ToSettlementDate', 'ToDate'],
     date_cols: list=['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date', 'startTimeOfHalfHrPeriod'],
-    SP_cols: list=['SettlementPeriod', 'Period'],
+    SP_cols: list=['SettlementPeriod', 'Period', 'settlementPeriod'],
     year_cols: list=['Year'],
     month_cols: list=['Month', 'MonthName'],
     week_cols: list=['Week']
@@ -178,7 +178,7 @@ def construct_method_to_params_map(method_to_params):
         'start_date': ['StartDate', 'FromSettlementDate', 'FromDate'],
         'end_date': ['EndDate', 'ToSettlementDate', 'ToDate'],
         'date': ['SettlementDate', 'ImplementationDate', 'DecommissioningDate', 'Date', 'startTimeOfHalfHrPeriod'],
-        'SP': ['SettlementPeriod', 'Period'],
+        'SP': ['SettlementPeriod', 'Period', 'settlementPeriod'],
         'year': ['Year'],
         'month': ['Month', 'MonthName'],
         'week': ['Week']

@@ -67,7 +67,7 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "query_orchestrator": "05-orchestrator.ipynb",
          "generate_streams": "06-client-gen.ipynb",
          "save_api_client": "06-client-gen.ipynb",
-         "app": "09-map-gen.ipynb",
+         "app": "vis-01-GB-decarb-progress.ipynb",
          "rebuild_library": "07-cli-rebuild.ipynb",
          "clean_route_gdf": "09-map-gen.ipynb",
          "load_route_gdf": "09-map-gen.ipynb",
@@ -151,7 +151,17 @@ index = {"convert_file_to_json": "00-documentation.ipynb",
          "get_SYSDEM": "03-raw-methods.ipynb",
          "get_SYSWARN": "03-raw-methods.ipynb",
          "get_TEMP": "03-raw-methods.ipynb",
-         "get_WINDFORFUELHH": "03-raw-methods.ipynb"}
+         "get_WINDFORFUELHH": "03-raw-methods.ipynb",
+         "get_ei_raw_urls": "vis-01-GB-decarb-progress.ipynb",
+         "get_ei_df": "vis-01-GB-decarb-progress.ipynb",
+         "clean_EI_df_for_plot": "vis-01-GB-decarb-progress.ipynb",
+         "rgb_2_plt_tuple": "vis-01-GB-decarb-progress.ipynb",
+         "convert_fuel_colour_dict_to_plt_tuple": "vis-01-GB-decarb-progress.ipynb",
+         "hide_spines": "vis-01-GB-decarb-progress.ipynb",
+         "stacked_fuel_plot": "vis-01-GB-decarb-progress.ipynb",
+         "generate_GB_decarb_progess": "vis-01-GB-decarb-progress.ipynb",
+         "construct_md_txt": "vis-01-GB-decarb-progress.ipynb",
+         "retry_request": "05-orchestrator.ipynb"}
 
 modules = ["api.py",
            "dev/clientgen.py",
@@ -165,7 +175,13 @@ modules = ["api.py",
            "dev/rdf.py",
            "dev/specgen.py",
            "dev/utils.py",
-           "rebuild.py"]
+           "rebuild.py",
+           "vis/decarb.py",
+           "vis/decarb.py",
+           "vis/decarb.py",
+           "dev/orchestrator.py",
+           "dev/orchestrator.py",
+           "dev/orchestrator.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"
 
