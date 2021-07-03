@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
             var mymap = L.map('map', {layers: [basemap, dateLayersGroup]}).setView([54.8, -4.61], 5);
 
             var overlayLayers = {
-                '<span style="font-size: 0.5em">Plants</span>': dateLayersGroup,
+//                 '<span style="font-size: 0.5em">Plants</span>': dateLayersGroup,
                 '<span style="font-size: 0.5em">Network</span>': routeLayer
             };
             L.control.layers(null, overlayLayers, {position: 'bottomright'}).addTo(mymap);
