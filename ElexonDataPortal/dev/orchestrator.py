@@ -379,6 +379,7 @@ def query_orchestrator(
     func_params: list=None,
     start_date: str=None,
     end_date: str=None,
+    n_attempts: int=3,
     **kwargs
 ):
     if request_type not in ['non_temporal']:
@@ -410,6 +411,7 @@ def query_orchestrator(
     df = request_func(
         method=method,
         api_key=api_key,
+        n_attempts=n_attempts,
         **kwargs
     )
 
