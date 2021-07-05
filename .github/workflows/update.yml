@@ -1,4 +1,4 @@
-name: "map-update"
+name: "visualisations-update"
 
 on: 
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .[dev]
           pip install mkdocs==1.1.2 mkdocs-material==7.1.1 mkdocs-material-extensions==1.0.1 mkdocstrings==0.15.0
-          python -m ElexonDataPortal.dev.mapgen
+          python -m ElexonDataPortal.vis.gen
           mkdocs gh-deploy --force
       
       - name: Saving changes to repo
