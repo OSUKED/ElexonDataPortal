@@ -1044,7 +1044,7 @@ class Client:
     def get_CDN(
         self,
         FromClearedDate: str='2021-01-01',
-        ToClearedDate: str='2021-02-01',
+        ToClearedDate: str='2021-01-02',
     ):
         """
         Credit Default Notice Data
@@ -1182,7 +1182,7 @@ class Client:
     def get_FREQ(
         self,
         FromDateTime: str='2021-01-01 00:01:00',
-        ToDateTime: str='2021-01-02 23:59:00',
+        ToDateTime: str='2021-02-01 23:59:00',
     ):
         """
         Rolling System Frequency
@@ -1225,6 +1225,33 @@ class Client:
             n_attempts=self.n_retry_attempts,
             request_type='date_range',
             kwargs_map={'start_date': 'FromDate', 'end_date': 'ToDate'},
+            func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
+            start_date=start_date,
+            end_date=end_date,
+        )
+        
+        return df
+    
+    
+    def get_LOLPDRM(
+        self,
+        start_date: str='2020-01-01', 
+        end_date: str='2020-01-07',
+    ):
+        """
+        Loss of Load Probability and De-rated Margin
+        
+        Parameters:
+            start_date (str)
+            end_date (str)
+        """
+        
+        df = orchestrator.query_orchestrator(
+            method='get_LOLPDRM',
+            api_key=self.api_key,
+            n_attempts=self.n_retry_attempts,
+            request_type='date_range',
+            kwargs_map={'start_date': 'FromSettlementDate', 'end_date': 'ToSettlementDate'},
             func_params=['APIKey', 'start_date', 'end_date', 'ServiceType'],
             start_date=start_date,
             end_date=end_date,
@@ -1326,9 +1353,9 @@ class Client:
     def get_MessageListRetrieval(
         self,
         EventStart: str='2021-01-01',
-        EventEnd: str='2021-02-01',
+        EventEnd: str='2021-01-02',
         PublicationFrom: str='2021-01-01',
-        PublicationTo: str='2021-02-01',
+        PublicationTo: str='2021-01-02',
         ParticipantId: str='',
         MessageID: str='',
         AssetID: str='',

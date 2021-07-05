@@ -1,6 +1,6 @@
 id,name,version,method,direction,Field Name,Field Type,Remarks,Mandatory,Format,Sample Data,tags
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1720,Amount Of Balancing Reserves Under Contract Service,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1720,Amount Of Balancing Reserves Under Contract Service,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -9,7 +9,7 @@ B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,Busines
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,MarketAgreementType,String,,No,,Monthly,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,PowerSystemResourceType,String,,No,,Generation,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,ImbalanceQuantityDirection,String,,No,,SURPLUS,Balancing
-B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,Quantity,String,,No,,200,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,DocumentType,String,,No,,System total load,Balancing
@@ -21,7 +21,7 @@ B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,ActiveF
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1720,Amount Of Balancing Reserves Under Contract Service,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1730,Prices Of Procured Balancing Reserves Service,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1730,Prices Of Procured Balancing Reserves Service,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -30,7 +30,7 @@ B1730,Prices Of Procured Balancing Reserves Service,1,get,response,BusinessType,
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,MarketAgreementType,String,,No,,Monthly,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,PowerSystemResourceType,String,,No,,Generation,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,FlowDirection,String,,No,,Stable,Balancing
-B1730,Prices Of Procured Balancing Reserves Service,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1730,Prices Of Procured Balancing Reserves Service,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,ProcurementPriceAmount,String,,No,,661237.297,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,PriceCategory,String,,No,,Excess Balance,Balancing
@@ -44,7 +44,7 @@ B1730,Prices Of Procured Balancing Reserves Service,1,get,response,DocumentId,St
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,UnitOfCurrency,String,,No,,GBP,Balancing
 B1730,Prices Of Procured Balancing Reserves Service,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1740,Accepted Aggregated Offers,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1740,Accepted Aggregated Offers,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1740,Accepted Aggregated Offers,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1740,Accepted Aggregated Offers,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1740,Accepted Aggregated Offers,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -52,7 +52,7 @@ B1740,Accepted Aggregated Offers,1,get,response,TimeSeriesID,String,,No,,NGET-EM
 B1740,Accepted Aggregated Offers,1,get,response,BusinessType,String,,No,,Frequency Containment Reserve,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,PowerSystemResourceType,String,,No,,Load,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,FlowDirection,String,,No,,Up,Balancing
-B1740,Accepted Aggregated Offers,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1740,Accepted Aggregated Offers,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,Quantity,String,,No,,50,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,SecondaryQuantity(MAW),String,,No,,50,Balancing
@@ -65,7 +65,7 @@ B1740,Accepted Aggregated Offers,1,get,response,ActiveFlag,String,,No,,Y,Balanci
 B1740,Accepted Aggregated Offers,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1740,Accepted Aggregated Offers,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1750,Activated Balancing Energy,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1750,Activated Balancing Energy,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1750,Activated Balancing Energy,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1750,Activated Balancing Energy,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1750,Activated Balancing Energy,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1750,Activated Balancing Energy,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -73,7 +73,7 @@ B1750,Activated Balancing Energy,1,get,response,TimeSeriesID,String,,No,,NGET-EM
 B1750,Activated Balancing Energy,1,get,response,BusinessType,String,,No,,Frequency Containment Reserve,Balancing
 B1750,Activated Balancing Energy,1,get,response,PowerSystemResourceType,String,,No,,Load,Balancing
 B1750,Activated Balancing Energy,1,get,response,FlowDirection,String,,No,,Stable,Balancing
-B1750,Activated Balancing Energy,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1750,Activated Balancing Energy,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1750,Activated Balancing Energy,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1750,Activated Balancing Energy,1,get,response,ActivationQuantity,String,,No,,50,Balancing
 B1750,Activated Balancing Energy,1,get,response,DocumentType,String,,No,,System total load,Balancing
@@ -85,7 +85,7 @@ B1750,Activated Balancing Energy,1,get,response,ActiveFlag,String,,No,,Y,Balanci
 B1750,Activated Balancing Energy,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1750,Activated Balancing Energy,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1760,Prices Of Activated Balancing Energy,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1760,Prices Of Activated Balancing Energy,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1760,Prices Of Activated Balancing Energy,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1760,Prices Of Activated Balancing Energy,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1760,Prices Of Activated Balancing Energy,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1760,Prices Of Activated Balancing Energy,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
@@ -100,13 +100,13 @@ B1760,Prices Of Activated Balancing Energy,1,get,response,ActiveFlag,String,,No,
 B1760,Prices Of Activated Balancing Energy,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1760,Prices Of Activated Balancing Energy,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1770,Imbalance Prices,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1770,Imbalance Prices,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1770,Imbalance Prices,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1770,Imbalance Prices,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1770,Imbalance Prices,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1770,Imbalance Prices,1,get,response,ControlArea,String,,No,,London,Balancing
 B1770,Imbalance Prices,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Balancing
 B1770,Imbalance Prices,1,get,response,BusinessType,String,,No,,Frequency Containment Reserve,Balancing
-B1770,Imbalance Prices,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1770,Imbalance Prices,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1770,Imbalance Prices,1,get,response,SettlementPeriod,Int,,No,*/1-50,1,Balancing
 B1770,Imbalance Prices,1,get,response,ImbalancePriceAmount,String,,No,,661237.297,Balancing
 B1770,Imbalance Prices,1,get,response,PriceCategory,String,,No,,Excess Balance,Balancing
@@ -119,14 +119,14 @@ B1770,Imbalance Prices,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 B1770,Imbalance Prices,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1770,Imbalance Prices,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1780,Aggregated Imbalance Volumes,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1780,Aggregated Imbalance Volumes,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,ControlArea,String,,No,,London,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,BusinessType,String,,No,,Balance Energy Deviation,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,ImbalanceQuantityDirection,String,,No,,SURPLUS,Balancing
-B1780,Aggregated Imbalance Volumes,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1780,Aggregated Imbalance Volumes,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,ImbalanceQuantity,String,,No,,661237.297,Balancing
 B1780,Aggregated Imbalance Volumes,1,get,response,DocumentType,String,,No,,System total load,Balancing
@@ -158,7 +158,7 @@ B1790,Financial Expenses and Income For Balancing,1,get,response,DocumentId,Stri
 B1790,Financial Expenses and Income For Balancing,1,get,response,UnitOfCurrency,String,,No,,GBP,Balancing
 B1790,Financial Expenses and Income For Balancing,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -167,7 +167,7 @@ B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,AcquiringDomain,String,,No,,A01=EIC Code,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,ConnectingDomain,String,,No,,A01=EIC Code,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,FlowDirection,String,,No,,Stable,Balancing
-B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,Quantity,String,,No,,121212.5,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,DocumentType,String,,No,,System total load,Balancing
@@ -179,7 +179,7 @@ B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1810,Cross-Border Balancing Volumes of Exchanged Bids and Offers,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1820,Cross-Border Balancing Prices,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1820,Cross-Border Balancing Prices,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1820,Cross-Border Balancing Prices,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1820,Cross-Border Balancing Prices,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1820,Cross-Border Balancing Prices,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -188,7 +188,7 @@ B1820,Cross-Border Balancing Prices,1,get,response,BusinessType,String,,No,,Freq
 B1820,Cross-Border Balancing Prices,1,get,response,AcquiringDomain,String,,No,,A01=EIC Code,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,ConnectingDomain,String,,No,,A01=EIC Code,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,FlowDirection,String,,No,,Stable,Balancing
-B1820,Cross-Border Balancing Prices,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1820,Cross-Border Balancing Prices,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,MinPriceAmount,String,,No,,1000,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,MaxPriceAmount,String,,No,,999999,Balancing
@@ -201,7 +201,7 @@ B1820,Cross-Border Balancing Prices,1,get,response,ActiveFlag,String,,No,,Y,Bala
 B1820,Cross-Border Balancing Prices,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1820,Cross-Border Balancing Prices,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-B1830,Cross-border Balancing Energy Activated,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Balancing
+B1830,Cross-border Balancing Energy Activated,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,request,Period,String,,Yes,*/1-50,1,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,ControlArea,String,,No,,London,Balancing
@@ -210,7 +210,7 @@ B1830,Cross-border Balancing Energy Activated,1,get,response,BusinessType,String
 B1830,Cross-border Balancing Energy Activated,1,get,response,AcquiringDomain,String,,No,,A01=EIC Code,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,ConnectingDomain,String,,No,,A01=EIC Code,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,FlowDirection,String,,No,,Stable,Balancing
-B1830,Cross-border Balancing Energy Activated,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+B1830,Cross-border Balancing Energy Activated,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,SecondaryQuantity,String,,No,,1012112,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,DocumentType,String,,No,,System total load,Balancing
@@ -222,11 +222,11 @@ B1830,Cross-border Balancing Energy Activated,1,get,response,ActiveFlag,String,,
 B1830,Cross-border Balancing Energy Activated,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Balancing
 B1830,Cross-border Balancing Energy Activated,1,get,response,DocumentRevNum,String,,No,,1,Balancing
 B0610,Actual Total Load per Bidding Zone,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
-B0610,Actual Total Load per Bidding Zone,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Demand
+B0610,Actual Total Load per Bidding Zone,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,request,Period,String,,Yes,*/1-50,1,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,response,TimeSeriesID,String,,No,,101,Demand
-B0610,Actual Total Load per Bidding Zone,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Demand
+B0610,Actual Total Load per Bidding Zone,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,response,Quantity,String,,No,,200,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,response,DocumentType,String,,No,,System total load,Demand
@@ -241,11 +241,11 @@ B0610,Actual Total Load per Bidding Zone,1,get,response,DocumentId,String,,No,,N
 B0610,Actual Total Load per Bidding Zone,1,get,response,DocumentRevNum,String,,No,,1,Demand
 B0610,Actual Total Load per Bidding Zone,1,get,response,SecondaryQuantity(MAW),String,,No,,50,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
-B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Demand
+B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,request,Period,String,,Yes,*/1-50,1,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Demand
-B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Demand
+B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,Quantity,String,,No,,200,Demand
 B0620,Day-Ahead Total Load Forecast per Bidding Zone,1,get,response,DocumentType,String,,No,,System total load,Demand
@@ -265,7 +265,7 @@ B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,request,Week,String,
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,BusinessType,String,,No,,Consumption,Demand
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Demand
-B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,Date,Date,,No,YYYY-MM-DD,2021-01-01,Demand
+B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,Date,Date,,No,YYYY-MM-DD,01/01/2021,Demand
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,Quantity(MAW),String,,No,,200,Demand
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,Week,int,,No,,13,Demand
 B0630,Week-Ahead Total Load Forecast per Bidding Zone,1,get,response,SecondaryQuantity(MAW),String,,No,,50,Demand
@@ -289,7 +289,7 @@ B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,Quantity,S
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,SecondaryQuantity(MAW),String,,No,,50,Demand
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,Year,int,,No,YYYY,2021,Demand
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,Month,String,,No,MMM,MAR,Demand
-B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,WeekCommencing(YYYY-MM-DD),Date,,No,YYYY-MM-DD,2021-01-01,Demand
+B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,WeekCommencing(YYYY-MM-DD),Date,,No,YYYY-MM-DD,01/01/2021,Demand
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,DocumentType,String,,No,,System total load,Demand
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,DocumentRevNum,String,,No,,2,Demand
 B0640,Month-Ahead Total Load Forecast Per Bidding Zone,1,get,response,ProcessType,String,,No,,Realised,Demand
@@ -364,15 +364,15 @@ B1420,Installed Generation Capacity per Unit,1,get,response,ProcessType,String,,
 B1420,Installed Generation Capacity per Unit,1,get,response,ActiveFlag,String,,No,,Y,Generation
 B1420,Installed Generation Capacity per Unit,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Generation
 B1420,Installed Generation Capacity per Unit,1,get,response,Nominal,String,,No,,153.2,Generation
-B1420,Installed Generation Capacity per Unit,1,get,response,ImplementationDate,String,,No,,2021-01-01,Generation
-B1420,Installed Generation Capacity per Unit,1,get,response,DecommissioningDate,String,,No,,2021-01-01,Generation
+B1420,Installed Generation Capacity per Unit,1,get,response,ImplementationDate,String,,No,,01/01/2021,Generation
+B1420,Installed Generation Capacity per Unit,1,get,response,DecommissioningDate,String,,No,,01/01/2021,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1430,Day-Ahead Aggregated Generation,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
+B1430,Day-Ahead Aggregated Generation,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,request,Period,String,,Yes,*/1-50,1,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,Quantity,String,,No,,200,Generation
-B1430,Day-Ahead Aggregated Generation,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+B1430,Day-Ahead Aggregated Generation,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,DocumentType,String,,No,,System total load,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,BusinessType,String,,No,,Consumption,Generation
@@ -383,14 +383,14 @@ B1430,Day-Ahead Aggregated Generation,1,get,response,ActiveFlag,String,,No,,Y,Ge
 B1430,Day-Ahead Aggregated Generation,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Generation
 B1430,Day-Ahead Aggregated Generation,1,get,response,DocumentRevNum,String,,No,,1,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1440,Generation forecasts for Wind and Solar,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
+B1440,Generation forecasts for Wind and Solar,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,request,Period,String,,Yes,*/1-50,1,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,request,ProcessType,String,,No,,Day Ahead,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,Quantity,double,,No,,200,Generation
-B1440,Generation forecasts for Wind and Solar,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+B1440,Generation forecasts for Wind and Solar,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,SettlementPeriod,int,,No,,1,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,PSRType,String,,No,,Generation,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,DocumentType,String,,No,,System total load,Generation
@@ -401,13 +401,13 @@ B1440,Generation forecasts for Wind and Solar,1,get,response,ActiveFlag,String,,
 B1440,Generation forecasts for Wind and Solar,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Generation
 B1440,Generation forecasts for Wind and Solar,1,get,response,DocumentRevNum,String,,No,,1,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1610,Actual Generation Output per Generation Unit,2,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
+B1610,Actual Generation Output per Generation Unit,2,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,request,Period,String,,Yes,*/1-50,1,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,request,NGCBMUnitID,String,,No,,*,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,Quantity,String,,No,,200,Generation
-B1610,Actual Generation Output per Generation Unit,2,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+B1610,Actual Generation Output per Generation Unit,2,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,SettlementPeriod,int,,No,*/1-50,1,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,PSRType,String,,No,,Generation,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,RegisteredResourceEICCode,String,,No,,EIC2_A0001,Generation
@@ -425,12 +425,12 @@ B1610,Actual Generation Output per Generation Unit,2,get,response,ActiveFlag,Str
 B1610,Actual Generation Output per Generation Unit,2,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Generation
 B1610,Actual Generation Output per Generation Unit,2,get,response,DocumentRevNum,String,,No,,1,Generation
 B1620,Actual Aggregated Generation per Type,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1620,Actual Aggregated Generation per Type,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
+B1620,Actual Aggregated Generation per Type,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
 B1620,Actual Aggregated Generation per Type,1,get,request,Period,String,,Yes,*/1-50,1,Generation
 B1620,Actual Aggregated Generation per Type,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,Quantity,String,,No,,200,Generation
-B1620,Actual Aggregated Generation per Type,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+B1620,Actual Aggregated Generation per Type,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,PSRType,String,,No,,Generation,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,DocumentType,String,,No,,System total load,Generation
@@ -441,13 +441,13 @@ B1620,Actual Aggregated Generation per Type,1,get,response,ActiveFlag,String,,No
 B1620,Actual Aggregated Generation per Type,1,get,response,DocumentId,String,,No,,NGET-EMFIP-ATL-401,Generation
 B1620,Actual Aggregated Generation per Type,1,get,response,DocumentRevNum,String,,No,,1,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
+B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,request,Period,String,,Yes,*/1-50,1,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,Quantity,double,,No,,200,Generation
-B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,PSRType,String,,No,,Generation,Generation
 B1630,Actual Or Estimated Wind and Solar Power Generation,1,get,response,DocumentType,String,,No,,System total load,Generation
@@ -482,12 +482,12 @@ B0910,Expansion and Dismantling Projects,1,get,response,DocumentId,String,,No,,D
 B0910,Expansion and Dismantling Projects,1,get,response,DocumentRevNum,String,,No,,12,Transmission
 B0910,Expansion and Dismantling Projects,1,get,response,Year,int,,No,,2021,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
-B1320,Congestion Management Measures Countertrading,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,2021-01-01,Transmission
+B1320,Congestion Management Measures Countertrading,1,get,request,SettlementDate,String,,Yes,YYYY-MM-DD,01/01/2021,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,request,Period,String,,Yes,*/1-50,1,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,request,ServiceType,String,,No,,csv/xml,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,response,Quantity(MAW),String,,No,,200,Transmission
-B1320,Congestion Management Measures Countertrading,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Transmission
+B1320,Congestion Management Measures Countertrading,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,response,SettlementPeriod,int,,No,*/1-50,1,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,response,ReasonCode,String,,No,,Complementary Information,Transmission
 B1320,Congestion Management Measures Countertrading,1,get,response,ReasonDescription,String,,No,,Infrastructure End of Life,Transmission
@@ -522,13 +522,13 @@ B1330,Congestion Management Measures Costs of Congestion Management,1,get,respon
 B0710,Planned Unavailability of Consumption Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Demand
-B0710,Planned Unavailability of Consumption Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Demand
-B0710,Planned Unavailability of Consumption Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Demand
+B0710,Planned Unavailability of Consumption Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Demand
+B0710,Planned Unavailability of Consumption Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,BusinessType,String,,No,,Solar Generation,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Demand
-B0710,Planned Unavailability of Consumption Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Demand
-B0710,Planned Unavailability of Consumption Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Demand
+B0710,Planned Unavailability of Consumption Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Demand
+B0710,Planned Unavailability of Consumption Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,Quantity,String,,No,,200,Demand
@@ -544,15 +544,15 @@ B0710,Planned Unavailability of Consumption Units,1,get,response,BMUNITId,String
 B0710,Planned Unavailability of Consumption Units,1,get,response,AssestEICCode,String,,No,,registered.12345,Demand
 B0710,Planned Unavailability of Consumption Units,1,get,response,NGCBMUnitid,String,,No,,,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
-B0720,Changes In Actual Availability Of Consumption Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Demand
+B0720,Changes In Actual Availability Of Consumption Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Demand
-B0720,Changes In Actual Availability Of Consumption Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Demand
+B0720,Changes In Actual Availability Of Consumption Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,BusinessType,String,,No,,Solar Generation,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Demand
-B0720,Changes In Actual Availability Of Consumption Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Demand
-B0720,Changes In Actual Availability Of Consumption Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Demand
+B0720,Changes In Actual Availability Of Consumption Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Demand
+B0720,Changes In Actual Availability Of Consumption Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,ReasonCode,String,,No,,shutdown,Demand
@@ -568,15 +568,15 @@ B0720,Changes In Actual Availability Of Consumption Units,1,get,response,AssestB
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,AssestEICCode,String,,No,,registered.12345,Demand
 B0720,Changes In Actual Availability Of Consumption Units,1,get,response,NGCBMUnitid,String,,No,,,Demand
 B1010,Planned Unavailability In The Transmission Grid,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
-B1010,Planned Unavailability In The Transmission Grid,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Transmission
-B1010,Planned Unavailability In The Transmission Grid,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Transmission
+B1010,Planned Unavailability In The Transmission Grid,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Transmission
+B1010,Planned Unavailability In The Transmission Grid,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,request,ServiceType,String,,No,,csv/xml,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,BusinessType,String,,No,,Solar Generation,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Transmission
-B1010,Planned Unavailability In The Transmission Grid,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Transmission
-B1010,Planned Unavailability In The Transmission Grid,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Transmission
+B1010,Planned Unavailability In The Transmission Grid,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Transmission
+B1010,Planned Unavailability In The Transmission Grid,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,ReasonCode,String,,No,,shutdown,Transmission
@@ -595,15 +595,15 @@ B1010,Planned Unavailability In The Transmission Grid,1,get,response,ActiveFlag,
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,DocumentId,String,,No,,NGET-PUCU-00001,Transmission
 B1010,Planned Unavailability In The Transmission Grid,1,get,response,DocumentRevNum,String,,No,,1,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
-B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Transmission
-B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Transmission
+B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Transmission
+B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,request,ServiceType,String,,No,,csv/xml,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,BusinessType,String,,No,,Solar Generation,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Transmission
-B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Transmission
-B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Transmission
+B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Transmission
+B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,ReasonCode,String,,No,,shutdown,Transmission
@@ -622,15 +622,15 @@ B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,Act
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,DocumentId,String,,No,,NGET-PUCU-00001,Transmission
 B1020,Changes In Actual Availability In The Transmission Grid,1,get,response,DocumentRevNum,String,,No,,1,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
-B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Transmission
-B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Transmission
+B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Transmission
+B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,request,ServiceType,String,,No,,csv/xml,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,BusinessType,String,,No,,Solar Generation,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Transmission
-B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Transmission
-B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Transmission
+B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Transmission
+B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,ReasonCode,String,,No,,shutdown,Transmission
@@ -649,15 +649,15 @@ B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,respo
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,DocumentId,String,,No,,NGET-PUCU-00001,Transmission
 B1030,Changes In Actual Availability of Offshore Grid Infrastructure,1,get,response,DocumentRevNum,String,,No,,1,Transmission
 B1510,Planned Unavailability of Generation Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1510,Planned Unavailability of Generation Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
-B1510,Planned Unavailability of Generation Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Generation
+B1510,Planned Unavailability of Generation Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
+B1510,Planned Unavailability of Generation Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Generation
 B1510,Planned Unavailability of Generation Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Generation
 B1510,Planned Unavailability of Generation Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Generation
 B1510,Planned Unavailability of Generation Units,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
-B1510,Planned Unavailability of Generation Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
-B1510,Planned Unavailability of Generation Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Generation
+B1510,Planned Unavailability of Generation Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
+B1510,Planned Unavailability of Generation Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,ReasonCode,String,,No,,shutdown,Generation
@@ -678,15 +678,15 @@ B1510,Planned Unavailability of Generation Units,1,get,response,DocumentId,Strin
 B1510,Planned Unavailability of Generation Units,1,get,response,DocumentRevNum,String,,No,,2,Generation
 B1510,Planned Unavailability of Generation Units,1,get,response,PSREICCode,String,,No,,BMUnitEIC,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1520,Changes In Actual Availability of Generation Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
-B1520,Changes In Actual Availability of Generation Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Generation
+B1520,Changes In Actual Availability of Generation Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
+B1520,Changes In Actual Availability of Generation Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
-B1520,Changes In Actual Availability of Generation Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
-B1520,Changes In Actual Availability of Generation Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Generation
+B1520,Changes In Actual Availability of Generation Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
+B1520,Changes In Actual Availability of Generation Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,Quantity(MAW),String,,No,dddd,200,Generation
@@ -705,15 +705,15 @@ B1520,Changes In Actual Availability of Generation Units,1,get,response,ActiveFl
 B1520,Changes In Actual Availability of Generation Units,1,get,response,DocumentId,String,,No,,NGET-AAGTYU,Generation
 B1520,Changes In Actual Availability of Generation Units,1,get,response,DocumentRevNum,String,,No,,2,Generation
 B1530,Planned Unavailability of Production Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1530,Planned Unavailability of Production Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
-B1530,Planned Unavailability of Production Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Generation
+B1530,Planned Unavailability of Production Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
+B1530,Planned Unavailability of Production Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Generation
 B1530,Planned Unavailability of Production Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Generation
 B1530,Planned Unavailability of Production Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Generation
 B1530,Planned Unavailability of Production Units,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
-B1530,Planned Unavailability of Production Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
-B1530,Planned Unavailability of Production Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Generation
+B1530,Planned Unavailability of Production Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
+B1530,Planned Unavailability of Production Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,ReasonCode,String,,No,,Complementary Information,Generation
@@ -730,15 +730,15 @@ B1530,Planned Unavailability of Production Units,1,get,response,ActiveFlag,Strin
 B1530,Planned Unavailability of Production Units,1,get,response,DocumentId,String,,No,,NGET-AAGTYU,Generation
 B1530,Planned Unavailability of Production Units,1,get,response,DocumentRevNum,String,,No,,2,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-B1540,Changes In Actual Availability of Production Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,2021-01-01,Generation
-B1540,Changes In Actual Availability of Production Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,2021-02-01,Generation
+B1540,Changes In Actual Availability of Production Units,1,get,request,StartDate,String,,Yes,YYYY-MM-DD,01/01/2021,Generation
+B1540,Changes In Actual Availability of Production Units,1,get,request,EndDate,String,,Yes,YYYY-MM-DD,01/02/2021,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,request,StartTime,String,,Yes,mm:hh:ss ZZ,00:00:00,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,request,EndTime,String,,Yes,mm:hh:ss ZZ,23:59:59,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,BusinessType,String,,No,,Solar Generation,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,TimeSeriesID,String,,No,,NGET-EMFIP-ATL-0002,Generation
-B1540,Changes In Actual Availability of Production Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,2021-01-01,Generation
-B1540,Changes In Actual Availability of Production Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,2021-02-01,Generation
+B1540,Changes In Actual Availability of Production Units,1,get,response,StartDate,Date,,No,YYYY-MM-DD,01/01/2021,Generation
+B1540,Changes In Actual Availability of Production Units,1,get,response,EndDate,Date,,No,YYYY-MM-DD,01/02/2021,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,StartTime,Date,,No,mm:hh:ss ZZ,00:00:00,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,EndTime,Date,,No,mm:hh:ss ZZ,23:59:59,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,ReasonCode,String,,No,,Complementary Information,Generation
@@ -755,10 +755,10 @@ B1540,Changes In Actual Availability of Production Units,1,get,response,ActiveFl
 B1540,Changes In Actual Availability of Production Units,1,get,response,DocumentId,String,,No,,NGET-AAPU-00001t1,Generation
 B1540,Changes In Actual Availability of Production Units,1,get,response,DocumentRevNum,String,,No,,2,Generation
 MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,APIKey,String,The key used to identify and authorize the request,Yes,,AP8DA23,REMIT
-MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,EventStart,String,The start date of the event,No,YYYY-MM-DD,2021-01-01,REMIT
-MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,EventEnd,String,The end date of the event,No,YYYY-MM-DD,2021-02-01,REMIT
-MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,PublicationFrom,String,The start date of the publication,No,YYYY-MM-DD,2021-01-01,REMIT
-MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,PublicationTo,String,The end date of the publication,No,YYYY-MM-DD,2021-02-01,REMIT
+MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,EventStart,String,The start date of the event,No,YYYY-MM-DD,01/01/2021,REMIT
+MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,EventEnd,String,The end date of the event,No,YYYY-MM-DD,01/02/2021,REMIT
+MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,PublicationFrom,String,The start date of the publication,No,YYYY-MM-DD,01/01/2021,REMIT
+MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,PublicationTo,String,The end date of the publication,No,YYYY-MM-DD,01/02/2021,REMIT
 MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,ParticipantId,String,The ID of the participant.,No,,,REMIT
 MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,MessageID,String,The ID of the message.,No,,,REMIT
 MessageListRetrieval,REMIT Flow - Message List Retrieval,1,get,request,AssetID,String,The ID of the asset.,No,,,REMIT
@@ -774,18 +774,18 @@ MessageDetailRetrieval,REMIT Flow - Message List Retrieval,1,get,request,Sequenc
 MessageDetailRetrieval,REMIT Flow - Message List Retrieval,1,get,request,ActiveFlag,String,,No,,N,REMIT
 MessageDetailRetrieval,REMIT Flow - Message List Retrieval,1,get,request,ServiceType,String,,No,,csv/xml.,REMIT
 TEMP,Temperature Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-TEMP,Temperature Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Generation
-TEMP,Temperature Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Generation
+TEMP,Temperature Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Generation
+TEMP,Temperature Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Generation
 TEMP,Temperature Data,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 TEMP,Temperature Data,1,get,response,RecordType,String,,No,,TEMP,Generation
-TEMP,Temperature Data,1,get,response,Spot(Date)Time,Date,,No,YYYY-MM-DD,2021-01-01,Generation
+TEMP,Temperature Data,1,get,response,Spot(Date)Time,Date,,No,YYYY-MM-DD,01/01/2021,Generation
 TEMP,Temperature Data,1,get,response,TemperatureOut-Turn,Double,,No,,9.5,Generation
 TEMP,Temperature Data,1,get,response,NormalReferenceTemperature,Double,,No,,9.6,Generation
 TEMP,Temperature Data,1,get,response,LowReferenceTemperature,Double,,No,,12.5,Generation
 TEMP,Temperature Data,1,get,response,HighReferenceTemperature,Double,,No,,12.5,Generation
 TEMP,Temperature Data,1,get,,ActiveFlag,String,,No,,Y,Generation
 BOD,Bid Offer Level Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-BOD,Bid Offer Level Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
+BOD,Bid Offer Level Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
 BOD,Bid Offer Level Data,1,get,request,SettlementPeriod,String,,No,1 to 50 or *,12,Balancing
 BOD,Bid Offer Level Data,1,get,request,BMUnitId,String,,No,,"2__AEENG000, G, E.ON Energy, Solutions Limited, EAS-EST01",Balancing
 BOD,Bid Offer Level Data,1,get,request,BMUnitType,String,,No,,"G, S, E, I, T, etc",Balancing
@@ -798,43 +798,43 @@ BOD,Bid Offer Level Data,1,get,response,BMUnitId,String,,No,,"2__AEENG000, G, E.
 BOD,Bid Offer Level Data,1,get,response,BMUnitType,String,,No,,"G, S, E, I, T, etc",Balancing
 BOD,Bid Offer Level Data,1,get,response,LeadPartyName,String,,No,,AES New Energy Limited,Balancing
 BOD,Bid Offer Level Data,1,get,response,NGCBMUnitName,String,,No,,"EAS-ASP01, AES New Energy Limited, G, 2__AAEPD000",Balancing
-BOD,Bid Offer Level Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+BOD,Bid Offer Level Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 BOD,Bid Offer Level Data,1,get,response,SettlementPeriod,Integer,,No,,1,Balancing
 BOD,Bid Offer Level Data,1,get,response,BMOfferPairNumber,Integer,,No,,"1, -1, etc.",Balancing
-BOD,Bid Offer Level Data,1,get,response,FromTime,Date,,No,YYYY-MM-DD HH:MM:SS,2021-01-01 00:01:00,Balancing
+BOD,Bid Offer Level Data,1,get,response,FromTime,Date,,No,YYYY-MM-DD HH:MM:SS,01/01/2021 00:01,Balancing
 BOD,Bid Offer Level Data,1,get,response,FromLevel,Integer,,No,,0,Balancing
-BOD,Bid Offer Level Data,1,get,response,ToTime,Date,,No,YYYY-MM-DD HH:MM:SS,2021-01-02 23:59:00,Balancing
+BOD,Bid Offer Level Data,1,get,response,ToTime,Date,,No,YYYY-MM-DD HH:MM:SS,02/01/2021 23:59,Balancing
 BOD,Bid Offer Level Data,1,get,response,ToLevel,Integer,,No,,0,Balancing
 BOD,Bid Offer Level Data,1,get,response,BidPrice,Double,,No,,0,Balancing
 BOD,Bid Offer Level Data,1,get,response,OfferPrice,Double,,No,,0,Balancing
 BOD,Bid Offer Level Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 CDN,Credit Default Notice Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-CDN,Credit Default Notice Data,1,get,request,FromClearedDate,String,,No,YYYY-DD-MM,2021-01-01,Balancing
-CDN,Credit Default Notice Data,1,get,request,ToClearedDate,String,,No,YYYY-DD-MM,2021-02-01,Balancing
+CDN,Credit Default Notice Data,1,get,request,FromClearedDate,String,,No,YYYY-DD-MM,01/01/2021,Balancing
+CDN,Credit Default Notice Data,1,get,request,ToClearedDate,String,,No,YYYY-DD-MM,01/02/2021,Balancing
 CDN,Credit Default Notice Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 CDN,Credit Default Notice Data,1,get,response,RecordType,String,,No,,CDN,Balancing
 CDN,Credit Default Notice Data,1,get,response,ParticipantID,String,,No,,NEEB,Balancing
 CDN,Credit Default Notice Data,1,get,response,CreditDefaultLevel,Integer,,No,,1,Balancing
-CDN,Credit Default Notice Data,1,get,response,EnteredDefaultSettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+CDN,Credit Default Notice Data,1,get,response,EnteredDefaultSettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 CDN,Credit Default Notice Data,1,get,response,EnergyDefaultSettlementPeriod,Integer,,No,,2,Balancing
-CDN,Credit Default Notice Data,1,get,response,ClearedDefaultSettlementDate,Date,,No,YYYY-MM-DD,2021-02-01,Balancing
+CDN,Credit Default Notice Data,1,get,response,ClearedDefaultSettlementDate,Date,,No,YYYY-MM-DD,01/02/2021,Balancing
 CDN,Credit Default Notice Data,1,get,response,ClearedDefaultSettlementPeriod,Integer,,No,,21,Balancing
 CDN,Credit Default Notice Data,1,get,response,ClearedDefaultText,String,,No,,Credit Cover Percentage <= 75% of credit limit (level default),Balancing
 CDN,Credit Default Notice Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 SYSWARN,System Warnings,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
-SYSWARN,System Warnings,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Transmission
-SYSWARN,System Warnings,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Transmission
+SYSWARN,System Warnings,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Transmission
+SYSWARN,System Warnings,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Transmission
 SYSWARN,System Warnings,1,get,request,ServiceType,String,,No,,csv/xml,Transmission
 SYSWARN,System Warnings,1,get,response,RecordType,String,,No,,SYSWARN,Transmission
-SYSWARN,System Warnings,1,get,response,WarningDate/Time,Date,,No,YYYY-MM-DD HH:MM,2021-01-01 00:01:00,Transmission
+SYSWARN,System Warnings,1,get,response,WarningDate/Time,Date,,No,YYYY-MM-DD HH:MM,01/01/2021 00:01,Transmission
 SYSWARN,System Warnings,1,get,response,WarningText,String,,No,,Text Data,Transmission
 SYSWARN,System Warnings,1,get,response,ActiveFlag,String,,No,,Y,Transmission
 DISBSAD,Balancing Services Adjustment Action Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-DISBSAD,Balancing Services Adjustment Action Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
+DISBSAD,Balancing Services Adjustment Action Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,request,SettlementPeriod,String,,No,,1,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,RecordType,String,,No,,DISAG,Balancing
-DISBSAD,Balancing Services Adjustment Action Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+DISBSAD,Balancing Services Adjustment Action Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,SettlementPeriod,Integer,,No,,1,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,ActionIdentifier,Integer,,No,,6,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,SO-Flag,String,,No,,T,Balancing
@@ -843,12 +843,12 @@ DISBSAD,Balancing Services Adjustment Action Data,1,get,response,ActionCost,Doub
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,ActionVolume,Double,,No,,150.25,Balancing
 DISBSAD,Balancing Services Adjustment Action Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-NETBSAD,Balancing Service Adjustment Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
+NETBSAD,Balancing Service Adjustment Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,request,SettlementPeriod,String,,No,,1,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,request,isTwoDayWindow,String,,No,,FALSE,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,response,RecordType,String,,No,,BSAD,Balancing
-NETBSAD,Balancing Service Adjustment Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+NETBSAD,Balancing Service Adjustment Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,response,SettlementPeriod,Integer,,No,,1,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,response,NetEnergySell-PriceCostAdjustment-(ESCA)£,Double,,No,,60.23,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,response,NetEnergySell-PriceVolumeAdjustment-(ESVA)MWh,Double,,No,,1031.53,Balancing
@@ -860,50 +860,50 @@ NETBSAD,Balancing Service Adjustment Data,1,get,response,NetSystemBuy-PriceVolum
 NETBSAD,Balancing Service Adjustment Data,1,get,response,Buy-PricePriceAdjust(BPA)£/MWh,Double,,No,,0,Balancing
 NETBSAD,Balancing Service Adjustment Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 FREQ,Rolling System Frequency,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
-FREQ,Rolling System Frequency,1,get,request,FromDateTime,String,,No,YYYY-MM-DD HH:MM:SS,2021-01-01 00:01:00,Demand
-FREQ,Rolling System Frequency,1,get,request,ToDateTime,String,,No,YYYY-MM-DD HH:MM:SS,2021-01-02 23:59:00,Demand
+FREQ,Rolling System Frequency,1,get,request,FromDateTime,String,,No,YYYY-MM-DD HH:MM:SS,01/01/2021 00:01,Demand
+FREQ,Rolling System Frequency,1,get,request,ToDateTime,String,,No,YYYY-MM-DD HH:MM:SS,02/01/2021 23:59,Demand
 FREQ,Rolling System Frequency,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 FREQ,Rolling System Frequency,1,get,response,RecordType,String,,No,,VD,Demand
-FREQ,Rolling System Frequency,1,get,response,Date,Date,,No,YYYY-MM-DD,2021-01-01,Demand
+FREQ,Rolling System Frequency,1,get,response,Date,Date,,No,YYYY-MM-DD,01/01/2021,Demand
 FREQ,Rolling System Frequency,1,get,response,SpotTime,Date,,No,HH:MM:SS,00:00:00,Demand
 FREQ,Rolling System Frequency,1,get,response,Frequency(Hz),Double,,No,Derived data  = Sum of Demand across all the Fuel type (N0509),50000.09,Demand
 FREQ,Rolling System Frequency,1,get,response,ActiveFlag,String,,No,,Y,Demand
 MID,Market Index Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-MID,Market Index Data,1,get,request,FromSettlementDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
-MID,Market Index Data,1,get,request,ToSettlementDate,String,,No,YYYY-MM-DD,2021-02-01,Balancing
+MID,Market Index Data,1,get,request,FromSettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
+MID,Market Index Data,1,get,request,ToSettlementDate,String,,No,YYYY-MM-DD,01/02/2021,Balancing
 MID,Market Index Data,1,get,request,Period,String,,No,,*,Balancing
 MID,Market Index Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 MID,Market Index Data,1,get,response,RecordType,String,,No,,MID,Balancing
 MID,Market Index Data,1,get,response,DataProvider,String,,No,,APXMIDP,Balancing
-MID,Market Index Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+MID,Market Index Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 MID,Market Index Data,1,get,response,SettlementPeriod,Integer,,No,,1,Balancing
 MID,Market Index Data,1,get,response,Price,Double,,No,,24.09,Balancing
 MID,Market Index Data,1,get,response,Volume,Double,,No,,434.4,Balancing
 MID,Market Index Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-DEVINDOD,Daily Energy Volume Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
-DEVINDOD,Daily Energy Volume Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Balancing
+DEVINDOD,Daily Energy Volume Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
+DEVINDOD,Daily Energy Volume Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,RecordType,String,,No,,INDOD,Balancing
-DEVINDOD,Daily Energy Volume Data,1,get,response,SettlementDay,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+DEVINDOD,Daily Energy Volume Data,1,get,response,SettlementDay,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,DailyEnergyVolumeOutturn,Integer,,No,,628909,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,DailyEnergyVolumeNormalReference,Integer,,No,,594930,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,DailyEnergyVolumeLowReference,Integer,,No,,542739,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,DailyEnergyVolumeHighReference,Integer,,No,,631710,Balancing
 DEVINDOD,Daily Energy Volume Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
-NONBM,Non BM STOR Instructed Volume Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
-NONBM,Non BM STOR Instructed Volume Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Balancing
+NONBM,Non BM STOR Instructed Volume Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
+NONBM,Non BM STOR Instructed Volume Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,response,RecordType,String,,No,-,NONBM,Balancing
-NONBM,Non BM STOR Instructed Volume Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,2021-01-01,Balancing
+NONBM,Non BM STOR Instructed Volume Data,1,get,response,SettlementDate,Date,,No,YYYY-MM-DD,01/01/2021,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,response,SettlementPeriod,Integer,,No,,1,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,response,SystemZone,String,,No,,Always N,Balancing
-NONBM,Non BM STOR Instructed Volume Data,1,get,response,NONBMPublishTime,Date,,No,YYYY-MM-DD HH:MM:SS,2021-01-01 00:01:00,Balancing
+NONBM,Non BM STOR Instructed Volume Data,1,get,response,NONBMPublishTime,Date,,No,YYYY-MM-DD HH:MM:SS,01/01/2021 00:01,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,response,InstructedVolume(MWh),Integer,,No,,12345,Balancing
 NONBM,Non BM STOR Instructed Volume Data,1,get,response,ActiveFlag,String,,No,,Y,Balancing
 PHYBMDATA,Physical Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-PHYBMDATA,Physical Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,2021-01-01,Balancing
+PHYBMDATA,Physical Data,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Balancing
 PHYBMDATA,Physical Data,1,get,request,SettlementPeriod,String,,No,1 to 50 or *,12,Balancing
 PHYBMDATA,Physical Data,1,get,request,BMUnitId,String,,No,,,Balancing
 PHYBMDATA,Physical Data,1,get,request,BMUnitType,String,,No,,,Balancing
@@ -917,23 +917,27 @@ FUELHH,Half Hourly Outturn Generation by Fuel Type,1,get,request,ToDate,String,,
 FUELHH,Half Hourly Outturn Generation by Fuel Type,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
 MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,ZoneIdentifier,String,,No,,N,Demand
-MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Demand
-MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Demand
+MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Demand
+MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Demand
 MELIMBALNGC,Forecast Day and Day Ahead Margin and Imbalance Data,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
 FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,ZoneIdentifier,String,,No,,N,Demand
-FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Demand
-FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Demand
+FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Demand
+FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Demand
 FORDAYDEM,Forecast Day and Day Ahead Demand Data,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 SYSDEM,System Demand,1,get,request,APIKey,String,,Yes,,AP8DA23,Demand
-SYSDEM,System Demand,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Demand
-SYSDEM,System Demand,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Demand
+SYSDEM,System Demand,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Demand
+SYSDEM,System Demand,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Demand
 SYSDEM,System Demand,1,get,request,ServiceType,String,,No,,csv/xml,Demand
 WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,APIKey,String,,Yes,,AP8DA23,Generation
-WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,2021-01-01,Generation
-WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,2021-02-01,Generation
+WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,FromDate,String,,No,YYYY-MM-DD,01/01/2021,Generation
+WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,ToDate,String,,No,YYYY-MM-DD,01/02/2021,Generation
 WINDFORFUELHH,Wind Generation Forecast and Out-turn Data,1,get,request,ServiceType,String,,No,,csv/xml,Generation
 DETSYSPRICES,Detailed System Prices,1,get,request,APIKey,String,,Yes,,AP8DA23,Balancing
-DETSYSPRICES,Detailed System Prices,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,2014-02-01,Balancing
+DETSYSPRICES,Detailed System Prices,1,get,request,SettlementDate,String,,No,YYYY-MM-DD,01/02/2014,Balancing
 DETSYSPRICES,Detailed System Prices,1,get,request,SettlementPeriod,String,,No,,2,Balancing
 DETSYSPRICES,Detailed System Prices,1,get,request,ServiceType,String,,No,,csv/xml,Balancing
+LOLPDRM,Loss of Load Probability and De-rated Margin,1,get,request,APIKey,String,,Yes,,AP8DA23,Transmission
+LOLPDRM,Loss of Load Probability and De-rated Margin,1,get,request,FromSettlementDate,String,,No,YYYY-MM-DD,01/01/2021,Transmission
+LOLPDRM,Loss of Load Probability and De-rated Margin,1,get,request,ToSettlementDate,String,,No,YYYY-MM-DD,01/02/2021,Transmission
+LOLPDRM,Loss of Load Probability and De-rated Margin,1,get,request,ServiceType,String,,No,,csv/xml,Transmission

@@ -42,9 +42,7 @@ nav:
   - Home: 
     - Welcome: index.md
     - Quick-Start: 08-quick-start.md
-  - Visualisations:
-    - Contributed: vis-contrib.md
-    - Map: map.md
+  - Visualisations: visualisations.md
   - API: api.md
   - Development:
     - Utilities: 01-utils.md

@@ -54,7 +54,7 @@ function createDateLayers(geojsonFeatures){
             onEachFeature: function (feature, layer) {
                 var popupText = 'Name: ' + feature.properties.name + '<br>Latest Output (MW): ' + feature.properties.output[geojsonFeatures.timeseries[geojsonFeatures.timeseries.length-1]];
                 if(feature.properties.capacity) popupText = popupText.concat('<br>Capacity (MW): ' + feature.properties.capacity);;
-                layer.bindPopup('<p style="font-size: 0.5em">' + popupText + '</p>');
+                layer.bindPopup('<p style="font-size: 1.5em">' + popupText + '</p>');
             }
         });
         dateLayer.options.epoch = epochTime
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json", function(plant_data) {
         $.getJSON("https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json", function(route_data) {
             var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+              attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery Â© <a href="https://www.mapbox.com/">Mapbox</a>',
               maxZoom: 18,
               id: 'mapbox/streets-v11',
               tileSize: 512,
@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var mymap = L.map('map', {layers: [basemap, dateLayersGroup]}).setView([54.8, -4.61], 5);
 
             var overlayLayers = {
-//                 '<span style="font-size: 0.5em">Plants</span>': dateLayersGroup,
-                '<span style="font-size: 0.5em">Network</span>': routeLayer
+//                 '<span style="font-size: 1.5em">Plants</span>': dateLayersGroup,
+                '<span style="font-size: 1.5em">Network</span>': routeLayer
             };
             L.control.layers(null, overlayLayers, {position: 'bottomright'}).addTo(mymap);
 

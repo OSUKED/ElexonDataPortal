@@ -114,7 +114,7 @@ def get_B0710(
     EndTime='23:59:59',
     StartTime='00:00:00',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B0710/v1'
 ):
@@ -139,7 +139,7 @@ def get_B0720(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
     StartTime='00:00:00',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     EndTime='23:59:59',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/B0720/v1'
@@ -204,7 +204,7 @@ def get_B0910(
 def get_B1010(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -230,7 +230,7 @@ def get_B1010(
 def get_B1020(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -256,7 +256,7 @@ def get_B1020(
 def get_B1030(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -412,7 +412,7 @@ def get_B1440(
 def get_B1510(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -438,7 +438,7 @@ def get_B1510(
 def get_B1520(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -464,7 +464,7 @@ def get_B1520(
 def get_B1530(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -490,7 +490,7 @@ def get_B1530(
 def get_B1540(
     APIKey='AP8DA23',
     StartDate='2021-01-01',
-    EndDate='2021-02-01',
+    EndDate='2021-01-02',
     StartTime='00:00:00',
     EndTime='23:59:59',
     ServiceType='csv',
@@ -858,7 +858,7 @@ def get_BOD(
 def get_CDN(
     APIKey='AP8DA23',
     FromClearedDate='2021-01-01',
-    ToClearedDate='2021-02-01',
+    ToClearedDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/CDN/v1'
 ):
@@ -879,7 +879,7 @@ def get_CDN(
 
 def get_DETSYSPRICES(
     APIKey='AP8DA23',
-    SettlementDate='2014-02-01',
+    SettlementDate='2014-01-02',
     SettlementPeriod='2',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/DETSYSPRICES/v1'
@@ -902,7 +902,7 @@ def get_DETSYSPRICES(
 def get_DEVINDOD(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/DEVINDOD/v1'
 ):
@@ -947,7 +947,7 @@ def get_FORDAYDEM(
     APIKey='AP8DA23',
     ZoneIdentifier='N',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/FORDAYDEM/v1'
 ):
@@ -970,7 +970,7 @@ def get_FORDAYDEM(
 def get_FREQ(
     APIKey='AP8DA23',
     FromDateTime='2021-01-01 00:01:00',
-    ToDateTime='2021-01-02 23:59:00',
+    ToDateTime='2021-02-01 23:59:00',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/FREQ/v1'
 ):
@@ -1011,11 +1011,33 @@ def get_FUELHH(
     return r
 
 
+def get_LOLPDRM(
+    APIKey='AP8DA23',
+    FromSettlementDate='2021-01-01',
+    ToSettlementDate='2021-01-02',
+    ServiceType='csv',
+    endpoint='https://api.bmreports.com/BMRS/LOLPDRM/v1'
+):
+    """Loss of Load Probability and De-rated Margin
+    """
+    
+    params = { 
+        'APIKey': APIKey,
+        'FromSettlementDate': FromSettlementDate,
+        'ToSettlementDate': ToSettlementDate,
+        'ServiceType': ServiceType,
+    }
+    
+    r = requests.get(endpoint, params=params)
+    
+    return r
+
+
 def get_MELIMBALNGC(
     APIKey='AP8DA23',
     ZoneIdentifier='N',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/MELIMBALNGC/v1'
 ):
@@ -1038,7 +1060,7 @@ def get_MELIMBALNGC(
 def get_MID(
     APIKey='AP8DA23',
     FromSettlementDate='2021-01-01',
-    ToSettlementDate='2021-02-01',
+    ToSettlementDate='2021-01-02',
     Period='*',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/MID/v1'
@@ -1088,9 +1110,9 @@ def get_MessageDetailRetrieval(
 def get_MessageListRetrieval(
     APIKey='AP8DA23',
     EventStart='2021-01-01',
-    EventEnd='2021-02-01',
+    EventEnd='2021-01-02',
     PublicationFrom='2021-01-01',
-    PublicationTo='2021-02-01',
+    PublicationTo='2021-01-02',
     ParticipantId='',
     MessageID='',
     AssetID='',
@@ -1151,7 +1173,7 @@ def get_NETBSAD(
 
 def get_NONBM(
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     APIKey='AP8DA23',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/NONBM/v1'
@@ -1206,7 +1228,7 @@ def get_PHYBMDATA(
 def get_SYSDEM(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/SYSDEM/v1'
 ):
@@ -1228,7 +1250,7 @@ def get_SYSDEM(
 def get_SYSWARN(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/SYSWARN/v1'
 ):
@@ -1250,7 +1272,7 @@ def get_SYSWARN(
 def get_TEMP(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/TEMP/v1'
 ):
@@ -1272,7 +1294,7 @@ def get_TEMP(
 def get_WINDFORFUELHH(
     APIKey='AP8DA23',
     FromDate='2021-01-01',
-    ToDate='2021-02-01',
+    ToDate='2021-01-02',
     ServiceType='csv',
     endpoint='https://api.bmreports.com/BMRS/WINDFORFUELHH/v1'
 ):

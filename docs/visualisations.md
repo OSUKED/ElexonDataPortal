@@ -1,6 +1,6 @@
 # Visualisations
 
-On this page you can view visualisations of key phenomena in the GB power sector, ranging from long-term trends in the generation-mix and market prices to information on excess capacity in the grid. All data used in these visualisations was either sourced directly from BMRS using the `ElexonDataPortal` client, or has been derived from BMRS data streams. As with the other components of the `ElexonDataPortal` the code to generate these visualisations is open-source and users are welcome to contribute their own visualisations, for more detail on how to do this please refer to the [user contribution guide](#contributor-guide)
+On this page you can view visualisations of key phenomena in the GB power sector, ranging from long-term trends in the generation-mix and market prices to information on excess capacity in the grid. All data used in these visualisations was either sourced directly from BMRS using the `ElexonDataPortal` client, or has been derived from BMRS data streams. As with the other components of the `ElexonDataPortal` the code to generate these visualisations is open-source and users are welcome to contribute their own visualisations, for more detail on how to do this please refer to the [user contribution section](#user-contrib)
     
 
 <br>
@@ -15,7 +15,7 @@ The figures shown here are attempts to replicate the visualisations from [this p
 * Wind, solar and biomass provided 20% of demand in 2015, with a peak of 45%.
 * Prices have become more volatile and net demand is falling towards must-run nuclear.
 
-These figures will be updated on a weekly basis, the last update was at: 2021-07-05 14:40
+These figures will be updated on a weekly basis, the last update was at: 2021-07-05 13:40
 
 <br>
 
@@ -39,7 +39,7 @@ The figure shown here is reproduced from the work in [this paper](https://ayrton
 * In Britain the MOE has increased sharply since 2016, with a 0.67% price reduction per p.p. increase in RES penetration
 * Disaggregation of the MOE by fuel-type highlights key differences in the transition paths of Britain and Germany
 
-This figure will be updated on a weekly basis, the last update was at: 2021-07-05 14:40
+This figure will be updated on a weekly basis, the last update was at: 2021-07-05 13:45
 
 <br>
 
@@ -60,7 +60,7 @@ In each settlement period the system operator publishes the de-rated margin fore
 * At 1200 hours on each calendar day for all Settlement Periods for which Gate Closure has not yet passed and which occur within the current Operational Day or the following Operational Day; and
 * At eight, four, two and one hour(s) prior to the beginning of the Settlement Period to which the De-Rated Margin Forecast relates.
 
-These figures will be updated on an hourly basis, the last update was at: 2021-07-05 14:50
+These figures will be updated on an hourly basis, the last update was at: 2021-07-05 13:45
 
 <br>
 
@@ -81,19 +81,9 @@ The following heatmap shows how the more recent de-rated margin forecasts deviat
 
 <br>
 
-### Power Output Map
-
-Last Updated: 2021-07-05 14:50
-
-This map shows the power output of individual plants connected to the transmission grid as stated in their most recent Physical Notifications. This data can be retrieved through the *PHYBMDATA* BMRS stream, the out-turn data can be viewed one week later through the *B1610* stream. The scrollbar at the top of the map can be used to view how the generation sources have changed their output over the last week, the layer control can be used to toggle on/off the transmission network, and the plants themselves can be clicked to reveal additional information. The plant location data used in this map has been taking from a sister project, [the Power Station Dictionary](https://osuked.github.io/Power-Station-Dictionary/), which aims to link between data about individual power plants.
-
-<div id="map"></div>
-
-<br>
-
 ### Contributor Guide
 
-We encourage users to contribute their own visualisations which the `ElexonDataPortal` will then update automatically. To this end the library adopts a standardised format for generating visualisations, the core component of which is the `data/vis_configs.json` file to which you will have to add detail on your visualisation function:
+We encourage users to contribute their own visualisations which the `ElexonDataPortal` will then update automatically. To this end the library adopts a standardised format for generating visualisations, the core component of which is the `data/vis_configs.json` file to which you will have to add detail on your visualisation function: 
 
 ```javascript
 [
@@ -112,41 +102,46 @@ We encourage users to contribute their own visualisations which the `ElexonDataP
 ]
 ```
 
-<br>
-
 The other core component is writing the function that generates the visualisation. This function should require parameters for the `docs_dir`, `api_key`, and `update_time` but can include optional parameters that you wish to specify, it should then return markdown text which will be used to populate the *Visualisations* page. These functions will normally contain three steps: data retrieval, generating the visualisation, and generating the accompanying text - an example can be seen below.
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
-from ..api import Client
+from ElexonDataPortal.api import Client
 
 def generate_vis(
     docs_dir: str='docs',
     api_key: str=None,
     update_time: str=pd.Timestamp.now().round('5min').strftime('%Y-%m-%d %H:%M'),
 ) -> str:
-
     # Data Retrieval
     client = Client(api_key=api_key)
     df = client.get_data_stream(param1, param2)
-
+    
     # Generating the Visualisation
     fig, ax = plt.subplots(dpi=150)
     df.plot(ax=ax)
     fig.savefig(f'{docs_dir}/img/vis/great_vis_name.png')
-
+    
     # Generating the Text
     md_text = f"""### Title
-
+    
 Explanation of what your visualisation shows
 
 ![](img/vis/great_vis_name.png)
 """
-
+    
     return md_text
 ```
 
-N.b. the path to the image should be relative to the `docs` directory.
+If you require an assistance in this process please start a discussion [here](https://github.com/OSUKED/ElexonDataPortal/discussions) and we'll endeavour to help as best we can.
 
-If you require any assistance in this process please start a discussion [here](https://github.com/OSUKED/ElexonDataPortal/discussions) and we'll endeavour to help as best we can.
+<br>
+
+### Power Output Map
+
+Last Updated: {{ update_date }}
+
+This map shows the power output of individual plants connected to the transmission grid as stated in their most recent Physical Notifications. This data can be retrieved through the *PHYBMDATA* BMRS stream, the out-turn data can be viewed one week later through the *B1610* stream.
+
+<div id="map"></div>

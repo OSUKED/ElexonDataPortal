@@ -244,7 +244,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -288,7 +288,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "EndTime"
           in: "query"
           schema:
@@ -400,7 +400,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -449,7 +449,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -498,7 +498,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -776,7 +776,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -825,7 +825,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -874,7 +874,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -923,7 +923,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "StartTime"
           in: "query"
           schema:
@@ -1587,7 +1587,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -1621,7 +1621,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2014-02-01"
+          example: "2014-01-02"
         - name: "SettlementPeriod"
           in: "query"
           schema:
@@ -1665,7 +1665,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -1748,7 +1748,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -1787,7 +1787,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-01-02 23:59:00"
+          example: "2021-02-01 23:59:00"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -1844,6 +1844,45 @@ paths:
     servers:
       - url: "https://api.bmreports.com"
     
+  /BMRS/LOLPDRM/v1:
+    get:
+      x-title: "LOLPDRM"
+      description: "Loss of Load Probability and De-rated Margin"
+      tags:
+        - Transmission
+      parameters:
+        - name: "APIKey"
+          in: "query"
+          schema:
+            type: "string"
+          example: "AP8DA23"
+        - name: "FromSettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-01"
+        - name: "ToSettlementDate"
+          in: "query"
+          schema:
+            type: "string"
+          example: "2021-01-02"
+        - name: "ServiceType"
+          in: "query"
+          schema:
+            type: "string"
+          examples:
+            csv:
+              value: "csv"
+            xml:
+              value: "xml"
+      responses:
+        '200':
+          description: "Loss of Load Probability and De-rated Margin"
+      servers:
+        - url: "https://api.bmreports.com"
+    servers:
+      - url: "https://api.bmreports.com"
+    
   /BMRS/MELIMBALNGC/v1:
     get:
       x-title: "MELIMBALNGC"
@@ -1870,7 +1909,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -1909,7 +1948,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "Period"
           in: "query"
           schema:
@@ -1998,7 +2037,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "PublicationFrom"
           in: "query"
           schema:
@@ -2008,7 +2047,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ParticipantId"
           in: "query"
           schema:
@@ -2121,7 +2160,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "APIKey"
           in: "query"
           schema:
@@ -2229,7 +2268,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -2268,7 +2307,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -2307,7 +2346,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:
@@ -2346,7 +2385,7 @@ paths:
           in: "query"
           schema:
             type: "string"
-          example: "2021-02-01"
+          example: "2021-01-02"
         - name: "ServiceType"
           in: "query"
           schema:

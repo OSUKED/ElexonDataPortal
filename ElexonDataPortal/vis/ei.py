@@ -348,7 +348,8 @@ def generate_moe(
     dpi: int=250,
     use_preloaded_ei_df: bool=True,
     img_name: str='moe_surface',
-    docs_dir: str='docs'
+    docs_dir: str='docs',
+    update_time: str=None
 ):
     df_ei = globals()['df_ei']
     if (use_preloaded_ei_df == True) and (df_ei is not None):
@@ -362,6 +363,6 @@ def generate_moe(
     df_pred = estimate_ts_surface(s_dispatchable, s_price, reg_dates,num_fits=num_fits, x_pred=x_pred, dt_idx=dt_idx, reg_dates_start=reg_dates_start, reg_dates_end=reg_dates_end)
 
     plot_ts_surface_estimate(df_pred, s_dispatchable, dpi=dpi, save_path=f'{docs_dir}/img/vis/{img_name}.png', reg_dates_start=reg_dates_start, reg_dates_end=reg_dates_end)
-    md_txt = construct_moe_md_txt(img_fp=f'img/vis/{img_name}.png')
+    md_txt = construct_moe_md_txt(img_fp=f'img/vis/{img_name}.png', update_time=update_time)
 
     return md_txt

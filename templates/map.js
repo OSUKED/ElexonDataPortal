@@ -54,7 +54,7 @@ function createDateLayers(geojsonFeatures){
             onEachFeature: function (feature, layer) {
                 var popupText = 'Name: ' + feature.properties.name + '<br>Latest Output (MW): ' + feature.properties.output[geojsonFeatures.timeseries[geojsonFeatures.timeseries.length-1]];
                 if(feature.properties.capacity) popupText = popupText.concat('<br>Capacity (MW): ' + feature.properties.capacity);;
-                layer.bindPopup('<p style="font-size: 0.5em">' + popupText + '</p>');
+                layer.bindPopup('<p style="font-size: 1.5em">' + popupText + '</p>');
             }
         });
         dateLayer.options.epoch = epochTime
@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function() {
             var mymap = L.map('map', {layers: [basemap, dateLayersGroup]}).setView({{ center }}, {{ zoom }});
 
             var overlayLayers = {
-//                 '<span style="font-size: 0.5em">Plants</span>': dateLayersGroup,
-                '<span style="font-size: 0.5em">Network</span>': routeLayer
+//                 '<span style="font-size: 1.5em">Plants</span>': dateLayersGroup,
+                '<span style="font-size: 1.5em">Network</span>': routeLayer
             };
             L.control.layers(null, overlayLayers, {position: 'bottomright'}).addTo(mymap);
 
