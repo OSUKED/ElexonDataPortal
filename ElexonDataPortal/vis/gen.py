@@ -55,7 +55,7 @@ def get_rerun_vis_bool(vis_config):
         last_update_time = pd.to_datetime(vis_config['last_update_time']).tz_localize('Europe/London')
 
     cron = croniter.croniter(vis_config['cron'], pd.Timestamp.now()-pd.Timedelta(weeks=1))
-    cron_dts = pd.to_datetime([cron.get_next() for i in range(2*24*7)], unit='s').tz_localize('UTC').tz_convert('Europe/London')
+    cron_dts = pd.to_datetime([cron.get_next() for i in range(10*48*7)], unit='s').tz_localize('UTC').tz_convert('Europe/London')
 
     s_cron_dts_time_delta_to_now = pd.Series((cron_dts - pd.Timestamp.now(tz='Europe/London')).total_seconds())
     assert (s_cron_dts_time_delta_to_now<0).sum()>0 and (s_cron_dts_time_delta_to_now>0).sum()>0, 'The cron dts being assessed do not cross the current time'
@@ -121,7 +121,7 @@ We encourage users to contribute their own visualisations which the `ElexonDataP
 [
     ...
     {
-        "cron": "0 * * * *", # the update schedule, in this instance to run at midnight every monday
+        "cron": "0 * * * *", # the update schedule, in this instance to run at midnight every sunday
         "function": "path_to_function", # e.g. ElexonDataPortal.vis.generate_vis
         "kwargs": {
             'api_key': null,  # if no api_key is passed then the client will try and look for the `BMRS_API_KEY` environment variable
