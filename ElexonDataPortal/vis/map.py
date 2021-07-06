@@ -149,7 +149,7 @@ def load_most_recent_PN_data(data_dir='data/PN', latest_year_month_file=None, df
 
     if df_PN_old is not None:
         assert latest_year_month_file is not None, 'Should not be appending to the main dataframe if `latest_year_month_file` was not specified'
-        df_PN = df_PN_old.append(df_PN)
+        df_PN = df_PN_old.append(df_PN).pipe(lambda df: df[~df.index.duplicated(keep='first')]).sort_index()
 
     if df_PN.shape[0] < (48*7): # want to have at least a week's worth of data
         assert 'PN_files' in locals(), 'The two most recent files combined have less than one week\'s worth of data'
