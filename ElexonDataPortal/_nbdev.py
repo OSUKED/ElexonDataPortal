@@ -217,6 +217,8 @@ modules = ["api.py",
            "vis/map.py",
            "vis/map.py",
            "vis/gen.py",
+           "vis/gen.py",
+           "vis/gen.py",
            "vis/gen.py"]
 
 doc_url = "https://OSUKED.github.io/ElexonDataPortal/"

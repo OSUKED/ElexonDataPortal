@@ -177,7 +177,7 @@ If you require any assistance in this process please start a discussion [here](h
     all_vis_md_texts = [prefix_text] + [vis_config['md_text'] for vis_config in vis_configs] + [suffix_text]
     combined_md_text = '\n\n<br>\n\n'.join(all_vis_md_texts)
 
-    with open(f'{docs_dir}/vis-contrib.md', 'w', encoding='utf-8') as f:
+    with open(f'{docs_dir}/visualisations.md', 'w', encoding='utf-8') as f:
         f.write(combined_md_text)
 
     return
