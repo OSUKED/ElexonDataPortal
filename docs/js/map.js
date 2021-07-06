@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 follow: 1
             });
             mymap.addControl(sliderControl);
-            sliderControl.startSlider(335);
+            sliderControl.startSlider(333);
         });
     });
 });
