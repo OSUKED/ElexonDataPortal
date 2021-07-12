@@ -15,7 +15,7 @@ The figures shown here are attempts to replicate the visualisations from [this p
 * Wind, solar and biomass provided 20% of demand in 2015, with a peak of 45%.
 * Prices have become more volatile and net demand is falling towards must-run nuclear.
 
-These figures will be updated on a weekly basis, the last update was at: 2021-07-12 06:50
+These figures will be updated on a weekly basis, the last update was at: 2021-07-12 07:10
 
 <br>
 
@@ -39,7 +39,7 @@ The figure shown here is reproduced from the work in [this paper](https://ayrton
 * In Britain the MOE has increased sharply since 2016, with a 0.67% price reduction per p.p. increase in RES penetration
 * Disaggregation of the MOE by fuel-type highlights key differences in the transition paths of Britain and Germany
 
-This figure will be updated on a weekly basis, the last update was at: 2021-07-12 06:50
+This figure will be updated on a weekly basis, the last update was at: 2021-07-12 07:10
 
 <br>
 
@@ -60,7 +60,7 @@ In each settlement period the system operator publishes the de-rated margin fore
 * At 1200 hours on each calendar day for all Settlement Periods for which Gate Closure has not yet passed and which occur within the current Operational Day or the following Operational Day; and
 * At eight, four, two and one hour(s) prior to the beginning of the Settlement Period to which the De-Rated Margin Forecast relates.
 
-These figures will be updated on an hourly basis, the last update was at: 2021-07-12 06:55
+These figures will be updated on an hourly basis, the last update was at: 2021-07-12 07:15
 
 <br>
 
@@ -83,7 +83,7 @@ The following heatmap shows how the more recent de-rated margin forecasts deviat
 
 ### Power Output Map
 
-Last Updated: 2021-07-12 06:55
+Last Updated: 2021-07-12 07:15
 
 This map shows the power output of individual plants connected to the transmission grid as stated in their most recent Physical Notifications. This data can be retrieved through the *PHYBMDATA* BMRS stream, the out-turn data can be viewed one week later through the *B1610* stream. The scrollbar at the top of the map can be used to view how the generation sources have changed their output over the last week, the layer control can be used to toggle on/off the transmission network, and the plants themselves can be clicked to reveal additional information. The plant location data used in this map has been taking from a sister project, [the Power Station Dictionary](https://osuked.github.io/Power-Station-Dictionary/), which aims to link between data about individual power plants.
 
