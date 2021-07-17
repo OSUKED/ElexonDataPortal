@@ -1,0 +1,905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Visualisations - Elexon Data Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    
+      <link rel="stylesheet" href="../css/map.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visualisations" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Elexon Data Portal" class="md-header__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Elexon Data Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Visualisations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Visualisations
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01-utils/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Elexon Data Portal" class="md-nav__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Elexon Data Portal
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-quick-start/" class="md-nav__link">
+        Quick-Start
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Visualisations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Visualisations
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-the-progress-and-impacts-of-decarbonising-british-electricity" class="md-nav__link">
+    Measuring the Progress and Impacts of Decarbonising British Electricity
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring the Progress and Impacts of Decarbonising British Electricity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weekly-averaged-generation-mix" class="md-nav__link">
+    Weekly Averaged Generation Mix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marginal-price-curve-estimation" class="md-nav__link">
+    Marginal Price Curve Estimation
+  </a>
+  
+    <nav class="md-nav" aria-label="Marginal Price Curve Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smoothed-price-time-series-surface" class="md-nav__link">
+    Smoothed Price Time-Series Surface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-rated-margin" class="md-nav__link">
+    De-Rated Margin
+  </a>
+  
+    <nav class="md-nav" aria-label="De-Rated Margin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forecasts" class="md-nav__link">
+    Forecasts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecast-deltas" class="md-nav__link">
+    Forecast Deltas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-output-map" class="md-nav__link">
+    Power Output Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributor-guide" class="md-nav__link">
+    Contributor Guide
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-utils/" class="md-nav__link">
+        Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-spec-gen/" class="md-nav__link">
+        OpenAPI Spec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-raw-methods/" class="md-nav__link">
+        Raw Methods
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-client-prep/" class="md-nav__link">
+        Endpoint Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-orchestrator/" class="md-nav__link">
+        Orchestrator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-client-gen/" class="md-nav__link">
+        Client Generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cli-rebuild/" class="md-nav__link">
+        Rebuilding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-map-gen/" class="md-nav__link">
+        Map Generation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#measuring-the-progress-and-impacts-of-decarbonising-british-electricity" class="md-nav__link">
+    Measuring the Progress and Impacts of Decarbonising British Electricity
+  </a>
+  
+    <nav class="md-nav" aria-label="Measuring the Progress and Impacts of Decarbonising British Electricity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#weekly-averaged-generation-mix" class="md-nav__link">
+    Weekly Averaged Generation Mix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#marginal-price-curve-estimation" class="md-nav__link">
+    Marginal Price Curve Estimation
+  </a>
+  
+    <nav class="md-nav" aria-label="Marginal Price Curve Estimation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smoothed-price-time-series-surface" class="md-nav__link">
+    Smoothed Price Time-Series Surface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-rated-margin" class="md-nav__link">
+    De-Rated Margin
+  </a>
+  
+    <nav class="md-nav" aria-label="De-Rated Margin">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forecasts" class="md-nav__link">
+    Forecasts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#forecast-deltas" class="md-nav__link">
+    Forecast Deltas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-output-map" class="md-nav__link">
+    Power Output Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributor-guide" class="md-nav__link">
+    Contributor Guide
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="visualisations">Visualisations</h1>
+<p>On this page you can view visualisations of key phenomena in the GB power sector, ranging from long-term trends in the generation-mix and market prices to information on excess capacity in the grid. All data used in these visualisations was either sourced directly from BMRS using the <code>ElexonDataPortal</code> client, or has been derived from BMRS data streams. As with the other components of the <code>ElexonDataPortal</code> the code to generate these visualisations is open-source and users are welcome to contribute their own visualisations, for more detail on how to do this please refer to the <a href="#contributor-guide">user contribution guide</a></p>
+<p><br></p>
+<h3 id="measuring-the-progress-and-impacts-of-decarbonising-british-electricity">Measuring the Progress and Impacts of Decarbonising British Electricity</h3>
+<p>The figures shown here are attempts to replicate the visualisations from <a href="https://www.sciencedirect.com/science/article/pii/S0301421516307017">this paper</a> by Dr Iain Staffell which finds that:</p>
+<ul>
+<li>CO2 emissions from British electricity have fallen 46% in the three years to June 2016.</li>
+<li>Emissions from imports and biomass are not attributed to electricity, but add 5%.</li>
+<li>Coal capacity fell 50% and output 75% due to prices, competition and legislation.</li>
+<li>Wind, solar and biomass provided 20% of demand in 2015, with a peak of 45%.</li>
+<li>Prices have become more volatile and net demand is falling towards must-run nuclear.</li>
+</ul>
+<p>These figures will be updated on a weekly basis, the last update was at: 2021-07-12 23:40</p>
+<p><br></p>
+<h4 id="weekly-averaged-generation-mix">Weekly Averaged Generation Mix</h4>
+<p>The following figure shows a stacked plot of the generation from different fuel types over time, averaged on a weekly basis. The original plot can be found <a href="https://www.sciencedirect.com/science/article/pii/S0301421516307017#f0030">here</a>, the following description is taken directly from the paper.</p>
+<blockquote>
+<p>Over this period fossil fuels have become increasingly squeezed by the growth of imports, biomass, wind and solar. Coal is seen responding to seasonal changes in demand, and displaced gas over the second half of 2011. Gas generation fell steadily from an average of 17.3 GW in 2009–10 to just 9.3 GW in 2012–13. This trend reversed over the course of 2015 with gas generation rising from an average of 9.0 GW in the first quarter of 2015 to 13.8 GW in the first quarter of 2016. By May 2016 coal generation fell to an average of just 1.1 GW, and on the 10th of May instantaneous coal output fell to zero for the first in over 130 years.</p>
+</blockquote>
+<p><img alt="" src="../img/vis/ei_stacked_fuel.png" /></p>
+<p><br></p>
+<h3 id="marginal-price-curve-estimation">Marginal Price Curve Estimation</h3>
+<p>The figure shown here is reproduced from the work in <a href="https://ayrtonb.github.io/Merit-Order-Effect/#paper">this paper</a> by Ayrton Bourn which investigates the merit order effect of renewables in the GB and DE power markets in terms of the price and carbon reductions - the key findings are as follows:</p>
+<ul>
+<li>A LOWESS estimation of the non-linear marginal price curve for dispatchable generation shows high back-casting accuracy for Germany and Britain</li>
+<li>The evolving Merit Order Effect (MOE) was estimated through a time-adaptive model, enabling long-term trends to be captured</li>
+<li>In Britain the MOE has increased sharply since 2016, with a 0.67% price reduction per p.p. increase in RES penetration</li>
+<li>Disaggregation of the MOE by fuel-type highlights key differences in the transition paths of Britain and Germany</li>
+</ul>
+<p>This figure will be updated on a weekly basis, the last update was at: 2021-07-12 23:40</p>
+<p><br></p>
+<h4 id="smoothed-price-time-series-surface">Smoothed Price Time-Series Surface</h4>
+<p>This figure shows the LOWESS (Locally Weighted Scatterplot Smoothing) regressions for the day-ahead marginal price curve visualised as a heatmap surface, highlighting the seasonal and non-cyclical changes over time. A mask has been applied where the residual demand after RES is outside the range of 99% of the data. This view is particularly helpful for picking up long-term trends in the market, for example the higher power prices seen in 18/19 due to high gas prices.</p>
+<p><img alt="" src="../img/vis/moe_surface.png" /></p>
+<p><br></p>
+<h3 id="de-rated-margin">De-Rated Margin</h3>
+<p>In each settlement period the system operator publishes the de-rated margin forecast calculated in accordance with the <a href="https://www.elexon.co.uk/documents/bsc-codes/lolp/loss-of-load-probability-calculation-statement/">Loss of Load Probability Calculation Statement</a> at the following times:</p>
+<ul>
+<li>At 1200 hours on each calendar day for all Settlement Periods for which Gate Closure has not yet passed and which occur within the current Operational Day or the following Operational Day; and</li>
+<li>At eight, four, two and one hour(s) prior to the beginning of the Settlement Period to which the De-Rated Margin Forecast relates.</li>
+</ul>
+<p>These figures will be updated on an hourly basis, the last update was at: 2021-07-17 13:15</p>
+<p><br></p>
+<h4 id="forecasts">Forecasts</h4>
+<p>The following heatmap shows the evolving de-rated margin forecast across the different forecast horizons.</p>
+<p><img alt="" src="../img/vis/drm_fcst_htmp.png" /></p>
+<p><br></p>
+<h4 id="forecast-deltas">Forecast Deltas</h4>
+<p>The following heatmap shows how the more recent de-rated margin forecasts deviate from the 8 hours ahead forecast.</p>
+<p><img alt="" src="../img/vis/drm_fcst_delta_htmp.png" /></p>
+<p><br></p>
+<h3 id="power-output-map">Power Output Map</h3>
+<p>Last Updated: 2021-07-17 13:20</p>
+<p>This map shows the power output of individual plants connected to the transmission grid as stated in their most recent Physical Notifications. This data can be retrieved through the <em>PHYBMDATA</em> BMRS stream, the out-turn data can be viewed one week later through the <em>B1610</em> stream. The scrollbar at the top of the map can be used to view how the generation sources have changed their output over the last week, the layer control can be used to toggle on/off the transmission network, and the plants themselves can be clicked to reveal additional information. The plant location data used in this map has been taking from a sister project, <a href="https://osuked.github.io/Power-Station-Dictionary/">the Power Station Dictionary</a>, which aims to link between data about individual power plants.</p>
+<div id="map"></div>
+
+<p><br></p>
+<h3 id="contributor-guide">Contributor Guide</h3>
+<p>We encourage users to contribute their own visualisations which the <code>ElexonDataPortal</code> will then update automatically. To this end the library adopts a standardised format for generating visualisations, the core component of which is the <code>data/vis_configs.json</code> file to which you will have to add detail on your visualisation function:</p>
+<pre><code class="language-javascript">[
+    ...
+    {
+        &quot;cron&quot;: &quot;0 * * * *&quot;, # the update schedule, in this instance to run at midnight every sunday
+        &quot;function&quot;: &quot;path_to_function&quot;, # e.g. ElexonDataPortal.vis.generate_vis
+        &quot;kwargs&quot;: {
+            'api_key': null,  # if no api_key is passed then the client will try and look for the `BMRS_API_KEY` environment variable
+            'update_time': null, # if no update_time is passed you should generate it yourself, e.g. with `pd.Timestamp.now().round('5min').strftime('%Y-%m-%d %H:%M')`
+            'docs_dir': 'docs', # in almost all circumstances this should just be `docs`
+            &quot;optional_kwarg&quot;: &quot;optional_value&quot; # you can specify any additional keyword arguments that your function requires
+        }
+    },
+    ...
+]
+</code></pre>
+<p><br></p>
+<p>The other core component is writing the function that generates the visualisation. This function should require parameters for the <code>docs_dir</code>, <code>api_key</code>, and <code>update_time</code> but can include optional parameters that you wish to specify, it should then return markdown text which will be used to populate the <em>Visualisations</em> page. These functions will normally contain three steps: data retrieval, generating the visualisation, and generating the accompanying text - an example can be seen below.</p>
+<pre><code class="language-python">import pandas as pd
+import matplotlib.pyplot as plt
+from ..api import Client
+
+def generate_vis(
+    docs_dir: str='docs',
+    api_key: str=None,
+    update_time: str=pd.Timestamp.now().round('5min').strftime('%Y-%m-%d %H:%M'),
+) -&gt; str:
+
+    # Data Retrieval
+    client = Client(api_key=api_key)
+    df = client.get_data_stream(param1, param2)
+
+    # Generating the Visualisation
+    fig, ax = plt.subplots(dpi=150)
+    df.plot(ax=ax)
+    fig.savefig(f'{docs_dir}/img/vis/great_vis_name.png')
+
+    # Generating the Text
+    md_text = f&quot;&quot;&quot;### Title
+
+Explanation of what your visualisation shows
+
+![](img/vis/great_vis_name.png)
+&quot;&quot;&quot;
+
+    return md_text
+</code></pre>
+<p>N.b. the path to the image should be relative to the <code>docs</code> directory.</p>
+<p>If you require any assistance in this process please start a discussion <a href="https://github.com/OSUKED/ElexonDataPortal/discussions">here</a> and we'll endeavour to help as best we can.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../08-quick-start/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Quick-Start
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../api/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              API
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.instant", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+      
+        <script src="../js/map.js"></script>
+      
+        <script src="../js/SliderControl.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,23 @@
+#dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+   
+#map {
+    z-index: 1;
+    width: device-width;
+    height: 550px;
+    margin: 0;
+}
+   
+@media (min-width: 550px){
+    #map {
+        z-index: 1;
+        width: 550px;
+        height: 500px;
+        margin: 0;
+    }
+}

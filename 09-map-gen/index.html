@@ -1,0 +1,1457 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Map Generation - Elexon Data Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    
+      <link rel="stylesheet" href="../css/map.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#map-generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Elexon Data Portal" class="md-header__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Elexon Data Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Map Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../visualisations/" class="md-tabs__link">
+      Visualisations
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01-utils/" class="md-tabs__link md-tabs__link--active">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Elexon Data Portal" class="md-nav__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Elexon Data Portal
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-quick-start/" class="md-nav__link">
+        Quick-Start
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualisations/" class="md-nav__link">
+        Visualisations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-utils/" class="md-nav__link">
+        Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-spec-gen/" class="md-nav__link">
+        OpenAPI Spec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-raw-methods/" class="md-nav__link">
+        Raw Methods
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-client-prep/" class="md-nav__link">
+        Endpoint Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-orchestrator/" class="md-nav__link">
+        Orchestrator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-client-gen/" class="md-nav__link">
+        Client Generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cli-rebuild/" class="md-nav__link">
+        Rebuilding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Map Generation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Map Generation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    Imports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-route-map" class="md-nav__link">
+    Network Route Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-plant-output-data-retrieval" class="md-nav__link">
+    Power Plant Output Data Retrieval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location-fuel-type-data-collation" class="md-nav__link">
+    Location &amp; Fuel Type Data Collation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    Imports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-route-map" class="md-nav__link">
+    Network Route Map
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-plant-output-data-retrieval" class="md-nav__link">
+    Power Plant Output Data Retrieval
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#location-fuel-type-data-collation" class="md-nav__link">
+    Location &amp; Fuel Type Data Collation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="map-generation">Map Generation</h1>
+<p>This notebook shows the development of the code required to generate the live map of energy generation by power plant.</p>
+<p><br></p>
+<h3 id="imports">Imports</h3>
+<pre><code class="language-python">#exports
+import json
+import numpy as np
+import pandas as pd
+import geopandas as gpd
+
+import os
+import typer
+from tqdm import tqdm
+from jinja2 import Template
+
+from ElexonDataPortal.dev import utils, raw
+</code></pre>
+<pre><code class="language-python">from IPython.display import JSON
+import matplotlib.pyplot as plt
+</code></pre>
+<p><br></p>
+<h3 id="network-route-map">Network Route Map</h3>
+<p>The raw network route map data can be retrieved from <a href="https://www.nationalgrid.com/uk/electricity-transmission/network-and-infrastructure/network-route-maps">here</a>. We want to extract the relevant data, group the different cables/lines according to capacity, then save the information as a geojson.</p>
+<pre><code class="language-python">#exports
+def clean_route_gdf(gdf):
+    s_LV_routes = gdf['OPERATING_'].astype(float).fillna(0)&lt;=132
+    gdf.loc[s_LV_routes, 'OPERATING_'] = '&lt;=132'
+    gdf.loc[~s_LV_routes, 'OPERATING_'] = gdf.loc[~s_LV_routes, 'OPERATING_'].astype(int).astype(str)
+
+    return gdf
+
+def load_route_gdf(data_dir='data'):
+    gdf_OHL = gpd.read_file(f'{data_dir}/transmission-system/OHL.shp').to_crs('EPSG:4326')
+    gdf_cables = gpd.read_file(f'{data_dir}/transmission-system/Cable.shp').to_crs('EPSG:4326')
+
+    gdf_OHL = clean_route_gdf(gdf_OHL)
+    gdf_cables = clean_route_gdf(gdf_cables)
+
+    gdf_route = gdf_OHL.append(gdf_cables)[['OPERATING_', 'geometry']].rename(columns={'OPERATING_': 'kV'})
+    gdf_route.to_file(f'{data_dir}/network_routes.json', driver='GeoJSON')
+
+    return gdf_route
+</code></pre>
+<pre><code class="language-python">gdf_route = load_route_gdf('../data')
+
+gdf_route.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right">kV</th>
+<th align="left">geometry</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">400</td>
+<td align="left">LINESTRING Z (-2.02839 51.85078 0.00000, -2.02...</td>
+</tr>
+<tr>
+<td align="right">400</td>
+<td align="left">LINESTRING Z (-2.02754 51.84931 0.00000, -2.02...</td>
+</tr>
+<tr>
+<td align="right">400</td>
+<td align="left">LINESTRING Z (-3.12672 51.20292 0.00000, -3.12...</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We'll quickly visualise the network route and count how many of the different capacity types we have.</p>
+<pre><code class="language-python">gdf_route.plot(column='kV', legend=True, legend_kwds={'frameon': False})
+
+gdf_route['kV'].value_counts()
+</code></pre>
+<pre><code>275      1858
+400      1232
+&lt;=132    1087
+Name: kV, dtype: int64
+</code></pre>
+<p><img alt="png" src="../img/nbs/09-map-gen_cell_8_output_1.png" /></p>
+<p><br></p>
+<h3 id="power-plant-output-data-retrieval">Power Plant Output Data Retrieval</h3>
+<p>We'll begin by creating a function to retrieve and clean Physical Notification (PN) data for transmission level plants in Great Britain.</p>
+<pre><code class="language-python">#exports
+def construct_df_PN_pivot_dt_rng(df_PN):
+    no_seconds = (((df_PN['timeFrom'].str.split(':').str[-1]=='00').mean()==1) &amp; 
+                  ((df_PN['timeTo'].str.split(':').str[-1]=='00').mean()==1))
+
+    if no_seconds == True:
+        dt_rng = pd.date_range(df_PN['timeFrom'].min(), df_PN['timeTo'].max(), freq='min', tz='Europe/London')
+    else:
+        dt_rng = pd.date_range(df_PN['timeFrom'].min(), df_PN['timeTo'].max(), freq='s', tz='Europe/London')
+
+    return dt_rng
+
+def construct_PN_pivot_df(df_PN, resample=None):
+    bmu_ids = sorted(list(df_PN['bmUnitID'].unique()))
+    df_PN_pivot = pd.DataFrame(index=construct_df_PN_pivot_dt_rng(df_PN), columns=bmu_ids, dtype=float)
+
+    for bmu_id in tqdm(bmu_ids):
+        for idx, row in df_PN.query('bmUnitID==@bmu_id').iterrows():
+            df_PN_pivot.loc[pd.to_datetime(row['timeFrom']).tz_localize('Europe/London'), bmu_id] = float(row['pnLevelFrom'])
+            df_PN_pivot.loc[pd.to_datetime(row['timeTo']).tz_localize('Europe/London'), bmu_id] = float(row['pnLevelTo'])
+
+        df_PN_pivot[bmu_id] = df_PN_pivot[bmu_id].interpolate()
+
+    if resample is not None:
+        df_PN_pivot = df_PN_pivot.resample(resample).mean()
+
+    return df_PN_pivot
+
+def get_PHYBM_df(api_key, start_date=None, end_date=None, record_type='PN', resample='30T'):
+    if start_date is None and end_date is None:
+        start_date = pd.Timestamp.now().round('30min') - pd.Timedelta(minutes=60*1) 
+        end_date = pd.Timestamp.now().round('30min') + pd.Timedelta(minutes=180)
+    elif start_date is not None and end_date is not None:
+        pass
+    else:
+        raise ValueError('Only one of `start_date` and `end_date` was specified')
+
+    df = pd.DataFrame()
+    df_local_datetime_to_date_SP = utils.dt_rng_to_SPs(start_date, end_date)
+
+    for idx, (date, SP) in tqdm(df_local_datetime_to_date_SP.iterrows(), total=df_local_datetime_to_date_SP.shape[0]):
+        df_SP = utils.parse_xml_response(raw.get_PHYBMDATA(api_key, SettlementDate=date, SettlementPeriod=SP, ServiceType='xml'))
+        df = df.append(df_SP)
+
+    df = (df
+          .query(f'recordType==&quot;{record_type}&quot;')
+          .dropna(how='all', axis=1)
+         )
+
+    if resample is not None:
+        df = df.pipe(construct_PN_pivot_df, resample=resample)
+
+    df.index.name = 'local_datetime'
+
+    return df
+</code></pre>
+<pre><code class="language-python">df_PN = get_PHYBM_df(api_key)
+
+df_PN.index.min(), df_PN.index.max()
+</code></pre>
+<pre><code> 44%â–Ž                                              | 4/9 [00:13&lt;00:15,  3.13s/it]c:\users\ayrto\desktop\phd\data\bmrs\elexon-bmrs-api-wrapper\ElexonDataPortal\dev\utils.py:29: UserWarning: Data request was succesful but no content was returned
+  warn(f'Data request was succesful but no content was returned')
+100% 9/9 [00:14&lt;00:00,  1.58s/it]
+100% 1370/1370 [00:10&lt;00:00, 133.33it/s]
+
+
+
+
+
+(Timestamp('2021-06-25 15:00:00+0100', tz='Europe/London', freq='30T'),
+ Timestamp('2021-06-25 17:00:00+0100', tz='Europe/London', freq='30T'))
+</code></pre>
+<p><br></p>
+<p>We'll now inspect the data from the closest half-hour settlement period that is available.</p>
+<pre><code class="language-python">nearest_half_hour = (pd.Timestamp.now(tz='Europe/London')+pd.Timedelta(minutes=15)).round('30min')
+most_recent_available_dt = max(df_PN.index[df_PN.index&lt;=nearest_half_hour])
+
+s_PN = df_PN.loc[most_recent_available_dt]
+
+s_PN.replace(0, np.nan).dropna().head()
+</code></pre>
+<pre><code>2__ABGAS000   -378.0
+2__AEELC000   -174.0
+2__AEMEB000   -200.0
+2__AENRD000   -145.0
+2__AEOND000   -177.0
+Name: 2021-06-25 17:00:00+01:00, dtype: float64
+</code></pre>
+<p><br></p>
+<p>We want to be able to show not just current but historical data, however the time it takes to download the PN is quite long. To get around this issue we'll save data in monthly batches and only request data that is not currently contained in the existing csv files.</p>
+<pre><code class="language-python">#exports
+get_files = lambda data_dir: [f for f in os.listdir(data_dir) if '.csv' in f]
+
+def download_latest_PHYBM_data(api_key=None, data_dir='data/PN', record_type='PN'):
+    if api_key is None:
+        if 'BMRS_API_KEY' in os.environ.keys():
+            api_key = os.environ['BMRS_API_KEY']
+        else:
+            raise ValueError('`api_key` must be passed or set as the environment variable `BMRS_API_KEY`')
+
+    files = get_files(data_dir)
+    years_months_downloaded = [f.split('.')[0] for f in files]
+
+    current_ts = pd.Timestamp.now(tz='Europe/London')
+    current_year_month = current_ts.strftime('%Y-%m')
+
+    if current_year_month not in years_months_downloaded:
+        start_date, end_date = f'{current_year_month}-01 00:00', current_ts.strftime('%Y-%m-%d %H:%M')
+        df = get_PHYBM_df(api_key, start_date, end_date, record_type=record_type)
+        df.to_csv(f'{data_dir}/{current_year_month}.csv')
+
+    else:
+        df = pd.read_csv(f'{data_dir}/{current_year_month}.csv')
+
+        df = df.set_index('local_datetime')
+        df.index = pd.to_datetime(df.index, utc=True).tz_convert('Europe/London')
+        dt_rng = pd.date_range(df.index.max(), current_ts, freq='30T', tz='Europe/London')
+
+        if dt_rng.size &gt; 1:
+            start_date = dt_rng[0] - pd.Timedelta(minutes=30)
+            end_date = dt_rng[-1] + pd.Timedelta(minutes=60)
+
+            try:
+                df_latest = get_PHYBM_df(api_key, start_date, end_date, record_type=record_type)
+                df_trimmed = df.drop(list(set(df_latest.index) - (set(df_latest.index) - set(df.index))))
+                df_combined = df_trimmed.append(df_latest).sort_index()
+                df_combined.to_csv(f'{data_dir}/{current_year_month}.csv')
+            except: 
+                warn(f'Could not retrieve any new data between {start_date} and {end_date}')
+</code></pre>
+<pre><code class="language-python">download_latest_PHYBM_data(api_key, data_dir='../data/PN')
+</code></pre>
+<pre><code>100% 5/5 [00:18&lt;00:00,  3.78s/it]
+100% 1370/1370 [00:11&lt;00:00, 118.20it/s]
+</code></pre>
+<p><br></p>
+<p>We'll also create a helper function for loading in the latest data, when there is less than a week's worth of data in the latest month we'll append the dataframe to last months data as well.</p>
+<pre><code class="language-python">#exports
+def load_most_recent_PN_data(data_dir='data/PN', latest_year_month_file=None, df_PN_old=None):
+    if latest_year_month_file is None:
+        PN_files = sorted(get_files(data_dir))
+        latest_year_month_file = PN_files[-1]
+
+    latest_fp = f'{data_dir}/{latest_year_month_file}'
+
+    df_PN = pd.read_csv(latest_fp)
+
+    df_PN['local_datetime'] = pd.to_datetime(df_PN['local_datetime'], utc=True)
+    df_PN = df_PN.set_index('local_datetime')
+    df_PN.index = df_PN.index.tz_convert('Europe/London')
+
+    if df_PN_old is not None:
+        assert latest_year_month_file is not None, 'Should not be appending to the main dataframe if `latest_year_month_file` was not specified'
+        df_PN = df_PN_old.append(df_PN)
+
+    if df_PN.shape[0] &lt; (48*7): # want to have at least a week's worth of data
+        assert 'PN_files' in locals(), 'The two most recent files combined have less than one week\'s worth of data'
+        df_PN = load_most_recent_PN_data(data_dir, latest_year_month_file=PN_files[-2], df_PN_old=df_PN)
+
+    return df_PN
+</code></pre>
+<pre><code class="language-python">df_PN = load_most_recent_PN_data(data_dir='../data/PN')
+
+df_PN.tail()
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">local_datetime</th>
+<th align="right">2__AANGE001</th>
+<th align="right">2__AANGE002</th>
+<th align="right">2__ABGAS000</th>
+<th align="right">2__ACNDL001</th>
+<th align="right">2__AEDFE000</th>
+<th align="right">2__AEDIR000</th>
+<th align="right">2__AEELC000</th>
+<th align="right">2__AEENG000</th>
+<th align="right">2__AEMEB000</th>
+<th align="right">2__AENRD000</th>
+<th align="left">...</th>
+<th align="right">V__KGAZP002</th>
+<th align="right">V__LCEND001</th>
+<th align="right">V__LFLEX001</th>
+<th align="right">V__MADEL001</th>
+<th align="right">V__MGBLO001</th>
+<th align="right">V__NFLEX001</th>
+<th align="right">V__PFLEX001</th>
+<th align="right">I_I2D-MQBN1</th>
+<th align="right">I_I2G-MQBN1</th>
+<th align="right">I_IFG-MQBN1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2021-06-25 15:00:00+01:00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-299.917</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-154.833</td>
+<td align="right">0</td>
+<td align="right">-177.8</td>
+<td align="right">-171.617</td>
+<td align="left">...</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">2021-06-25 15:30:00+01:00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-335.4</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-161.933</td>
+<td align="right">0</td>
+<td align="right">-188.35</td>
+<td align="right">-162.2</td>
+<td align="left">...</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">2021-06-25 16:00:00+01:00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-365.6</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-168.833</td>
+<td align="right">0</td>
+<td align="right">-196.383</td>
+<td align="right">-150.683</td>
+<td align="left">...</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">2021-06-25 16:30:00+01:00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-378</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-174</td>
+<td align="right">0</td>
+<td align="right">-200</td>
+<td align="right">-145</td>
+<td align="left">...</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">2021-06-25 17:00:00+01:00</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-378</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">-174</td>
+<td align="right">0</td>
+<td align="right">-200</td>
+<td align="right">-145</td>
+<td align="left">...</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="location-fuel-type-data-collation">Location &amp; Fuel Type Data Collation</h3>
+<p>Now we're redy to start building the map, for this we'll need information on both the location and fuel-type (which will be represented by the colour of the plant). We can get this data from the power station dictionary project.</p>
+<pre><code class="language-python">df_powerdict = pd.read_csv('https://raw.githubusercontent.com/OSUKED/Power-Station-Dictionary/main/data/output/power_stations.csv')
+
+df_powerdict.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right">osuked_id</th>
+<th align="left">esail_id</th>
+<th align="left">gppd_idnr</th>
+<th align="left">name</th>
+<th align="left">sett_bmu_id</th>
+<th align="right">longitude</th>
+<th align="right">latitude</th>
+<th align="left">fuel_type</th>
+<th align="right">capacity_mw</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">10000</td>
+<td align="left">MARK</td>
+<td align="left">nan</td>
+<td align="left">Rothes Bio-Plant CHP</td>
+<td align="left">E_MARK-1, E_MARK-2</td>
+<td align="right">-3.60352</td>
+<td align="right">57.4804</td>
+<td align="left">biomass</td>
+<td align="right">nan</td>
+</tr>
+<tr>
+<td align="right">10001</td>
+<td align="left">DIDC</td>
+<td align="left">nan</td>
+<td align="left">Didcot A (G)</td>
+<td align="left">T_DIDC1, T_DIDC2, T_DIDC4, T_DIDC3</td>
+<td align="right">-1.26757</td>
+<td align="right">51.6236</td>
+<td align="left">coal</td>
+<td align="right">nan</td>
+</tr>
+<tr>
+<td align="right">10002</td>
+<td align="left">ABTH</td>
+<td align="left">GBR1000374</td>
+<td align="left">Aberthaw B</td>
+<td align="left">T_ABTH7, T_ABTH8, T_ABTH9</td>
+<td align="right">-3.40487</td>
+<td align="right">51.3873</td>
+<td align="left">coal</td>
+<td align="right">1586</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We'll create some helper dictionaries for mapping from the osuked id to the data we're interested in</p>
+<pre><code class="language-python">#exports
+def construct_osuked_id_mappings(df_powerdict):
+    osuked_id_mappings = dict()
+
+    osuked_id_mappings['bmu_ids'] = (df_powerdict
+                                     .set_index('osuked_id')
+                                     ['sett_bmu_id']
+                                     .str.split(', ')
+                                     .dropna()
+                                     .to_dict()
+                                    )
+
+    osuked_id_mappings['capacity_mw'] = (df_powerdict
+                                         .set_index('osuked_id')
+                                         ['capacity_mw']
+                                         .astype(str)
+                                         .str.replace('.0', '', regex=False)
+                                         .to_dict()
+                                        )
+
+    osuked_id_mappings['fuel_type'] = (df_powerdict
+                                       .set_index('osuked_id')
+                                       ['fuel_type']
+                                       .dropna()
+                                       .to_dict()
+                                      )
+
+    osuked_id_mappings['name'] = (df_powerdict
+                                  .set_index('osuked_id')
+                                  ['name']
+                                  .dropna()
+                                  .to_dict()
+                                 )
+
+    osuked_id_mappings['lat_lon'] = (df_powerdict
+                                     .set_index('osuked_id')
+                                     [['latitude', 'longitude']]
+                                     .dropna()
+                                     .apply(dict, axis=1)
+                                     .to_dict()
+                                    )
+
+    return osuked_id_mappings
+</code></pre>
+<pre><code class="language-python">osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
+osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
+
+pd.Series(osuked_id_to_bmu_ids).head().to_dict()
+</code></pre>
+<pre><code>{10000: ['E_MARK-1', 'E_MARK-2'],
+ 10001: ['T_DIDC1', 'T_DIDC2', 'T_DIDC4', 'T_DIDC3'],
+ 10002: ['T_ABTH7', 'T_ABTH8', 'T_ABTH9'],
+ 10003: ['T_COTPS-1', 'T_COTPS-2', 'T_COTPS-3', 'T_COTPS-4'],
+ 10004: ['T_DRAXX-1',
+  'T_DRAXX-2',
+  'T_DRAXX-3',
+  'T_DRAXX-4',
+  'T_DRAXX-5',
+  'T_DRAXX-6']}
+</code></pre>
+<p><br></p>
+<p>We'll quickly inspect how much of the current generator capacity our contextual plant data covers.</p>
+<pre><code class="language-python">flatten_list = lambda list_: [item for sublist in list_ for item in sublist]
+
+bmu_ids_with_metadata = sorted(list(set(flatten_list(osuked_id_to_bmu_ids.values()))))
+bmu_ids_with_metadata_and_output = df_PN.columns.intersection(bmu_ids_with_metadata)
+bmu_ids_without_metadata = sorted(list(set(df_PN.columns) -set(bmu_ids_with_metadata)))
+
+pct_site_coverage = len(bmu_ids_with_metadata_and_output)/df_PN.columns.size
+pct_output_coverage = df_PN.sum()[bmu_ids_with_metadata_and_output].sum()/df_PN.sum().sum()
+
+# print(f&quot;{pct_site_coverage:.0%} of the sites have coverage, making up {pct_output_coverage:.0%} of the total power output. The following are missing:\n{', '.join(bmu_ids_without_metadata)}&quot;)
+</code></pre>
+<p><br></p>
+<p>We'll now create a new dataframe that contains the contextual plant data as well as the generation time-series.</p>
+<pre><code class="language-python">#exports
+def extract_PN_ts(df_PN, bmu_ids, n_SPs=48*7):
+    matching_output_bmu_ids = df_PN.columns.intersection(bmu_ids)
+    output_match = matching_output_bmu_ids.size &gt; 0
+
+    if output_match == False:
+        return None
+
+    s_PN = df_PN[matching_output_bmu_ids].sum(axis=1)
+    s_PN.index = (s_PN.index.tz_convert('UTC') - pd.to_datetime(0, unit='s').tz_localize('UTC')).total_seconds().astype(int) * 1000
+
+    s_PN = s_PN.fillna(0)
+    s_PN[s_PN&lt;0] = 0
+    PN_ts = s_PN.tail(n_SPs).to_dict()
+
+    return PN_ts
+
+def construct_map_df(
+    df_PN, 
+    osuked_id_to_bmu_ids, 
+    osuked_id_to_capacity_mw,
+    osuked_id_to_lat_lon, 
+    osuked_id_to_fuel_type, 
+    osuked_id_to_name,
+    n_SPs=48*7
+):
+    sites_data = list()
+
+    for osuked_id, bmu_ids in osuked_id_to_bmu_ids.items():
+        lat_lon_match = osuked_id in osuked_id_to_lat_lon.keys()
+
+        PN_ts = extract_PN_ts(df_PN, bmu_ids, n_SPs=n_SPs)
+
+        if lat_lon_match and PN_ts is not None:
+            if sum(PN_ts.values()) &gt; 0:
+                site_data = osuked_id_to_lat_lon[osuked_id]
+                site_data.update({'id': osuked_id})
+                site_data.update({'name': osuked_id_to_name[osuked_id]})
+                site_data.update({'capacity': osuked_id_to_capacity_mw[osuked_id]})
+                site_data.update({'fuel_type': osuked_id_to_fuel_type[osuked_id]})
+                site_data.update({'output': PN_ts})
+
+                sites_data += [site_data]
+
+    df_map = pd.DataFrame(sites_data).set_index('id')
+
+    return df_map
+</code></pre>
+<pre><code class="language-python">df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name)
+
+df_map.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right">id</th>
+<th align="right">latitude</th>
+<th align="right">longitude</th>
+<th align="left">name</th>
+<th align="right">capacity</th>
+<th align="left">fuel_type</th>
+<th align="left">output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">10000</td>
+<td align="right">57.4804</td>
+<td align="right">-3.60352</td>
+<td align="left">Rothes Bio-Plant CHP</td>
+<td align="right">nan</td>
+<td align="left">biomass</td>
+<td align="left">{1624033800000: 55.0, 1624035600000: 55.0, 162...</td>
+</tr>
+<tr>
+<td align="right">10004</td>
+<td align="right">53.7487</td>
+<td align="right">-0.626221</td>
+<td align="left">Drax</td>
+<td align="right">1980</td>
+<td align="left">coal, biomass</td>
+<td align="left">{1624033800000: 1950.0, 1624035600000: 1950.0,...</td>
+</tr>
+<tr>
+<td align="right">10010</td>
+<td align="right">55.2042</td>
+<td align="right">-1.52083</td>
+<td align="left">Lynemouth Generator</td>
+<td align="right">nan</td>
+<td align="left">coal</td>
+<td align="left">{1624033800000: 405.0, 1624035600000: 405.0, 1...</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We now want to convert this into a geodataframe so we can visualise it spatially</p>
+<pre><code class="language-python">#exports
+def df_to_gdf(df, lat_col='latitude', lon_col='longitude'):
+    geometry = gpd.points_from_xy(df[lon_col], df[lat_col])
+    gdf = gpd.GeoDataFrame(df, geometry=geometry)
+
+    return gdf
+</code></pre>
+<pre><code class="language-python">gdf_map = df_to_gdf(df_map)
+gdf_map_latest = gdf_map.assign(output=gdf_map['output'].apply(lambda d: list(d.values())[-1]))
+
+gdf_map_latest.plot(markersize='output', column='fuel_type', alpha=0.5, legend=True)
+</code></pre>
+<pre><code>&lt;AxesSubplot:&gt;
+</code></pre>
+<p><img alt="png" src="../img/nbs/09-map-gen_cell_32_output_1.png" /></p>
+<pre><code class="language-python">#exports
+def construct_map_geojson(
+    df_PN, 
+    df_powerdict,
+    n_SPs=48*7
+):
+    osuked_id_mappings = construct_osuked_id_mappings(df_powerdict)
+    osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_fuel_type, osuked_id_to_name, osuked_id_to_lat_lon = osuked_id_mappings.values()
+
+    df_map = construct_map_df(df_PN, osuked_id_to_bmu_ids, osuked_id_to_capacity_mw, osuked_id_to_lat_lon, osuked_id_to_fuel_type, osuked_id_to_name, n_SPs=n_SPs)
+    gdf_map = df_to_gdf(df_map)
+
+    geojson = json.loads(gdf_map.to_json().replace('&quot;nan&quot;', 'null'))
+    geojson['timeseries'] = [int(unix_datetime) for unix_datetime in list(geojson['features'][0]['properties']['output'].keys())]
+
+    return geojson
+</code></pre>
+<pre><code class="language-python">geojson = construct_map_geojson(df_PN, df_powerdict)
+
+JSON(geojson)
+</code></pre>
+<pre><code>&lt;IPython.core.display.JSON object&gt;
+</code></pre>
+<pre><code class="language-python">#exports
+def save_map_geojson(geojson, fp='data/power_plants.json'):
+    with open(fp, 'w') as f:
+        json.dump(geojson, f)
+</code></pre>
+<pre><code class="language-python">save_map_geojson(geojson, fp='../data/power_plants.json')
+</code></pre>
+<pre><code class="language-python">#exports
+def get_nearest_dt_idx(geojson, nearest_half_hour):
+    ts = pd.to_datetime([x*1000000 for x in geojson['timeseries']]).tz_localize('UTC').tz_convert('Europe/London')
+    nearest_hh_match = [i for i, dt in enumerate(ts) if dt==nearest_half_hour]
+
+    if len(nearest_hh_match) == 1:
+        return nearest_hh_match[0]
+    else:
+        return len(ts)-1
+
+def generate_map_js(
+    df_PN: pd.DataFrame, 
+    df_powerdict: pd.DataFrame, 
+    zoom: int=5,
+    center: list=[54.8, -4.61],
+    js_template_fp: str='templates/map.js', 
+    js_docs_fp: str='docs/js/map.js',
+    plants_geojson_fp: str='data/power_plants.json',
+    plants_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json',
+    routes_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json'
+):
+    geojson = construct_map_geojson(df_PN, df_powerdict)
+    save_map_geojson(geojson, fp=plants_geojson_fp)
+
+    nearest_half_hour = (pd.Timestamp.now().tz_localize('Europe/London')+pd.Timedelta(minutes=15)).round('30min')
+    nearest_dt_idx = get_nearest_dt_idx(geojson, nearest_half_hour)
+
+    rendered_map_js = Template(open(js_template_fp).read()).render(
+        zoom=zoom,
+        start_idx=nearest_dt_idx,
+        center=center,
+        plants_geojson_url=plants_geojson_url,
+        routes_geojson_url=routes_geojson_url,
+    )
+
+    with open(js_docs_fp, 'w', encoding='utf8') as fp:
+        fp.write(rendered_map_js)
+
+    return
+</code></pre>
+<pre><code class="language-python">generate_map_js(df_PN, df_powerdict, plants_geojson_fp='../data/power_plants.json', js_template_fp='../templates/map.js', js_docs_fp='../docs/js/map.js')
+</code></pre>
+<pre><code class="language-python"># clean up the pop-up
+</code></pre>
+<pre><code class="language-python">#exports
+def generate_map_md(md_template_fp='templates/map.md', md_docs_fp='docs/map.md'):
+    update_date = pd.Timestamp.now().round('5min').tz_localize('Europe/London').strftime('%Y-%m-%d %H:%M')
+    rendered_map_md = Template(open(md_template_fp).read()).render({'update_date': update_date})
+
+    with open(md_docs_fp, 'w', encoding='utf8') as fp:
+        fp.write(rendered_map_md)
+
+    return
+</code></pre>
+<pre><code class="language-python">generate_map_md(md_template_fp='../templates/map.md', md_docs_fp='../docs/map.md')
+</code></pre>
+<pre><code class="language-python">#exports
+app = typer.Typer()
+</code></pre>
+<p><br></p>
+<p><code>python -m ElexonDataPortal.dev.mapgen</code></p>
+<pre><code class="language-python">#exports
+@app.command()
+def generate_map(
+    api_key: str=None,
+    powerdict_url: str='https://raw.githubusercontent.com/OSUKED/Power-Station-Dictionary/main/data/output/power_stations.csv',
+    js_template_fp: str='templates/map.js', 
+    js_docs_fp: str='docs/js/map.js', 
+    md_template_fp: str='templates/map.md', 
+    md_docs_fp: str='docs/map.md',
+    data_dir: str='data/PN',
+    plants_geojson_fp: str='data/power_plants.json',
+    plants_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/power_plants.json',
+    routes_geojson_url: str='https://raw.githubusercontent.com/OSUKED/ElexonDataPortal/master/data/network_routes.json'
+):
+    if api_key is None:
+        assert 'BMRS_API_KEY' in os.environ.keys(), 'If the `api_key` is not specified during client initialisation then it must be set to as the environment variable `BMRS_API_KEY`'
+        api_key = os.environ['BMRS_API_KEY']
+
+    download_latest_PHYBM_data(api_key, data_dir)
+    df_PN = load_most_recent_PN_data(data_dir)
+
+    df_powerdict = pd.read_csv(powerdict_url)
+
+    generate_map_js(df_PN, df_powerdict, js_template_fp=js_template_fp, js_docs_fp=js_docs_fp, plants_geojson_fp=plants_geojson_fp, plants_geojson_url=plants_geojson_url, routes_geojson_url=routes_geojson_url)
+    generate_map_md(md_template_fp=md_template_fp, md_docs_fp=md_docs_fp)
+
+    return 
+</code></pre>
+<pre><code class="language-python">generate_map(
+    api_key=api_key,
+    js_template_fp='../templates/map.js', 
+    js_docs_fp='../docs/js/map.js', 
+    md_template_fp='../templates/map.md', 
+    md_docs_fp='../docs/map.md',
+    data_dir='../data/PN',
+    plants_geojson_fp='../data/power_plants.json'
+)
+</code></pre>
+<pre><code class="language-python">#exports
+if __name__ == '__main__' and '__file__' in globals():
+    app()
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../07-cli-rebuild/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Rebuilding
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.instant", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+      
+        <script src="../js/map.js"></script>
+      
+        <script src="../js/SliderControl.js"></script>
+      
+    
+  </body>
+</html>

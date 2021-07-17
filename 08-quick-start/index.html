@@ -1,0 +1,1449 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Quick-Start - Elexon Data Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    
+      <link rel="stylesheet" href="../css/map.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quick-start-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Elexon Data Portal" class="md-header__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Elexon Data Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quick-Start
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../visualisations/" class="md-tabs__link">
+      Visualisations
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01-utils/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Elexon Data Portal" class="md-nav__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Elexon Data Portal
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Quick-Start
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Quick-Start
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#client-initialisation" class="md-nav__link">
+    Client Initialisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-usage" class="md-nav__link">
+    Client Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-handling" class="md-nav__link">
+    Date Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#under-the-hood" class="md-nav__link">
+    Under the Hood
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualisations/" class="md-nav__link">
+        Visualisations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-utils/" class="md-nav__link">
+        Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-spec-gen/" class="md-nav__link">
+        OpenAPI Spec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-raw-methods/" class="md-nav__link">
+        Raw Methods
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-client-prep/" class="md-nav__link">
+        Endpoint Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-orchestrator/" class="md-nav__link">
+        Orchestrator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-client-gen/" class="md-nav__link">
+        Client Generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cli-rebuild/" class="md-nav__link">
+        Rebuilding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-map-gen/" class="md-nav__link">
+        Map Generation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#client-initialisation" class="md-nav__link">
+    Client Initialisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-usage" class="md-nav__link">
+    Client Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-handling" class="md-nav__link">
+    Date Handling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#under-the-hood" class="md-nav__link">
+    Under the Hood
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="quick-start-guide">Quick Start Guide</h1>
+<p><br></p>
+<p>This notebook outlines how to get up and running with the <code>ElexonDataPortal</code> library, a Python client for retrieving data from the Elexon/BMRS API.</p>
+<p>The core functionality is exposed through the <code>ElexonDataPortal.api</code> module which we'll now import.</p>
+<p><br></p>
+<h3 id="client-initialisation">Client Initialisation</h3>
+<p>We're now ready to initialise the API <code>Client</code>. The key parameter to pass is the <code>api_key</code>, alternatively this can be set as the environment variable <code>BMRS_API_KEY</code> which will then be loaded automatically (as in this example).</p>
+<pre><code class="language-python">from ElexonDataPortal import api
+
+client = api.Client() # or use `api.Client('your_api_key_here')`
+
+client
+</code></pre>
+<pre><code>&lt;ElexonDataPortal.api.Client at 0x16e0bf5b8e0&gt;
+</code></pre>
+<p><br></p>
+<h3 id="client-usage">Client Usage</h3>
+<p>The client exposes a <code>methods</code> attribute which provides a quick way to explore what request methods are available alongside a short description of the data they return.</p>
+<pre><code class="language-python">import pandas as pd
+
+pd.Series(client.methods).head()
+</code></pre>
+<pre><code>get_B0610                  Actual Total Load per Bidding Zone
+get_B0620      Day-Ahead Total Load Forecast per Bidding Zone
+get_B0630     Week-Ahead Total Load Forecast per Bidding Zone
+get_B0640    Month-Ahead Total Load Forecast Per Bidding Zone
+get_B0650     Year Ahead Total Load Forecast per Bidding Zone
+dtype: object
+</code></pre>
+<p><br></p>
+<p>Lets look at the docstring for a specific method, in this case the B1610 stream.</p>
+<pre><code class="language-python">print(client.get_B1610.__doc__)
+</code></pre>
+<pre><code>        Actual Generation Output per Generation Unit
+
+        Parameters:
+            start_date (str)
+            end_date (str)
+            NGCBMUnitID (str)
+</code></pre>
+<p><br></p>
+<p>Now we know what to pass in to the <code>get_B1610</code> method lets call it! </p>
+<p>Each response (4 in this example) will be automatically cleaned and parsed, then concatenated into a single Pandas DataFrame.</p>
+<pre><code class="language-python">start_date = '2020-01-01'
+end_date = '2020-01-01 1:30'
+
+df_B1610 = client.get_B1610(start_date, end_date)
+
+df_B1610.head(3)
+</code></pre>
+<pre><code>B1610: 100% 4/4 [00:04&lt;00:00,  1.14s/it]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">local_datetime</th>
+<th align="left">documentType</th>
+<th align="left">businessType</th>
+<th align="left">processType</th>
+<th align="left">timeSeriesID</th>
+<th align="left">curveType</th>
+<th align="left">settlementDate</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">registeredResourceEICCode</th>
+<th align="left">marketGenerationUnitEICCode</th>
+<th align="left">...</th>
+<th align="left">bMUnitID</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">resolution</th>
+<th align="left">start</th>
+<th align="left">end</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-151</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000CAIRW-2E</td>
+<td align="left">48W00000CAIRW-2E</td>
+<td align="left">...</td>
+<td align="left">2__PSTAT001</td>
+<td align="left">CAIRW-2</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">27.926</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-251</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000DRAXX-3A</td>
+<td align="left">48W00000DRAXX-3A</td>
+<td align="left">...</td>
+<td align="left">T_DRAXX-3</td>
+<td align="left">DRAXX-3</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">638.512</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-231</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000BLKWW-1L</td>
+<td align="left">48W00000BLKWW-1L</td>
+<td align="left">...</td>
+<td align="left">T_BLKWW-1</td>
+<td align="left">BLKWW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">10.63</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>We could see from the docstring that there were more parameters we could specify, lets pass in the <code>NGCBMUnitID</code> and look at the output for a single power plant. In this example we'll look at the power output from <em>'LARYO-1'</em>, which makes up roughly 1/4 of the London Array wind farm.</p>
+<pre><code class="language-python">start_date = '2021-01-01'
+end_date = '2021-01-02 23:30'
+NGCBMUnitID = 'LARYO-1'
+
+df_LARYO_1 = client.get_B1610(start_date, end_date, NGCBMUnitID)
+
+df_LARYO_1.set_index('local_datetime')['quantity'].astype(float).plot()
+</code></pre>
+<pre><code>B1610: 100% 96/96 [00:21&lt;00:00,  4.56it/s]
+
+
+
+
+
+&lt;AxesSubplot:xlabel='local_datetime'&gt;
+</code></pre>
+<p><img alt="png" src="../img/nbs/08-quick-start_cell_10_output_2.png" /></p>
+<p><br></p>
+<p>Before moving on we'll quickly show what an alternative data stream might return, in this case the <code>B1440</code> stream which provides <em>'Generation forecasts for Wind and Solar'</em>.</p>
+<pre><code class="language-python">start_date = '2020-01-01'
+end_date = '2020-01-01 1:30'
+
+df_B1440 = client.get_B1440(start_date, end_date)
+
+df_B1440.head(3)
+</code></pre>
+<pre><code>B1440: 100% 4/4 [00:00&lt;00:00,  6.08it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">local_datetime</th>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">settlementDate</th>
+<th align="left">processType</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+<th align="left">documentType</th>
+<th align="left">curveType</th>
+<th align="left">resolution</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">NGET-EMFIP-DGWS-TS-00034592</td>
+<td align="left">Solar generation</td>
+<td align="left">"Solar"</td>
+<td align="left">2020-01-01</td>
+<td align="left">Day Ahead</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">Wind and solar forecast</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">PT30M</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-DGWS-00035923</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">NGET-EMFIP-DGWS-TS-00034590</td>
+<td align="left">Wind generation</td>
+<td align="left">"Wind Offshore"</td>
+<td align="left">2020-01-01</td>
+<td align="left">Day Ahead</td>
+<td align="right">1</td>
+<td align="right">2843.18</td>
+<td align="left">Wind and solar forecast</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">PT30M</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-DGWS-00035923</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">NGET-EMFIP-DGWS-TS-00034591</td>
+<td align="left">Wind generation</td>
+<td align="left">"Wind Onshore"</td>
+<td align="left">2020-01-01</td>
+<td align="left">Day Ahead</td>
+<td align="right">1</td>
+<td align="right">3024.24</td>
+<td align="left">Wind and solar forecast</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">PT30M</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-DGWS-00035923</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="date-handling">Date Handling</h3>
+<p>Often a main pain point when working with time-series data is having to handle timezones, this is made more complex when working with data from the power sector as the datetime is expressed through a combination of settlement dates and settlement periods (half-hour trading blocks). <code>ElexonDataPortal</code> has a utility function for determining the settlement dates and periods over a specified date range.</p>
+<pre><code class="language-python">from ElexonDataPortal.dev import utils
+
+start_date = '2021-01-01'
+end_date = '2021-01-02'
+
+df_dates_SPs = utils.dt_rng_to_SPs(start_date, end_date)
+
+df_dates_SPs.head()
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Unnamed: 0</th>
+<th align="left">date</th>
+<th align="right">SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2021-01-01 00:00:00+00:00</td>
+<td align="left">2021-01-01</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">2021-01-01 00:30:00+00:00</td>
+<td align="left">2021-01-01</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">2021-01-01 01:00:00+00:00</td>
+<td align="left">2021-01-01</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">2021-01-01 01:30:00+00:00</td>
+<td align="left">2021-01-01</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">2021-01-01 02:00:00+00:00</td>
+<td align="left">2021-01-01</td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>This is then used by the client to determine the correct settlement period and date pairs to request, as well as how to then parse the returned data and create a new column containing the local datetime. In this example we'll look at what happens when the clocks change forwards (there will be 46 SPs on this date).</p>
+<pre><code class="language-python">start_date = '2020-03-28 23:00'
+end_date = '2020-03-29 02:30'
+
+df_B1610_clock_change = client.get_B1610(start_date, end_date)
+
+df_B1610_clock_change[['local_datetime', 'settlementDate', 'settlementPeriod']].drop_duplicates()
+</code></pre>
+<pre><code>B1610: 100% 6/6 [00:05&lt;00:00,  1.12it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right">Unnamed: 0</th>
+<th align="left">local_datetime</th>
+<th align="left">settlementDate</th>
+<th align="right">settlementPeriod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2020-03-28 23:00:00+00:00</td>
+<td align="left">2020-03-28</td>
+<td align="right">47</td>
+</tr>
+<tr>
+<td align="right">159</td>
+<td align="left">2020-03-28 23:30:00+00:00</td>
+<td align="left">2020-03-28</td>
+<td align="right">48</td>
+</tr>
+<tr>
+<td align="right">318</td>
+<td align="left">2020-03-29 00:00:00+00:00</td>
+<td align="left">2020-03-29</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="right">478</td>
+<td align="left">2020-03-29 00:30:00+00:00</td>
+<td align="left">2020-03-29</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">639</td>
+<td align="left">2020-03-29 02:00:00+01:00</td>
+<td align="left">2020-03-29</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">800</td>
+<td align="left">2020-03-29 02:30:00+01:00</td>
+<td align="left">2020-03-29</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>In this example we'll look at what happens when the clocks change backwards (there will be 50 SPs on this date).</p>
+<pre><code class="language-python">start_date = '2020-10-25 00:30'
+end_date = '2020-10-25 02:00'
+
+df_B1610_clock_change = client.get_B1610(start_date, end_date)
+
+df_B1610_clock_change[['local_datetime', 'settlementDate', 'settlementPeriod']].drop_duplicates()
+</code></pre>
+<pre><code>B1610: 100% 6/6 [00:05&lt;00:00,  1.19it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right">Unnamed: 0</th>
+<th align="left">local_datetime</th>
+<th align="left">settlementDate</th>
+<th align="right">settlementPeriod</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">2020-10-25 00:30:00+01:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="right">155</td>
+<td align="left">2020-10-25 01:00:00+01:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="right">305</td>
+<td align="left">2020-10-25 01:30:00+01:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="right">451</td>
+<td align="left">2020-10-25 01:00:00+00:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="right">592</td>
+<td align="left">2020-10-25 01:30:00+00:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="right">729</td>
+<td align="left">2020-10-25 02:00:00+00:00</td>
+<td align="left">2020-10-25</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h3 id="under-the-hood">Under the Hood</h3>
+<p>If you've previously written your own code for extracting data from the Elexon/BMRS API then you may be wondering where some of the normal parameters you pass have gone. The differences in the parameters passed are due to 4 core drivers:</p>
+<ul>
+<li>Standardisation of date range parameter names</li>
+<li>Removal of the need to specify <code>ServiceType</code></li>
+<li>Automatic passing of <code>APIKey</code> after client initialisation</li>
+<li>Shipped with sensible defaults for all remaining parameters</li>
+</ul>
+<p>If you wish to make requests using the raw methods these are available through the <code>ElexonDataportal.dev.raw</code> module. We'll quickly make one of these requests, note that in this example we'll specify <code>ServiceType=csv</code>.</p>
+<pre><code class="language-python">import io
+from ElexonDataPortal import dev
+
+r = dev.raw.get_B1610(
+    APIKey=api_key,
+    SettlementDate='2020-01-01',
+    Period='1',
+    NGCBMUnitID='*',
+    ServiceType='csv',
+)
+
+df_B1610_raw_csv = pd.read_csv(io.StringIO(r.content.decode('utf-8')), skiprows=1)
+
+df_B1610_raw_csv.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">Time Series ID</th>
+<th align="left">Registered Resource EIC Code</th>
+<th align="left">BM Unit ID</th>
+<th align="left">NGC BM Unit ID</th>
+<th align="left">PSR Type</th>
+<th align="left">Market Generation Unit EIC Code</th>
+<th align="left">Market Generation BMU ID</th>
+<th align="left">Market Generation NGC BM Unit ID</th>
+<th align="left">Settlement Date</th>
+<th align="right">SP</th>
+<th align="right">Quantity (MW)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ELX-EMFIP-AGOG-TS-319</td>
+<td align="left">48W00000LNCSO-1R</td>
+<td align="left">T_LNCSW-1</td>
+<td align="left">LNCSO-1</td>
+<td align="left">Generation</td>
+<td align="left">48W00000LNCSO-1R</td>
+<td align="left">T_LNCSW-1</td>
+<td align="left">LNCSO-1</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">56.076</td>
+</tr>
+<tr>
+<td align="left">ELX-EMFIP-AGOG-TS-320</td>
+<td align="left">48W00000LNCSO-2P</td>
+<td align="left">T_LNCSW-2</td>
+<td align="left">LNCSO-2</td>
+<td align="left">Generation</td>
+<td align="left">48W00000LNCSO-2P</td>
+<td align="left">T_LNCSW-2</td>
+<td align="left">LNCSO-2</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">47.456</td>
+</tr>
+<tr>
+<td align="left">ELX-EMFIP-AGOG-TS-175</td>
+<td align="left">48W00000CLDRW-16</td>
+<td align="left">E_CLDRW-1</td>
+<td align="left">CLDRW-1</td>
+<td align="left">Generation</td>
+<td align="left">48W00000CLDRW-16</td>
+<td align="left">E_CLDRW-1</td>
+<td align="left">CLDRW-1</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">3.096</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>If you wish to use <code>ServiceType=xml</code> you can use the <code>ElexonDataPortal.dev.utils.parse_xml_response</code> function to convert the response into a Pandas DataFrame.</p>
+<pre><code class="language-python">r = dev.raw.get_B1610(
+    APIKey=api_key,
+    SettlementDate='2020-01-01',
+    Period='1',
+    NGCBMUnitID='*',
+    ServiceType='xml',
+)
+
+df_B1610_raw_xml = dev.utils.parse_xml_response(r)
+
+df_B1610_raw_xml.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">documentType</th>
+<th align="left">businessType</th>
+<th align="left">processType</th>
+<th align="left">timeSeriesID</th>
+<th align="left">curveType</th>
+<th align="left">settlementDate</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">registeredResourceEICCode</th>
+<th align="left">marketGenerationUnitEICCode</th>
+<th align="left">marketGenerationBMUId</th>
+<th align="left">...</th>
+<th align="left">bMUnitID</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">resolution</th>
+<th align="left">start</th>
+<th align="left">end</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-236</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000CLDCW-17</td>
+<td align="left">48W00000CLDCW-17</td>
+<td align="left">T_CLDCW-1</td>
+<td align="left">...</td>
+<td align="left">T_CLDCW-1</td>
+<td align="left">CLDCW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">96.42</td>
+</tr>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-171</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000BRYBW-10</td>
+<td align="left">48W00000BRYBW-10</td>
+<td align="left">E_BRYBW-1</td>
+<td align="left">...</td>
+<td align="left">E_BRYBW-1</td>
+<td align="left">BRYBW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">46.42</td>
+</tr>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-257</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000000EECL-15</td>
+<td align="left">48W000000EECL-15</td>
+<td align="left">T_EECL-1</td>
+<td align="left">...</td>
+<td align="left">T_EECL-1</td>
+<td align="left">EECL-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">232.272</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>But how do we go from these raw methods to the standardised client that we first saw?</p>
+<p>The glue that enables this is the <code>ElexonDataPortal.dev.orchestrator.query_orchestrator</code> function which provides a wrapper for the various request types. Crucially, the <code>query_orchestrator</code> provides a mechanism for collating requests over a date range with the different request types broken down into:</p>
+<ul>
+<li>SP_and_date</li>
+<li>date_range</li>
+<li>date_time_range</li>
+<li>year</li>
+<li>year_and_month</li>
+<li>year_and_week</li>
+<li>non_temporal</li>
+</ul>
+<p>Let's make a request to the same BMRS stream using the orchestrator.</p>
+<pre><code class="language-python">start_date = '2020-01-01'
+end_date = '2020-01-01'
+
+df_B1610_orchestrator = dev.orchestrator.query_orchestrator(
+    api_key=api_key,
+    start_date=start_date,
+    end_date=end_date,
+    method='get_B1610',
+    request_type='SP_and_date',
+    kwargs_map={'date': 'SettlementDate', 'SP': 'Period'},
+    func_params=['APIKey', 'date', 'SP', 'ServiceType'],
+)
+
+df_B1610_orchestrator.head(3)
+</code></pre>
+<pre><code>B1610: 100% 1/1 [00:01&lt;00:00,  1.11s/it]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">local_datetime</th>
+<th align="left">documentType</th>
+<th align="left">businessType</th>
+<th align="left">processType</th>
+<th align="left">timeSeriesID</th>
+<th align="left">curveType</th>
+<th align="left">settlementDate</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">registeredResourceEICCode</th>
+<th align="left">marketGenerationUnitEICCode</th>
+<th align="left">...</th>
+<th align="left">bMUnitID</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">resolution</th>
+<th align="left">start</th>
+<th align="left">end</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-361</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000WBURB-27</td>
+<td align="left">48W00000WBURB-27</td>
+<td align="left">...</td>
+<td align="left">T_WBURB-2</td>
+<td align="left">WBURB-2</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">275.38</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-233</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000000BLLA-2I</td>
+<td align="left">48W000000BLLA-2I</td>
+<td align="left">...</td>
+<td align="left">T_BLLA-2</td>
+<td align="left">BLLA-2</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">8.194</td>
+</tr>
+<tr>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-326</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000000NANT-1R</td>
+<td align="left">48W000000NANT-1R</td>
+<td align="left">...</td>
+<td align="left">T_NANT-1</td>
+<td align="left">NANT-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">12.75</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>It's worth noting that there are some differences in the returned DataFrames. Firstly, when specifying <code>ServiceType=csv</code> the number of columns is much smaller as the data that is nested within the xml representation is simply not included. Secondly, the orchestrator response includes an additional column relative to the xml one even though it itself specifies <code>ServiceType=xml</code>, this is because the orchestrator introduces a new column containing the local datetime as Pandas Timestamps.</p>
+<pre><code class="language-python">(
+    df_B1610_raw_csv.columns.size, 
+    df_B1610_raw_xml.columns.size, 
+    df_B1610_orchestrator.columns.size
+)
+</code></pre>
+<pre><code>(11, 21, 22)
+</code></pre>
+<p><br></p>
+<p>The response from the <code>ElexonDataPortal.api.Client</code> is the same as that returned by the orchestrator.</p>
+<pre><code class="language-python">(df_B1610.columns == df_B1610_orchestrator.columns).mean() == 1
+</code></pre>
+<pre><code>True
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Welcome
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../visualisations/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Visualisations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.instant", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+      
+        <script src="../js/map.js"></script>
+      
+        <script src="../js/SliderControl.js"></script>
+      
+    
+  </body>
+</html>

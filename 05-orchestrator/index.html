@@ -1,0 +1,1732 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Orchestrator - Elexon Data Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    
+      <link rel="stylesheet" href="../css/map.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#core-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Elexon Data Portal" class="md-header__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Elexon Data Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Orchestrator
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../visualisations/" class="md-tabs__link">
+      Visualisations
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../01-utils/" class="md-tabs__link md-tabs__link--active">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Elexon Data Portal" class="md-nav__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Elexon Data Portal
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-quick-start/" class="md-nav__link">
+        Quick-Start
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visualisations/" class="md-nav__link">
+        Visualisations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-utils/" class="md-nav__link">
+        Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-spec-gen/" class="md-nav__link">
+        OpenAPI Spec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-raw-methods/" class="md-nav__link">
+        Raw Methods
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-client-prep/" class="md-nav__link">
+        Endpoint Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Orchestrator
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Orchestrator
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    Imports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-types" class="md-nav__link">
+    Request Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-orchestrator" class="md-nav__link">
+    Query Orchestrator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-client-gen/" class="md-nav__link">
+        Client Generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-cli-rebuild/" class="md-nav__link">
+        Rebuilding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-map-gen/" class="md-nav__link">
+        Map Generation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#imports" class="md-nav__link">
+    Imports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-types" class="md-nav__link">
+    Request Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-orchestrator" class="md-nav__link">
+    Query Orchestrator
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="core-api">Core API</h1>
+<p><br></p>
+<h3 id="imports">Imports</h3>
+<pre><code class="language-python">#exports
+import pandas as pd
+from tqdm import tqdm
+from warnings import warn
+from requests.models import Response
+
+from ElexonDataPortal.dev import utils, raw
+</code></pre>
+<pre><code class="language-python">from IPython.display import JSON
+from ElexonDataPortal.dev import clientprep
+</code></pre>
+<pre><code class="language-python">import os
+from dotenv import load_dotenv
+
+assert load_dotenv('../.env'), 'Environment variables could not be loaded'
+
+api_key = os.environ['BMRS_API_KEY']
+</code></pre>
+<pre><code class="language-python">API_yaml_fp = '../data/BMRS_API.yaml'
+
+method_info = clientprep.construct_method_info_dict(API_yaml_fp)
+
+JSON([method_info])
+</code></pre>
+<pre><code>&lt;IPython.core.display.JSON object&gt;
+</code></pre>
+<p><br></p>
+<h3 id="request-types">Request Types</h3>
+<pre><code class="language-python">#exports
+def if_possible_parse_local_datetime(df):
+    dt_cols_with_period_in_name = ['startTimeOfHalfHrPeriod', 'initialForecastPublishingPeriodCommencingTime', 'latestForecastPublishingPeriodCommencingTime', 'outTurnPublishingPeriodCommencingTime']
+
+    dt_cols = [col for col in df.columns if 'date' in col.lower() or col in dt_cols_with_period_in_name]
+    sp_cols = [col for col in df.columns if 'period' in col.lower() and col not in dt_cols_with_period_in_name]
+
+    if len(dt_cols)==1 and len(sp_cols)==1:
+        df = utils.parse_local_datetime(df, dt_col=dt_cols[0], SP_col=sp_cols[0])
+
+    return df
+
+def SP_and_date_request(
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    start_date: str,
+    end_date: str,
+    **kwargs
+):
+    assert start_date is not None, '`start_date` must be specified'
+    assert end_date is not None, '`end_date` must be specified'
+
+    df = pd.DataFrame()
+    stream = '_'.join(method.split('_')[1:])
+
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    df_dates_SPs = utils.dt_rng_to_SPs(start_date, end_date)
+    date_SP_tuples = list(df_dates_SPs.reset_index().itertuples(index=False, name=None))
+
+    for datetime, query_date, SP in tqdm(date_SP_tuples, desc=stream, total=len(date_SP_tuples)):
+        kwargs.update({
+            kwargs_map['date']: datetime.strftime('%Y-%m-%d'),
+            kwargs_map['SP']: SP,
+        })
+
+        missing_kwargs = list(set(func_params) - set(['SP', 'date'] + list(kwargs.keys())))
+        assert len(missing_kwargs) == 0, f&quot;The following kwargs are missing: {', '.join(missing_kwargs)}&quot;
+
+        r = getattr(raw, method)(**kwargs)
+        utils.check_status(r)
+        df_SP = utils.parse_xml_response(r)
+
+        df = df.append(df_SP)
+
+    df = utils.expand_cols(df)
+    df = if_possible_parse_local_datetime(df)
+
+    return df
+</code></pre>
+<pre><code class="language-python">method_info_mock = {
+    'get_B1610': {
+        'request_type': 'SP_and_date',
+        'kwargs_map': {'date': 'SettlementDate', 'SP': 'Period'},
+        'func_kwargs': {
+            'APIKey': 'AP8DA23',
+            'date': '2020-01-01',
+            'SP': '1',
+            'NGCBMUnitID': '*',
+            'ServiceType': 'csv'
+        }
+    }
+}
+
+method = 'get_B1610'
+kwargs = {'NGCBMUnitID': '*'}
+
+kwargs_map = method_info_mock[method]['kwargs_map']
+func_params = list(method_info_mock[method]['func_kwargs'].keys())
+
+df = SP_and_date_request(
+    method=method,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    api_key=api_key,
+    start_date='2020-01-01',
+    end_date='2020-01-01 01:30',
+    **kwargs
+)
+
+df.head(3)
+</code></pre>
+<pre><code>B1610: 100% 4/4 [00:02&lt;00:00,  1.45it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">documentType</th>
+<th align="left">businessType</th>
+<th align="left">processType</th>
+<th align="left">timeSeriesID</th>
+<th align="left">curveType</th>
+<th align="left">settlementDate</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">registeredResourceEICCode</th>
+<th align="left">marketGenerationUnitEICCode</th>
+<th align="left">marketGenerationBMUId</th>
+<th align="left">...</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">resolution</th>
+<th align="left">start</th>
+<th align="left">end</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+<th align="left">local_datetime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-305</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000HRSTW-19</td>
+<td align="left">48W00000HRSTW-19</td>
+<td align="left">T_HRSTW-1</td>
+<td align="left">...</td>
+<td align="left">HRSTW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">48.346</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-338</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000000RREW-14</td>
+<td align="left">48W000000RREW-14</td>
+<td align="left">T_RREW-1</td>
+<td align="left">...</td>
+<td align="left">RREW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">35.92</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+<tr>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-349</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000000SIZB-2S</td>
+<td align="left">48W000000SIZB-2S</td>
+<td align="left">T_SIZB-2</td>
+<td align="left">...</td>
+<td align="left">SIZB-2</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">599.94</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#exports
+def handle_capping(
+    r: Response, 
+    df: pd.DataFrame,
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    end_date: str,
+    request_type: str,
+    **kwargs
+):
+    capping_applied = utils.check_capping(r)
+    assert capping_applied != None, 'No information on whether or not capping limits had been breached could be found in the response metadata'
+
+    if capping_applied == True: # only subset of date range returned
+        dt_cols_with_period_in_name = ['startTimeOfHalfHrPeriod']
+        dt_cols = [col for col in df.columns if ('date' in col.lower() or col in dt_cols_with_period_in_name) and ('end' not in col.lower())]
+
+        if len(dt_cols) == 1:
+            start_date = pd.to_datetime(df[dt_cols[0]]).max().strftime('%Y-%m-%d')
+            if 'start_time' in kwargs.keys():
+                kwargs['start_time'] = '00:00'
+
+            if pd.to_datetime(start_date) &gt;= pd.to_datetime(end_date):
+                warnings.warn(f'The `end_date` ({end_date}) was earlier than `start_date` ({start_date})\nThe `start_date` will be set one day earlier than the `end_date`.')
+                start_date = (pd.to_datetime(end_date) - pd.Timedelta(days=1)).strftime('%Y-%m-%d')
+
+            warn(f'Response was capped, request is rerunning for missing data from {start_date}')
+            df_rerun = date_range_request(
+                            method=method,
+                            kwargs_map=kwargs_map,
+                            func_params=func_params,
+                            api_key=api_key,
+                            start_date=start_date,
+                            end_date=end_date,
+                            request_type=request_type,
+                            **kwargs
+                        )
+
+            df = df.append(df_rerun)
+            df = df.drop_duplicates()
+
+        else:
+            warn(f'Response was capped: a new `start_date` to continue requesting could not be determined automatically, please handle manually for `{method}`')
+
+    return df
+
+def date_range_request(
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    start_date: str,
+    end_date: str,
+    request_type: str,
+    **kwargs
+):
+    assert start_date is not None, '`start_date` must be specified'
+    assert end_date is not None, '`end_date` must be specified'
+
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    for kwarg in ['start_time', 'end_time']:
+        if kwarg not in kwargs_map.keys():
+            kwargs_map[kwarg] = kwarg
+
+    kwargs[kwargs_map['start_date']], kwargs[kwargs_map['start_time']] = pd.to_datetime(start_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
+    kwargs[kwargs_map['end_date']], kwargs[kwargs_map['end_time']] = pd.to_datetime(end_date).strftime('%Y-%m-%d %H:%M:%S').split(' ')
+
+    if 'SP' in kwargs_map.keys():
+        kwargs[kwargs_map['SP']] = '*'
+        func_params.remove('SP')
+        func_params += [kwargs_map['SP']]
+
+    missing_kwargs = list(set(func_params) - set(['start_date', 'end_date', 'start_time', 'end_time'] + list(kwargs.keys())))
+    assert len(missing_kwargs) == 0, f&quot;The following kwargs are missing: {', '.join(missing_kwargs)}&quot;
+
+    if request_type == 'date_range':
+        kwargs.pop(kwargs_map['start_time'])
+        kwargs.pop(kwargs_map['end_time'])
+
+    r = getattr(raw, method)(**kwargs)
+    utils.check_status(r)
+
+    df = utils.parse_xml_response(r)
+    df = if_possible_parse_local_datetime(df)
+
+    # Handling capping
+    df = handle_capping(
+        r, 
+        df,
+        method=method,
+        kwargs_map=kwargs_map,
+        func_params=func_params,
+        api_key=api_key,
+        end_date=end_date,
+        request_type=request_type,
+        **kwargs
+    )
+
+    return df
+</code></pre>
+<pre><code class="language-python">method = 'get_B1540'
+kwargs = {}
+
+kwargs_map = method_info[method]['kwargs_map']
+func_params = list(method_info[method]['func_kwargs'].keys())
+request_type = method_info[method]['request_type']
+
+df = date_range_request(
+    method=method,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    api_key=api_key,
+    start_date='2020-01-01',
+    end_date='2021-01-01',
+    request_type=request_type,
+    **kwargs
+)
+
+df.head(3)
+</code></pre>
+<pre><code>&lt;ipython-input-8-a3b15d7a70c8&gt;:28: UserWarning: Response was capped, request is rerunning for missing data from 2020-06-23
+  warn(f'Response was capped, request is rerunning for missing data from {start_date}')
+&lt;ipython-input-8-a3b15d7a70c8&gt;:28: UserWarning: Response was capped, request is rerunning for missing data from 2020-11-03
+  warn(f'Response was capped, request is rerunning for missing data from {start_date}')
+&lt;ipython-input-8-a3b15d7a70c8&gt;:28: UserWarning: Response was capped, request is rerunning for missing data from 2020-12-31
+  warn(f'Response was capped, request is rerunning for missing data from {start_date}')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="left">settlementStartDate</th>
+<th align="left">settlementStartTime</th>
+<th align="left">settlementEndDate</th>
+<th align="left">settlementEndTime</th>
+<th align="right">quantity</th>
+<th align="left">prodRegisteredResourcemRID</th>
+<th align="right">bMUnitID</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">documentType</th>
+<th align="left">processType</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">reasonCode</th>
+<th align="right">prodRegisteredResourceName</th>
+<th align="right">prodRegisteredResourcemLocation</th>
+<th align="right">pSRType</th>
+<th align="left">reasonDescription</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">MP-NGET-AAPU-TS-00050434</td>
+<td align="left">Unplanned outage</td>
+<td align="left">2020-06-23</td>
+<td align="left">23:00:00</td>
+<td align="left">2020-07-07</td>
+<td align="left">23:00:00</td>
+<td align="right">0</td>
+<td align="left">48WSTN0000ABTHBN</td>
+<td align="right">nan</td>
+<td align="left">ABTHB</td>
+<td align="left">Production unavailability</td>
+<td align="left">Outage information</td>
+<td align="left">Y</td>
+<td align="left">11XINNOGY------2-NGET-AAPU-00050434</td>
+<td align="right">597</td>
+<td align="left">nan</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">2020-06-23</td>
+<td align="left">23:00:00</td>
+<td align="left">2020-07-07</td>
+<td align="left">23:00:00</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+<td align="left">Production unavailability</td>
+<td align="left">Outage information</td>
+<td align="left">Y</td>
+<td align="left">11XINNOGY------2-NGET-AAPU-00050434</td>
+<td align="right">597</td>
+<td align="left">Failure</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+</tr>
+<tr>
+<td align="left">nan</td>
+<td align="left">nan</td>
+<td align="left">2020-06-23</td>
+<td align="left">23:00:00</td>
+<td align="left">2020-07-07</td>
+<td align="left">23:00:00</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+<td align="right">nan</td>
+<td align="left">nan</td>
+<td align="left">Production unavailability</td>
+<td align="left">Outage information</td>
+<td align="left">Y</td>
+<td align="left">11XINNOGY------2-NGET-AAPU-00050434</td>
+<td align="right">597</td>
+<td align="left">Complementary information</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="right">nan</td>
+<td align="left">Other</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#exports
+def year_request(
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    start_date: str,
+    end_date: str,
+    **kwargs
+):
+    assert start_date is not None, '`start_date` must be specified'
+    assert end_date is not None, '`end_date` must be specified'
+
+    df = pd.DataFrame()
+    stream = '_'.join(method.split('_')[1:])
+
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    start_year = int(pd.to_datetime(start_date).strftime('%Y'))
+    end_year = int(pd.to_datetime(end_date).strftime('%Y'))
+
+    for year in tqdm(range(start_year, end_year+1), desc=stream):
+        kwargs.update({kwargs_map['year']: year})
+
+        missing_kwargs = list(set(func_params) - set(['year'] + list(kwargs.keys())))
+        assert len(missing_kwargs) == 0, f&quot;The following kwargs are missing: {', '.join(missing_kwargs)}&quot;
+
+        r = getattr(raw, method)(**kwargs)
+        utils.check_status(r)
+        df_year = utils.parse_xml_response(r)
+
+        df = df.append(df_year)
+
+    df = if_possible_parse_local_datetime(df)
+
+    return df
+</code></pre>
+<pre><code class="language-python">method = 'get_B0650'
+kwargs = {}
+
+kwargs_map = method_info[method]['kwargs_map']
+func_params = list(method_info[method]['func_kwargs'].keys())
+
+df = year_request(
+    method=method,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    api_key=api_key,
+    start_date='2020-01-01',
+    end_date='2021-01-01 01:30',
+    **kwargs
+)
+
+df.head(3)
+</code></pre>
+<pre><code>B0650: 100% 2/2 [00:01&lt;00:00,  1.06it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="right">year</th>
+<th align="right">week</th>
+<th align="right">quantity</th>
+<th align="left">documentType</th>
+<th align="left">processType</th>
+<th align="left">objectAggregation</th>
+<th align="left">curveType</th>
+<th align="left">resolution</th>
+<th align="left">unitOfMeasure</th>
+<th align="left">monthName</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NGET-EMFIP-YATL-TS-00000762</td>
+<td align="left">Maximum available</td>
+<td align="right">2020</td>
+<td align="right">53</td>
+<td align="right">4019</td>
+<td align="left">System total load</td>
+<td align="left">Year ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">DEC</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-YATL-00000741</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-YATL-TS-00000781</td>
+<td align="left">Minimum possible</td>
+<td align="right">2020</td>
+<td align="right">53</td>
+<td align="right">2181</td>
+<td align="left">System total load</td>
+<td align="left">Year ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">DEC</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-YATL-00000761</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-YATL-TS-00000782</td>
+<td align="left">Maximum available</td>
+<td align="right">2020</td>
+<td align="right">53</td>
+<td align="right">4100</td>
+<td align="left">System total load</td>
+<td align="left">Year ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">DEC</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-YATL-00000761</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#exports
+def construct_year_month_pairs(start_date, end_date):
+    dt_rng = pd.date_range(start_date, end_date, freq='M')
+
+    if len(dt_rng) == 0:
+        year_month_pairs = [tuple(pd.to_datetime(start_date).strftime('%Y %b').split(' '))]
+    else:
+        year_month_pairs = [tuple(dt.strftime('%Y %b').split(' ')) for dt in dt_rng]
+
+    year_month_pairs = [(int(year), week.upper()) for year, week in year_month_pairs]
+
+    return year_month_pairs
+
+def year_and_month_request(
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    start_date: str,
+    end_date: str,
+    **kwargs
+):
+    assert start_date is not None, '`start_date` must be specified'
+    assert end_date is not None, '`end_date` must be specified'
+
+    df = pd.DataFrame()
+    stream = '_'.join(method.split('_')[1:])
+
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    year_month_pairs = construct_year_month_pairs(start_date, end_date)
+
+    for year, month in tqdm(year_month_pairs, desc=stream):
+        kwargs.update({
+            kwargs_map['year']: year,
+            kwargs_map['month']: month
+        })
+
+        missing_kwargs = list(set(func_params) - set(['year', 'month'] + list(kwargs.keys())))
+        assert len(missing_kwargs) == 0, f&quot;The following kwargs are missing: {', '.join(missing_kwargs)}&quot;
+
+        r = getattr(raw, method)(**kwargs)
+        utils.check_status(r)
+        df_year = utils.parse_xml_response(r)
+
+        df = df.append(df_year)
+
+    df = if_possible_parse_local_datetime(df)
+
+    return df
+</code></pre>
+<pre><code class="language-python">method = 'get_B0640'
+kwargs = {}
+
+kwargs_map = method_info[method]['kwargs_map']
+func_params = list(method_info[method]['func_kwargs'].keys())
+
+df = year_and_month_request(
+    method=method,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    api_key=api_key,
+    start_date='2020-01-01',
+    end_date='2020-03-31',
+    **kwargs
+)
+
+df.head(3)
+</code></pre>
+<pre><code>B0640: 100% 3/3 [00:00&lt;00:00,  5.57it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="right">year</th>
+<th align="left">monthName</th>
+<th align="left">week</th>
+<th align="right">quantity</th>
+<th align="left">documentType</th>
+<th align="left">processType</th>
+<th align="left">objectAggregation</th>
+<th align="left">curveType</th>
+<th align="left">resolution</th>
+<th align="left">unitOfMeasure</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NGET-EMFIP-MATL-TS-06201799</td>
+<td align="left">Minimum possible</td>
+<td align="right">2020</td>
+<td align="left">JAN</td>
+<td align="left">2020-01-27</td>
+<td align="right">20201</td>
+<td align="left">System total load</td>
+<td align="left">Month ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-MATL-16201797</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-MATL-TS-06201800</td>
+<td align="left">Maximum available</td>
+<td align="right">2020</td>
+<td align="left">JAN</td>
+<td align="left">2020-01-27</td>
+<td align="right">53599</td>
+<td align="left">System total load</td>
+<td align="left">Month ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-MATL-16201797</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-MATL-TS-06201801</td>
+<td align="left">Minimum possible</td>
+<td align="right">2020</td>
+<td align="left">JAN</td>
+<td align="left">2020-01-27</td>
+<td align="right">20201</td>
+<td align="left">System total load</td>
+<td align="left">Month ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P7D</td>
+<td align="left">Mega watt</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-MATL-16201817</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#exports
+def clean_year_week(year, week):
+    year = int(year)
+
+    if week == '00':
+        year = int(year) - 1
+        week = 52
+
+    else:
+        year = int(year)
+        week = int(week.strip('0'))
+
+    return year, week
+
+def construct_year_week_pairs(start_date, end_date):
+    dt_rng = pd.date_range(start_date, end_date, freq='W')
+
+    if len(dt_rng) == 0:
+        year_week_pairs = [tuple(pd.to_datetime(start_date).strftime('%Y %W').split(' '))]
+    else:
+        year_week_pairs = [tuple(dt.strftime('%Y %W').split(' ')) for dt in dt_rng]
+
+    year_week_pairs = [clean_year_week(year, week) for year, week in year_week_pairs]
+
+    return year_week_pairs
+
+def year_and_week_request(
+    method: str,
+    kwargs_map: dict,
+    func_params: list,
+    api_key: str,
+    start_date: str,
+    end_date: str,
+    **kwargs
+):
+    assert start_date is not None, '`start_date` must be specified'
+    assert end_date is not None, '`end_date` must be specified'
+
+    df = pd.DataFrame()
+    stream = '_'.join(method.split('_')[1:])
+
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    year_week_pairs = construct_year_week_pairs(start_date, end_date)
+
+    for year, week in tqdm(year_week_pairs, desc=stream):
+        kwargs.update({
+            kwargs_map['year']: year,
+            kwargs_map['week']: week
+        })
+
+        missing_kwargs = list(set(func_params) - set(['year', 'week'] + list(kwargs.keys())))
+        assert len(missing_kwargs) == 0, f&quot;The following kwargs are missing: {', '.join(missing_kwargs)}&quot;
+
+        r = getattr(raw, method)(**kwargs)
+        utils.check_status(r)
+        df_year = utils.parse_xml_response(r)
+
+        df = df.append(df_year)
+
+    df = if_possible_parse_local_datetime(df)
+
+    return df
+</code></pre>
+<pre><code class="language-python">method = 'get_B0630'
+kwargs = {}
+
+kwargs_map = method_info[method]['kwargs_map']
+func_params = list(method_info[method]['func_kwargs'].keys())
+
+df = year_and_week_request(
+    method=method,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    api_key=api_key,
+    start_date='2020-01-01',
+    end_date='2020-01-31',
+    **kwargs
+)
+
+df.head(3)
+</code></pre>
+<pre><code>B0630: 100% 4/4 [00:00&lt;00:00,  6.22it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="left">settlementDate</th>
+<th align="right">quantity</th>
+<th align="right">week</th>
+<th align="left">documentType</th>
+<th align="left">processType</th>
+<th align="left">objectAggregation</th>
+<th align="left">curveType</th>
+<th align="left">resolution</th>
+<th align="left">unitOfMeasure</th>
+<th align="right">year</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005681</td>
+<td align="left">Minimum possible</td>
+<td align="left">2019-12-29</td>
+<td align="right">22753</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005682</td>
+<td align="left">Maximum available</td>
+<td align="left">2019-12-29</td>
+<td align="right">40156</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005681</td>
+<td align="left">Minimum possible</td>
+<td align="left">2019-12-28</td>
+<td align="right">23644</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">#exports
+def non_temporal_request(
+    method: str,
+    api_key: str,
+    **kwargs
+):    
+    kwargs.update({
+        'APIKey': api_key,
+        'ServiceType': 'xml'
+    })
+
+    r = getattr(raw, method)(**kwargs)
+    utils.check_status(r)
+
+    df = utils.parse_xml_response(r)
+    df = if_possible_parse_local_datetime(df)
+
+    return df
+</code></pre>
+<p><br></p>
+<h3 id="query-orchestrator">Query Orchestrator</h3>
+<pre><code class="language-python">#exports
+def query_orchestrator(
+    method: str,
+    api_key: str,
+    request_type: str,
+    kwargs_map: dict=None,
+    func_params: list=None,
+    start_date: str=None,
+    end_date: str=None,
+    **kwargs
+):    
+    if request_type not in ['non_temporal']:
+        kwargs.update({
+            'kwargs_map': kwargs_map,
+            'func_params': func_params,
+            'start_date': start_date,
+            'end_date': end_date,
+        })
+
+    if request_type in ['date_range', 'date_time_range']:
+        kwargs.update({
+            'request_type': request_type,
+        })
+
+    request_type_to_func = {
+        'SP_and_date': SP_and_date_request,
+        'date_range': date_range_request,
+        'date_time_range': date_range_request,
+        'year': year_request,
+        'year_and_month': year_and_month_request,
+        'year_and_week': year_and_week_request,
+        'non_temporal': non_temporal_request
+    }
+
+    assert request_type in request_type_to_func.keys(), f&quot;{request_type} must be one of: {', '.join(request_type_to_func.keys())}&quot;
+    request_func = request_type_to_func[request_type]
+
+    df = request_func(
+        method=method,
+        api_key=api_key,
+        **kwargs
+    )
+
+    df = df.reset_index(drop=True)
+
+    return df
+</code></pre>
+<pre><code class="language-python">method = 'get_B0630'
+start_date = '2020-01-01'
+end_date = '2020-01-31'
+
+request_type = method_info[method]['request_type']
+kwargs_map = method_info[method]['kwargs_map']
+func_params = list(method_info[method]['func_kwargs'].keys())
+
+df = query_orchestrator(
+    method=method,
+    api_key=api_key,
+    request_type=request_type,
+    kwargs_map=kwargs_map,
+    func_params=func_params,
+    start_date=start_date,
+    end_date=end_date
+)
+
+df.head(3)
+</code></pre>
+<pre><code>B0630: 100% 4/4 [00:00&lt;00:00,  6.54it/s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="left">timeSeriesID</th>
+<th align="left">businessType</th>
+<th align="left">settlementDate</th>
+<th align="right">quantity</th>
+<th align="right">week</th>
+<th align="left">documentType</th>
+<th align="left">processType</th>
+<th align="left">objectAggregation</th>
+<th align="left">curveType</th>
+<th align="left">resolution</th>
+<th align="left">unitOfMeasure</th>
+<th align="right">year</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005681</td>
+<td align="left">Minimum possible</td>
+<td align="left">2019-12-29</td>
+<td align="right">22753</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005682</td>
+<td align="left">Maximum available</td>
+<td align="left">2019-12-29</td>
+<td align="right">40156</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">NGET-EMFIP-WATL-TS-00005681</td>
+<td align="left">Minimum possible</td>
+<td align="left">2019-12-28</td>
+<td align="right">23644</td>
+<td align="right">52</td>
+<td align="left">System total load</td>
+<td align="left">Week ahead</td>
+<td align="left">Area</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">P1D</td>
+<td align="left">Mega watt</td>
+<td align="right">2019</td>
+<td align="left">Y</td>
+<td align="left">NGET-EMFIP-WATL-00005681</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../04-client-prep/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Endpoint Types
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../06-client-gen/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Client Generation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["header.autohide", "navigation.tabs", "navigation.instant", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+      
+        <script src="../js/map.js"></script>
+      
+        <script src="../js/SliderControl.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1093 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+    
+    
+      
+        <title>Welcome - Elexon Data Portal</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.9299cb39.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ef6f36e2.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css">
+    
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    
+      <link rel="stylesheet" href="css/map.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elexon-data-portal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Elexon Data Portal" class="md-header__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Elexon Data Portal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Welcome
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="visualisations/" class="md-tabs__link">
+      Visualisations
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="api/" class="md-tabs__link">
+      API
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01-utils/" class="md-tabs__link">
+        Development
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Elexon Data Portal" class="md-nav__button md-logo" aria-label="Elexon Data Portal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Elexon Data Portal
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/OSUKED/ElexonDataPortal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ElexonDataPortal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        Home
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Welcome
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-changed-in-v2" class="md-nav__link">
+    What's Changed in v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-library-generation" class="md-nav__link">
+    Programmatic Library Generation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-stream-descriptions" class="md-nav__link">
+    Data Stream Descriptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08-quick-start/" class="md-nav__link">
+        Quick-Start
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="visualisations/" class="md-nav__link">
+        Visualisations
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api/" class="md-nav__link">
+        API
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01-utils/" class="md-nav__link">
+        Utilities
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02-spec-gen/" class="md-nav__link">
+        OpenAPI Spec
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03-raw-methods/" class="md-nav__link">
+        Raw Methods
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04-client-prep/" class="md-nav__link">
+        Endpoint Types
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05-orchestrator/" class="md-nav__link">
+        Orchestrator
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06-client-gen/" class="md-nav__link">
+        Client Generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07-cli-rebuild/" class="md-nav__link">
+        Rebuilding
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09-map-gen/" class="md-nav__link">
+        Map Generation
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-changed-in-v2" class="md-nav__link">
+    What's Changed in v2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-library-generation" class="md-nav__link">
+    Programmatic Library Generation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-stream-descriptions" class="md-nav__link">
+    Data Stream Descriptions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="elexon-data-portal">Elexon Data Portal</h1>
+<p><a href="https://zenodo.org/badge/latestdoi/189842391"><img alt="DOI" src="https://zenodo.org/badge/189842391.svg" /></a> <a href="https://notebooks.gesis.org/binder/v2/gh/OSUKED/ElexonDataPortal/master?urlpath=lab%2Ftree%2Fnbs%2F08-quick-start.ipynb"><img alt="Binder" src="https://notebooks.gesis.org/binder/badge_logo.svg" /></a> <a href="https://badge.fury.io/py/ElexonDataPortal"><img alt="PyPI version" src="https://badge.fury.io/py/ElexonDataPortal.svg" /></a></p>
+<p>The <code>ElexonDataPortal</code> library is a Python Client for retrieving data from the Elexon/BMRS API. The library significantly reduces the complexity of interfacing with the Elexon/BMRS API through the standardisation of parameter names and orchestration of multiple queries when making requests over a date range. To use the <code>ElexonDataPortal</code> you will have to register for an Elexon API key which can be done <a href="https://www.elexonportal.co.uk/registration/newuser">here</a>. </p>
+<p><br>
+<br></p>
+<h3 id="installation">Installation</h3>
+<p>The library can be easily installed from PyPi, this can be done using:</p>
+<pre><code class="language-bash">pip install ElexonDataPortal
+</code></pre>
+<p><br>
+<br></p>
+<h3 id="getting-started">Getting Started</h3>
+<p>We'll begin by initialising the API <code>Client</code>. The key parameter to pass here is the <code>api_key</code>, alternatively this can be set by specifying the environment variable <code>BMRS_API_KEY</code> which will then be loaded automatically.</p>
+<pre><code class="language-python">from ElexonDataPortal import api
+
+client = api.Client('your_api_key_here')
+</code></pre>
+<p><br></p>
+<p>Now that the client has been initialised we can make a request! </p>
+<p>One of the key abstractions within the <code>ElexonDataPortal</code> library is the handling of multiple requests over a date range specified through the <code>start_date</code> and <code>end_date</code> parameters. Each response will be automatically cleaned and parsed, then concatenated into a single Pandas DataFrame. If a settlement period and date column can be identified in the returned data then a new column will be added with the local datetime for each data-point. N.b. that if passed as a string the start and end datetimes will be assumed to be in the local timezone for the UK</p>
+<pre><code class="language-python">start_date = '2020-01-01'
+end_date = '2020-01-01 1:30'
+
+df_B1610 = client.get_B1610(start_date, end_date)
+
+df_B1610.head(3)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">documentType</th>
+<th align="left">businessType</th>
+<th align="left">processType</th>
+<th align="left">timeSeriesID</th>
+<th align="left">curveType</th>
+<th align="left">settlementDate</th>
+<th align="left">powerSystemResourceType</th>
+<th align="left">registeredResourceEICCode</th>
+<th align="left">marketGenerationUnitEICCode</th>
+<th align="left">marketGenerationBMUId</th>
+<th align="left">marketGenerationNGCBMUId</th>
+<th align="left">bMUnitID</th>
+<th align="left">nGCBMUnitID</th>
+<th align="left">activeFlag</th>
+<th align="left">documentID</th>
+<th align="right">documentRevNum</th>
+<th align="left">resolution</th>
+<th align="left">start</th>
+<th align="left">end</th>
+<th align="right">settlementPeriod</th>
+<th align="right">quantity</th>
+<th align="left">local_datetime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-212</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W000CAS-BEU01F</td>
+<td align="left">48W000CAS-BEU01F</td>
+<td align="left">M_CAS-BEU01</td>
+<td align="left">CAS-BEU01</td>
+<td align="left">M_CAS-BEU01</td>
+<td align="left">CAS-BEU01</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">18.508</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-355</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000STLGW-3A</td>
+<td align="left">48W00000STLGW-3A</td>
+<td align="left">T_STLGW-3</td>
+<td align="left">STLGW-3</td>
+<td align="left">T_STLGW-3</td>
+<td align="left">STLGW-3</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">28.218</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Actual generation</td>
+<td align="left">Production</td>
+<td align="left">Realised</td>
+<td align="left">ELX-EMFIP-AGOG-TS-278</td>
+<td align="left">Sequential fixed size block</td>
+<td align="left">2020-01-01</td>
+<td align="left">Generation</td>
+<td align="left">48W00000GNFSW-1H</td>
+<td align="left">48W00000GNFSW-1H</td>
+<td align="left">T_GNFSW-1</td>
+<td align="left">GNFSW-1</td>
+<td align="left">T_GNFSW-1</td>
+<td align="left">GNFSW-1</td>
+<td align="left">Y</td>
+<td align="left">ELX-EMFIP-AGOG-22495386</td>
+<td align="right">1</td>
+<td align="left">PT30M</td>
+<td align="left">2020-01-01</td>
+<td align="left">2020-01-01</td>
+<td align="right">1</td>
+<td align="right">29.44</td>
+<td align="left">2020-01-01 00:00:00+00:00</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>If you've previously written your own code for extracting data from the Elexon/BMRS API then you may be wondering where some of the normal parameters you pass have gone. The reduction in the parameters passed are due to 4 core drivers:</p>
+<ul>
+<li>Standardisation of date range parameter names</li>
+<li>Removal of the need to specify <code>ServiceType</code></li>
+<li>Automatic passing of <code>APIKey</code> after client initialisation</li>
+<li>Shipped with sensible defaults for all remaining parameters</li>
+</ul>
+<p>The full list of data streams that are able to be requested can be found <a href="#data-stream-descriptions">here</a>. If you wish to make requests using the raw methods these are available through the <code>ElexonDataportal.dev.raw</code> module.</p>
+<p>Further information can be found in the <a href="https://osuked.github.io/ElexonDataPortal/08-quick-start/">Quick Start guide</a>.</p>
+<p><br>
+<br></p>
+<h3 id="whats-changed-in-v2">What's Changed in v2</h3>
+<p>The latest release of the library includes a full rewrite of the code-base. We have endeavoured to make the new API as intuitive as possible but that has required breaking changes from v1, if you wish to continue using the historic library use <code>pip install ElexonDataPortal==1.0.4</code>. N.b v1 will not be maintained going forward, you are advised to change over to v2.0.0+. </p>
+<p>The key feature changes are:</p>
+<ul>
+<li>Coverage of more BMRS streams </li>
+<li>Automated default values</li>
+<li>Cleaner client API</li>
+<li>A larger range of request types are compatible with the date range orchestrator</li>
+</ul>
+<p><br>
+<br></p>
+<h3 id="programmatic-library-generation">Programmatic Library Generation</h3>
+<p>One of the core features within the <code>ElexonDataPortal</code> library is that it is <em>self-generating</em>, by which we mean it can rebuild itself (including any new API request methods) from scratch using only the <code>endpoints.csv</code> spreadsheet. As well as generating the Python Client library a <code>BMRS_API.yaml</code> file is created, this provides an OpenAPI specification representation of the Elexon/BMRS API. In turn this allows us to automatically generate documentation, as well as run tests on the API itself to ensure that everything is working as expected - during this process we identified and corrected several small errors in the API documentation provided by Elexon. </p>
+<p>To rebuild the library simply run the following in the root directory: </p>
+<pre><code class="language-bash">python -m ElexonDataPortal.rebuild
+</code></pre>
+<p>N.b. If you wish to develop the library further or use any of the programmatic library generation functionality then please install the development version of the library using:</p>
+<pre><code class="language-bash">pip install ElexonDataPortal[dev]
+</code></pre>
+<p>If you are not installing into a fresh environment it is recommended you install <code>pyyaml</code> and <code>geopandas</code> using conda to avoid any dependency conflicts. In future we are looking to release <code>ElexonDataPortal</code> as a conda package to avoid these issues.</p>
+<p><br>
+<br></p>
+<h3 id="data-stream-descriptions">Data Stream Descriptions</h3>
+<p>The following table describes the data streams that are currently retreivable through the API. The client method to retrieve data from a given stream follows the naming convention <code>get_{stream-name}</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Stream</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">B0610</td>
+<td align="left">Actual Total Load per Bidding Zone</td>
+</tr>
+<tr>
+<td align="left">B0620</td>
+<td align="left">Day-Ahead Total Load Forecast per Bidding Zone</td>
+</tr>
+<tr>
+<td align="left">B0630</td>
+<td align="left">Week-Ahead Total Load Forecast per Bidding Zone</td>
+</tr>
+<tr>
+<td align="left">B0640</td>
+<td align="left">Month-Ahead Total Load Forecast Per Bidding Zone</td>
+</tr>
+<tr>
+<td align="left">B0650</td>
+<td align="left">Year Ahead Total Load Forecast per Bidding Zone</td>
+</tr>
+<tr>
+<td align="left">B0710</td>
+<td align="left">Planned Unavailability of Consumption Units</td>
+</tr>
+<tr>
+<td align="left">B0720</td>
+<td align="left">Changes In Actual Availability Of Consumption Units</td>
+</tr>
+<tr>
+<td align="left">B0810</td>
+<td align="left">Year Ahead Forecast Margin</td>
+</tr>
+<tr>
+<td align="left">B0910</td>
+<td align="left">Expansion and Dismantling Projects</td>
+</tr>
+<tr>
+<td align="left">B1010</td>
+<td align="left">Planned Unavailability In The Transmission Grid</td>
+</tr>
+<tr>
+<td align="left">B1020</td>
+<td align="left">Changes In Actual Availability In The Transmission Grid</td>
+</tr>
+<tr>
+<td align="left">B1030</td>
+<td align="left">Changes In Actual Availability of Offshore Grid Infrastructure</td>
+</tr>
+<tr>
+<td align="left">B1320</td>
+<td align="left">Congestion Management Measures Countertrading</td>
+</tr>
+<tr>
+<td align="left">B1330</td>
+<td align="left">Congestion Management Measures Costs of Congestion Management</td>
+</tr>
+<tr>
+<td align="left">B1410</td>
+<td align="left">Installed Generation Capacity Aggregated</td>
+</tr>
+<tr>
+<td align="left">B1420</td>
+<td align="left">Installed Generation Capacity per Unit</td>
+</tr>
+<tr>
+<td align="left">B1430</td>
+<td align="left">Day-Ahead Aggregated Generation</td>
+</tr>
+<tr>
+<td align="left">B1440</td>
+<td align="left">Generation forecasts for Wind and Solar</td>
+</tr>
+<tr>
+<td align="left">B1510</td>
+<td align="left">Planned Unavailability of Generation Units</td>
+</tr>
+<tr>
+<td align="left">B1520</td>
+<td align="left">Changes In Actual Availability of Generation Units</td>
+</tr>
+<tr>
+<td align="left">B1530</td>
+<td align="left">Planned Unavailability of Production Units</td>
+</tr>
+<tr>
+<td align="left">B1540</td>
+<td align="left">Changes In Actual Availability of Production Units</td>
+</tr>
+<tr>
+<td align="left">B1610</td>
+<td align="left">Actual Generation Output per Generation Unit</td>
+</tr>
+<tr>
+<td align="left">B1620</td>
+<td align="left">Actual Aggregated Generation per Type</td>
+</tr>
+<tr>
+<td align="left">B1630</td>
+<td align="left">Actual Or Estimated Wind and Solar Power Generation</td>
+</tr>
+<tr>
+<td align="left">B1720</td>
+<td align="left">Amount Of Balancing Reserves Under Contract Service</td>
+</tr>
+<tr>
+<td align="left">B1730</td>
+<td align="left">Prices Of Procured Balancing Reserves Service</td>
+</tr>
+<tr>
+<td align="left">B1740</td>
+<td align="left">Accepted Aggregated Offers</td>
+</tr>
+<tr>
+<td align="left">B1750</td>
+<td align="left">Activated Balancing Energy</td>
+</tr>
+<tr>
+<td align="left">B1760</td>
+<td align="left">Prices Of Activated Balancing Energy</td>
+</tr>
+<tr>
+<td align="left">B1770</td>
+<td align="left">Imbalance Prices</td>
+</tr>
+<tr>
+<td align="left">B1780</td>
+<td align="left">Aggregated Imbalance Volumes</td>
+</tr>
+<tr>
+<td align="left">B1790</td>
+<td align="left">Financial Expenses and Income For Balancing</td>
+</tr>
+<tr>
+<td align="left">B1810</td>
+<td align="left">Cross-Border Balancing Volumes of Exchanged Bids and Offers</td>
+</tr>
+<tr>
+<td align="left">B1820</td>
+<td align="left">Cross-Border Balancing Prices</td>
+</tr>
+<tr>
+<td align="left">B1830</td>
+<td align="left">Cross-border Balancing Energy Activated</td>
+</tr>
+<tr>
+<td align="left">BOD</td>
+<td align="left">Bid Offer Level Data</td>
+</tr>
+<tr>
+<td align="left">CDN</td>
+<td align="left">Credit Default Notice Data</td>
+</tr>
+<tr>
+<td align="left">DETSYSPRICES</td>
+<td align="left">Detailed System Prices</td>
+</tr>
+<tr>
+<td align="left">DEVINDOD</td>
+<td align="left">Daily Energy Volume Data</td>
+</tr>
+<tr>
+<td align="left">DISBSAD</td>
+<td align="left">Balancing Services Adjustment Action Data</td>
+</tr>
+<tr>
+<td align="left">FORDAYDEM</td>
+<td align="left">Forecast Day and Day Ahead Demand Data</td>
+</tr>
+<tr>
+<td align="left">FREQ</td>
+<td align="left">Rolling System Frequency</td>
+</tr>
+<tr>
+<td align="left">FUELHH</td>
+<td align="left">Half Hourly Outturn Generation by Fuel Type</td>
+</tr>
+<tr>
+<td align="left">MELIMBALNGC</td>
+<td align="left">Forecast Day and Day Ahead Margin and Imbalance Data</td>
+</tr>
+<tr>
+<td align="left">MID</td>
+<td align="left">Market Index Data</td>
+</tr>
+<tr>
+<td align="left">MessageDetailRetrieval</td>
+<td align="left">REMIT Flow - Message List Retrieval</td>
+</tr>
+<tr>
+<td align="left">MessageListRetrieval</td>
+<td align="left">REMIT Flow - Message List Retrieval</td>
+</tr>
+<tr>
+<td align="left">NETBSAD</td>
+<td align="left">Balancing Service Adjustment Data</td>
+</tr>
+<tr>
+<td align="left">NONBM</td>
+<td align="left">Non BM STOR Instructed Volume Data</td>
+</tr>
+<tr>
+<td align="left">PHYBMDATA</td>
+<td align="left">Physical Data</td>
+</tr>
+<tr>
+<td align="left">SYSDEM</td>
+<td align="left">System Demand</td>
+</tr>
+<tr>
+<td align="left">SYSWARN</td>
+<td align="left">System Warnings</td>
+</tr>
+<tr>
+<td align="left">TEMP</td>
+<td align="left">Temperature Data</td>
+</tr>
+<tr>
+<td align="left">WINDFORFUELHH</td>
+<td align="left">Wind Generation Forecast and Out-turn Data</td>
+</tr>
+</tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        <a href="08-quick-start/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Quick-Start
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "navigation.tabs", "navigation.instant", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.7353b375.min.js"></script>
+      
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/redoc/bundles/redoc.standalone.js"></script>
+      
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+      
+        <script src="js/map.js"></script>
+      
+        <script src="js/SliderControl.js"></script>
+      
+    
+  </body>
+</html>
